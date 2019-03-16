@@ -1,16 +1,48 @@
-type User {
+type EnumType {
   id: ID! @unique
-  email: String! @unique
   name: String
-  posts: [Post!]!
+  desc: String
+  props: [EnumProp!]!
+  wikiUrl: String
 }
 
-type Post {
+type EnumProp {
   id: ID! @unique
-  createdAt: DateTime!
-  updatedAt: DateTime!
-  published: Boolean! @default(value: "false")
-  title: String!
-  content: String
-  author: User!
+  key: String!
+  value: Int!
+}
+
+type Bo {
+  id: ID! @unique
+  name: String
+  desc: String
+  props: [BoProp!]!
+  wikiUrl: String
+  details: [Bo] # 清单实体
+}
+
+type BoProp {
+  id: ID! @unique
+  name: String
+  desc: String
+  type: String # 数据类型
+  required: Boolean # 是否必填
+  unique: Boolean # 是否唯一
+  redundant: Boolean # 是否冗余
+  Bo: Bo # 所属 BO
+  linkBo: Bo # 关联另一个 BO
+  linkEnumType: EnumType # 关联枚举
+}
+
+type Page {
+  id: ID! @unique
+  name: String
+  desc: String
+  project: String # 项目名称
+  system: String # 系统名称
+  domain: String # 业务领域
+  type: String # 业务类型
+  wikiUrl: String
+  bos: [Bo!]!
+  enums: [EnumType!]!
 }

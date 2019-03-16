@@ -2,11 +2,23 @@
   // Please don't change this file manually but run `prisma generate` to update it.
   // For more information, please read the docs: https://www.prisma.io/docs/prisma-client/
 
-export const typeDefs = /* GraphQL */ `type AggregatePost {
+export const typeDefs = /* GraphQL */ `type AggregateBo {
   count: Int!
 }
 
-type AggregateUser {
+type AggregateBoProp {
+  count: Int!
+}
+
+type AggregateEnumProp {
+  count: Int!
+}
+
+type AggregateEnumType {
+  count: Int!
+}
+
+type AggregatePage {
   count: Int!
 }
 
@@ -14,428 +26,154 @@ type BatchPayload {
   count: Long!
 }
 
-scalar DateTime
-
-scalar Long
-
-type Mutation {
-  createPost(data: PostCreateInput!): Post!
-  updatePost(data: PostUpdateInput!, where: PostWhereUniqueInput!): Post
-  updateManyPosts(data: PostUpdateManyMutationInput!, where: PostWhereInput): BatchPayload!
-  upsertPost(where: PostWhereUniqueInput!, create: PostCreateInput!, update: PostUpdateInput!): Post!
-  deletePost(where: PostWhereUniqueInput!): Post
-  deleteManyPosts(where: PostWhereInput): BatchPayload!
-  createUser(data: UserCreateInput!): User!
-  updateUser(data: UserUpdateInput!, where: UserWhereUniqueInput!): User
-  updateManyUsers(data: UserUpdateManyMutationInput!, where: UserWhereInput): BatchPayload!
-  upsertUser(where: UserWhereUniqueInput!, create: UserCreateInput!, update: UserUpdateInput!): User!
-  deleteUser(where: UserWhereUniqueInput!): User
-  deleteManyUsers(where: UserWhereInput): BatchPayload!
-}
-
-enum MutationType {
-  CREATED
-  UPDATED
-  DELETED
-}
-
-interface Node {
+type Bo {
   id: ID!
+  name: String
+  desc: String
+  props(where: BoPropWhereInput, orderBy: BoPropOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [BoProp!]
+  wikiUrl: String
+  details(where: BoWhereInput, orderBy: BoOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Bo!]
 }
 
-type PageInfo {
-  hasNextPage: Boolean!
-  hasPreviousPage: Boolean!
-  startCursor: String
-  endCursor: String
-}
-
-type Post {
-  id: ID!
-  createdAt: DateTime!
-  updatedAt: DateTime!
-  published: Boolean!
-  title: String!
-  content: String
-  author: User!
-}
-
-type PostConnection {
+type BoConnection {
   pageInfo: PageInfo!
-  edges: [PostEdge]!
-  aggregate: AggregatePost!
+  edges: [BoEdge]!
+  aggregate: AggregateBo!
 }
 
-input PostCreateInput {
-  published: Boolean
-  title: String!
-  content: String
-  author: UserCreateOneWithoutPostsInput!
+input BoCreateInput {
+  name: String
+  desc: String
+  props: BoPropCreateManyWithoutLinkBoInput
+  wikiUrl: String
+  details: BoCreateManyInput
 }
 
-input PostCreateManyWithoutAuthorInput {
-  create: [PostCreateWithoutAuthorInput!]
-  connect: [PostWhereUniqueInput!]
+input BoCreateManyInput {
+  create: [BoCreateInput!]
+  connect: [BoWhereUniqueInput!]
 }
 
-input PostCreateWithoutAuthorInput {
-  published: Boolean
-  title: String!
-  content: String
+input BoCreateOneWithoutPropsInput {
+  create: BoCreateWithoutPropsInput
+  connect: BoWhereUniqueInput
 }
 
-type PostEdge {
-  node: Post!
+input BoCreateWithoutPropsInput {
+  name: String
+  desc: String
+  wikiUrl: String
+  details: BoCreateManyInput
+}
+
+type BoEdge {
+  node: Bo!
   cursor: String!
 }
 
-enum PostOrderByInput {
+enum BoOrderByInput {
   id_ASC
   id_DESC
-  createdAt_ASC
-  createdAt_DESC
-  updatedAt_ASC
-  updatedAt_DESC
-  published_ASC
-  published_DESC
-  title_ASC
-  title_DESC
-  content_ASC
-  content_DESC
-}
-
-type PostPreviousValues {
-  id: ID!
-  createdAt: DateTime!
-  updatedAt: DateTime!
-  published: Boolean!
-  title: String!
-  content: String
-}
-
-input PostScalarWhereInput {
-  id: ID
-  id_not: ID
-  id_in: [ID!]
-  id_not_in: [ID!]
-  id_lt: ID
-  id_lte: ID
-  id_gt: ID
-  id_gte: ID
-  id_contains: ID
-  id_not_contains: ID
-  id_starts_with: ID
-  id_not_starts_with: ID
-  id_ends_with: ID
-  id_not_ends_with: ID
-  createdAt: DateTime
-  createdAt_not: DateTime
-  createdAt_in: [DateTime!]
-  createdAt_not_in: [DateTime!]
-  createdAt_lt: DateTime
-  createdAt_lte: DateTime
-  createdAt_gt: DateTime
-  createdAt_gte: DateTime
-  updatedAt: DateTime
-  updatedAt_not: DateTime
-  updatedAt_in: [DateTime!]
-  updatedAt_not_in: [DateTime!]
-  updatedAt_lt: DateTime
-  updatedAt_lte: DateTime
-  updatedAt_gt: DateTime
-  updatedAt_gte: DateTime
-  published: Boolean
-  published_not: Boolean
-  title: String
-  title_not: String
-  title_in: [String!]
-  title_not_in: [String!]
-  title_lt: String
-  title_lte: String
-  title_gt: String
-  title_gte: String
-  title_contains: String
-  title_not_contains: String
-  title_starts_with: String
-  title_not_starts_with: String
-  title_ends_with: String
-  title_not_ends_with: String
-  content: String
-  content_not: String
-  content_in: [String!]
-  content_not_in: [String!]
-  content_lt: String
-  content_lte: String
-  content_gt: String
-  content_gte: String
-  content_contains: String
-  content_not_contains: String
-  content_starts_with: String
-  content_not_starts_with: String
-  content_ends_with: String
-  content_not_ends_with: String
-  AND: [PostScalarWhereInput!]
-  OR: [PostScalarWhereInput!]
-  NOT: [PostScalarWhereInput!]
-}
-
-type PostSubscriptionPayload {
-  mutation: MutationType!
-  node: Post
-  updatedFields: [String!]
-  previousValues: PostPreviousValues
-}
-
-input PostSubscriptionWhereInput {
-  mutation_in: [MutationType!]
-  updatedFields_contains: String
-  updatedFields_contains_every: [String!]
-  updatedFields_contains_some: [String!]
-  node: PostWhereInput
-  AND: [PostSubscriptionWhereInput!]
-  OR: [PostSubscriptionWhereInput!]
-  NOT: [PostSubscriptionWhereInput!]
-}
-
-input PostUpdateInput {
-  published: Boolean
-  title: String
-  content: String
-  author: UserUpdateOneRequiredWithoutPostsInput
-}
-
-input PostUpdateManyDataInput {
-  published: Boolean
-  title: String
-  content: String
-}
-
-input PostUpdateManyMutationInput {
-  published: Boolean
-  title: String
-  content: String
-}
-
-input PostUpdateManyWithoutAuthorInput {
-  create: [PostCreateWithoutAuthorInput!]
-  delete: [PostWhereUniqueInput!]
-  connect: [PostWhereUniqueInput!]
-  set: [PostWhereUniqueInput!]
-  disconnect: [PostWhereUniqueInput!]
-  update: [PostUpdateWithWhereUniqueWithoutAuthorInput!]
-  upsert: [PostUpsertWithWhereUniqueWithoutAuthorInput!]
-  deleteMany: [PostScalarWhereInput!]
-  updateMany: [PostUpdateManyWithWhereNestedInput!]
-}
-
-input PostUpdateManyWithWhereNestedInput {
-  where: PostScalarWhereInput!
-  data: PostUpdateManyDataInput!
-}
-
-input PostUpdateWithoutAuthorDataInput {
-  published: Boolean
-  title: String
-  content: String
-}
-
-input PostUpdateWithWhereUniqueWithoutAuthorInput {
-  where: PostWhereUniqueInput!
-  data: PostUpdateWithoutAuthorDataInput!
-}
-
-input PostUpsertWithWhereUniqueWithoutAuthorInput {
-  where: PostWhereUniqueInput!
-  update: PostUpdateWithoutAuthorDataInput!
-  create: PostCreateWithoutAuthorInput!
-}
-
-input PostWhereInput {
-  id: ID
-  id_not: ID
-  id_in: [ID!]
-  id_not_in: [ID!]
-  id_lt: ID
-  id_lte: ID
-  id_gt: ID
-  id_gte: ID
-  id_contains: ID
-  id_not_contains: ID
-  id_starts_with: ID
-  id_not_starts_with: ID
-  id_ends_with: ID
-  id_not_ends_with: ID
-  createdAt: DateTime
-  createdAt_not: DateTime
-  createdAt_in: [DateTime!]
-  createdAt_not_in: [DateTime!]
-  createdAt_lt: DateTime
-  createdAt_lte: DateTime
-  createdAt_gt: DateTime
-  createdAt_gte: DateTime
-  updatedAt: DateTime
-  updatedAt_not: DateTime
-  updatedAt_in: [DateTime!]
-  updatedAt_not_in: [DateTime!]
-  updatedAt_lt: DateTime
-  updatedAt_lte: DateTime
-  updatedAt_gt: DateTime
-  updatedAt_gte: DateTime
-  published: Boolean
-  published_not: Boolean
-  title: String
-  title_not: String
-  title_in: [String!]
-  title_not_in: [String!]
-  title_lt: String
-  title_lte: String
-  title_gt: String
-  title_gte: String
-  title_contains: String
-  title_not_contains: String
-  title_starts_with: String
-  title_not_starts_with: String
-  title_ends_with: String
-  title_not_ends_with: String
-  content: String
-  content_not: String
-  content_in: [String!]
-  content_not_in: [String!]
-  content_lt: String
-  content_lte: String
-  content_gt: String
-  content_gte: String
-  content_contains: String
-  content_not_contains: String
-  content_starts_with: String
-  content_not_starts_with: String
-  content_ends_with: String
-  content_not_ends_with: String
-  author: UserWhereInput
-  AND: [PostWhereInput!]
-  OR: [PostWhereInput!]
-  NOT: [PostWhereInput!]
-}
-
-input PostWhereUniqueInput {
-  id: ID
-}
-
-type Query {
-  post(where: PostWhereUniqueInput!): Post
-  posts(where: PostWhereInput, orderBy: PostOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Post]!
-  postsConnection(where: PostWhereInput, orderBy: PostOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): PostConnection!
-  user(where: UserWhereUniqueInput!): User
-  users(where: UserWhereInput, orderBy: UserOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [User]!
-  usersConnection(where: UserWhereInput, orderBy: UserOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): UserConnection!
-  node(id: ID!): Node
-}
-
-type Subscription {
-  post(where: PostSubscriptionWhereInput): PostSubscriptionPayload
-  user(where: UserSubscriptionWhereInput): UserSubscriptionPayload
-}
-
-type User {
-  id: ID!
-  email: String!
-  name: String
-  posts(where: PostWhereInput, orderBy: PostOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Post!]
-}
-
-type UserConnection {
-  pageInfo: PageInfo!
-  edges: [UserEdge]!
-  aggregate: AggregateUser!
-}
-
-input UserCreateInput {
-  email: String!
-  name: String
-  posts: PostCreateManyWithoutAuthorInput
-}
-
-input UserCreateOneWithoutPostsInput {
-  create: UserCreateWithoutPostsInput
-  connect: UserWhereUniqueInput
-}
-
-input UserCreateWithoutPostsInput {
-  email: String!
-  name: String
-}
-
-type UserEdge {
-  node: User!
-  cursor: String!
-}
-
-enum UserOrderByInput {
-  id_ASC
-  id_DESC
-  email_ASC
-  email_DESC
   name_ASC
   name_DESC
+  desc_ASC
+  desc_DESC
+  wikiUrl_ASC
+  wikiUrl_DESC
   createdAt_ASC
   createdAt_DESC
   updatedAt_ASC
   updatedAt_DESC
 }
 
-type UserPreviousValues {
+type BoPreviousValues {
   id: ID!
-  email: String!
   name: String
+  desc: String
+  wikiUrl: String
 }
 
-type UserSubscriptionPayload {
-  mutation: MutationType!
-  node: User
-  updatedFields: [String!]
-  previousValues: UserPreviousValues
-}
-
-input UserSubscriptionWhereInput {
-  mutation_in: [MutationType!]
-  updatedFields_contains: String
-  updatedFields_contains_every: [String!]
-  updatedFields_contains_some: [String!]
-  node: UserWhereInput
-  AND: [UserSubscriptionWhereInput!]
-  OR: [UserSubscriptionWhereInput!]
-  NOT: [UserSubscriptionWhereInput!]
-}
-
-input UserUpdateInput {
-  email: String
+type BoProp {
+  id: ID!
   name: String
-  posts: PostUpdateManyWithoutAuthorInput
+  desc: String
+  type: String
+  required: Boolean
+  unique: Boolean
+  redundant: Boolean
+  linkBo: Bo
+  linkEnumType: EnumType
 }
 
-input UserUpdateManyMutationInput {
-  email: String
+type BoPropConnection {
+  pageInfo: PageInfo!
+  edges: [BoPropEdge]!
+  aggregate: AggregateBoProp!
+}
+
+input BoPropCreateInput {
   name: String
+  desc: String
+  type: String
+  required: Boolean
+  unique: Boolean
+  redundant: Boolean
+  linkBo: BoCreateOneWithoutPropsInput
+  linkEnumType: EnumTypeCreateOneInput
 }
 
-input UserUpdateOneRequiredWithoutPostsInput {
-  create: UserCreateWithoutPostsInput
-  update: UserUpdateWithoutPostsDataInput
-  upsert: UserUpsertWithoutPostsInput
-  connect: UserWhereUniqueInput
+input BoPropCreateManyWithoutLinkBoInput {
+  create: [BoPropCreateWithoutLinkBoInput!]
+  connect: [BoPropWhereUniqueInput!]
 }
 
-input UserUpdateWithoutPostsDataInput {
-  email: String
+input BoPropCreateWithoutLinkBoInput {
   name: String
+  desc: String
+  type: String
+  required: Boolean
+  unique: Boolean
+  redundant: Boolean
+  linkEnumType: EnumTypeCreateOneInput
 }
 
-input UserUpsertWithoutPostsInput {
-  update: UserUpdateWithoutPostsDataInput!
-  create: UserCreateWithoutPostsInput!
+type BoPropEdge {
+  node: BoProp!
+  cursor: String!
 }
 
-input UserWhereInput {
+enum BoPropOrderByInput {
+  id_ASC
+  id_DESC
+  name_ASC
+  name_DESC
+  desc_ASC
+  desc_DESC
+  type_ASC
+  type_DESC
+  required_ASC
+  required_DESC
+  unique_ASC
+  unique_DESC
+  redundant_ASC
+  redundant_DESC
+  createdAt_ASC
+  createdAt_DESC
+  updatedAt_ASC
+  updatedAt_DESC
+}
+
+type BoPropPreviousValues {
+  id: ID!
+  name: String
+  desc: String
+  type: String
+  required: Boolean
+  unique: Boolean
+  redundant: Boolean
+}
+
+input BoPropScalarWhereInput {
   id: ID
   id_not: ID
   id_in: [ID!]
@@ -450,20 +188,6 @@ input UserWhereInput {
   id_not_starts_with: ID
   id_ends_with: ID
   id_not_ends_with: ID
-  email: String
-  email_not: String
-  email_in: [String!]
-  email_not_in: [String!]
-  email_lt: String
-  email_lte: String
-  email_gt: String
-  email_gte: String
-  email_contains: String
-  email_not_contains: String
-  email_starts_with: String
-  email_not_starts_with: String
-  email_ends_with: String
-  email_not_ends_with: String
   name: String
   name_not: String
   name_in: [String!]
@@ -478,16 +202,1222 @@ input UserWhereInput {
   name_not_starts_with: String
   name_ends_with: String
   name_not_ends_with: String
-  posts_every: PostWhereInput
-  posts_some: PostWhereInput
-  posts_none: PostWhereInput
-  AND: [UserWhereInput!]
-  OR: [UserWhereInput!]
-  NOT: [UserWhereInput!]
+  desc: String
+  desc_not: String
+  desc_in: [String!]
+  desc_not_in: [String!]
+  desc_lt: String
+  desc_lte: String
+  desc_gt: String
+  desc_gte: String
+  desc_contains: String
+  desc_not_contains: String
+  desc_starts_with: String
+  desc_not_starts_with: String
+  desc_ends_with: String
+  desc_not_ends_with: String
+  type: String
+  type_not: String
+  type_in: [String!]
+  type_not_in: [String!]
+  type_lt: String
+  type_lte: String
+  type_gt: String
+  type_gte: String
+  type_contains: String
+  type_not_contains: String
+  type_starts_with: String
+  type_not_starts_with: String
+  type_ends_with: String
+  type_not_ends_with: String
+  required: Boolean
+  required_not: Boolean
+  unique: Boolean
+  unique_not: Boolean
+  redundant: Boolean
+  redundant_not: Boolean
+  AND: [BoPropScalarWhereInput!]
+  OR: [BoPropScalarWhereInput!]
+  NOT: [BoPropScalarWhereInput!]
 }
 
-input UserWhereUniqueInput {
+type BoPropSubscriptionPayload {
+  mutation: MutationType!
+  node: BoProp
+  updatedFields: [String!]
+  previousValues: BoPropPreviousValues
+}
+
+input BoPropSubscriptionWhereInput {
+  mutation_in: [MutationType!]
+  updatedFields_contains: String
+  updatedFields_contains_every: [String!]
+  updatedFields_contains_some: [String!]
+  node: BoPropWhereInput
+  AND: [BoPropSubscriptionWhereInput!]
+  OR: [BoPropSubscriptionWhereInput!]
+  NOT: [BoPropSubscriptionWhereInput!]
+}
+
+input BoPropUpdateInput {
+  name: String
+  desc: String
+  type: String
+  required: Boolean
+  unique: Boolean
+  redundant: Boolean
+  linkBo: BoUpdateOneWithoutPropsInput
+  linkEnumType: EnumTypeUpdateOneInput
+}
+
+input BoPropUpdateManyDataInput {
+  name: String
+  desc: String
+  type: String
+  required: Boolean
+  unique: Boolean
+  redundant: Boolean
+}
+
+input BoPropUpdateManyMutationInput {
+  name: String
+  desc: String
+  type: String
+  required: Boolean
+  unique: Boolean
+  redundant: Boolean
+}
+
+input BoPropUpdateManyWithoutLinkBoInput {
+  create: [BoPropCreateWithoutLinkBoInput!]
+  delete: [BoPropWhereUniqueInput!]
+  connect: [BoPropWhereUniqueInput!]
+  set: [BoPropWhereUniqueInput!]
+  disconnect: [BoPropWhereUniqueInput!]
+  update: [BoPropUpdateWithWhereUniqueWithoutLinkBoInput!]
+  upsert: [BoPropUpsertWithWhereUniqueWithoutLinkBoInput!]
+  deleteMany: [BoPropScalarWhereInput!]
+  updateMany: [BoPropUpdateManyWithWhereNestedInput!]
+}
+
+input BoPropUpdateManyWithWhereNestedInput {
+  where: BoPropScalarWhereInput!
+  data: BoPropUpdateManyDataInput!
+}
+
+input BoPropUpdateWithoutLinkBoDataInput {
+  name: String
+  desc: String
+  type: String
+  required: Boolean
+  unique: Boolean
+  redundant: Boolean
+  linkEnumType: EnumTypeUpdateOneInput
+}
+
+input BoPropUpdateWithWhereUniqueWithoutLinkBoInput {
+  where: BoPropWhereUniqueInput!
+  data: BoPropUpdateWithoutLinkBoDataInput!
+}
+
+input BoPropUpsertWithWhereUniqueWithoutLinkBoInput {
+  where: BoPropWhereUniqueInput!
+  update: BoPropUpdateWithoutLinkBoDataInput!
+  create: BoPropCreateWithoutLinkBoInput!
+}
+
+input BoPropWhereInput {
   id: ID
-  email: String
+  id_not: ID
+  id_in: [ID!]
+  id_not_in: [ID!]
+  id_lt: ID
+  id_lte: ID
+  id_gt: ID
+  id_gte: ID
+  id_contains: ID
+  id_not_contains: ID
+  id_starts_with: ID
+  id_not_starts_with: ID
+  id_ends_with: ID
+  id_not_ends_with: ID
+  name: String
+  name_not: String
+  name_in: [String!]
+  name_not_in: [String!]
+  name_lt: String
+  name_lte: String
+  name_gt: String
+  name_gte: String
+  name_contains: String
+  name_not_contains: String
+  name_starts_with: String
+  name_not_starts_with: String
+  name_ends_with: String
+  name_not_ends_with: String
+  desc: String
+  desc_not: String
+  desc_in: [String!]
+  desc_not_in: [String!]
+  desc_lt: String
+  desc_lte: String
+  desc_gt: String
+  desc_gte: String
+  desc_contains: String
+  desc_not_contains: String
+  desc_starts_with: String
+  desc_not_starts_with: String
+  desc_ends_with: String
+  desc_not_ends_with: String
+  type: String
+  type_not: String
+  type_in: [String!]
+  type_not_in: [String!]
+  type_lt: String
+  type_lte: String
+  type_gt: String
+  type_gte: String
+  type_contains: String
+  type_not_contains: String
+  type_starts_with: String
+  type_not_starts_with: String
+  type_ends_with: String
+  type_not_ends_with: String
+  required: Boolean
+  required_not: Boolean
+  unique: Boolean
+  unique_not: Boolean
+  redundant: Boolean
+  redundant_not: Boolean
+  linkBo: BoWhereInput
+  linkEnumType: EnumTypeWhereInput
+  AND: [BoPropWhereInput!]
+  OR: [BoPropWhereInput!]
+  NOT: [BoPropWhereInput!]
+}
+
+input BoPropWhereUniqueInput {
+  id: ID
+}
+
+input BoScalarWhereInput {
+  id: ID
+  id_not: ID
+  id_in: [ID!]
+  id_not_in: [ID!]
+  id_lt: ID
+  id_lte: ID
+  id_gt: ID
+  id_gte: ID
+  id_contains: ID
+  id_not_contains: ID
+  id_starts_with: ID
+  id_not_starts_with: ID
+  id_ends_with: ID
+  id_not_ends_with: ID
+  name: String
+  name_not: String
+  name_in: [String!]
+  name_not_in: [String!]
+  name_lt: String
+  name_lte: String
+  name_gt: String
+  name_gte: String
+  name_contains: String
+  name_not_contains: String
+  name_starts_with: String
+  name_not_starts_with: String
+  name_ends_with: String
+  name_not_ends_with: String
+  desc: String
+  desc_not: String
+  desc_in: [String!]
+  desc_not_in: [String!]
+  desc_lt: String
+  desc_lte: String
+  desc_gt: String
+  desc_gte: String
+  desc_contains: String
+  desc_not_contains: String
+  desc_starts_with: String
+  desc_not_starts_with: String
+  desc_ends_with: String
+  desc_not_ends_with: String
+  wikiUrl: String
+  wikiUrl_not: String
+  wikiUrl_in: [String!]
+  wikiUrl_not_in: [String!]
+  wikiUrl_lt: String
+  wikiUrl_lte: String
+  wikiUrl_gt: String
+  wikiUrl_gte: String
+  wikiUrl_contains: String
+  wikiUrl_not_contains: String
+  wikiUrl_starts_with: String
+  wikiUrl_not_starts_with: String
+  wikiUrl_ends_with: String
+  wikiUrl_not_ends_with: String
+  AND: [BoScalarWhereInput!]
+  OR: [BoScalarWhereInput!]
+  NOT: [BoScalarWhereInput!]
+}
+
+type BoSubscriptionPayload {
+  mutation: MutationType!
+  node: Bo
+  updatedFields: [String!]
+  previousValues: BoPreviousValues
+}
+
+input BoSubscriptionWhereInput {
+  mutation_in: [MutationType!]
+  updatedFields_contains: String
+  updatedFields_contains_every: [String!]
+  updatedFields_contains_some: [String!]
+  node: BoWhereInput
+  AND: [BoSubscriptionWhereInput!]
+  OR: [BoSubscriptionWhereInput!]
+  NOT: [BoSubscriptionWhereInput!]
+}
+
+input BoUpdateDataInput {
+  name: String
+  desc: String
+  props: BoPropUpdateManyWithoutLinkBoInput
+  wikiUrl: String
+  details: BoUpdateManyInput
+}
+
+input BoUpdateInput {
+  name: String
+  desc: String
+  props: BoPropUpdateManyWithoutLinkBoInput
+  wikiUrl: String
+  details: BoUpdateManyInput
+}
+
+input BoUpdateManyDataInput {
+  name: String
+  desc: String
+  wikiUrl: String
+}
+
+input BoUpdateManyInput {
+  create: [BoCreateInput!]
+  update: [BoUpdateWithWhereUniqueNestedInput!]
+  upsert: [BoUpsertWithWhereUniqueNestedInput!]
+  delete: [BoWhereUniqueInput!]
+  connect: [BoWhereUniqueInput!]
+  set: [BoWhereUniqueInput!]
+  disconnect: [BoWhereUniqueInput!]
+  deleteMany: [BoScalarWhereInput!]
+  updateMany: [BoUpdateManyWithWhereNestedInput!]
+}
+
+input BoUpdateManyMutationInput {
+  name: String
+  desc: String
+  wikiUrl: String
+}
+
+input BoUpdateManyWithWhereNestedInput {
+  where: BoScalarWhereInput!
+  data: BoUpdateManyDataInput!
+}
+
+input BoUpdateOneWithoutPropsInput {
+  create: BoCreateWithoutPropsInput
+  update: BoUpdateWithoutPropsDataInput
+  upsert: BoUpsertWithoutPropsInput
+  delete: Boolean
+  disconnect: Boolean
+  connect: BoWhereUniqueInput
+}
+
+input BoUpdateWithoutPropsDataInput {
+  name: String
+  desc: String
+  wikiUrl: String
+  details: BoUpdateManyInput
+}
+
+input BoUpdateWithWhereUniqueNestedInput {
+  where: BoWhereUniqueInput!
+  data: BoUpdateDataInput!
+}
+
+input BoUpsertWithoutPropsInput {
+  update: BoUpdateWithoutPropsDataInput!
+  create: BoCreateWithoutPropsInput!
+}
+
+input BoUpsertWithWhereUniqueNestedInput {
+  where: BoWhereUniqueInput!
+  update: BoUpdateDataInput!
+  create: BoCreateInput!
+}
+
+input BoWhereInput {
+  id: ID
+  id_not: ID
+  id_in: [ID!]
+  id_not_in: [ID!]
+  id_lt: ID
+  id_lte: ID
+  id_gt: ID
+  id_gte: ID
+  id_contains: ID
+  id_not_contains: ID
+  id_starts_with: ID
+  id_not_starts_with: ID
+  id_ends_with: ID
+  id_not_ends_with: ID
+  name: String
+  name_not: String
+  name_in: [String!]
+  name_not_in: [String!]
+  name_lt: String
+  name_lte: String
+  name_gt: String
+  name_gte: String
+  name_contains: String
+  name_not_contains: String
+  name_starts_with: String
+  name_not_starts_with: String
+  name_ends_with: String
+  name_not_ends_with: String
+  desc: String
+  desc_not: String
+  desc_in: [String!]
+  desc_not_in: [String!]
+  desc_lt: String
+  desc_lte: String
+  desc_gt: String
+  desc_gte: String
+  desc_contains: String
+  desc_not_contains: String
+  desc_starts_with: String
+  desc_not_starts_with: String
+  desc_ends_with: String
+  desc_not_ends_with: String
+  props_every: BoPropWhereInput
+  props_some: BoPropWhereInput
+  props_none: BoPropWhereInput
+  wikiUrl: String
+  wikiUrl_not: String
+  wikiUrl_in: [String!]
+  wikiUrl_not_in: [String!]
+  wikiUrl_lt: String
+  wikiUrl_lte: String
+  wikiUrl_gt: String
+  wikiUrl_gte: String
+  wikiUrl_contains: String
+  wikiUrl_not_contains: String
+  wikiUrl_starts_with: String
+  wikiUrl_not_starts_with: String
+  wikiUrl_ends_with: String
+  wikiUrl_not_ends_with: String
+  details_every: BoWhereInput
+  details_some: BoWhereInput
+  details_none: BoWhereInput
+  AND: [BoWhereInput!]
+  OR: [BoWhereInput!]
+  NOT: [BoWhereInput!]
+}
+
+input BoWhereUniqueInput {
+  id: ID
+}
+
+type EnumProp {
+  id: ID!
+  key: String!
+  value: Int!
+}
+
+type EnumPropConnection {
+  pageInfo: PageInfo!
+  edges: [EnumPropEdge]!
+  aggregate: AggregateEnumProp!
+}
+
+input EnumPropCreateInput {
+  key: String!
+  value: Int!
+}
+
+input EnumPropCreateManyInput {
+  create: [EnumPropCreateInput!]
+  connect: [EnumPropWhereUniqueInput!]
+}
+
+type EnumPropEdge {
+  node: EnumProp!
+  cursor: String!
+}
+
+enum EnumPropOrderByInput {
+  id_ASC
+  id_DESC
+  key_ASC
+  key_DESC
+  value_ASC
+  value_DESC
+  createdAt_ASC
+  createdAt_DESC
+  updatedAt_ASC
+  updatedAt_DESC
+}
+
+type EnumPropPreviousValues {
+  id: ID!
+  key: String!
+  value: Int!
+}
+
+input EnumPropScalarWhereInput {
+  id: ID
+  id_not: ID
+  id_in: [ID!]
+  id_not_in: [ID!]
+  id_lt: ID
+  id_lte: ID
+  id_gt: ID
+  id_gte: ID
+  id_contains: ID
+  id_not_contains: ID
+  id_starts_with: ID
+  id_not_starts_with: ID
+  id_ends_with: ID
+  id_not_ends_with: ID
+  key: String
+  key_not: String
+  key_in: [String!]
+  key_not_in: [String!]
+  key_lt: String
+  key_lte: String
+  key_gt: String
+  key_gte: String
+  key_contains: String
+  key_not_contains: String
+  key_starts_with: String
+  key_not_starts_with: String
+  key_ends_with: String
+  key_not_ends_with: String
+  value: Int
+  value_not: Int
+  value_in: [Int!]
+  value_not_in: [Int!]
+  value_lt: Int
+  value_lte: Int
+  value_gt: Int
+  value_gte: Int
+  AND: [EnumPropScalarWhereInput!]
+  OR: [EnumPropScalarWhereInput!]
+  NOT: [EnumPropScalarWhereInput!]
+}
+
+type EnumPropSubscriptionPayload {
+  mutation: MutationType!
+  node: EnumProp
+  updatedFields: [String!]
+  previousValues: EnumPropPreviousValues
+}
+
+input EnumPropSubscriptionWhereInput {
+  mutation_in: [MutationType!]
+  updatedFields_contains: String
+  updatedFields_contains_every: [String!]
+  updatedFields_contains_some: [String!]
+  node: EnumPropWhereInput
+  AND: [EnumPropSubscriptionWhereInput!]
+  OR: [EnumPropSubscriptionWhereInput!]
+  NOT: [EnumPropSubscriptionWhereInput!]
+}
+
+input EnumPropUpdateDataInput {
+  key: String
+  value: Int
+}
+
+input EnumPropUpdateInput {
+  key: String
+  value: Int
+}
+
+input EnumPropUpdateManyDataInput {
+  key: String
+  value: Int
+}
+
+input EnumPropUpdateManyInput {
+  create: [EnumPropCreateInput!]
+  update: [EnumPropUpdateWithWhereUniqueNestedInput!]
+  upsert: [EnumPropUpsertWithWhereUniqueNestedInput!]
+  delete: [EnumPropWhereUniqueInput!]
+  connect: [EnumPropWhereUniqueInput!]
+  set: [EnumPropWhereUniqueInput!]
+  disconnect: [EnumPropWhereUniqueInput!]
+  deleteMany: [EnumPropScalarWhereInput!]
+  updateMany: [EnumPropUpdateManyWithWhereNestedInput!]
+}
+
+input EnumPropUpdateManyMutationInput {
+  key: String
+  value: Int
+}
+
+input EnumPropUpdateManyWithWhereNestedInput {
+  where: EnumPropScalarWhereInput!
+  data: EnumPropUpdateManyDataInput!
+}
+
+input EnumPropUpdateWithWhereUniqueNestedInput {
+  where: EnumPropWhereUniqueInput!
+  data: EnumPropUpdateDataInput!
+}
+
+input EnumPropUpsertWithWhereUniqueNestedInput {
+  where: EnumPropWhereUniqueInput!
+  update: EnumPropUpdateDataInput!
+  create: EnumPropCreateInput!
+}
+
+input EnumPropWhereInput {
+  id: ID
+  id_not: ID
+  id_in: [ID!]
+  id_not_in: [ID!]
+  id_lt: ID
+  id_lte: ID
+  id_gt: ID
+  id_gte: ID
+  id_contains: ID
+  id_not_contains: ID
+  id_starts_with: ID
+  id_not_starts_with: ID
+  id_ends_with: ID
+  id_not_ends_with: ID
+  key: String
+  key_not: String
+  key_in: [String!]
+  key_not_in: [String!]
+  key_lt: String
+  key_lte: String
+  key_gt: String
+  key_gte: String
+  key_contains: String
+  key_not_contains: String
+  key_starts_with: String
+  key_not_starts_with: String
+  key_ends_with: String
+  key_not_ends_with: String
+  value: Int
+  value_not: Int
+  value_in: [Int!]
+  value_not_in: [Int!]
+  value_lt: Int
+  value_lte: Int
+  value_gt: Int
+  value_gte: Int
+  AND: [EnumPropWhereInput!]
+  OR: [EnumPropWhereInput!]
+  NOT: [EnumPropWhereInput!]
+}
+
+input EnumPropWhereUniqueInput {
+  id: ID
+}
+
+type EnumType {
+  id: ID!
+  name: String
+  desc: String
+  props(where: EnumPropWhereInput, orderBy: EnumPropOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [EnumProp!]
+  wikiUrl: String
+}
+
+type EnumTypeConnection {
+  pageInfo: PageInfo!
+  edges: [EnumTypeEdge]!
+  aggregate: AggregateEnumType!
+}
+
+input EnumTypeCreateInput {
+  name: String
+  desc: String
+  props: EnumPropCreateManyInput
+  wikiUrl: String
+}
+
+input EnumTypeCreateManyInput {
+  create: [EnumTypeCreateInput!]
+  connect: [EnumTypeWhereUniqueInput!]
+}
+
+input EnumTypeCreateOneInput {
+  create: EnumTypeCreateInput
+  connect: EnumTypeWhereUniqueInput
+}
+
+type EnumTypeEdge {
+  node: EnumType!
+  cursor: String!
+}
+
+enum EnumTypeOrderByInput {
+  id_ASC
+  id_DESC
+  name_ASC
+  name_DESC
+  desc_ASC
+  desc_DESC
+  wikiUrl_ASC
+  wikiUrl_DESC
+  createdAt_ASC
+  createdAt_DESC
+  updatedAt_ASC
+  updatedAt_DESC
+}
+
+type EnumTypePreviousValues {
+  id: ID!
+  name: String
+  desc: String
+  wikiUrl: String
+}
+
+input EnumTypeScalarWhereInput {
+  id: ID
+  id_not: ID
+  id_in: [ID!]
+  id_not_in: [ID!]
+  id_lt: ID
+  id_lte: ID
+  id_gt: ID
+  id_gte: ID
+  id_contains: ID
+  id_not_contains: ID
+  id_starts_with: ID
+  id_not_starts_with: ID
+  id_ends_with: ID
+  id_not_ends_with: ID
+  name: String
+  name_not: String
+  name_in: [String!]
+  name_not_in: [String!]
+  name_lt: String
+  name_lte: String
+  name_gt: String
+  name_gte: String
+  name_contains: String
+  name_not_contains: String
+  name_starts_with: String
+  name_not_starts_with: String
+  name_ends_with: String
+  name_not_ends_with: String
+  desc: String
+  desc_not: String
+  desc_in: [String!]
+  desc_not_in: [String!]
+  desc_lt: String
+  desc_lte: String
+  desc_gt: String
+  desc_gte: String
+  desc_contains: String
+  desc_not_contains: String
+  desc_starts_with: String
+  desc_not_starts_with: String
+  desc_ends_with: String
+  desc_not_ends_with: String
+  wikiUrl: String
+  wikiUrl_not: String
+  wikiUrl_in: [String!]
+  wikiUrl_not_in: [String!]
+  wikiUrl_lt: String
+  wikiUrl_lte: String
+  wikiUrl_gt: String
+  wikiUrl_gte: String
+  wikiUrl_contains: String
+  wikiUrl_not_contains: String
+  wikiUrl_starts_with: String
+  wikiUrl_not_starts_with: String
+  wikiUrl_ends_with: String
+  wikiUrl_not_ends_with: String
+  AND: [EnumTypeScalarWhereInput!]
+  OR: [EnumTypeScalarWhereInput!]
+  NOT: [EnumTypeScalarWhereInput!]
+}
+
+type EnumTypeSubscriptionPayload {
+  mutation: MutationType!
+  node: EnumType
+  updatedFields: [String!]
+  previousValues: EnumTypePreviousValues
+}
+
+input EnumTypeSubscriptionWhereInput {
+  mutation_in: [MutationType!]
+  updatedFields_contains: String
+  updatedFields_contains_every: [String!]
+  updatedFields_contains_some: [String!]
+  node: EnumTypeWhereInput
+  AND: [EnumTypeSubscriptionWhereInput!]
+  OR: [EnumTypeSubscriptionWhereInput!]
+  NOT: [EnumTypeSubscriptionWhereInput!]
+}
+
+input EnumTypeUpdateDataInput {
+  name: String
+  desc: String
+  props: EnumPropUpdateManyInput
+  wikiUrl: String
+}
+
+input EnumTypeUpdateInput {
+  name: String
+  desc: String
+  props: EnumPropUpdateManyInput
+  wikiUrl: String
+}
+
+input EnumTypeUpdateManyDataInput {
+  name: String
+  desc: String
+  wikiUrl: String
+}
+
+input EnumTypeUpdateManyInput {
+  create: [EnumTypeCreateInput!]
+  update: [EnumTypeUpdateWithWhereUniqueNestedInput!]
+  upsert: [EnumTypeUpsertWithWhereUniqueNestedInput!]
+  delete: [EnumTypeWhereUniqueInput!]
+  connect: [EnumTypeWhereUniqueInput!]
+  set: [EnumTypeWhereUniqueInput!]
+  disconnect: [EnumTypeWhereUniqueInput!]
+  deleteMany: [EnumTypeScalarWhereInput!]
+  updateMany: [EnumTypeUpdateManyWithWhereNestedInput!]
+}
+
+input EnumTypeUpdateManyMutationInput {
+  name: String
+  desc: String
+  wikiUrl: String
+}
+
+input EnumTypeUpdateManyWithWhereNestedInput {
+  where: EnumTypeScalarWhereInput!
+  data: EnumTypeUpdateManyDataInput!
+}
+
+input EnumTypeUpdateOneInput {
+  create: EnumTypeCreateInput
+  update: EnumTypeUpdateDataInput
+  upsert: EnumTypeUpsertNestedInput
+  delete: Boolean
+  disconnect: Boolean
+  connect: EnumTypeWhereUniqueInput
+}
+
+input EnumTypeUpdateWithWhereUniqueNestedInput {
+  where: EnumTypeWhereUniqueInput!
+  data: EnumTypeUpdateDataInput!
+}
+
+input EnumTypeUpsertNestedInput {
+  update: EnumTypeUpdateDataInput!
+  create: EnumTypeCreateInput!
+}
+
+input EnumTypeUpsertWithWhereUniqueNestedInput {
+  where: EnumTypeWhereUniqueInput!
+  update: EnumTypeUpdateDataInput!
+  create: EnumTypeCreateInput!
+}
+
+input EnumTypeWhereInput {
+  id: ID
+  id_not: ID
+  id_in: [ID!]
+  id_not_in: [ID!]
+  id_lt: ID
+  id_lte: ID
+  id_gt: ID
+  id_gte: ID
+  id_contains: ID
+  id_not_contains: ID
+  id_starts_with: ID
+  id_not_starts_with: ID
+  id_ends_with: ID
+  id_not_ends_with: ID
+  name: String
+  name_not: String
+  name_in: [String!]
+  name_not_in: [String!]
+  name_lt: String
+  name_lte: String
+  name_gt: String
+  name_gte: String
+  name_contains: String
+  name_not_contains: String
+  name_starts_with: String
+  name_not_starts_with: String
+  name_ends_with: String
+  name_not_ends_with: String
+  desc: String
+  desc_not: String
+  desc_in: [String!]
+  desc_not_in: [String!]
+  desc_lt: String
+  desc_lte: String
+  desc_gt: String
+  desc_gte: String
+  desc_contains: String
+  desc_not_contains: String
+  desc_starts_with: String
+  desc_not_starts_with: String
+  desc_ends_with: String
+  desc_not_ends_with: String
+  props_every: EnumPropWhereInput
+  props_some: EnumPropWhereInput
+  props_none: EnumPropWhereInput
+  wikiUrl: String
+  wikiUrl_not: String
+  wikiUrl_in: [String!]
+  wikiUrl_not_in: [String!]
+  wikiUrl_lt: String
+  wikiUrl_lte: String
+  wikiUrl_gt: String
+  wikiUrl_gte: String
+  wikiUrl_contains: String
+  wikiUrl_not_contains: String
+  wikiUrl_starts_with: String
+  wikiUrl_not_starts_with: String
+  wikiUrl_ends_with: String
+  wikiUrl_not_ends_with: String
+  AND: [EnumTypeWhereInput!]
+  OR: [EnumTypeWhereInput!]
+  NOT: [EnumTypeWhereInput!]
+}
+
+input EnumTypeWhereUniqueInput {
+  id: ID
+}
+
+scalar Long
+
+type Mutation {
+  createBo(data: BoCreateInput!): Bo!
+  updateBo(data: BoUpdateInput!, where: BoWhereUniqueInput!): Bo
+  updateManyBoes(data: BoUpdateManyMutationInput!, where: BoWhereInput): BatchPayload!
+  upsertBo(where: BoWhereUniqueInput!, create: BoCreateInput!, update: BoUpdateInput!): Bo!
+  deleteBo(where: BoWhereUniqueInput!): Bo
+  deleteManyBoes(where: BoWhereInput): BatchPayload!
+  createBoProp(data: BoPropCreateInput!): BoProp!
+  updateBoProp(data: BoPropUpdateInput!, where: BoPropWhereUniqueInput!): BoProp
+  updateManyBoProps(data: BoPropUpdateManyMutationInput!, where: BoPropWhereInput): BatchPayload!
+  upsertBoProp(where: BoPropWhereUniqueInput!, create: BoPropCreateInput!, update: BoPropUpdateInput!): BoProp!
+  deleteBoProp(where: BoPropWhereUniqueInput!): BoProp
+  deleteManyBoProps(where: BoPropWhereInput): BatchPayload!
+  createEnumProp(data: EnumPropCreateInput!): EnumProp!
+  updateEnumProp(data: EnumPropUpdateInput!, where: EnumPropWhereUniqueInput!): EnumProp
+  updateManyEnumProps(data: EnumPropUpdateManyMutationInput!, where: EnumPropWhereInput): BatchPayload!
+  upsertEnumProp(where: EnumPropWhereUniqueInput!, create: EnumPropCreateInput!, update: EnumPropUpdateInput!): EnumProp!
+  deleteEnumProp(where: EnumPropWhereUniqueInput!): EnumProp
+  deleteManyEnumProps(where: EnumPropWhereInput): BatchPayload!
+  createEnumType(data: EnumTypeCreateInput!): EnumType!
+  updateEnumType(data: EnumTypeUpdateInput!, where: EnumTypeWhereUniqueInput!): EnumType
+  updateManyEnumTypes(data: EnumTypeUpdateManyMutationInput!, where: EnumTypeWhereInput): BatchPayload!
+  upsertEnumType(where: EnumTypeWhereUniqueInput!, create: EnumTypeCreateInput!, update: EnumTypeUpdateInput!): EnumType!
+  deleteEnumType(where: EnumTypeWhereUniqueInput!): EnumType
+  deleteManyEnumTypes(where: EnumTypeWhereInput): BatchPayload!
+  createPage(data: PageCreateInput!): Page!
+  updatePage(data: PageUpdateInput!, where: PageWhereUniqueInput!): Page
+  updateManyPages(data: PageUpdateManyMutationInput!, where: PageWhereInput): BatchPayload!
+  upsertPage(where: PageWhereUniqueInput!, create: PageCreateInput!, update: PageUpdateInput!): Page!
+  deletePage(where: PageWhereUniqueInput!): Page
+  deleteManyPages(where: PageWhereInput): BatchPayload!
+}
+
+enum MutationType {
+  CREATED
+  UPDATED
+  DELETED
+}
+
+interface Node {
+  id: ID!
+}
+
+type Page {
+  id: ID!
+  name: String
+  desc: String
+  project: String
+  system: String
+  domain: String
+  type: String
+  wikiUrl: String
+  bos(where: BoWhereInput, orderBy: BoOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Bo!]
+  enums(where: EnumTypeWhereInput, orderBy: EnumTypeOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [EnumType!]
+}
+
+type PageConnection {
+  pageInfo: PageInfo!
+  edges: [PageEdge]!
+  aggregate: AggregatePage!
+}
+
+input PageCreateInput {
+  name: String
+  desc: String
+  project: String
+  system: String
+  domain: String
+  type: String
+  wikiUrl: String
+  bos: BoCreateManyInput
+  enums: EnumTypeCreateManyInput
+}
+
+type PageEdge {
+  node: Page!
+  cursor: String!
+}
+
+type PageInfo {
+  hasNextPage: Boolean!
+  hasPreviousPage: Boolean!
+  startCursor: String
+  endCursor: String
+}
+
+enum PageOrderByInput {
+  id_ASC
+  id_DESC
+  name_ASC
+  name_DESC
+  desc_ASC
+  desc_DESC
+  project_ASC
+  project_DESC
+  system_ASC
+  system_DESC
+  domain_ASC
+  domain_DESC
+  type_ASC
+  type_DESC
+  wikiUrl_ASC
+  wikiUrl_DESC
+  createdAt_ASC
+  createdAt_DESC
+  updatedAt_ASC
+  updatedAt_DESC
+}
+
+type PagePreviousValues {
+  id: ID!
+  name: String
+  desc: String
+  project: String
+  system: String
+  domain: String
+  type: String
+  wikiUrl: String
+}
+
+type PageSubscriptionPayload {
+  mutation: MutationType!
+  node: Page
+  updatedFields: [String!]
+  previousValues: PagePreviousValues
+}
+
+input PageSubscriptionWhereInput {
+  mutation_in: [MutationType!]
+  updatedFields_contains: String
+  updatedFields_contains_every: [String!]
+  updatedFields_contains_some: [String!]
+  node: PageWhereInput
+  AND: [PageSubscriptionWhereInput!]
+  OR: [PageSubscriptionWhereInput!]
+  NOT: [PageSubscriptionWhereInput!]
+}
+
+input PageUpdateInput {
+  name: String
+  desc: String
+  project: String
+  system: String
+  domain: String
+  type: String
+  wikiUrl: String
+  bos: BoUpdateManyInput
+  enums: EnumTypeUpdateManyInput
+}
+
+input PageUpdateManyMutationInput {
+  name: String
+  desc: String
+  project: String
+  system: String
+  domain: String
+  type: String
+  wikiUrl: String
+}
+
+input PageWhereInput {
+  id: ID
+  id_not: ID
+  id_in: [ID!]
+  id_not_in: [ID!]
+  id_lt: ID
+  id_lte: ID
+  id_gt: ID
+  id_gte: ID
+  id_contains: ID
+  id_not_contains: ID
+  id_starts_with: ID
+  id_not_starts_with: ID
+  id_ends_with: ID
+  id_not_ends_with: ID
+  name: String
+  name_not: String
+  name_in: [String!]
+  name_not_in: [String!]
+  name_lt: String
+  name_lte: String
+  name_gt: String
+  name_gte: String
+  name_contains: String
+  name_not_contains: String
+  name_starts_with: String
+  name_not_starts_with: String
+  name_ends_with: String
+  name_not_ends_with: String
+  desc: String
+  desc_not: String
+  desc_in: [String!]
+  desc_not_in: [String!]
+  desc_lt: String
+  desc_lte: String
+  desc_gt: String
+  desc_gte: String
+  desc_contains: String
+  desc_not_contains: String
+  desc_starts_with: String
+  desc_not_starts_with: String
+  desc_ends_with: String
+  desc_not_ends_with: String
+  project: String
+  project_not: String
+  project_in: [String!]
+  project_not_in: [String!]
+  project_lt: String
+  project_lte: String
+  project_gt: String
+  project_gte: String
+  project_contains: String
+  project_not_contains: String
+  project_starts_with: String
+  project_not_starts_with: String
+  project_ends_with: String
+  project_not_ends_with: String
+  system: String
+  system_not: String
+  system_in: [String!]
+  system_not_in: [String!]
+  system_lt: String
+  system_lte: String
+  system_gt: String
+  system_gte: String
+  system_contains: String
+  system_not_contains: String
+  system_starts_with: String
+  system_not_starts_with: String
+  system_ends_with: String
+  system_not_ends_with: String
+  domain: String
+  domain_not: String
+  domain_in: [String!]
+  domain_not_in: [String!]
+  domain_lt: String
+  domain_lte: String
+  domain_gt: String
+  domain_gte: String
+  domain_contains: String
+  domain_not_contains: String
+  domain_starts_with: String
+  domain_not_starts_with: String
+  domain_ends_with: String
+  domain_not_ends_with: String
+  type: String
+  type_not: String
+  type_in: [String!]
+  type_not_in: [String!]
+  type_lt: String
+  type_lte: String
+  type_gt: String
+  type_gte: String
+  type_contains: String
+  type_not_contains: String
+  type_starts_with: String
+  type_not_starts_with: String
+  type_ends_with: String
+  type_not_ends_with: String
+  wikiUrl: String
+  wikiUrl_not: String
+  wikiUrl_in: [String!]
+  wikiUrl_not_in: [String!]
+  wikiUrl_lt: String
+  wikiUrl_lte: String
+  wikiUrl_gt: String
+  wikiUrl_gte: String
+  wikiUrl_contains: String
+  wikiUrl_not_contains: String
+  wikiUrl_starts_with: String
+  wikiUrl_not_starts_with: String
+  wikiUrl_ends_with: String
+  wikiUrl_not_ends_with: String
+  bos_every: BoWhereInput
+  bos_some: BoWhereInput
+  bos_none: BoWhereInput
+  enums_every: EnumTypeWhereInput
+  enums_some: EnumTypeWhereInput
+  enums_none: EnumTypeWhereInput
+  AND: [PageWhereInput!]
+  OR: [PageWhereInput!]
+  NOT: [PageWhereInput!]
+}
+
+input PageWhereUniqueInput {
+  id: ID
+}
+
+type Query {
+  bo(where: BoWhereUniqueInput!): Bo
+  boes(where: BoWhereInput, orderBy: BoOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Bo]!
+  boesConnection(where: BoWhereInput, orderBy: BoOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): BoConnection!
+  boProp(where: BoPropWhereUniqueInput!): BoProp
+  boProps(where: BoPropWhereInput, orderBy: BoPropOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [BoProp]!
+  boPropsConnection(where: BoPropWhereInput, orderBy: BoPropOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): BoPropConnection!
+  enumProp(where: EnumPropWhereUniqueInput!): EnumProp
+  enumProps(where: EnumPropWhereInput, orderBy: EnumPropOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [EnumProp]!
+  enumPropsConnection(where: EnumPropWhereInput, orderBy: EnumPropOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): EnumPropConnection!
+  enumType(where: EnumTypeWhereUniqueInput!): EnumType
+  enumTypes(where: EnumTypeWhereInput, orderBy: EnumTypeOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [EnumType]!
+  enumTypesConnection(where: EnumTypeWhereInput, orderBy: EnumTypeOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): EnumTypeConnection!
+  page(where: PageWhereUniqueInput!): Page
+  pages(where: PageWhereInput, orderBy: PageOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Page]!
+  pagesConnection(where: PageWhereInput, orderBy: PageOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): PageConnection!
+  node(id: ID!): Node
+}
+
+type Subscription {
+  bo(where: BoSubscriptionWhereInput): BoSubscriptionPayload
+  boProp(where: BoPropSubscriptionWhereInput): BoPropSubscriptionPayload
+  enumProp(where: EnumPropSubscriptionWhereInput): EnumPropSubscriptionPayload
+  enumType(where: EnumTypeSubscriptionWhereInput): EnumTypeSubscriptionPayload
+  page(where: PageSubscriptionWhereInput): PageSubscriptionPayload
 }
 `

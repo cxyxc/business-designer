@@ -15,76 +15,160 @@ export interface NexusPrismaTypes {
   objectTypes: {
     fields: {
       Query: QueryObject
-      User: UserObject
-      Post: PostObject
-      UserConnection: UserConnectionObject
+      EnumType: EnumTypeObject
+      EnumProp: EnumPropObject
+      EnumTypeConnection: EnumTypeConnectionObject
       PageInfo: PageInfoObject
-      UserEdge: UserEdgeObject
-      AggregateUser: AggregateUserObject
-      PostConnection: PostConnectionObject
-      PostEdge: PostEdgeObject
-      AggregatePost: AggregatePostObject
+      EnumTypeEdge: EnumTypeEdgeObject
+      AggregateEnumType: AggregateEnumTypeObject
+      EnumPropConnection: EnumPropConnectionObject
+      EnumPropEdge: EnumPropEdgeObject
+      AggregateEnumProp: AggregateEnumPropObject
+      Bo: BoObject
+      BoProp: BoPropObject
+      BoConnection: BoConnectionObject
+      BoEdge: BoEdgeObject
+      AggregateBo: AggregateBoObject
+      BoPropConnection: BoPropConnectionObject
+      BoPropEdge: BoPropEdgeObject
+      AggregateBoProp: AggregateBoPropObject
+      Page: PageObject
+      PageConnection: PageConnectionObject
+      PageEdge: PageEdgeObject
+      AggregatePage: AggregatePageObject
       Mutation: MutationObject
       BatchPayload: BatchPayloadObject
       Subscription: SubscriptionObject
-      UserSubscriptionPayload: UserSubscriptionPayloadObject
-      UserPreviousValues: UserPreviousValuesObject
-      PostSubscriptionPayload: PostSubscriptionPayloadObject
-      PostPreviousValues: PostPreviousValuesObject
+      EnumTypeSubscriptionPayload: EnumTypeSubscriptionPayloadObject
+      EnumTypePreviousValues: EnumTypePreviousValuesObject
+      EnumPropSubscriptionPayload: EnumPropSubscriptionPayloadObject
+      EnumPropPreviousValues: EnumPropPreviousValuesObject
+      BoSubscriptionPayload: BoSubscriptionPayloadObject
+      BoPreviousValues: BoPreviousValuesObject
+      BoPropSubscriptionPayload: BoPropSubscriptionPayloadObject
+      BoPropPreviousValues: BoPropPreviousValuesObject
+      PageSubscriptionPayload: PageSubscriptionPayloadObject
+      PagePreviousValues: PagePreviousValuesObject
     }
     fieldsDetails: {
       Query: QueryFieldDetails
-      User: UserFieldDetails
-      Post: PostFieldDetails
-      UserConnection: UserConnectionFieldDetails
+      EnumType: EnumTypeFieldDetails
+      EnumProp: EnumPropFieldDetails
+      EnumTypeConnection: EnumTypeConnectionFieldDetails
       PageInfo: PageInfoFieldDetails
-      UserEdge: UserEdgeFieldDetails
-      AggregateUser: AggregateUserFieldDetails
-      PostConnection: PostConnectionFieldDetails
-      PostEdge: PostEdgeFieldDetails
-      AggregatePost: AggregatePostFieldDetails
+      EnumTypeEdge: EnumTypeEdgeFieldDetails
+      AggregateEnumType: AggregateEnumTypeFieldDetails
+      EnumPropConnection: EnumPropConnectionFieldDetails
+      EnumPropEdge: EnumPropEdgeFieldDetails
+      AggregateEnumProp: AggregateEnumPropFieldDetails
+      Bo: BoFieldDetails
+      BoProp: BoPropFieldDetails
+      BoConnection: BoConnectionFieldDetails
+      BoEdge: BoEdgeFieldDetails
+      AggregateBo: AggregateBoFieldDetails
+      BoPropConnection: BoPropConnectionFieldDetails
+      BoPropEdge: BoPropEdgeFieldDetails
+      AggregateBoProp: AggregateBoPropFieldDetails
+      Page: PageFieldDetails
+      PageConnection: PageConnectionFieldDetails
+      PageEdge: PageEdgeFieldDetails
+      AggregatePage: AggregatePageFieldDetails
       Mutation: MutationFieldDetails
       BatchPayload: BatchPayloadFieldDetails
       Subscription: SubscriptionFieldDetails
-      UserSubscriptionPayload: UserSubscriptionPayloadFieldDetails
-      UserPreviousValues: UserPreviousValuesFieldDetails
-      PostSubscriptionPayload: PostSubscriptionPayloadFieldDetails
-      PostPreviousValues: PostPreviousValuesFieldDetails
+      EnumTypeSubscriptionPayload: EnumTypeSubscriptionPayloadFieldDetails
+      EnumTypePreviousValues: EnumTypePreviousValuesFieldDetails
+      EnumPropSubscriptionPayload: EnumPropSubscriptionPayloadFieldDetails
+      EnumPropPreviousValues: EnumPropPreviousValuesFieldDetails
+      BoSubscriptionPayload: BoSubscriptionPayloadFieldDetails
+      BoPreviousValues: BoPreviousValuesFieldDetails
+      BoPropSubscriptionPayload: BoPropSubscriptionPayloadFieldDetails
+      BoPropPreviousValues: BoPropPreviousValuesFieldDetails
+      PageSubscriptionPayload: PageSubscriptionPayloadFieldDetails
+      PagePreviousValues: PagePreviousValuesFieldDetails
     }
   }
   inputTypes: {
     fields: {
-      UserWhereUniqueInput: UserWhereUniqueInputInputObject
-      PostWhereInput: PostWhereInputInputObject
-      UserWhereInput: UserWhereInputInputObject
-      PostWhereUniqueInput: PostWhereUniqueInputInputObject
-      UserCreateInput: UserCreateInputInputObject
-      PostCreateManyWithoutAuthorInput: PostCreateManyWithoutAuthorInputInputObject
-      PostCreateWithoutAuthorInput: PostCreateWithoutAuthorInputInputObject
-      UserUpdateInput: UserUpdateInputInputObject
-      PostUpdateManyWithoutAuthorInput: PostUpdateManyWithoutAuthorInputInputObject
-      PostUpdateWithWhereUniqueWithoutAuthorInput: PostUpdateWithWhereUniqueWithoutAuthorInputInputObject
-      PostUpdateWithoutAuthorDataInput: PostUpdateWithoutAuthorDataInputInputObject
-      PostUpsertWithWhereUniqueWithoutAuthorInput: PostUpsertWithWhereUniqueWithoutAuthorInputInputObject
-      PostScalarWhereInput: PostScalarWhereInputInputObject
-      PostUpdateManyWithWhereNestedInput: PostUpdateManyWithWhereNestedInputInputObject
-      PostUpdateManyDataInput: PostUpdateManyDataInputInputObject
-      UserUpdateManyMutationInput: UserUpdateManyMutationInputInputObject
-      PostCreateInput: PostCreateInputInputObject
-      UserCreateOneWithoutPostsInput: UserCreateOneWithoutPostsInputInputObject
-      UserCreateWithoutPostsInput: UserCreateWithoutPostsInputInputObject
-      PostUpdateInput: PostUpdateInputInputObject
-      UserUpdateOneRequiredWithoutPostsInput: UserUpdateOneRequiredWithoutPostsInputInputObject
-      UserUpdateWithoutPostsDataInput: UserUpdateWithoutPostsDataInputInputObject
-      UserUpsertWithoutPostsInput: UserUpsertWithoutPostsInputInputObject
-      PostUpdateManyMutationInput: PostUpdateManyMutationInputInputObject
-      UserSubscriptionWhereInput: UserSubscriptionWhereInputInputObject
-      PostSubscriptionWhereInput: PostSubscriptionWhereInputInputObject
+      EnumTypeWhereUniqueInput: EnumTypeWhereUniqueInputInputObject
+      EnumPropWhereInput: EnumPropWhereInputInputObject
+      EnumTypeWhereInput: EnumTypeWhereInputInputObject
+      EnumPropWhereUniqueInput: EnumPropWhereUniqueInputInputObject
+      BoWhereUniqueInput: BoWhereUniqueInputInputObject
+      BoPropWhereInput: BoPropWhereInputInputObject
+      BoWhereInput: BoWhereInputInputObject
+      BoPropWhereUniqueInput: BoPropWhereUniqueInputInputObject
+      PageWhereUniqueInput: PageWhereUniqueInputInputObject
+      PageWhereInput: PageWhereInputInputObject
+      EnumTypeCreateInput: EnumTypeCreateInputInputObject
+      EnumPropCreateManyInput: EnumPropCreateManyInputInputObject
+      EnumPropCreateInput: EnumPropCreateInputInputObject
+      EnumTypeUpdateInput: EnumTypeUpdateInputInputObject
+      EnumPropUpdateManyInput: EnumPropUpdateManyInputInputObject
+      EnumPropUpdateWithWhereUniqueNestedInput: EnumPropUpdateWithWhereUniqueNestedInputInputObject
+      EnumPropUpdateDataInput: EnumPropUpdateDataInputInputObject
+      EnumPropUpsertWithWhereUniqueNestedInput: EnumPropUpsertWithWhereUniqueNestedInputInputObject
+      EnumPropScalarWhereInput: EnumPropScalarWhereInputInputObject
+      EnumPropUpdateManyWithWhereNestedInput: EnumPropUpdateManyWithWhereNestedInputInputObject
+      EnumPropUpdateManyDataInput: EnumPropUpdateManyDataInputInputObject
+      EnumTypeUpdateManyMutationInput: EnumTypeUpdateManyMutationInputInputObject
+      EnumPropUpdateInput: EnumPropUpdateInputInputObject
+      EnumPropUpdateManyMutationInput: EnumPropUpdateManyMutationInputInputObject
+      BoCreateInput: BoCreateInputInputObject
+      BoPropCreateManyWithoutLinkBoInput: BoPropCreateManyWithoutLinkBoInputInputObject
+      BoPropCreateWithoutLinkBoInput: BoPropCreateWithoutLinkBoInputInputObject
+      EnumTypeCreateOneInput: EnumTypeCreateOneInputInputObject
+      BoCreateManyInput: BoCreateManyInputInputObject
+      BoUpdateInput: BoUpdateInputInputObject
+      BoPropUpdateManyWithoutLinkBoInput: BoPropUpdateManyWithoutLinkBoInputInputObject
+      BoPropUpdateWithWhereUniqueWithoutLinkBoInput: BoPropUpdateWithWhereUniqueWithoutLinkBoInputInputObject
+      BoPropUpdateWithoutLinkBoDataInput: BoPropUpdateWithoutLinkBoDataInputInputObject
+      EnumTypeUpdateOneInput: EnumTypeUpdateOneInputInputObject
+      EnumTypeUpdateDataInput: EnumTypeUpdateDataInputInputObject
+      EnumTypeUpsertNestedInput: EnumTypeUpsertNestedInputInputObject
+      BoPropUpsertWithWhereUniqueWithoutLinkBoInput: BoPropUpsertWithWhereUniqueWithoutLinkBoInputInputObject
+      BoPropScalarWhereInput: BoPropScalarWhereInputInputObject
+      BoPropUpdateManyWithWhereNestedInput: BoPropUpdateManyWithWhereNestedInputInputObject
+      BoPropUpdateManyDataInput: BoPropUpdateManyDataInputInputObject
+      BoUpdateManyInput: BoUpdateManyInputInputObject
+      BoUpdateWithWhereUniqueNestedInput: BoUpdateWithWhereUniqueNestedInputInputObject
+      BoUpdateDataInput: BoUpdateDataInputInputObject
+      BoUpsertWithWhereUniqueNestedInput: BoUpsertWithWhereUniqueNestedInputInputObject
+      BoScalarWhereInput: BoScalarWhereInputInputObject
+      BoUpdateManyWithWhereNestedInput: BoUpdateManyWithWhereNestedInputInputObject
+      BoUpdateManyDataInput: BoUpdateManyDataInputInputObject
+      BoUpdateManyMutationInput: BoUpdateManyMutationInputInputObject
+      BoPropCreateInput: BoPropCreateInputInputObject
+      BoCreateOneWithoutPropsInput: BoCreateOneWithoutPropsInputInputObject
+      BoCreateWithoutPropsInput: BoCreateWithoutPropsInputInputObject
+      BoPropUpdateInput: BoPropUpdateInputInputObject
+      BoUpdateOneWithoutPropsInput: BoUpdateOneWithoutPropsInputInputObject
+      BoUpdateWithoutPropsDataInput: BoUpdateWithoutPropsDataInputInputObject
+      BoUpsertWithoutPropsInput: BoUpsertWithoutPropsInputInputObject
+      BoPropUpdateManyMutationInput: BoPropUpdateManyMutationInputInputObject
+      PageCreateInput: PageCreateInputInputObject
+      EnumTypeCreateManyInput: EnumTypeCreateManyInputInputObject
+      PageUpdateInput: PageUpdateInputInputObject
+      EnumTypeUpdateManyInput: EnumTypeUpdateManyInputInputObject
+      EnumTypeUpdateWithWhereUniqueNestedInput: EnumTypeUpdateWithWhereUniqueNestedInputInputObject
+      EnumTypeUpsertWithWhereUniqueNestedInput: EnumTypeUpsertWithWhereUniqueNestedInputInputObject
+      EnumTypeScalarWhereInput: EnumTypeScalarWhereInputInputObject
+      EnumTypeUpdateManyWithWhereNestedInput: EnumTypeUpdateManyWithWhereNestedInputInputObject
+      EnumTypeUpdateManyDataInput: EnumTypeUpdateManyDataInputInputObject
+      PageUpdateManyMutationInput: PageUpdateManyMutationInputInputObject
+      EnumTypeSubscriptionWhereInput: EnumTypeSubscriptionWhereInputInputObject
+      EnumPropSubscriptionWhereInput: EnumPropSubscriptionWhereInputInputObject
+      BoSubscriptionWhereInput: BoSubscriptionWhereInputInputObject
+      BoPropSubscriptionWhereInput: BoPropSubscriptionWhereInputInputObject
+      PageSubscriptionWhereInput: PageSubscriptionWhereInputInputObject
     }
   }
   enumTypes: {
-    PostOrderByInput: PostOrderByInputValues,
-    UserOrderByInput: UserOrderByInputValues,
+    EnumPropOrderByInput: EnumPropOrderByInputValues,
+    EnumTypeOrderByInput: EnumTypeOrderByInputValues,
+    BoPropOrderByInput: BoPropOrderByInputValues,
+    BoOrderByInput: BoOrderByInputValues,
+    PageOrderByInput: PageOrderByInputValues,
     MutationType: MutationTypeValues,
   }
 }
@@ -93,33 +177,43 @@ export interface NexusPrismaTypes {
 
 type QueryObject =
   | QueryFields
-  | { name: 'user', args?: QueryUserArgs[] | false, alias?: string  } 
-  | { name: 'users', args?: QueryUsersArgs[] | false, alias?: string  } 
-  | { name: 'usersConnection', args?: QueryUsersConnectionArgs[] | false, alias?: string  } 
-  | { name: 'post', args?: QueryPostArgs[] | false, alias?: string  } 
-  | { name: 'posts', args?: QueryPostsArgs[] | false, alias?: string  } 
-  | { name: 'postsConnection', args?: QueryPostsConnectionArgs[] | false, alias?: string  } 
+  | { name: 'enumType', args?: QueryEnumTypeArgs[] | false, alias?: string  } 
+  | { name: 'enumTypes', args?: QueryEnumTypesArgs[] | false, alias?: string  } 
+  | { name: 'enumTypesConnection', args?: QueryEnumTypesConnectionArgs[] | false, alias?: string  } 
+  | { name: 'enumProp', args?: QueryEnumPropArgs[] | false, alias?: string  } 
+  | { name: 'enumProps', args?: QueryEnumPropsArgs[] | false, alias?: string  } 
+  | { name: 'enumPropsConnection', args?: QueryEnumPropsConnectionArgs[] | false, alias?: string  } 
+  | { name: 'bo', args?: QueryBoArgs[] | false, alias?: string  } 
+  | { name: 'boes', args?: QueryBoesArgs[] | false, alias?: string  } 
+  | { name: 'boesConnection', args?: QueryBoesConnectionArgs[] | false, alias?: string  } 
+  | { name: 'boProp', args?: QueryBoPropArgs[] | false, alias?: string  } 
+  | { name: 'boProps', args?: QueryBoPropsArgs[] | false, alias?: string  } 
+  | { name: 'boPropsConnection', args?: QueryBoPropsConnectionArgs[] | false, alias?: string  } 
+  | { name: 'page', args?: QueryPageArgs[] | false, alias?: string  } 
+  | { name: 'pages', args?: QueryPagesArgs[] | false, alias?: string  } 
+  | { name: 'pagesConnection', args?: QueryPagesConnectionArgs[] | false, alias?: string  } 
 
 type QueryFields =
-  | 'user'
-  | 'users'
-  | 'usersConnection'
-  | 'post'
-  | 'posts'
-  | 'postsConnection'
+  | 'enumType'
+  | 'enumTypes'
+  | 'enumTypesConnection'
+  | 'enumProp'
+  | 'enumProps'
+  | 'enumPropsConnection'
+  | 'bo'
+  | 'boes'
+  | 'boesConnection'
+  | 'boProp'
+  | 'boProps'
+  | 'boPropsConnection'
+  | 'page'
+  | 'pages'
+  | 'pagesConnection'
 
 
-type QueryUserArgs =
+type QueryEnumTypeArgs =
   | 'where'
-type QueryUsersArgs =
-  | 'where'
-  | 'orderBy'
-  | 'skip'
-  | 'after'
-  | 'before'
-  | 'first'
-  | 'last'
-type QueryUsersConnectionArgs =
+type QueryEnumTypesArgs =
   | 'where'
   | 'orderBy'
   | 'skip'
@@ -127,9 +221,7 @@ type QueryUsersConnectionArgs =
   | 'before'
   | 'first'
   | 'last'
-type QueryPostArgs =
-  | 'where'
-type QueryPostsArgs =
+type QueryEnumTypesConnectionArgs =
   | 'where'
   | 'orderBy'
   | 'skip'
@@ -137,7 +229,71 @@ type QueryPostsArgs =
   | 'before'
   | 'first'
   | 'last'
-type QueryPostsConnectionArgs =
+type QueryEnumPropArgs =
+  | 'where'
+type QueryEnumPropsArgs =
+  | 'where'
+  | 'orderBy'
+  | 'skip'
+  | 'after'
+  | 'before'
+  | 'first'
+  | 'last'
+type QueryEnumPropsConnectionArgs =
+  | 'where'
+  | 'orderBy'
+  | 'skip'
+  | 'after'
+  | 'before'
+  | 'first'
+  | 'last'
+type QueryBoArgs =
+  | 'where'
+type QueryBoesArgs =
+  | 'where'
+  | 'orderBy'
+  | 'skip'
+  | 'after'
+  | 'before'
+  | 'first'
+  | 'last'
+type QueryBoesConnectionArgs =
+  | 'where'
+  | 'orderBy'
+  | 'skip'
+  | 'after'
+  | 'before'
+  | 'first'
+  | 'last'
+type QueryBoPropArgs =
+  | 'where'
+type QueryBoPropsArgs =
+  | 'where'
+  | 'orderBy'
+  | 'skip'
+  | 'after'
+  | 'before'
+  | 'first'
+  | 'last'
+type QueryBoPropsConnectionArgs =
+  | 'where'
+  | 'orderBy'
+  | 'skip'
+  | 'after'
+  | 'before'
+  | 'first'
+  | 'last'
+type QueryPageArgs =
+  | 'where'
+type QueryPagesArgs =
+  | 'where'
+  | 'orderBy'
+  | 'skip'
+  | 'after'
+  | 'before'
+  | 'first'
+  | 'last'
+type QueryPagesConnectionArgs =
   | 'where'
   | 'orderBy'
   | 'skip'
@@ -148,104 +304,223 @@ type QueryPostsConnectionArgs =
   
 
 export interface QueryFieldDetails {
-  user: {
-    type: 'User'
-    args: Record<QueryUserArgs, core.NexusArgDef<string>>
+  enumType: {
+    type: 'EnumType'
+    args: Record<QueryEnumTypeArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: true
     resolve: (
       root: core.RootValue<"Query">,
-      args: { where: UserWhereUniqueInput }  ,
+      args: { where: EnumTypeWhereUniqueInput }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.User | null> | prisma.User | null
+    ) => Promise<prisma.EnumType | null> | prisma.EnumType | null
   }
-  users: {
-    type: 'User'
-    args: Record<QueryUsersArgs, core.NexusArgDef<string>>
+  enumTypes: {
+    type: 'EnumType'
+    args: Record<QueryEnumTypesArgs, core.NexusArgDef<string>>
     description: string
     list: true
     nullable: false
     resolve: (
       root: core.RootValue<"Query">,
-      args: { where?: UserWhereInput | null, orderBy?: prisma.UserOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
+      args: { where?: EnumTypeWhereInput | null, orderBy?: prisma.EnumTypeOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.User[]> | prisma.User[]
+    ) => Promise<prisma.EnumType[]> | prisma.EnumType[]
   }
-  usersConnection: {
-    type: 'UserConnection'
-    args: Record<QueryUsersConnectionArgs, core.NexusArgDef<string>>
+  enumTypesConnection: {
+    type: 'EnumTypeConnection'
+    args: Record<QueryEnumTypesConnectionArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: false
     resolve: (
       root: core.RootValue<"Query">,
-      args: { where?: UserWhereInput | null, orderBy?: prisma.UserOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
+      args: { where?: EnumTypeWhereInput | null, orderBy?: prisma.EnumTypeOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.UserConnection> | prisma.UserConnection
+    ) => Promise<prisma.EnumTypeConnection> | prisma.EnumTypeConnection
   }
-  post: {
-    type: 'Post'
-    args: Record<QueryPostArgs, core.NexusArgDef<string>>
+  enumProp: {
+    type: 'EnumProp'
+    args: Record<QueryEnumPropArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: true
     resolve: (
       root: core.RootValue<"Query">,
-      args: { where: PostWhereUniqueInput }  ,
+      args: { where: EnumPropWhereUniqueInput }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.Post | null> | prisma.Post | null
+    ) => Promise<prisma.EnumProp | null> | prisma.EnumProp | null
   }
-  posts: {
-    type: 'Post'
-    args: Record<QueryPostsArgs, core.NexusArgDef<string>>
+  enumProps: {
+    type: 'EnumProp'
+    args: Record<QueryEnumPropsArgs, core.NexusArgDef<string>>
     description: string
     list: true
     nullable: false
     resolve: (
       root: core.RootValue<"Query">,
-      args: { where?: PostWhereInput | null, orderBy?: prisma.PostOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
+      args: { where?: EnumPropWhereInput | null, orderBy?: prisma.EnumPropOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.Post[]> | prisma.Post[]
+    ) => Promise<prisma.EnumProp[]> | prisma.EnumProp[]
   }
-  postsConnection: {
-    type: 'PostConnection'
-    args: Record<QueryPostsConnectionArgs, core.NexusArgDef<string>>
+  enumPropsConnection: {
+    type: 'EnumPropConnection'
+    args: Record<QueryEnumPropsConnectionArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: false
     resolve: (
       root: core.RootValue<"Query">,
-      args: { where?: PostWhereInput | null, orderBy?: prisma.PostOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
+      args: { where?: EnumPropWhereInput | null, orderBy?: prisma.EnumPropOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.PostConnection> | prisma.PostConnection
+    ) => Promise<prisma.EnumPropConnection> | prisma.EnumPropConnection
+  }
+  bo: {
+    type: 'Bo'
+    args: Record<QueryBoArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"Query">,
+      args: { where: BoWhereUniqueInput }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.Bo | null> | prisma.Bo | null
+  }
+  boes: {
+    type: 'Bo'
+    args: Record<QueryBoesArgs, core.NexusArgDef<string>>
+    description: string
+    list: true
+    nullable: false
+    resolve: (
+      root: core.RootValue<"Query">,
+      args: { where?: BoWhereInput | null, orderBy?: prisma.BoOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.Bo[]> | prisma.Bo[]
+  }
+  boesConnection: {
+    type: 'BoConnection'
+    args: Record<QueryBoesConnectionArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"Query">,
+      args: { where?: BoWhereInput | null, orderBy?: prisma.BoOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.BoConnection> | prisma.BoConnection
+  }
+  boProp: {
+    type: 'BoProp'
+    args: Record<QueryBoPropArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"Query">,
+      args: { where: BoPropWhereUniqueInput }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.BoProp | null> | prisma.BoProp | null
+  }
+  boProps: {
+    type: 'BoProp'
+    args: Record<QueryBoPropsArgs, core.NexusArgDef<string>>
+    description: string
+    list: true
+    nullable: false
+    resolve: (
+      root: core.RootValue<"Query">,
+      args: { where?: BoPropWhereInput | null, orderBy?: prisma.BoPropOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.BoProp[]> | prisma.BoProp[]
+  }
+  boPropsConnection: {
+    type: 'BoPropConnection'
+    args: Record<QueryBoPropsConnectionArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"Query">,
+      args: { where?: BoPropWhereInput | null, orderBy?: prisma.BoPropOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.BoPropConnection> | prisma.BoPropConnection
+  }
+  page: {
+    type: 'Page'
+    args: Record<QueryPageArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"Query">,
+      args: { where: PageWhereUniqueInput }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.Page | null> | prisma.Page | null
+  }
+  pages: {
+    type: 'Page'
+    args: Record<QueryPagesArgs, core.NexusArgDef<string>>
+    description: string
+    list: true
+    nullable: false
+    resolve: (
+      root: core.RootValue<"Query">,
+      args: { where?: PageWhereInput | null, orderBy?: prisma.PageOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.Page[]> | prisma.Page[]
+  }
+  pagesConnection: {
+    type: 'PageConnection'
+    args: Record<QueryPagesConnectionArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"Query">,
+      args: { where?: PageWhereInput | null, orderBy?: prisma.PageOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PageConnection> | prisma.PageConnection
   }
 }
   
 
-// Types for User
+// Types for EnumType
 
-type UserObject =
-  | UserFields
+type EnumTypeObject =
+  | EnumTypeFields
   | { name: 'id', args?: [] | false, alias?: string  } 
-  | { name: 'email', args?: [] | false, alias?: string  } 
   | { name: 'name', args?: [] | false, alias?: string  } 
-  | { name: 'posts', args?: UserPostsArgs[] | false, alias?: string  } 
+  | { name: 'desc', args?: [] | false, alias?: string  } 
+  | { name: 'props', args?: EnumTypePropsArgs[] | false, alias?: string  } 
+  | { name: 'wikiUrl', args?: [] | false, alias?: string  } 
 
-type UserFields =
+type EnumTypeFields =
   | 'id'
-  | 'email'
   | 'name'
-  | 'posts'
+  | 'desc'
+  | 'props'
+  | 'wikiUrl'
 
 
-type UserPostsArgs =
+type EnumTypePropsArgs =
   | 'where'
   | 'orderBy'
   | 'skip'
@@ -255,17 +530,9 @@ type UserPostsArgs =
   | 'last'
   
 
-export interface UserFieldDetails {
+export interface EnumTypeFieldDetails {
   id: {
     type: 'ID'
-    args: {}
-    description: string
-    list: undefined
-    nullable: false
-    resolve: undefined
-  }
-  email: {
-    type: 'String'
     args: {}
     description: string
     list: undefined
@@ -280,48 +547,56 @@ export interface UserFieldDetails {
     nullable: true
     resolve: undefined
   }
-  posts: {
-    type: 'Post'
-    args: Record<UserPostsArgs, core.NexusArgDef<string>>
+  desc: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  props: {
+    type: 'EnumProp'
+    args: Record<EnumTypePropsArgs, core.NexusArgDef<string>>
     description: string
     list: true
     nullable: false
     resolve: (
-      root: core.RootValue<"User">,
-      args: { where?: PostWhereInput | null, orderBy?: prisma.PostOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
+      root: core.RootValue<"EnumType">,
+      args: { where?: EnumPropWhereInput | null, orderBy?: prisma.EnumPropOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.Post[]> | prisma.Post[]
+    ) => Promise<prisma.EnumProp[]> | prisma.EnumProp[]
+  }
+  wikiUrl: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
   }
 }
   
 
-// Types for Post
+// Types for EnumProp
 
-type PostObject =
-  | PostFields
+type EnumPropObject =
+  | EnumPropFields
   | { name: 'id', args?: [] | false, alias?: string  } 
-  | { name: 'createdAt', args?: [] | false, alias?: string  } 
-  | { name: 'updatedAt', args?: [] | false, alias?: string  } 
-  | { name: 'published', args?: [] | false, alias?: string  } 
-  | { name: 'title', args?: [] | false, alias?: string  } 
-  | { name: 'content', args?: [] | false, alias?: string  } 
-  | { name: 'author', args?: [] | false, alias?: string  } 
+  | { name: 'key', args?: [] | false, alias?: string  } 
+  | { name: 'value', args?: [] | false, alias?: string  } 
 
-type PostFields =
+type EnumPropFields =
   | 'id'
-  | 'createdAt'
-  | 'updatedAt'
-  | 'published'
-  | 'title'
-  | 'content'
-  | 'author'
+  | 'key'
+  | 'value'
 
 
 
   
 
-export interface PostFieldDetails {
+export interface EnumPropFieldDetails {
   id: {
     type: 'ID'
     args: {}
@@ -330,31 +605,7 @@ export interface PostFieldDetails {
     nullable: false
     resolve: undefined
   }
-  createdAt: {
-    type: 'DateTime'
-    args: {}
-    description: string
-    list: undefined
-    nullable: false
-    resolve: undefined
-  }
-  updatedAt: {
-    type: 'DateTime'
-    args: {}
-    description: string
-    list: undefined
-    nullable: false
-    resolve: undefined
-  }
-  published: {
-    type: 'Boolean'
-    args: {}
-    description: string
-    list: undefined
-    nullable: false
-    resolve: undefined
-  }
-  title: {
+  key: {
     type: 'String'
     args: {}
     description: string
@@ -362,39 +613,26 @@ export interface PostFieldDetails {
     nullable: false
     resolve: undefined
   }
-  content: {
-    type: 'String'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: undefined
-  }
-  author: {
-    type: 'User'
+  value: {
+    type: 'Int'
     args: {}
     description: string
     list: undefined
     nullable: false
-    resolve: (
-      root: core.RootValue<"Post">,
-      args: {  }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.User> | prisma.User
+    resolve: undefined
   }
 }
   
 
-// Types for UserConnection
+// Types for EnumTypeConnection
 
-type UserConnectionObject =
-  | UserConnectionFields
+type EnumTypeConnectionObject =
+  | EnumTypeConnectionFields
   | { name: 'pageInfo', args?: [] | false, alias?: string  } 
   | { name: 'edges', args?: [] | false, alias?: string  } 
   | { name: 'aggregate', args?: [] | false, alias?: string  } 
 
-type UserConnectionFields =
+type EnumTypeConnectionFields =
   | 'pageInfo'
   | 'edges'
   | 'aggregate'
@@ -403,7 +641,7 @@ type UserConnectionFields =
 
   
 
-export interface UserConnectionFieldDetails {
+export interface EnumTypeConnectionFieldDetails {
   pageInfo: {
     type: 'PageInfo'
     args: {}
@@ -411,37 +649,37 @@ export interface UserConnectionFieldDetails {
     list: undefined
     nullable: false
     resolve: (
-      root: core.RootValue<"UserConnection">,
+      root: core.RootValue<"EnumTypeConnection">,
       args: {  }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
     ) => Promise<prisma.PageInfo> | prisma.PageInfo
   }
   edges: {
-    type: 'UserEdge'
+    type: 'EnumTypeEdge'
     args: {}
     description: string
     list: true
     nullable: false
     resolve: (
-      root: core.RootValue<"UserConnection">,
+      root: core.RootValue<"EnumTypeConnection">,
       args: {  }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.UserEdge[]> | prisma.UserEdge[]
+    ) => Promise<prisma.EnumTypeEdge[]> | prisma.EnumTypeEdge[]
   }
   aggregate: {
-    type: 'AggregateUser'
+    type: 'AggregateEnumType'
     args: {}
     description: string
     list: undefined
     nullable: false
     resolve: (
-      root: core.RootValue<"UserConnection">,
+      root: core.RootValue<"EnumTypeConnection">,
       args: {  }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.AggregateUser> | prisma.AggregateUser
+    ) => Promise<prisma.AggregateEnumType> | prisma.AggregateEnumType
   }
 }
   
@@ -501,14 +739,14 @@ export interface PageInfoFieldDetails {
 }
   
 
-// Types for UserEdge
+// Types for EnumTypeEdge
 
-type UserEdgeObject =
-  | UserEdgeFields
+type EnumTypeEdgeObject =
+  | EnumTypeEdgeFields
   | { name: 'node', args?: [] | false, alias?: string  } 
   | { name: 'cursor', args?: [] | false, alias?: string  } 
 
-type UserEdgeFields =
+type EnumTypeEdgeFields =
   | 'node'
   | 'cursor'
 
@@ -516,19 +754,19 @@ type UserEdgeFields =
 
   
 
-export interface UserEdgeFieldDetails {
+export interface EnumTypeEdgeFieldDetails {
   node: {
-    type: 'User'
+    type: 'EnumType'
     args: {}
     description: string
     list: undefined
     nullable: false
     resolve: (
-      root: core.RootValue<"UserEdge">,
+      root: core.RootValue<"EnumTypeEdge">,
       args: {  }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.User> | prisma.User
+    ) => Promise<prisma.EnumType> | prisma.EnumType
   }
   cursor: {
     type: 'String'
@@ -541,20 +779,20 @@ export interface UserEdgeFieldDetails {
 }
   
 
-// Types for AggregateUser
+// Types for AggregateEnumType
 
-type AggregateUserObject =
-  | AggregateUserFields
+type AggregateEnumTypeObject =
+  | AggregateEnumTypeFields
   | { name: 'count', args?: [] | false, alias?: string  } 
 
-type AggregateUserFields =
+type AggregateEnumTypeFields =
   | 'count'
 
 
 
   
 
-export interface AggregateUserFieldDetails {
+export interface AggregateEnumTypeFieldDetails {
   count: {
     type: 'Int'
     args: {}
@@ -566,15 +804,15 @@ export interface AggregateUserFieldDetails {
 }
   
 
-// Types for PostConnection
+// Types for EnumPropConnection
 
-type PostConnectionObject =
-  | PostConnectionFields
+type EnumPropConnectionObject =
+  | EnumPropConnectionFields
   | { name: 'pageInfo', args?: [] | false, alias?: string  } 
   | { name: 'edges', args?: [] | false, alias?: string  } 
   | { name: 'aggregate', args?: [] | false, alias?: string  } 
 
-type PostConnectionFields =
+type EnumPropConnectionFields =
   | 'pageInfo'
   | 'edges'
   | 'aggregate'
@@ -583,7 +821,7 @@ type PostConnectionFields =
 
   
 
-export interface PostConnectionFieldDetails {
+export interface EnumPropConnectionFieldDetails {
   pageInfo: {
     type: 'PageInfo'
     args: {}
@@ -591,49 +829,49 @@ export interface PostConnectionFieldDetails {
     list: undefined
     nullable: false
     resolve: (
-      root: core.RootValue<"PostConnection">,
+      root: core.RootValue<"EnumPropConnection">,
       args: {  }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
     ) => Promise<prisma.PageInfo> | prisma.PageInfo
   }
   edges: {
-    type: 'PostEdge'
+    type: 'EnumPropEdge'
     args: {}
     description: string
     list: true
     nullable: false
     resolve: (
-      root: core.RootValue<"PostConnection">,
+      root: core.RootValue<"EnumPropConnection">,
       args: {  }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.PostEdge[]> | prisma.PostEdge[]
+    ) => Promise<prisma.EnumPropEdge[]> | prisma.EnumPropEdge[]
   }
   aggregate: {
-    type: 'AggregatePost'
+    type: 'AggregateEnumProp'
     args: {}
     description: string
     list: undefined
     nullable: false
     resolve: (
-      root: core.RootValue<"PostConnection">,
+      root: core.RootValue<"EnumPropConnection">,
       args: {  }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.AggregatePost> | prisma.AggregatePost
+    ) => Promise<prisma.AggregateEnumProp> | prisma.AggregateEnumProp
   }
 }
   
 
-// Types for PostEdge
+// Types for EnumPropEdge
 
-type PostEdgeObject =
-  | PostEdgeFields
+type EnumPropEdgeObject =
+  | EnumPropEdgeFields
   | { name: 'node', args?: [] | false, alias?: string  } 
   | { name: 'cursor', args?: [] | false, alias?: string  } 
 
-type PostEdgeFields =
+type EnumPropEdgeFields =
   | 'node'
   | 'cursor'
 
@@ -641,19 +879,19 @@ type PostEdgeFields =
 
   
 
-export interface PostEdgeFieldDetails {
+export interface EnumPropEdgeFieldDetails {
   node: {
-    type: 'Post'
+    type: 'EnumProp'
     args: {}
     description: string
     list: undefined
     nullable: false
     resolve: (
-      root: core.RootValue<"PostEdge">,
+      root: core.RootValue<"EnumPropEdge">,
       args: {  }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.Post> | prisma.Post
+    ) => Promise<prisma.EnumProp> | prisma.EnumProp
   }
   cursor: {
     type: 'String'
@@ -666,20 +904,750 @@ export interface PostEdgeFieldDetails {
 }
   
 
-// Types for AggregatePost
+// Types for AggregateEnumProp
 
-type AggregatePostObject =
-  | AggregatePostFields
+type AggregateEnumPropObject =
+  | AggregateEnumPropFields
   | { name: 'count', args?: [] | false, alias?: string  } 
 
-type AggregatePostFields =
+type AggregateEnumPropFields =
   | 'count'
 
 
 
   
 
-export interface AggregatePostFieldDetails {
+export interface AggregateEnumPropFieldDetails {
+  count: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+}
+  
+
+// Types for Bo
+
+type BoObject =
+  | BoFields
+  | { name: 'id', args?: [] | false, alias?: string  } 
+  | { name: 'name', args?: [] | false, alias?: string  } 
+  | { name: 'desc', args?: [] | false, alias?: string  } 
+  | { name: 'props', args?: BoPropsArgs[] | false, alias?: string  } 
+  | { name: 'wikiUrl', args?: [] | false, alias?: string  } 
+  | { name: 'details', args?: BoDetailsArgs[] | false, alias?: string  } 
+
+type BoFields =
+  | 'id'
+  | 'name'
+  | 'desc'
+  | 'props'
+  | 'wikiUrl'
+  | 'details'
+
+
+type BoPropsArgs =
+  | 'where'
+  | 'orderBy'
+  | 'skip'
+  | 'after'
+  | 'before'
+  | 'first'
+  | 'last'
+type BoDetailsArgs =
+  | 'where'
+  | 'orderBy'
+  | 'skip'
+  | 'after'
+  | 'before'
+  | 'first'
+  | 'last'
+  
+
+export interface BoFieldDetails {
+  id: {
+    type: 'ID'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  name: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  desc: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  props: {
+    type: 'BoProp'
+    args: Record<BoPropsArgs, core.NexusArgDef<string>>
+    description: string
+    list: true
+    nullable: false
+    resolve: (
+      root: core.RootValue<"Bo">,
+      args: { where?: BoPropWhereInput | null, orderBy?: prisma.BoPropOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.BoProp[]> | prisma.BoProp[]
+  }
+  wikiUrl: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  details: {
+    type: 'Bo'
+    args: Record<BoDetailsArgs, core.NexusArgDef<string>>
+    description: string
+    list: true
+    nullable: false
+    resolve: (
+      root: core.RootValue<"Bo">,
+      args: { where?: BoWhereInput | null, orderBy?: prisma.BoOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.Bo[]> | prisma.Bo[]
+  }
+}
+  
+
+// Types for BoProp
+
+type BoPropObject =
+  | BoPropFields
+  | { name: 'id', args?: [] | false, alias?: string  } 
+  | { name: 'name', args?: [] | false, alias?: string  } 
+  | { name: 'desc', args?: [] | false, alias?: string  } 
+  | { name: 'type', args?: [] | false, alias?: string  } 
+  | { name: 'required', args?: [] | false, alias?: string  } 
+  | { name: 'unique', args?: [] | false, alias?: string  } 
+  | { name: 'redundant', args?: [] | false, alias?: string  } 
+  | { name: 'linkBo', args?: [] | false, alias?: string  } 
+  | { name: 'linkEnumType', args?: [] | false, alias?: string  } 
+
+type BoPropFields =
+  | 'id'
+  | 'name'
+  | 'desc'
+  | 'type'
+  | 'required'
+  | 'unique'
+  | 'redundant'
+  | 'linkBo'
+  | 'linkEnumType'
+
+
+
+  
+
+export interface BoPropFieldDetails {
+  id: {
+    type: 'ID'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  name: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  desc: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  type: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  required: {
+    type: 'Boolean'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  unique: {
+    type: 'Boolean'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  redundant: {
+    type: 'Boolean'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  linkBo: {
+    type: 'Bo'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"BoProp">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.Bo | null> | prisma.Bo | null
+  }
+  linkEnumType: {
+    type: 'EnumType'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"BoProp">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.EnumType | null> | prisma.EnumType | null
+  }
+}
+  
+
+// Types for BoConnection
+
+type BoConnectionObject =
+  | BoConnectionFields
+  | { name: 'pageInfo', args?: [] | false, alias?: string  } 
+  | { name: 'edges', args?: [] | false, alias?: string  } 
+  | { name: 'aggregate', args?: [] | false, alias?: string  } 
+
+type BoConnectionFields =
+  | 'pageInfo'
+  | 'edges'
+  | 'aggregate'
+
+
+
+  
+
+export interface BoConnectionFieldDetails {
+  pageInfo: {
+    type: 'PageInfo'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"BoConnection">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PageInfo> | prisma.PageInfo
+  }
+  edges: {
+    type: 'BoEdge'
+    args: {}
+    description: string
+    list: true
+    nullable: false
+    resolve: (
+      root: core.RootValue<"BoConnection">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.BoEdge[]> | prisma.BoEdge[]
+  }
+  aggregate: {
+    type: 'AggregateBo'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"BoConnection">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.AggregateBo> | prisma.AggregateBo
+  }
+}
+  
+
+// Types for BoEdge
+
+type BoEdgeObject =
+  | BoEdgeFields
+  | { name: 'node', args?: [] | false, alias?: string  } 
+  | { name: 'cursor', args?: [] | false, alias?: string  } 
+
+type BoEdgeFields =
+  | 'node'
+  | 'cursor'
+
+
+
+  
+
+export interface BoEdgeFieldDetails {
+  node: {
+    type: 'Bo'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"BoEdge">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.Bo> | prisma.Bo
+  }
+  cursor: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+}
+  
+
+// Types for AggregateBo
+
+type AggregateBoObject =
+  | AggregateBoFields
+  | { name: 'count', args?: [] | false, alias?: string  } 
+
+type AggregateBoFields =
+  | 'count'
+
+
+
+  
+
+export interface AggregateBoFieldDetails {
+  count: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+}
+  
+
+// Types for BoPropConnection
+
+type BoPropConnectionObject =
+  | BoPropConnectionFields
+  | { name: 'pageInfo', args?: [] | false, alias?: string  } 
+  | { name: 'edges', args?: [] | false, alias?: string  } 
+  | { name: 'aggregate', args?: [] | false, alias?: string  } 
+
+type BoPropConnectionFields =
+  | 'pageInfo'
+  | 'edges'
+  | 'aggregate'
+
+
+
+  
+
+export interface BoPropConnectionFieldDetails {
+  pageInfo: {
+    type: 'PageInfo'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"BoPropConnection">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PageInfo> | prisma.PageInfo
+  }
+  edges: {
+    type: 'BoPropEdge'
+    args: {}
+    description: string
+    list: true
+    nullable: false
+    resolve: (
+      root: core.RootValue<"BoPropConnection">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.BoPropEdge[]> | prisma.BoPropEdge[]
+  }
+  aggregate: {
+    type: 'AggregateBoProp'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"BoPropConnection">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.AggregateBoProp> | prisma.AggregateBoProp
+  }
+}
+  
+
+// Types for BoPropEdge
+
+type BoPropEdgeObject =
+  | BoPropEdgeFields
+  | { name: 'node', args?: [] | false, alias?: string  } 
+  | { name: 'cursor', args?: [] | false, alias?: string  } 
+
+type BoPropEdgeFields =
+  | 'node'
+  | 'cursor'
+
+
+
+  
+
+export interface BoPropEdgeFieldDetails {
+  node: {
+    type: 'BoProp'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"BoPropEdge">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.BoProp> | prisma.BoProp
+  }
+  cursor: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+}
+  
+
+// Types for AggregateBoProp
+
+type AggregateBoPropObject =
+  | AggregateBoPropFields
+  | { name: 'count', args?: [] | false, alias?: string  } 
+
+type AggregateBoPropFields =
+  | 'count'
+
+
+
+  
+
+export interface AggregateBoPropFieldDetails {
+  count: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+}
+  
+
+// Types for Page
+
+type PageObject =
+  | PageFields
+  | { name: 'id', args?: [] | false, alias?: string  } 
+  | { name: 'name', args?: [] | false, alias?: string  } 
+  | { name: 'desc', args?: [] | false, alias?: string  } 
+  | { name: 'project', args?: [] | false, alias?: string  } 
+  | { name: 'system', args?: [] | false, alias?: string  } 
+  | { name: 'domain', args?: [] | false, alias?: string  } 
+  | { name: 'type', args?: [] | false, alias?: string  } 
+  | { name: 'wikiUrl', args?: [] | false, alias?: string  } 
+  | { name: 'bos', args?: PageBosArgs[] | false, alias?: string  } 
+  | { name: 'enums', args?: PageEnumsArgs[] | false, alias?: string  } 
+
+type PageFields =
+  | 'id'
+  | 'name'
+  | 'desc'
+  | 'project'
+  | 'system'
+  | 'domain'
+  | 'type'
+  | 'wikiUrl'
+  | 'bos'
+  | 'enums'
+
+
+type PageBosArgs =
+  | 'where'
+  | 'orderBy'
+  | 'skip'
+  | 'after'
+  | 'before'
+  | 'first'
+  | 'last'
+type PageEnumsArgs =
+  | 'where'
+  | 'orderBy'
+  | 'skip'
+  | 'after'
+  | 'before'
+  | 'first'
+  | 'last'
+  
+
+export interface PageFieldDetails {
+  id: {
+    type: 'ID'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  name: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  desc: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  project: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  system: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  domain: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  type: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  wikiUrl: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  bos: {
+    type: 'Bo'
+    args: Record<PageBosArgs, core.NexusArgDef<string>>
+    description: string
+    list: true
+    nullable: false
+    resolve: (
+      root: core.RootValue<"Page">,
+      args: { where?: BoWhereInput | null, orderBy?: prisma.BoOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.Bo[]> | prisma.Bo[]
+  }
+  enums: {
+    type: 'EnumType'
+    args: Record<PageEnumsArgs, core.NexusArgDef<string>>
+    description: string
+    list: true
+    nullable: false
+    resolve: (
+      root: core.RootValue<"Page">,
+      args: { where?: EnumTypeWhereInput | null, orderBy?: prisma.EnumTypeOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.EnumType[]> | prisma.EnumType[]
+  }
+}
+  
+
+// Types for PageConnection
+
+type PageConnectionObject =
+  | PageConnectionFields
+  | { name: 'pageInfo', args?: [] | false, alias?: string  } 
+  | { name: 'edges', args?: [] | false, alias?: string  } 
+  | { name: 'aggregate', args?: [] | false, alias?: string  } 
+
+type PageConnectionFields =
+  | 'pageInfo'
+  | 'edges'
+  | 'aggregate'
+
+
+
+  
+
+export interface PageConnectionFieldDetails {
+  pageInfo: {
+    type: 'PageInfo'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"PageConnection">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PageInfo> | prisma.PageInfo
+  }
+  edges: {
+    type: 'PageEdge'
+    args: {}
+    description: string
+    list: true
+    nullable: false
+    resolve: (
+      root: core.RootValue<"PageConnection">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PageEdge[]> | prisma.PageEdge[]
+  }
+  aggregate: {
+    type: 'AggregatePage'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"PageConnection">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.AggregatePage> | prisma.AggregatePage
+  }
+}
+  
+
+// Types for PageEdge
+
+type PageEdgeObject =
+  | PageEdgeFields
+  | { name: 'node', args?: [] | false, alias?: string  } 
+  | { name: 'cursor', args?: [] | false, alias?: string  } 
+
+type PageEdgeFields =
+  | 'node'
+  | 'cursor'
+
+
+
+  
+
+export interface PageEdgeFieldDetails {
+  node: {
+    type: 'Page'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"PageEdge">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.Page> | prisma.Page
+  }
+  cursor: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+}
+  
+
+// Types for AggregatePage
+
+type AggregatePageObject =
+  | AggregatePageFields
+  | { name: 'count', args?: [] | false, alias?: string  } 
+
+type AggregatePageFields =
+  | 'count'
+
+
+
+  
+
+export interface AggregatePageFieldDetails {
   count: {
     type: 'Int'
     args: {}
@@ -695,221 +1663,539 @@ export interface AggregatePostFieldDetails {
 
 type MutationObject =
   | MutationFields
-  | { name: 'createUser', args?: MutationCreateUserArgs[] | false, alias?: string  } 
-  | { name: 'updateUser', args?: MutationUpdateUserArgs[] | false, alias?: string  } 
-  | { name: 'updateManyUsers', args?: MutationUpdateManyUsersArgs[] | false, alias?: string  } 
-  | { name: 'upsertUser', args?: MutationUpsertUserArgs[] | false, alias?: string  } 
-  | { name: 'deleteUser', args?: MutationDeleteUserArgs[] | false, alias?: string  } 
-  | { name: 'deleteManyUsers', args?: MutationDeleteManyUsersArgs[] | false, alias?: string  } 
-  | { name: 'createPost', args?: MutationCreatePostArgs[] | false, alias?: string  } 
-  | { name: 'updatePost', args?: MutationUpdatePostArgs[] | false, alias?: string  } 
-  | { name: 'updateManyPosts', args?: MutationUpdateManyPostsArgs[] | false, alias?: string  } 
-  | { name: 'upsertPost', args?: MutationUpsertPostArgs[] | false, alias?: string  } 
-  | { name: 'deletePost', args?: MutationDeletePostArgs[] | false, alias?: string  } 
-  | { name: 'deleteManyPosts', args?: MutationDeleteManyPostsArgs[] | false, alias?: string  } 
+  | { name: 'createEnumType', args?: MutationCreateEnumTypeArgs[] | false, alias?: string  } 
+  | { name: 'updateEnumType', args?: MutationUpdateEnumTypeArgs[] | false, alias?: string  } 
+  | { name: 'updateManyEnumTypes', args?: MutationUpdateManyEnumTypesArgs[] | false, alias?: string  } 
+  | { name: 'upsertEnumType', args?: MutationUpsertEnumTypeArgs[] | false, alias?: string  } 
+  | { name: 'deleteEnumType', args?: MutationDeleteEnumTypeArgs[] | false, alias?: string  } 
+  | { name: 'deleteManyEnumTypes', args?: MutationDeleteManyEnumTypesArgs[] | false, alias?: string  } 
+  | { name: 'createEnumProp', args?: MutationCreateEnumPropArgs[] | false, alias?: string  } 
+  | { name: 'updateEnumProp', args?: MutationUpdateEnumPropArgs[] | false, alias?: string  } 
+  | { name: 'updateManyEnumProps', args?: MutationUpdateManyEnumPropsArgs[] | false, alias?: string  } 
+  | { name: 'upsertEnumProp', args?: MutationUpsertEnumPropArgs[] | false, alias?: string  } 
+  | { name: 'deleteEnumProp', args?: MutationDeleteEnumPropArgs[] | false, alias?: string  } 
+  | { name: 'deleteManyEnumProps', args?: MutationDeleteManyEnumPropsArgs[] | false, alias?: string  } 
+  | { name: 'createBo', args?: MutationCreateBoArgs[] | false, alias?: string  } 
+  | { name: 'updateBo', args?: MutationUpdateBoArgs[] | false, alias?: string  } 
+  | { name: 'updateManyBoes', args?: MutationUpdateManyBoesArgs[] | false, alias?: string  } 
+  | { name: 'upsertBo', args?: MutationUpsertBoArgs[] | false, alias?: string  } 
+  | { name: 'deleteBo', args?: MutationDeleteBoArgs[] | false, alias?: string  } 
+  | { name: 'deleteManyBoes', args?: MutationDeleteManyBoesArgs[] | false, alias?: string  } 
+  | { name: 'createBoProp', args?: MutationCreateBoPropArgs[] | false, alias?: string  } 
+  | { name: 'updateBoProp', args?: MutationUpdateBoPropArgs[] | false, alias?: string  } 
+  | { name: 'updateManyBoProps', args?: MutationUpdateManyBoPropsArgs[] | false, alias?: string  } 
+  | { name: 'upsertBoProp', args?: MutationUpsertBoPropArgs[] | false, alias?: string  } 
+  | { name: 'deleteBoProp', args?: MutationDeleteBoPropArgs[] | false, alias?: string  } 
+  | { name: 'deleteManyBoProps', args?: MutationDeleteManyBoPropsArgs[] | false, alias?: string  } 
+  | { name: 'createPage', args?: MutationCreatePageArgs[] | false, alias?: string  } 
+  | { name: 'updatePage', args?: MutationUpdatePageArgs[] | false, alias?: string  } 
+  | { name: 'updateManyPages', args?: MutationUpdateManyPagesArgs[] | false, alias?: string  } 
+  | { name: 'upsertPage', args?: MutationUpsertPageArgs[] | false, alias?: string  } 
+  | { name: 'deletePage', args?: MutationDeletePageArgs[] | false, alias?: string  } 
+  | { name: 'deleteManyPages', args?: MutationDeleteManyPagesArgs[] | false, alias?: string  } 
 
 type MutationFields =
-  | 'createUser'
-  | 'updateUser'
-  | 'updateManyUsers'
-  | 'upsertUser'
-  | 'deleteUser'
-  | 'deleteManyUsers'
-  | 'createPost'
-  | 'updatePost'
-  | 'updateManyPosts'
-  | 'upsertPost'
-  | 'deletePost'
-  | 'deleteManyPosts'
+  | 'createEnumType'
+  | 'updateEnumType'
+  | 'updateManyEnumTypes'
+  | 'upsertEnumType'
+  | 'deleteEnumType'
+  | 'deleteManyEnumTypes'
+  | 'createEnumProp'
+  | 'updateEnumProp'
+  | 'updateManyEnumProps'
+  | 'upsertEnumProp'
+  | 'deleteEnumProp'
+  | 'deleteManyEnumProps'
+  | 'createBo'
+  | 'updateBo'
+  | 'updateManyBoes'
+  | 'upsertBo'
+  | 'deleteBo'
+  | 'deleteManyBoes'
+  | 'createBoProp'
+  | 'updateBoProp'
+  | 'updateManyBoProps'
+  | 'upsertBoProp'
+  | 'deleteBoProp'
+  | 'deleteManyBoProps'
+  | 'createPage'
+  | 'updatePage'
+  | 'updateManyPages'
+  | 'upsertPage'
+  | 'deletePage'
+  | 'deleteManyPages'
 
 
-type MutationCreateUserArgs =
+type MutationCreateEnumTypeArgs =
   | 'data'
-type MutationUpdateUserArgs =
-  | 'data'
-  | 'where'
-type MutationUpdateManyUsersArgs =
+type MutationUpdateEnumTypeArgs =
   | 'data'
   | 'where'
-type MutationUpsertUserArgs =
+type MutationUpdateManyEnumTypesArgs =
+  | 'data'
+  | 'where'
+type MutationUpsertEnumTypeArgs =
   | 'where'
   | 'create'
   | 'update'
-type MutationDeleteUserArgs =
+type MutationDeleteEnumTypeArgs =
   | 'where'
-type MutationDeleteManyUsersArgs =
+type MutationDeleteManyEnumTypesArgs =
   | 'where'
-type MutationCreatePostArgs =
+type MutationCreateEnumPropArgs =
   | 'data'
-type MutationUpdatePostArgs =
-  | 'data'
-  | 'where'
-type MutationUpdateManyPostsArgs =
+type MutationUpdateEnumPropArgs =
   | 'data'
   | 'where'
-type MutationUpsertPostArgs =
+type MutationUpdateManyEnumPropsArgs =
+  | 'data'
+  | 'where'
+type MutationUpsertEnumPropArgs =
   | 'where'
   | 'create'
   | 'update'
-type MutationDeletePostArgs =
+type MutationDeleteEnumPropArgs =
   | 'where'
-type MutationDeleteManyPostsArgs =
+type MutationDeleteManyEnumPropsArgs =
+  | 'where'
+type MutationCreateBoArgs =
+  | 'data'
+type MutationUpdateBoArgs =
+  | 'data'
+  | 'where'
+type MutationUpdateManyBoesArgs =
+  | 'data'
+  | 'where'
+type MutationUpsertBoArgs =
+  | 'where'
+  | 'create'
+  | 'update'
+type MutationDeleteBoArgs =
+  | 'where'
+type MutationDeleteManyBoesArgs =
+  | 'where'
+type MutationCreateBoPropArgs =
+  | 'data'
+type MutationUpdateBoPropArgs =
+  | 'data'
+  | 'where'
+type MutationUpdateManyBoPropsArgs =
+  | 'data'
+  | 'where'
+type MutationUpsertBoPropArgs =
+  | 'where'
+  | 'create'
+  | 'update'
+type MutationDeleteBoPropArgs =
+  | 'where'
+type MutationDeleteManyBoPropsArgs =
+  | 'where'
+type MutationCreatePageArgs =
+  | 'data'
+type MutationUpdatePageArgs =
+  | 'data'
+  | 'where'
+type MutationUpdateManyPagesArgs =
+  | 'data'
+  | 'where'
+type MutationUpsertPageArgs =
+  | 'where'
+  | 'create'
+  | 'update'
+type MutationDeletePageArgs =
+  | 'where'
+type MutationDeleteManyPagesArgs =
   | 'where'
   
 
 export interface MutationFieldDetails {
-  createUser: {
-    type: 'User'
-    args: Record<MutationCreateUserArgs, core.NexusArgDef<string>>
+  createEnumType: {
+    type: 'EnumType'
+    args: Record<MutationCreateEnumTypeArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: false
     resolve: (
       root: core.RootValue<"Mutation">,
-      args: { data: UserCreateInput }  ,
+      args: { data: EnumTypeCreateInput }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.User> | prisma.User
+    ) => Promise<prisma.EnumType> | prisma.EnumType
   }
-  updateUser: {
-    type: 'User'
-    args: Record<MutationUpdateUserArgs, core.NexusArgDef<string>>
+  updateEnumType: {
+    type: 'EnumType'
+    args: Record<MutationUpdateEnumTypeArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: true
     resolve: (
       root: core.RootValue<"Mutation">,
-      args: { data: UserUpdateInput, where: UserWhereUniqueInput }  ,
+      args: { data: EnumTypeUpdateInput, where: EnumTypeWhereUniqueInput }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.User | null> | prisma.User | null
+    ) => Promise<prisma.EnumType | null> | prisma.EnumType | null
   }
-  updateManyUsers: {
+  updateManyEnumTypes: {
     type: 'BatchPayload'
-    args: Record<MutationUpdateManyUsersArgs, core.NexusArgDef<string>>
+    args: Record<MutationUpdateManyEnumTypesArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: false
     resolve: (
       root: core.RootValue<"Mutation">,
-      args: { data: UserUpdateManyMutationInput, where?: UserWhereInput | null }  ,
+      args: { data: EnumTypeUpdateManyMutationInput, where?: EnumTypeWhereInput | null }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
     ) => Promise<prisma.BatchPayload> | prisma.BatchPayload
   }
-  upsertUser: {
-    type: 'User'
-    args: Record<MutationUpsertUserArgs, core.NexusArgDef<string>>
+  upsertEnumType: {
+    type: 'EnumType'
+    args: Record<MutationUpsertEnumTypeArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: false
     resolve: (
       root: core.RootValue<"Mutation">,
-      args: { where: UserWhereUniqueInput, create: UserCreateInput, update: UserUpdateInput }  ,
+      args: { where: EnumTypeWhereUniqueInput, create: EnumTypeCreateInput, update: EnumTypeUpdateInput }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.User> | prisma.User
+    ) => Promise<prisma.EnumType> | prisma.EnumType
   }
-  deleteUser: {
-    type: 'User'
-    args: Record<MutationDeleteUserArgs, core.NexusArgDef<string>>
+  deleteEnumType: {
+    type: 'EnumType'
+    args: Record<MutationDeleteEnumTypeArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: true
     resolve: (
       root: core.RootValue<"Mutation">,
-      args: { where: UserWhereUniqueInput }  ,
+      args: { where: EnumTypeWhereUniqueInput }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.User | null> | prisma.User | null
+    ) => Promise<prisma.EnumType | null> | prisma.EnumType | null
   }
-  deleteManyUsers: {
+  deleteManyEnumTypes: {
     type: 'BatchPayload'
-    args: Record<MutationDeleteManyUsersArgs, core.NexusArgDef<string>>
+    args: Record<MutationDeleteManyEnumTypesArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: false
     resolve: (
       root: core.RootValue<"Mutation">,
-      args: { where?: UserWhereInput | null }  ,
+      args: { where?: EnumTypeWhereInput | null }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
     ) => Promise<prisma.BatchPayload> | prisma.BatchPayload
   }
-  createPost: {
-    type: 'Post'
-    args: Record<MutationCreatePostArgs, core.NexusArgDef<string>>
+  createEnumProp: {
+    type: 'EnumProp'
+    args: Record<MutationCreateEnumPropArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: false
     resolve: (
       root: core.RootValue<"Mutation">,
-      args: { data: PostCreateInput }  ,
+      args: { data: EnumPropCreateInput }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.Post> | prisma.Post
+    ) => Promise<prisma.EnumProp> | prisma.EnumProp
   }
-  updatePost: {
-    type: 'Post'
-    args: Record<MutationUpdatePostArgs, core.NexusArgDef<string>>
+  updateEnumProp: {
+    type: 'EnumProp'
+    args: Record<MutationUpdateEnumPropArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: true
     resolve: (
       root: core.RootValue<"Mutation">,
-      args: { data: PostUpdateInput, where: PostWhereUniqueInput }  ,
+      args: { data: EnumPropUpdateInput, where: EnumPropWhereUniqueInput }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.Post | null> | prisma.Post | null
+    ) => Promise<prisma.EnumProp | null> | prisma.EnumProp | null
   }
-  updateManyPosts: {
+  updateManyEnumProps: {
     type: 'BatchPayload'
-    args: Record<MutationUpdateManyPostsArgs, core.NexusArgDef<string>>
+    args: Record<MutationUpdateManyEnumPropsArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: false
     resolve: (
       root: core.RootValue<"Mutation">,
-      args: { data: PostUpdateManyMutationInput, where?: PostWhereInput | null }  ,
+      args: { data: EnumPropUpdateManyMutationInput, where?: EnumPropWhereInput | null }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
     ) => Promise<prisma.BatchPayload> | prisma.BatchPayload
   }
-  upsertPost: {
-    type: 'Post'
-    args: Record<MutationUpsertPostArgs, core.NexusArgDef<string>>
+  upsertEnumProp: {
+    type: 'EnumProp'
+    args: Record<MutationUpsertEnumPropArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: false
     resolve: (
       root: core.RootValue<"Mutation">,
-      args: { where: PostWhereUniqueInput, create: PostCreateInput, update: PostUpdateInput }  ,
+      args: { where: EnumPropWhereUniqueInput, create: EnumPropCreateInput, update: EnumPropUpdateInput }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.Post> | prisma.Post
+    ) => Promise<prisma.EnumProp> | prisma.EnumProp
   }
-  deletePost: {
-    type: 'Post'
-    args: Record<MutationDeletePostArgs, core.NexusArgDef<string>>
+  deleteEnumProp: {
+    type: 'EnumProp'
+    args: Record<MutationDeleteEnumPropArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: true
     resolve: (
       root: core.RootValue<"Mutation">,
-      args: { where: PostWhereUniqueInput }  ,
+      args: { where: EnumPropWhereUniqueInput }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.Post | null> | prisma.Post | null
+    ) => Promise<prisma.EnumProp | null> | prisma.EnumProp | null
   }
-  deleteManyPosts: {
+  deleteManyEnumProps: {
     type: 'BatchPayload'
-    args: Record<MutationDeleteManyPostsArgs, core.NexusArgDef<string>>
+    args: Record<MutationDeleteManyEnumPropsArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: false
     resolve: (
       root: core.RootValue<"Mutation">,
-      args: { where?: PostWhereInput | null }  ,
+      args: { where?: EnumPropWhereInput | null }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.BatchPayload> | prisma.BatchPayload
+  }
+  createBo: {
+    type: 'Bo'
+    args: Record<MutationCreateBoArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"Mutation">,
+      args: { data: BoCreateInput }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.Bo> | prisma.Bo
+  }
+  updateBo: {
+    type: 'Bo'
+    args: Record<MutationUpdateBoArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"Mutation">,
+      args: { data: BoUpdateInput, where: BoWhereUniqueInput }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.Bo | null> | prisma.Bo | null
+  }
+  updateManyBoes: {
+    type: 'BatchPayload'
+    args: Record<MutationUpdateManyBoesArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"Mutation">,
+      args: { data: BoUpdateManyMutationInput, where?: BoWhereInput | null }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.BatchPayload> | prisma.BatchPayload
+  }
+  upsertBo: {
+    type: 'Bo'
+    args: Record<MutationUpsertBoArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"Mutation">,
+      args: { where: BoWhereUniqueInput, create: BoCreateInput, update: BoUpdateInput }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.Bo> | prisma.Bo
+  }
+  deleteBo: {
+    type: 'Bo'
+    args: Record<MutationDeleteBoArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"Mutation">,
+      args: { where: BoWhereUniqueInput }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.Bo | null> | prisma.Bo | null
+  }
+  deleteManyBoes: {
+    type: 'BatchPayload'
+    args: Record<MutationDeleteManyBoesArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"Mutation">,
+      args: { where?: BoWhereInput | null }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.BatchPayload> | prisma.BatchPayload
+  }
+  createBoProp: {
+    type: 'BoProp'
+    args: Record<MutationCreateBoPropArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"Mutation">,
+      args: { data: BoPropCreateInput }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.BoProp> | prisma.BoProp
+  }
+  updateBoProp: {
+    type: 'BoProp'
+    args: Record<MutationUpdateBoPropArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"Mutation">,
+      args: { data: BoPropUpdateInput, where: BoPropWhereUniqueInput }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.BoProp | null> | prisma.BoProp | null
+  }
+  updateManyBoProps: {
+    type: 'BatchPayload'
+    args: Record<MutationUpdateManyBoPropsArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"Mutation">,
+      args: { data: BoPropUpdateManyMutationInput, where?: BoPropWhereInput | null }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.BatchPayload> | prisma.BatchPayload
+  }
+  upsertBoProp: {
+    type: 'BoProp'
+    args: Record<MutationUpsertBoPropArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"Mutation">,
+      args: { where: BoPropWhereUniqueInput, create: BoPropCreateInput, update: BoPropUpdateInput }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.BoProp> | prisma.BoProp
+  }
+  deleteBoProp: {
+    type: 'BoProp'
+    args: Record<MutationDeleteBoPropArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"Mutation">,
+      args: { where: BoPropWhereUniqueInput }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.BoProp | null> | prisma.BoProp | null
+  }
+  deleteManyBoProps: {
+    type: 'BatchPayload'
+    args: Record<MutationDeleteManyBoPropsArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"Mutation">,
+      args: { where?: BoPropWhereInput | null }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.BatchPayload> | prisma.BatchPayload
+  }
+  createPage: {
+    type: 'Page'
+    args: Record<MutationCreatePageArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"Mutation">,
+      args: { data: PageCreateInput }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.Page> | prisma.Page
+  }
+  updatePage: {
+    type: 'Page'
+    args: Record<MutationUpdatePageArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"Mutation">,
+      args: { data: PageUpdateInput, where: PageWhereUniqueInput }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.Page | null> | prisma.Page | null
+  }
+  updateManyPages: {
+    type: 'BatchPayload'
+    args: Record<MutationUpdateManyPagesArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"Mutation">,
+      args: { data: PageUpdateManyMutationInput, where?: PageWhereInput | null }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.BatchPayload> | prisma.BatchPayload
+  }
+  upsertPage: {
+    type: 'Page'
+    args: Record<MutationUpsertPageArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"Mutation">,
+      args: { where: PageWhereUniqueInput, create: PageCreateInput, update: PageUpdateInput }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.Page> | prisma.Page
+  }
+  deletePage: {
+    type: 'Page'
+    args: Record<MutationDeletePageArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"Mutation">,
+      args: { where: PageWhereUniqueInput }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.Page | null> | prisma.Page | null
+  }
+  deleteManyPages: {
+    type: 'BatchPayload'
+    args: Record<MutationDeleteManyPagesArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"Mutation">,
+      args: { where?: PageWhereInput | null }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
     ) => Promise<prisma.BatchPayload> | prisma.BatchPayload
@@ -946,60 +2232,111 @@ export interface BatchPayloadFieldDetails {
 
 type SubscriptionObject =
   | SubscriptionFields
-  | { name: 'user', args?: SubscriptionUserArgs[] | false, alias?: string  } 
-  | { name: 'post', args?: SubscriptionPostArgs[] | false, alias?: string  } 
+  | { name: 'enumType', args?: SubscriptionEnumTypeArgs[] | false, alias?: string  } 
+  | { name: 'enumProp', args?: SubscriptionEnumPropArgs[] | false, alias?: string  } 
+  | { name: 'bo', args?: SubscriptionBoArgs[] | false, alias?: string  } 
+  | { name: 'boProp', args?: SubscriptionBoPropArgs[] | false, alias?: string  } 
+  | { name: 'page', args?: SubscriptionPageArgs[] | false, alias?: string  } 
 
 type SubscriptionFields =
-  | 'user'
-  | 'post'
+  | 'enumType'
+  | 'enumProp'
+  | 'bo'
+  | 'boProp'
+  | 'page'
 
 
-type SubscriptionUserArgs =
+type SubscriptionEnumTypeArgs =
   | 'where'
-type SubscriptionPostArgs =
+type SubscriptionEnumPropArgs =
+  | 'where'
+type SubscriptionBoArgs =
+  | 'where'
+type SubscriptionBoPropArgs =
+  | 'where'
+type SubscriptionPageArgs =
   | 'where'
   
 
 export interface SubscriptionFieldDetails {
-  user: {
-    type: 'UserSubscriptionPayload'
-    args: Record<SubscriptionUserArgs, core.NexusArgDef<string>>
+  enumType: {
+    type: 'EnumTypeSubscriptionPayload'
+    args: Record<SubscriptionEnumTypeArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: true
     resolve: (
       root: core.RootValue<"Subscription">,
-      args: { where?: UserSubscriptionWhereInput | null }  ,
+      args: { where?: EnumTypeSubscriptionWhereInput | null }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.UserSubscriptionPayload | null> | prisma.UserSubscriptionPayload | null
+    ) => Promise<prisma.EnumTypeSubscriptionPayload | null> | prisma.EnumTypeSubscriptionPayload | null
   }
-  post: {
-    type: 'PostSubscriptionPayload'
-    args: Record<SubscriptionPostArgs, core.NexusArgDef<string>>
+  enumProp: {
+    type: 'EnumPropSubscriptionPayload'
+    args: Record<SubscriptionEnumPropArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: true
     resolve: (
       root: core.RootValue<"Subscription">,
-      args: { where?: PostSubscriptionWhereInput | null }  ,
+      args: { where?: EnumPropSubscriptionWhereInput | null }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.PostSubscriptionPayload | null> | prisma.PostSubscriptionPayload | null
+    ) => Promise<prisma.EnumPropSubscriptionPayload | null> | prisma.EnumPropSubscriptionPayload | null
+  }
+  bo: {
+    type: 'BoSubscriptionPayload'
+    args: Record<SubscriptionBoArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"Subscription">,
+      args: { where?: BoSubscriptionWhereInput | null }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.BoSubscriptionPayload | null> | prisma.BoSubscriptionPayload | null
+  }
+  boProp: {
+    type: 'BoPropSubscriptionPayload'
+    args: Record<SubscriptionBoPropArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"Subscription">,
+      args: { where?: BoPropSubscriptionWhereInput | null }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.BoPropSubscriptionPayload | null> | prisma.BoPropSubscriptionPayload | null
+  }
+  page: {
+    type: 'PageSubscriptionPayload'
+    args: Record<SubscriptionPageArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"Subscription">,
+      args: { where?: PageSubscriptionWhereInput | null }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PageSubscriptionPayload | null> | prisma.PageSubscriptionPayload | null
   }
 }
   
 
-// Types for UserSubscriptionPayload
+// Types for EnumTypeSubscriptionPayload
 
-type UserSubscriptionPayloadObject =
-  | UserSubscriptionPayloadFields
+type EnumTypeSubscriptionPayloadObject =
+  | EnumTypeSubscriptionPayloadFields
   | { name: 'mutation', args?: [] | false, alias?: string  } 
   | { name: 'node', args?: [] | false, alias?: string  } 
   | { name: 'updatedFields', args?: [] | false, alias?: string  } 
   | { name: 'previousValues', args?: [] | false, alias?: string  } 
 
-type UserSubscriptionPayloadFields =
+type EnumTypeSubscriptionPayloadFields =
   | 'mutation'
   | 'node'
   | 'updatedFields'
@@ -1009,7 +2346,7 @@ type UserSubscriptionPayloadFields =
 
   
 
-export interface UserSubscriptionPayloadFieldDetails {
+export interface EnumTypeSubscriptionPayloadFieldDetails {
   mutation: {
     type: 'MutationType'
     args: {}
@@ -1017,24 +2354,24 @@ export interface UserSubscriptionPayloadFieldDetails {
     list: undefined
     nullable: false
     resolve: (
-      root: core.RootValue<"UserSubscriptionPayload">,
+      root: core.RootValue<"EnumTypeSubscriptionPayload">,
       args: {  }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
     ) => Promise<prisma.MutationType> | prisma.MutationType
   }
   node: {
-    type: 'User'
+    type: 'EnumType'
     args: {}
     description: string
     list: undefined
     nullable: true
     resolve: (
-      root: core.RootValue<"UserSubscriptionPayload">,
+      root: core.RootValue<"EnumTypeSubscriptionPayload">,
       args: {  }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.User | null> | prisma.User | null
+    ) => Promise<prisma.EnumType | null> | prisma.EnumType | null
   }
   updatedFields: {
     type: 'String'
@@ -1045,49 +2382,43 @@ export interface UserSubscriptionPayloadFieldDetails {
     resolve: undefined
   }
   previousValues: {
-    type: 'UserPreviousValues'
+    type: 'EnumTypePreviousValues'
     args: {}
     description: string
     list: undefined
     nullable: true
     resolve: (
-      root: core.RootValue<"UserSubscriptionPayload">,
+      root: core.RootValue<"EnumTypeSubscriptionPayload">,
       args: {  }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.UserPreviousValues | null> | prisma.UserPreviousValues | null
+    ) => Promise<prisma.EnumTypePreviousValues | null> | prisma.EnumTypePreviousValues | null
   }
 }
   
 
-// Types for UserPreviousValues
+// Types for EnumTypePreviousValues
 
-type UserPreviousValuesObject =
-  | UserPreviousValuesFields
+type EnumTypePreviousValuesObject =
+  | EnumTypePreviousValuesFields
   | { name: 'id', args?: [] | false, alias?: string  } 
-  | { name: 'email', args?: [] | false, alias?: string  } 
   | { name: 'name', args?: [] | false, alias?: string  } 
+  | { name: 'desc', args?: [] | false, alias?: string  } 
+  | { name: 'wikiUrl', args?: [] | false, alias?: string  } 
 
-type UserPreviousValuesFields =
+type EnumTypePreviousValuesFields =
   | 'id'
-  | 'email'
   | 'name'
+  | 'desc'
+  | 'wikiUrl'
 
 
 
   
 
-export interface UserPreviousValuesFieldDetails {
+export interface EnumTypePreviousValuesFieldDetails {
   id: {
     type: 'ID'
-    args: {}
-    description: string
-    list: undefined
-    nullable: false
-    resolve: undefined
-  }
-  email: {
-    type: 'String'
     args: {}
     description: string
     list: undefined
@@ -1102,19 +2433,35 @@ export interface UserPreviousValuesFieldDetails {
     nullable: true
     resolve: undefined
   }
+  desc: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  wikiUrl: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
 }
   
 
-// Types for PostSubscriptionPayload
+// Types for EnumPropSubscriptionPayload
 
-type PostSubscriptionPayloadObject =
-  | PostSubscriptionPayloadFields
+type EnumPropSubscriptionPayloadObject =
+  | EnumPropSubscriptionPayloadFields
   | { name: 'mutation', args?: [] | false, alias?: string  } 
   | { name: 'node', args?: [] | false, alias?: string  } 
   | { name: 'updatedFields', args?: [] | false, alias?: string  } 
   | { name: 'previousValues', args?: [] | false, alias?: string  } 
 
-type PostSubscriptionPayloadFields =
+type EnumPropSubscriptionPayloadFields =
   | 'mutation'
   | 'node'
   | 'updatedFields'
@@ -1124,7 +2471,7 @@ type PostSubscriptionPayloadFields =
 
   
 
-export interface PostSubscriptionPayloadFieldDetails {
+export interface EnumPropSubscriptionPayloadFieldDetails {
   mutation: {
     type: 'MutationType'
     args: {}
@@ -1132,24 +2479,24 @@ export interface PostSubscriptionPayloadFieldDetails {
     list: undefined
     nullable: false
     resolve: (
-      root: core.RootValue<"PostSubscriptionPayload">,
+      root: core.RootValue<"EnumPropSubscriptionPayload">,
       args: {  }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
     ) => Promise<prisma.MutationType> | prisma.MutationType
   }
   node: {
-    type: 'Post'
+    type: 'EnumProp'
     args: {}
     description: string
     list: undefined
     nullable: true
     resolve: (
-      root: core.RootValue<"PostSubscriptionPayload">,
+      root: core.RootValue<"EnumPropSubscriptionPayload">,
       args: {  }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.Post | null> | prisma.Post | null
+    ) => Promise<prisma.EnumProp | null> | prisma.EnumProp | null
   }
   updatedFields: {
     type: 'String'
@@ -1160,45 +2507,39 @@ export interface PostSubscriptionPayloadFieldDetails {
     resolve: undefined
   }
   previousValues: {
-    type: 'PostPreviousValues'
+    type: 'EnumPropPreviousValues'
     args: {}
     description: string
     list: undefined
     nullable: true
     resolve: (
-      root: core.RootValue<"PostSubscriptionPayload">,
+      root: core.RootValue<"EnumPropSubscriptionPayload">,
       args: {  }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.PostPreviousValues | null> | prisma.PostPreviousValues | null
+    ) => Promise<prisma.EnumPropPreviousValues | null> | prisma.EnumPropPreviousValues | null
   }
 }
   
 
-// Types for PostPreviousValues
+// Types for EnumPropPreviousValues
 
-type PostPreviousValuesObject =
-  | PostPreviousValuesFields
+type EnumPropPreviousValuesObject =
+  | EnumPropPreviousValuesFields
   | { name: 'id', args?: [] | false, alias?: string  } 
-  | { name: 'createdAt', args?: [] | false, alias?: string  } 
-  | { name: 'updatedAt', args?: [] | false, alias?: string  } 
-  | { name: 'published', args?: [] | false, alias?: string  } 
-  | { name: 'title', args?: [] | false, alias?: string  } 
-  | { name: 'content', args?: [] | false, alias?: string  } 
+  | { name: 'key', args?: [] | false, alias?: string  } 
+  | { name: 'value', args?: [] | false, alias?: string  } 
 
-type PostPreviousValuesFields =
+type EnumPropPreviousValuesFields =
   | 'id'
-  | 'createdAt'
-  | 'updatedAt'
-  | 'published'
-  | 'title'
-  | 'content'
+  | 'key'
+  | 'value'
 
 
 
   
 
-export interface PostPreviousValuesFieldDetails {
+export interface EnumPropPreviousValuesFieldDetails {
   id: {
     type: 'ID'
     args: {}
@@ -1207,31 +2548,7 @@ export interface PostPreviousValuesFieldDetails {
     nullable: false
     resolve: undefined
   }
-  createdAt: {
-    type: 'DateTime'
-    args: {}
-    description: string
-    list: undefined
-    nullable: false
-    resolve: undefined
-  }
-  updatedAt: {
-    type: 'DateTime'
-    args: {}
-    description: string
-    list: undefined
-    nullable: false
-    resolve: undefined
-  }
-  published: {
-    type: 'Boolean'
-    args: {}
-    description: string
-    list: undefined
-    nullable: false
-    resolve: undefined
-  }
-  title: {
+  key: {
     type: 'String'
     args: {}
     description: string
@@ -1239,7 +2556,452 @@ export interface PostPreviousValuesFieldDetails {
     nullable: false
     resolve: undefined
   }
-  content: {
+  value: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+}
+  
+
+// Types for BoSubscriptionPayload
+
+type BoSubscriptionPayloadObject =
+  | BoSubscriptionPayloadFields
+  | { name: 'mutation', args?: [] | false, alias?: string  } 
+  | { name: 'node', args?: [] | false, alias?: string  } 
+  | { name: 'updatedFields', args?: [] | false, alias?: string  } 
+  | { name: 'previousValues', args?: [] | false, alias?: string  } 
+
+type BoSubscriptionPayloadFields =
+  | 'mutation'
+  | 'node'
+  | 'updatedFields'
+  | 'previousValues'
+
+
+
+  
+
+export interface BoSubscriptionPayloadFieldDetails {
+  mutation: {
+    type: 'MutationType'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"BoSubscriptionPayload">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.MutationType> | prisma.MutationType
+  }
+  node: {
+    type: 'Bo'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"BoSubscriptionPayload">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.Bo | null> | prisma.Bo | null
+  }
+  updatedFields: {
+    type: 'String'
+    args: {}
+    description: string
+    list: true
+    nullable: false
+    resolve: undefined
+  }
+  previousValues: {
+    type: 'BoPreviousValues'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"BoSubscriptionPayload">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.BoPreviousValues | null> | prisma.BoPreviousValues | null
+  }
+}
+  
+
+// Types for BoPreviousValues
+
+type BoPreviousValuesObject =
+  | BoPreviousValuesFields
+  | { name: 'id', args?: [] | false, alias?: string  } 
+  | { name: 'name', args?: [] | false, alias?: string  } 
+  | { name: 'desc', args?: [] | false, alias?: string  } 
+  | { name: 'wikiUrl', args?: [] | false, alias?: string  } 
+
+type BoPreviousValuesFields =
+  | 'id'
+  | 'name'
+  | 'desc'
+  | 'wikiUrl'
+
+
+
+  
+
+export interface BoPreviousValuesFieldDetails {
+  id: {
+    type: 'ID'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  name: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  desc: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  wikiUrl: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+}
+  
+
+// Types for BoPropSubscriptionPayload
+
+type BoPropSubscriptionPayloadObject =
+  | BoPropSubscriptionPayloadFields
+  | { name: 'mutation', args?: [] | false, alias?: string  } 
+  | { name: 'node', args?: [] | false, alias?: string  } 
+  | { name: 'updatedFields', args?: [] | false, alias?: string  } 
+  | { name: 'previousValues', args?: [] | false, alias?: string  } 
+
+type BoPropSubscriptionPayloadFields =
+  | 'mutation'
+  | 'node'
+  | 'updatedFields'
+  | 'previousValues'
+
+
+
+  
+
+export interface BoPropSubscriptionPayloadFieldDetails {
+  mutation: {
+    type: 'MutationType'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"BoPropSubscriptionPayload">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.MutationType> | prisma.MutationType
+  }
+  node: {
+    type: 'BoProp'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"BoPropSubscriptionPayload">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.BoProp | null> | prisma.BoProp | null
+  }
+  updatedFields: {
+    type: 'String'
+    args: {}
+    description: string
+    list: true
+    nullable: false
+    resolve: undefined
+  }
+  previousValues: {
+    type: 'BoPropPreviousValues'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"BoPropSubscriptionPayload">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.BoPropPreviousValues | null> | prisma.BoPropPreviousValues | null
+  }
+}
+  
+
+// Types for BoPropPreviousValues
+
+type BoPropPreviousValuesObject =
+  | BoPropPreviousValuesFields
+  | { name: 'id', args?: [] | false, alias?: string  } 
+  | { name: 'name', args?: [] | false, alias?: string  } 
+  | { name: 'desc', args?: [] | false, alias?: string  } 
+  | { name: 'type', args?: [] | false, alias?: string  } 
+  | { name: 'required', args?: [] | false, alias?: string  } 
+  | { name: 'unique', args?: [] | false, alias?: string  } 
+  | { name: 'redundant', args?: [] | false, alias?: string  } 
+
+type BoPropPreviousValuesFields =
+  | 'id'
+  | 'name'
+  | 'desc'
+  | 'type'
+  | 'required'
+  | 'unique'
+  | 'redundant'
+
+
+
+  
+
+export interface BoPropPreviousValuesFieldDetails {
+  id: {
+    type: 'ID'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  name: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  desc: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  type: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  required: {
+    type: 'Boolean'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  unique: {
+    type: 'Boolean'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  redundant: {
+    type: 'Boolean'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+}
+  
+
+// Types for PageSubscriptionPayload
+
+type PageSubscriptionPayloadObject =
+  | PageSubscriptionPayloadFields
+  | { name: 'mutation', args?: [] | false, alias?: string  } 
+  | { name: 'node', args?: [] | false, alias?: string  } 
+  | { name: 'updatedFields', args?: [] | false, alias?: string  } 
+  | { name: 'previousValues', args?: [] | false, alias?: string  } 
+
+type PageSubscriptionPayloadFields =
+  | 'mutation'
+  | 'node'
+  | 'updatedFields'
+  | 'previousValues'
+
+
+
+  
+
+export interface PageSubscriptionPayloadFieldDetails {
+  mutation: {
+    type: 'MutationType'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"PageSubscriptionPayload">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.MutationType> | prisma.MutationType
+  }
+  node: {
+    type: 'Page'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"PageSubscriptionPayload">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.Page | null> | prisma.Page | null
+  }
+  updatedFields: {
+    type: 'String'
+    args: {}
+    description: string
+    list: true
+    nullable: false
+    resolve: undefined
+  }
+  previousValues: {
+    type: 'PagePreviousValues'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"PageSubscriptionPayload">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PagePreviousValues | null> | prisma.PagePreviousValues | null
+  }
+}
+  
+
+// Types for PagePreviousValues
+
+type PagePreviousValuesObject =
+  | PagePreviousValuesFields
+  | { name: 'id', args?: [] | false, alias?: string  } 
+  | { name: 'name', args?: [] | false, alias?: string  } 
+  | { name: 'desc', args?: [] | false, alias?: string  } 
+  | { name: 'project', args?: [] | false, alias?: string  } 
+  | { name: 'system', args?: [] | false, alias?: string  } 
+  | { name: 'domain', args?: [] | false, alias?: string  } 
+  | { name: 'type', args?: [] | false, alias?: string  } 
+  | { name: 'wikiUrl', args?: [] | false, alias?: string  } 
+
+type PagePreviousValuesFields =
+  | 'id'
+  | 'name'
+  | 'desc'
+  | 'project'
+  | 'system'
+  | 'domain'
+  | 'type'
+  | 'wikiUrl'
+
+
+
+  
+
+export interface PagePreviousValuesFieldDetails {
+  id: {
+    type: 'ID'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  name: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  desc: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  project: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  system: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  domain: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  type: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  wikiUrl: {
     type: 'String'
     args: {}
     description: string
@@ -1251,16 +3013,14 @@ export interface PostPreviousValuesFieldDetails {
   
 
 
-export interface UserWhereUniqueInput {
+export interface EnumTypeWhereUniqueInput {
   id?: string | null
-  email?: string | null
 }
-export type UserWhereUniqueInputInputObject =
-  | Extract<keyof UserWhereUniqueInput, string>
+export type EnumTypeWhereUniqueInputInputObject =
+  | Extract<keyof EnumTypeWhereUniqueInput, string>
   | { name: 'id', alias?: string  } 
-  | { name: 'email', alias?: string  } 
   
-export interface PostWhereInput {
+export interface EnumPropWhereInput {
   id?: string | null
   id_not?: string | null
   id_in?: string[]
@@ -1275,59 +3035,34 @@ export interface PostWhereInput {
   id_not_starts_with?: string | null
   id_ends_with?: string | null
   id_not_ends_with?: string | null
-  createdAt?: string | null
-  createdAt_not?: string | null
-  createdAt_in?: string[]
-  createdAt_not_in?: string[]
-  createdAt_lt?: string | null
-  createdAt_lte?: string | null
-  createdAt_gt?: string | null
-  createdAt_gte?: string | null
-  updatedAt?: string | null
-  updatedAt_not?: string | null
-  updatedAt_in?: string[]
-  updatedAt_not_in?: string[]
-  updatedAt_lt?: string | null
-  updatedAt_lte?: string | null
-  updatedAt_gt?: string | null
-  updatedAt_gte?: string | null
-  published?: boolean | null
-  published_not?: boolean | null
-  title?: string | null
-  title_not?: string | null
-  title_in?: string[]
-  title_not_in?: string[]
-  title_lt?: string | null
-  title_lte?: string | null
-  title_gt?: string | null
-  title_gte?: string | null
-  title_contains?: string | null
-  title_not_contains?: string | null
-  title_starts_with?: string | null
-  title_not_starts_with?: string | null
-  title_ends_with?: string | null
-  title_not_ends_with?: string | null
-  content?: string | null
-  content_not?: string | null
-  content_in?: string[]
-  content_not_in?: string[]
-  content_lt?: string | null
-  content_lte?: string | null
-  content_gt?: string | null
-  content_gte?: string | null
-  content_contains?: string | null
-  content_not_contains?: string | null
-  content_starts_with?: string | null
-  content_not_starts_with?: string | null
-  content_ends_with?: string | null
-  content_not_ends_with?: string | null
-  author?: UserWhereInput | null
-  AND?: PostWhereInput[]
-  OR?: PostWhereInput[]
-  NOT?: PostWhereInput[]
+  key?: string | null
+  key_not?: string | null
+  key_in?: string[]
+  key_not_in?: string[]
+  key_lt?: string | null
+  key_lte?: string | null
+  key_gt?: string | null
+  key_gte?: string | null
+  key_contains?: string | null
+  key_not_contains?: string | null
+  key_starts_with?: string | null
+  key_not_starts_with?: string | null
+  key_ends_with?: string | null
+  key_not_ends_with?: string | null
+  value?: number | null
+  value_not?: number | null
+  value_in?: number[]
+  value_not_in?: number[]
+  value_lt?: number | null
+  value_lte?: number | null
+  value_gt?: number | null
+  value_gte?: number | null
+  AND?: EnumPropWhereInput[]
+  OR?: EnumPropWhereInput[]
+  NOT?: EnumPropWhereInput[]
 }
-export type PostWhereInputInputObject =
-  | Extract<keyof PostWhereInput, string>
+export type EnumPropWhereInputInputObject =
+  | Extract<keyof EnumPropWhereInput, string>
   | { name: 'id', alias?: string  } 
   | { name: 'id_not', alias?: string  } 
   | { name: 'id_in', alias?: string  } 
@@ -1342,58 +3077,33 @@ export type PostWhereInputInputObject =
   | { name: 'id_not_starts_with', alias?: string  } 
   | { name: 'id_ends_with', alias?: string  } 
   | { name: 'id_not_ends_with', alias?: string  } 
-  | { name: 'createdAt', alias?: string  } 
-  | { name: 'createdAt_not', alias?: string  } 
-  | { name: 'createdAt_in', alias?: string  } 
-  | { name: 'createdAt_not_in', alias?: string  } 
-  | { name: 'createdAt_lt', alias?: string  } 
-  | { name: 'createdAt_lte', alias?: string  } 
-  | { name: 'createdAt_gt', alias?: string  } 
-  | { name: 'createdAt_gte', alias?: string  } 
-  | { name: 'updatedAt', alias?: string  } 
-  | { name: 'updatedAt_not', alias?: string  } 
-  | { name: 'updatedAt_in', alias?: string  } 
-  | { name: 'updatedAt_not_in', alias?: string  } 
-  | { name: 'updatedAt_lt', alias?: string  } 
-  | { name: 'updatedAt_lte', alias?: string  } 
-  | { name: 'updatedAt_gt', alias?: string  } 
-  | { name: 'updatedAt_gte', alias?: string  } 
-  | { name: 'published', alias?: string  } 
-  | { name: 'published_not', alias?: string  } 
-  | { name: 'title', alias?: string  } 
-  | { name: 'title_not', alias?: string  } 
-  | { name: 'title_in', alias?: string  } 
-  | { name: 'title_not_in', alias?: string  } 
-  | { name: 'title_lt', alias?: string  } 
-  | { name: 'title_lte', alias?: string  } 
-  | { name: 'title_gt', alias?: string  } 
-  | { name: 'title_gte', alias?: string  } 
-  | { name: 'title_contains', alias?: string  } 
-  | { name: 'title_not_contains', alias?: string  } 
-  | { name: 'title_starts_with', alias?: string  } 
-  | { name: 'title_not_starts_with', alias?: string  } 
-  | { name: 'title_ends_with', alias?: string  } 
-  | { name: 'title_not_ends_with', alias?: string  } 
-  | { name: 'content', alias?: string  } 
-  | { name: 'content_not', alias?: string  } 
-  | { name: 'content_in', alias?: string  } 
-  | { name: 'content_not_in', alias?: string  } 
-  | { name: 'content_lt', alias?: string  } 
-  | { name: 'content_lte', alias?: string  } 
-  | { name: 'content_gt', alias?: string  } 
-  | { name: 'content_gte', alias?: string  } 
-  | { name: 'content_contains', alias?: string  } 
-  | { name: 'content_not_contains', alias?: string  } 
-  | { name: 'content_starts_with', alias?: string  } 
-  | { name: 'content_not_starts_with', alias?: string  } 
-  | { name: 'content_ends_with', alias?: string  } 
-  | { name: 'content_not_ends_with', alias?: string  } 
-  | { name: 'author', alias?: string  } 
+  | { name: 'key', alias?: string  } 
+  | { name: 'key_not', alias?: string  } 
+  | { name: 'key_in', alias?: string  } 
+  | { name: 'key_not_in', alias?: string  } 
+  | { name: 'key_lt', alias?: string  } 
+  | { name: 'key_lte', alias?: string  } 
+  | { name: 'key_gt', alias?: string  } 
+  | { name: 'key_gte', alias?: string  } 
+  | { name: 'key_contains', alias?: string  } 
+  | { name: 'key_not_contains', alias?: string  } 
+  | { name: 'key_starts_with', alias?: string  } 
+  | { name: 'key_not_starts_with', alias?: string  } 
+  | { name: 'key_ends_with', alias?: string  } 
+  | { name: 'key_not_ends_with', alias?: string  } 
+  | { name: 'value', alias?: string  } 
+  | { name: 'value_not', alias?: string  } 
+  | { name: 'value_in', alias?: string  } 
+  | { name: 'value_not_in', alias?: string  } 
+  | { name: 'value_lt', alias?: string  } 
+  | { name: 'value_lte', alias?: string  } 
+  | { name: 'value_gt', alias?: string  } 
+  | { name: 'value_gte', alias?: string  } 
   | { name: 'AND', alias?: string  } 
   | { name: 'OR', alias?: string  } 
   | { name: 'NOT', alias?: string  } 
   
-export interface UserWhereInput {
+export interface EnumTypeWhereInput {
   id?: string | null
   id_not?: string | null
   id_in?: string[]
@@ -1408,20 +3118,6 @@ export interface UserWhereInput {
   id_not_starts_with?: string | null
   id_ends_with?: string | null
   id_not_ends_with?: string | null
-  email?: string | null
-  email_not?: string | null
-  email_in?: string[]
-  email_not_in?: string[]
-  email_lt?: string | null
-  email_lte?: string | null
-  email_gt?: string | null
-  email_gte?: string | null
-  email_contains?: string | null
-  email_not_contains?: string | null
-  email_starts_with?: string | null
-  email_not_starts_with?: string | null
-  email_ends_with?: string | null
-  email_not_ends_with?: string | null
   name?: string | null
   name_not?: string | null
   name_in?: string[]
@@ -1436,15 +3132,43 @@ export interface UserWhereInput {
   name_not_starts_with?: string | null
   name_ends_with?: string | null
   name_not_ends_with?: string | null
-  posts_every?: PostWhereInput | null
-  posts_some?: PostWhereInput | null
-  posts_none?: PostWhereInput | null
-  AND?: UserWhereInput[]
-  OR?: UserWhereInput[]
-  NOT?: UserWhereInput[]
+  desc?: string | null
+  desc_not?: string | null
+  desc_in?: string[]
+  desc_not_in?: string[]
+  desc_lt?: string | null
+  desc_lte?: string | null
+  desc_gt?: string | null
+  desc_gte?: string | null
+  desc_contains?: string | null
+  desc_not_contains?: string | null
+  desc_starts_with?: string | null
+  desc_not_starts_with?: string | null
+  desc_ends_with?: string | null
+  desc_not_ends_with?: string | null
+  props_every?: EnumPropWhereInput | null
+  props_some?: EnumPropWhereInput | null
+  props_none?: EnumPropWhereInput | null
+  wikiUrl?: string | null
+  wikiUrl_not?: string | null
+  wikiUrl_in?: string[]
+  wikiUrl_not_in?: string[]
+  wikiUrl_lt?: string | null
+  wikiUrl_lte?: string | null
+  wikiUrl_gt?: string | null
+  wikiUrl_gte?: string | null
+  wikiUrl_contains?: string | null
+  wikiUrl_not_contains?: string | null
+  wikiUrl_starts_with?: string | null
+  wikiUrl_not_starts_with?: string | null
+  wikiUrl_ends_with?: string | null
+  wikiUrl_not_ends_with?: string | null
+  AND?: EnumTypeWhereInput[]
+  OR?: EnumTypeWhereInput[]
+  NOT?: EnumTypeWhereInput[]
 }
-export type UserWhereInputInputObject =
-  | Extract<keyof UserWhereInput, string>
+export type EnumTypeWhereInputInputObject =
+  | Extract<keyof EnumTypeWhereInput, string>
   | { name: 'id', alias?: string  } 
   | { name: 'id_not', alias?: string  } 
   | { name: 'id_in', alias?: string  } 
@@ -1459,20 +3183,6 @@ export type UserWhereInputInputObject =
   | { name: 'id_not_starts_with', alias?: string  } 
   | { name: 'id_ends_with', alias?: string  } 
   | { name: 'id_not_ends_with', alias?: string  } 
-  | { name: 'email', alias?: string  } 
-  | { name: 'email_not', alias?: string  } 
-  | { name: 'email_in', alias?: string  } 
-  | { name: 'email_not_in', alias?: string  } 
-  | { name: 'email_lt', alias?: string  } 
-  | { name: 'email_lte', alias?: string  } 
-  | { name: 'email_gt', alias?: string  } 
-  | { name: 'email_gte', alias?: string  } 
-  | { name: 'email_contains', alias?: string  } 
-  | { name: 'email_not_contains', alias?: string  } 
-  | { name: 'email_starts_with', alias?: string  } 
-  | { name: 'email_not_starts_with', alias?: string  } 
-  | { name: 'email_ends_with', alias?: string  } 
-  | { name: 'email_not_ends_with', alias?: string  } 
   | { name: 'name', alias?: string  } 
   | { name: 'name_not', alias?: string  } 
   | { name: 'name_in', alias?: string  } 
@@ -1487,117 +3197,56 @@ export type UserWhereInputInputObject =
   | { name: 'name_not_starts_with', alias?: string  } 
   | { name: 'name_ends_with', alias?: string  } 
   | { name: 'name_not_ends_with', alias?: string  } 
-  | { name: 'posts_every', alias?: string  } 
-  | { name: 'posts_some', alias?: string  } 
-  | { name: 'posts_none', alias?: string  } 
+  | { name: 'desc', alias?: string  } 
+  | { name: 'desc_not', alias?: string  } 
+  | { name: 'desc_in', alias?: string  } 
+  | { name: 'desc_not_in', alias?: string  } 
+  | { name: 'desc_lt', alias?: string  } 
+  | { name: 'desc_lte', alias?: string  } 
+  | { name: 'desc_gt', alias?: string  } 
+  | { name: 'desc_gte', alias?: string  } 
+  | { name: 'desc_contains', alias?: string  } 
+  | { name: 'desc_not_contains', alias?: string  } 
+  | { name: 'desc_starts_with', alias?: string  } 
+  | { name: 'desc_not_starts_with', alias?: string  } 
+  | { name: 'desc_ends_with', alias?: string  } 
+  | { name: 'desc_not_ends_with', alias?: string  } 
+  | { name: 'props_every', alias?: string  } 
+  | { name: 'props_some', alias?: string  } 
+  | { name: 'props_none', alias?: string  } 
+  | { name: 'wikiUrl', alias?: string  } 
+  | { name: 'wikiUrl_not', alias?: string  } 
+  | { name: 'wikiUrl_in', alias?: string  } 
+  | { name: 'wikiUrl_not_in', alias?: string  } 
+  | { name: 'wikiUrl_lt', alias?: string  } 
+  | { name: 'wikiUrl_lte', alias?: string  } 
+  | { name: 'wikiUrl_gt', alias?: string  } 
+  | { name: 'wikiUrl_gte', alias?: string  } 
+  | { name: 'wikiUrl_contains', alias?: string  } 
+  | { name: 'wikiUrl_not_contains', alias?: string  } 
+  | { name: 'wikiUrl_starts_with', alias?: string  } 
+  | { name: 'wikiUrl_not_starts_with', alias?: string  } 
+  | { name: 'wikiUrl_ends_with', alias?: string  } 
+  | { name: 'wikiUrl_not_ends_with', alias?: string  } 
   | { name: 'AND', alias?: string  } 
   | { name: 'OR', alias?: string  } 
   | { name: 'NOT', alias?: string  } 
   
-export interface PostWhereUniqueInput {
+export interface EnumPropWhereUniqueInput {
   id?: string | null
 }
-export type PostWhereUniqueInputInputObject =
-  | Extract<keyof PostWhereUniqueInput, string>
+export type EnumPropWhereUniqueInputInputObject =
+  | Extract<keyof EnumPropWhereUniqueInput, string>
   | { name: 'id', alias?: string  } 
   
-export interface UserCreateInput {
-  email?: string
-  name?: string | null
-  posts?: PostCreateManyWithoutAuthorInput | null
+export interface BoWhereUniqueInput {
+  id?: string | null
 }
-export type UserCreateInputInputObject =
-  | Extract<keyof UserCreateInput, string>
-  | { name: 'email', alias?: string  } 
-  | { name: 'name', alias?: string  } 
-  | { name: 'posts', alias?: string  } 
+export type BoWhereUniqueInputInputObject =
+  | Extract<keyof BoWhereUniqueInput, string>
+  | { name: 'id', alias?: string  } 
   
-export interface PostCreateManyWithoutAuthorInput {
-  create?: PostCreateWithoutAuthorInput[]
-  connect?: PostWhereUniqueInput[]
-}
-export type PostCreateManyWithoutAuthorInputInputObject =
-  | Extract<keyof PostCreateManyWithoutAuthorInput, string>
-  | { name: 'create', alias?: string  } 
-  | { name: 'connect', alias?: string  } 
-  
-export interface PostCreateWithoutAuthorInput {
-  published?: boolean | null
-  title?: string
-  content?: string | null
-}
-export type PostCreateWithoutAuthorInputInputObject =
-  | Extract<keyof PostCreateWithoutAuthorInput, string>
-  | { name: 'published', alias?: string  } 
-  | { name: 'title', alias?: string  } 
-  | { name: 'content', alias?: string  } 
-  
-export interface UserUpdateInput {
-  email?: string | null
-  name?: string | null
-  posts?: PostUpdateManyWithoutAuthorInput | null
-}
-export type UserUpdateInputInputObject =
-  | Extract<keyof UserUpdateInput, string>
-  | { name: 'email', alias?: string  } 
-  | { name: 'name', alias?: string  } 
-  | { name: 'posts', alias?: string  } 
-  
-export interface PostUpdateManyWithoutAuthorInput {
-  create?: PostCreateWithoutAuthorInput[]
-  delete?: PostWhereUniqueInput[]
-  connect?: PostWhereUniqueInput[]
-  set?: PostWhereUniqueInput[]
-  disconnect?: PostWhereUniqueInput[]
-  update?: PostUpdateWithWhereUniqueWithoutAuthorInput[]
-  upsert?: PostUpsertWithWhereUniqueWithoutAuthorInput[]
-  deleteMany?: PostScalarWhereInput[]
-  updateMany?: PostUpdateManyWithWhereNestedInput[]
-}
-export type PostUpdateManyWithoutAuthorInputInputObject =
-  | Extract<keyof PostUpdateManyWithoutAuthorInput, string>
-  | { name: 'create', alias?: string  } 
-  | { name: 'delete', alias?: string  } 
-  | { name: 'connect', alias?: string  } 
-  | { name: 'set', alias?: string  } 
-  | { name: 'disconnect', alias?: string  } 
-  | { name: 'update', alias?: string  } 
-  | { name: 'upsert', alias?: string  } 
-  | { name: 'deleteMany', alias?: string  } 
-  | { name: 'updateMany', alias?: string  } 
-  
-export interface PostUpdateWithWhereUniqueWithoutAuthorInput {
-  where?: PostWhereUniqueInput
-  data?: PostUpdateWithoutAuthorDataInput
-}
-export type PostUpdateWithWhereUniqueWithoutAuthorInputInputObject =
-  | Extract<keyof PostUpdateWithWhereUniqueWithoutAuthorInput, string>
-  | { name: 'where', alias?: string  } 
-  | { name: 'data', alias?: string  } 
-  
-export interface PostUpdateWithoutAuthorDataInput {
-  published?: boolean | null
-  title?: string | null
-  content?: string | null
-}
-export type PostUpdateWithoutAuthorDataInputInputObject =
-  | Extract<keyof PostUpdateWithoutAuthorDataInput, string>
-  | { name: 'published', alias?: string  } 
-  | { name: 'title', alias?: string  } 
-  | { name: 'content', alias?: string  } 
-  
-export interface PostUpsertWithWhereUniqueWithoutAuthorInput {
-  where?: PostWhereUniqueInput
-  update?: PostUpdateWithoutAuthorDataInput
-  create?: PostCreateWithoutAuthorInput
-}
-export type PostUpsertWithWhereUniqueWithoutAuthorInputInputObject =
-  | Extract<keyof PostUpsertWithWhereUniqueWithoutAuthorInput, string>
-  | { name: 'where', alias?: string  } 
-  | { name: 'update', alias?: string  } 
-  | { name: 'create', alias?: string  } 
-  
-export interface PostScalarWhereInput {
+export interface BoPropWhereInput {
   id?: string | null
   id_not?: string | null
   id_in?: string[]
@@ -1612,58 +3261,62 @@ export interface PostScalarWhereInput {
   id_not_starts_with?: string | null
   id_ends_with?: string | null
   id_not_ends_with?: string | null
-  createdAt?: string | null
-  createdAt_not?: string | null
-  createdAt_in?: string[]
-  createdAt_not_in?: string[]
-  createdAt_lt?: string | null
-  createdAt_lte?: string | null
-  createdAt_gt?: string | null
-  createdAt_gte?: string | null
-  updatedAt?: string | null
-  updatedAt_not?: string | null
-  updatedAt_in?: string[]
-  updatedAt_not_in?: string[]
-  updatedAt_lt?: string | null
-  updatedAt_lte?: string | null
-  updatedAt_gt?: string | null
-  updatedAt_gte?: string | null
-  published?: boolean | null
-  published_not?: boolean | null
-  title?: string | null
-  title_not?: string | null
-  title_in?: string[]
-  title_not_in?: string[]
-  title_lt?: string | null
-  title_lte?: string | null
-  title_gt?: string | null
-  title_gte?: string | null
-  title_contains?: string | null
-  title_not_contains?: string | null
-  title_starts_with?: string | null
-  title_not_starts_with?: string | null
-  title_ends_with?: string | null
-  title_not_ends_with?: string | null
-  content?: string | null
-  content_not?: string | null
-  content_in?: string[]
-  content_not_in?: string[]
-  content_lt?: string | null
-  content_lte?: string | null
-  content_gt?: string | null
-  content_gte?: string | null
-  content_contains?: string | null
-  content_not_contains?: string | null
-  content_starts_with?: string | null
-  content_not_starts_with?: string | null
-  content_ends_with?: string | null
-  content_not_ends_with?: string | null
-  AND?: PostScalarWhereInput[]
-  OR?: PostScalarWhereInput[]
-  NOT?: PostScalarWhereInput[]
+  name?: string | null
+  name_not?: string | null
+  name_in?: string[]
+  name_not_in?: string[]
+  name_lt?: string | null
+  name_lte?: string | null
+  name_gt?: string | null
+  name_gte?: string | null
+  name_contains?: string | null
+  name_not_contains?: string | null
+  name_starts_with?: string | null
+  name_not_starts_with?: string | null
+  name_ends_with?: string | null
+  name_not_ends_with?: string | null
+  desc?: string | null
+  desc_not?: string | null
+  desc_in?: string[]
+  desc_not_in?: string[]
+  desc_lt?: string | null
+  desc_lte?: string | null
+  desc_gt?: string | null
+  desc_gte?: string | null
+  desc_contains?: string | null
+  desc_not_contains?: string | null
+  desc_starts_with?: string | null
+  desc_not_starts_with?: string | null
+  desc_ends_with?: string | null
+  desc_not_ends_with?: string | null
+  type?: string | null
+  type_not?: string | null
+  type_in?: string[]
+  type_not_in?: string[]
+  type_lt?: string | null
+  type_lte?: string | null
+  type_gt?: string | null
+  type_gte?: string | null
+  type_contains?: string | null
+  type_not_contains?: string | null
+  type_starts_with?: string | null
+  type_not_starts_with?: string | null
+  type_ends_with?: string | null
+  type_not_ends_with?: string | null
+  required?: boolean | null
+  required_not?: boolean | null
+  unique?: boolean | null
+  unique_not?: boolean | null
+  redundant?: boolean | null
+  redundant_not?: boolean | null
+  linkBo?: BoWhereInput | null
+  linkEnumType?: EnumTypeWhereInput | null
+  AND?: BoPropWhereInput[]
+  OR?: BoPropWhereInput[]
+  NOT?: BoPropWhereInput[]
 }
-export type PostScalarWhereInputInputObject =
-  | Extract<keyof PostScalarWhereInput, string>
+export type BoPropWhereInputInputObject =
+  | Extract<keyof BoPropWhereInput, string>
   | { name: 'id', alias?: string  } 
   | { name: 'id_not', alias?: string  } 
   | { name: 'id_in', alias?: string  } 
@@ -1678,183 +3331,1624 @@ export type PostScalarWhereInputInputObject =
   | { name: 'id_not_starts_with', alias?: string  } 
   | { name: 'id_ends_with', alias?: string  } 
   | { name: 'id_not_ends_with', alias?: string  } 
-  | { name: 'createdAt', alias?: string  } 
-  | { name: 'createdAt_not', alias?: string  } 
-  | { name: 'createdAt_in', alias?: string  } 
-  | { name: 'createdAt_not_in', alias?: string  } 
-  | { name: 'createdAt_lt', alias?: string  } 
-  | { name: 'createdAt_lte', alias?: string  } 
-  | { name: 'createdAt_gt', alias?: string  } 
-  | { name: 'createdAt_gte', alias?: string  } 
-  | { name: 'updatedAt', alias?: string  } 
-  | { name: 'updatedAt_not', alias?: string  } 
-  | { name: 'updatedAt_in', alias?: string  } 
-  | { name: 'updatedAt_not_in', alias?: string  } 
-  | { name: 'updatedAt_lt', alias?: string  } 
-  | { name: 'updatedAt_lte', alias?: string  } 
-  | { name: 'updatedAt_gt', alias?: string  } 
-  | { name: 'updatedAt_gte', alias?: string  } 
-  | { name: 'published', alias?: string  } 
-  | { name: 'published_not', alias?: string  } 
-  | { name: 'title', alias?: string  } 
-  | { name: 'title_not', alias?: string  } 
-  | { name: 'title_in', alias?: string  } 
-  | { name: 'title_not_in', alias?: string  } 
-  | { name: 'title_lt', alias?: string  } 
-  | { name: 'title_lte', alias?: string  } 
-  | { name: 'title_gt', alias?: string  } 
-  | { name: 'title_gte', alias?: string  } 
-  | { name: 'title_contains', alias?: string  } 
-  | { name: 'title_not_contains', alias?: string  } 
-  | { name: 'title_starts_with', alias?: string  } 
-  | { name: 'title_not_starts_with', alias?: string  } 
-  | { name: 'title_ends_with', alias?: string  } 
-  | { name: 'title_not_ends_with', alias?: string  } 
-  | { name: 'content', alias?: string  } 
-  | { name: 'content_not', alias?: string  } 
-  | { name: 'content_in', alias?: string  } 
-  | { name: 'content_not_in', alias?: string  } 
-  | { name: 'content_lt', alias?: string  } 
-  | { name: 'content_lte', alias?: string  } 
-  | { name: 'content_gt', alias?: string  } 
-  | { name: 'content_gte', alias?: string  } 
-  | { name: 'content_contains', alias?: string  } 
-  | { name: 'content_not_contains', alias?: string  } 
-  | { name: 'content_starts_with', alias?: string  } 
-  | { name: 'content_not_starts_with', alias?: string  } 
-  | { name: 'content_ends_with', alias?: string  } 
-  | { name: 'content_not_ends_with', alias?: string  } 
+  | { name: 'name', alias?: string  } 
+  | { name: 'name_not', alias?: string  } 
+  | { name: 'name_in', alias?: string  } 
+  | { name: 'name_not_in', alias?: string  } 
+  | { name: 'name_lt', alias?: string  } 
+  | { name: 'name_lte', alias?: string  } 
+  | { name: 'name_gt', alias?: string  } 
+  | { name: 'name_gte', alias?: string  } 
+  | { name: 'name_contains', alias?: string  } 
+  | { name: 'name_not_contains', alias?: string  } 
+  | { name: 'name_starts_with', alias?: string  } 
+  | { name: 'name_not_starts_with', alias?: string  } 
+  | { name: 'name_ends_with', alias?: string  } 
+  | { name: 'name_not_ends_with', alias?: string  } 
+  | { name: 'desc', alias?: string  } 
+  | { name: 'desc_not', alias?: string  } 
+  | { name: 'desc_in', alias?: string  } 
+  | { name: 'desc_not_in', alias?: string  } 
+  | { name: 'desc_lt', alias?: string  } 
+  | { name: 'desc_lte', alias?: string  } 
+  | { name: 'desc_gt', alias?: string  } 
+  | { name: 'desc_gte', alias?: string  } 
+  | { name: 'desc_contains', alias?: string  } 
+  | { name: 'desc_not_contains', alias?: string  } 
+  | { name: 'desc_starts_with', alias?: string  } 
+  | { name: 'desc_not_starts_with', alias?: string  } 
+  | { name: 'desc_ends_with', alias?: string  } 
+  | { name: 'desc_not_ends_with', alias?: string  } 
+  | { name: 'type', alias?: string  } 
+  | { name: 'type_not', alias?: string  } 
+  | { name: 'type_in', alias?: string  } 
+  | { name: 'type_not_in', alias?: string  } 
+  | { name: 'type_lt', alias?: string  } 
+  | { name: 'type_lte', alias?: string  } 
+  | { name: 'type_gt', alias?: string  } 
+  | { name: 'type_gte', alias?: string  } 
+  | { name: 'type_contains', alias?: string  } 
+  | { name: 'type_not_contains', alias?: string  } 
+  | { name: 'type_starts_with', alias?: string  } 
+  | { name: 'type_not_starts_with', alias?: string  } 
+  | { name: 'type_ends_with', alias?: string  } 
+  | { name: 'type_not_ends_with', alias?: string  } 
+  | { name: 'required', alias?: string  } 
+  | { name: 'required_not', alias?: string  } 
+  | { name: 'unique', alias?: string  } 
+  | { name: 'unique_not', alias?: string  } 
+  | { name: 'redundant', alias?: string  } 
+  | { name: 'redundant_not', alias?: string  } 
+  | { name: 'linkBo', alias?: string  } 
+  | { name: 'linkEnumType', alias?: string  } 
   | { name: 'AND', alias?: string  } 
   | { name: 'OR', alias?: string  } 
   | { name: 'NOT', alias?: string  } 
   
-export interface PostUpdateManyWithWhereNestedInput {
-  where?: PostScalarWhereInput
-  data?: PostUpdateManyDataInput
-}
-export type PostUpdateManyWithWhereNestedInputInputObject =
-  | Extract<keyof PostUpdateManyWithWhereNestedInput, string>
-  | { name: 'where', alias?: string  } 
-  | { name: 'data', alias?: string  } 
-  
-export interface PostUpdateManyDataInput {
-  published?: boolean | null
-  title?: string | null
-  content?: string | null
-}
-export type PostUpdateManyDataInputInputObject =
-  | Extract<keyof PostUpdateManyDataInput, string>
-  | { name: 'published', alias?: string  } 
-  | { name: 'title', alias?: string  } 
-  | { name: 'content', alias?: string  } 
-  
-export interface UserUpdateManyMutationInput {
-  email?: string | null
+export interface BoWhereInput {
+  id?: string | null
+  id_not?: string | null
+  id_in?: string[]
+  id_not_in?: string[]
+  id_lt?: string | null
+  id_lte?: string | null
+  id_gt?: string | null
+  id_gte?: string | null
+  id_contains?: string | null
+  id_not_contains?: string | null
+  id_starts_with?: string | null
+  id_not_starts_with?: string | null
+  id_ends_with?: string | null
+  id_not_ends_with?: string | null
   name?: string | null
+  name_not?: string | null
+  name_in?: string[]
+  name_not_in?: string[]
+  name_lt?: string | null
+  name_lte?: string | null
+  name_gt?: string | null
+  name_gte?: string | null
+  name_contains?: string | null
+  name_not_contains?: string | null
+  name_starts_with?: string | null
+  name_not_starts_with?: string | null
+  name_ends_with?: string | null
+  name_not_ends_with?: string | null
+  desc?: string | null
+  desc_not?: string | null
+  desc_in?: string[]
+  desc_not_in?: string[]
+  desc_lt?: string | null
+  desc_lte?: string | null
+  desc_gt?: string | null
+  desc_gte?: string | null
+  desc_contains?: string | null
+  desc_not_contains?: string | null
+  desc_starts_with?: string | null
+  desc_not_starts_with?: string | null
+  desc_ends_with?: string | null
+  desc_not_ends_with?: string | null
+  props_every?: BoPropWhereInput | null
+  props_some?: BoPropWhereInput | null
+  props_none?: BoPropWhereInput | null
+  wikiUrl?: string | null
+  wikiUrl_not?: string | null
+  wikiUrl_in?: string[]
+  wikiUrl_not_in?: string[]
+  wikiUrl_lt?: string | null
+  wikiUrl_lte?: string | null
+  wikiUrl_gt?: string | null
+  wikiUrl_gte?: string | null
+  wikiUrl_contains?: string | null
+  wikiUrl_not_contains?: string | null
+  wikiUrl_starts_with?: string | null
+  wikiUrl_not_starts_with?: string | null
+  wikiUrl_ends_with?: string | null
+  wikiUrl_not_ends_with?: string | null
+  details_every?: BoWhereInput | null
+  details_some?: BoWhereInput | null
+  details_none?: BoWhereInput | null
+  AND?: BoWhereInput[]
+  OR?: BoWhereInput[]
+  NOT?: BoWhereInput[]
 }
-export type UserUpdateManyMutationInputInputObject =
-  | Extract<keyof UserUpdateManyMutationInput, string>
-  | { name: 'email', alias?: string  } 
+export type BoWhereInputInputObject =
+  | Extract<keyof BoWhereInput, string>
+  | { name: 'id', alias?: string  } 
+  | { name: 'id_not', alias?: string  } 
+  | { name: 'id_in', alias?: string  } 
+  | { name: 'id_not_in', alias?: string  } 
+  | { name: 'id_lt', alias?: string  } 
+  | { name: 'id_lte', alias?: string  } 
+  | { name: 'id_gt', alias?: string  } 
+  | { name: 'id_gte', alias?: string  } 
+  | { name: 'id_contains', alias?: string  } 
+  | { name: 'id_not_contains', alias?: string  } 
+  | { name: 'id_starts_with', alias?: string  } 
+  | { name: 'id_not_starts_with', alias?: string  } 
+  | { name: 'id_ends_with', alias?: string  } 
+  | { name: 'id_not_ends_with', alias?: string  } 
   | { name: 'name', alias?: string  } 
+  | { name: 'name_not', alias?: string  } 
+  | { name: 'name_in', alias?: string  } 
+  | { name: 'name_not_in', alias?: string  } 
+  | { name: 'name_lt', alias?: string  } 
+  | { name: 'name_lte', alias?: string  } 
+  | { name: 'name_gt', alias?: string  } 
+  | { name: 'name_gte', alias?: string  } 
+  | { name: 'name_contains', alias?: string  } 
+  | { name: 'name_not_contains', alias?: string  } 
+  | { name: 'name_starts_with', alias?: string  } 
+  | { name: 'name_not_starts_with', alias?: string  } 
+  | { name: 'name_ends_with', alias?: string  } 
+  | { name: 'name_not_ends_with', alias?: string  } 
+  | { name: 'desc', alias?: string  } 
+  | { name: 'desc_not', alias?: string  } 
+  | { name: 'desc_in', alias?: string  } 
+  | { name: 'desc_not_in', alias?: string  } 
+  | { name: 'desc_lt', alias?: string  } 
+  | { name: 'desc_lte', alias?: string  } 
+  | { name: 'desc_gt', alias?: string  } 
+  | { name: 'desc_gte', alias?: string  } 
+  | { name: 'desc_contains', alias?: string  } 
+  | { name: 'desc_not_contains', alias?: string  } 
+  | { name: 'desc_starts_with', alias?: string  } 
+  | { name: 'desc_not_starts_with', alias?: string  } 
+  | { name: 'desc_ends_with', alias?: string  } 
+  | { name: 'desc_not_ends_with', alias?: string  } 
+  | { name: 'props_every', alias?: string  } 
+  | { name: 'props_some', alias?: string  } 
+  | { name: 'props_none', alias?: string  } 
+  | { name: 'wikiUrl', alias?: string  } 
+  | { name: 'wikiUrl_not', alias?: string  } 
+  | { name: 'wikiUrl_in', alias?: string  } 
+  | { name: 'wikiUrl_not_in', alias?: string  } 
+  | { name: 'wikiUrl_lt', alias?: string  } 
+  | { name: 'wikiUrl_lte', alias?: string  } 
+  | { name: 'wikiUrl_gt', alias?: string  } 
+  | { name: 'wikiUrl_gte', alias?: string  } 
+  | { name: 'wikiUrl_contains', alias?: string  } 
+  | { name: 'wikiUrl_not_contains', alias?: string  } 
+  | { name: 'wikiUrl_starts_with', alias?: string  } 
+  | { name: 'wikiUrl_not_starts_with', alias?: string  } 
+  | { name: 'wikiUrl_ends_with', alias?: string  } 
+  | { name: 'wikiUrl_not_ends_with', alias?: string  } 
+  | { name: 'details_every', alias?: string  } 
+  | { name: 'details_some', alias?: string  } 
+  | { name: 'details_none', alias?: string  } 
+  | { name: 'AND', alias?: string  } 
+  | { name: 'OR', alias?: string  } 
+  | { name: 'NOT', alias?: string  } 
   
-export interface PostCreateInput {
-  published?: boolean | null
-  title?: string
-  content?: string | null
-  author?: UserCreateOneWithoutPostsInput
+export interface BoPropWhereUniqueInput {
+  id?: string | null
 }
-export type PostCreateInputInputObject =
-  | Extract<keyof PostCreateInput, string>
-  | { name: 'published', alias?: string  } 
-  | { name: 'title', alias?: string  } 
-  | { name: 'content', alias?: string  } 
-  | { name: 'author', alias?: string  } 
+export type BoPropWhereUniqueInputInputObject =
+  | Extract<keyof BoPropWhereUniqueInput, string>
+  | { name: 'id', alias?: string  } 
   
-export interface UserCreateOneWithoutPostsInput {
-  create?: UserCreateWithoutPostsInput | null
-  connect?: UserWhereUniqueInput | null
+export interface PageWhereUniqueInput {
+  id?: string | null
 }
-export type UserCreateOneWithoutPostsInputInputObject =
-  | Extract<keyof UserCreateOneWithoutPostsInput, string>
+export type PageWhereUniqueInputInputObject =
+  | Extract<keyof PageWhereUniqueInput, string>
+  | { name: 'id', alias?: string  } 
+  
+export interface PageWhereInput {
+  id?: string | null
+  id_not?: string | null
+  id_in?: string[]
+  id_not_in?: string[]
+  id_lt?: string | null
+  id_lte?: string | null
+  id_gt?: string | null
+  id_gte?: string | null
+  id_contains?: string | null
+  id_not_contains?: string | null
+  id_starts_with?: string | null
+  id_not_starts_with?: string | null
+  id_ends_with?: string | null
+  id_not_ends_with?: string | null
+  name?: string | null
+  name_not?: string | null
+  name_in?: string[]
+  name_not_in?: string[]
+  name_lt?: string | null
+  name_lte?: string | null
+  name_gt?: string | null
+  name_gte?: string | null
+  name_contains?: string | null
+  name_not_contains?: string | null
+  name_starts_with?: string | null
+  name_not_starts_with?: string | null
+  name_ends_with?: string | null
+  name_not_ends_with?: string | null
+  desc?: string | null
+  desc_not?: string | null
+  desc_in?: string[]
+  desc_not_in?: string[]
+  desc_lt?: string | null
+  desc_lte?: string | null
+  desc_gt?: string | null
+  desc_gte?: string | null
+  desc_contains?: string | null
+  desc_not_contains?: string | null
+  desc_starts_with?: string | null
+  desc_not_starts_with?: string | null
+  desc_ends_with?: string | null
+  desc_not_ends_with?: string | null
+  project?: string | null
+  project_not?: string | null
+  project_in?: string[]
+  project_not_in?: string[]
+  project_lt?: string | null
+  project_lte?: string | null
+  project_gt?: string | null
+  project_gte?: string | null
+  project_contains?: string | null
+  project_not_contains?: string | null
+  project_starts_with?: string | null
+  project_not_starts_with?: string | null
+  project_ends_with?: string | null
+  project_not_ends_with?: string | null
+  system?: string | null
+  system_not?: string | null
+  system_in?: string[]
+  system_not_in?: string[]
+  system_lt?: string | null
+  system_lte?: string | null
+  system_gt?: string | null
+  system_gte?: string | null
+  system_contains?: string | null
+  system_not_contains?: string | null
+  system_starts_with?: string | null
+  system_not_starts_with?: string | null
+  system_ends_with?: string | null
+  system_not_ends_with?: string | null
+  domain?: string | null
+  domain_not?: string | null
+  domain_in?: string[]
+  domain_not_in?: string[]
+  domain_lt?: string | null
+  domain_lte?: string | null
+  domain_gt?: string | null
+  domain_gte?: string | null
+  domain_contains?: string | null
+  domain_not_contains?: string | null
+  domain_starts_with?: string | null
+  domain_not_starts_with?: string | null
+  domain_ends_with?: string | null
+  domain_not_ends_with?: string | null
+  type?: string | null
+  type_not?: string | null
+  type_in?: string[]
+  type_not_in?: string[]
+  type_lt?: string | null
+  type_lte?: string | null
+  type_gt?: string | null
+  type_gte?: string | null
+  type_contains?: string | null
+  type_not_contains?: string | null
+  type_starts_with?: string | null
+  type_not_starts_with?: string | null
+  type_ends_with?: string | null
+  type_not_ends_with?: string | null
+  wikiUrl?: string | null
+  wikiUrl_not?: string | null
+  wikiUrl_in?: string[]
+  wikiUrl_not_in?: string[]
+  wikiUrl_lt?: string | null
+  wikiUrl_lte?: string | null
+  wikiUrl_gt?: string | null
+  wikiUrl_gte?: string | null
+  wikiUrl_contains?: string | null
+  wikiUrl_not_contains?: string | null
+  wikiUrl_starts_with?: string | null
+  wikiUrl_not_starts_with?: string | null
+  wikiUrl_ends_with?: string | null
+  wikiUrl_not_ends_with?: string | null
+  bos_every?: BoWhereInput | null
+  bos_some?: BoWhereInput | null
+  bos_none?: BoWhereInput | null
+  enums_every?: EnumTypeWhereInput | null
+  enums_some?: EnumTypeWhereInput | null
+  enums_none?: EnumTypeWhereInput | null
+  AND?: PageWhereInput[]
+  OR?: PageWhereInput[]
+  NOT?: PageWhereInput[]
+}
+export type PageWhereInputInputObject =
+  | Extract<keyof PageWhereInput, string>
+  | { name: 'id', alias?: string  } 
+  | { name: 'id_not', alias?: string  } 
+  | { name: 'id_in', alias?: string  } 
+  | { name: 'id_not_in', alias?: string  } 
+  | { name: 'id_lt', alias?: string  } 
+  | { name: 'id_lte', alias?: string  } 
+  | { name: 'id_gt', alias?: string  } 
+  | { name: 'id_gte', alias?: string  } 
+  | { name: 'id_contains', alias?: string  } 
+  | { name: 'id_not_contains', alias?: string  } 
+  | { name: 'id_starts_with', alias?: string  } 
+  | { name: 'id_not_starts_with', alias?: string  } 
+  | { name: 'id_ends_with', alias?: string  } 
+  | { name: 'id_not_ends_with', alias?: string  } 
+  | { name: 'name', alias?: string  } 
+  | { name: 'name_not', alias?: string  } 
+  | { name: 'name_in', alias?: string  } 
+  | { name: 'name_not_in', alias?: string  } 
+  | { name: 'name_lt', alias?: string  } 
+  | { name: 'name_lte', alias?: string  } 
+  | { name: 'name_gt', alias?: string  } 
+  | { name: 'name_gte', alias?: string  } 
+  | { name: 'name_contains', alias?: string  } 
+  | { name: 'name_not_contains', alias?: string  } 
+  | { name: 'name_starts_with', alias?: string  } 
+  | { name: 'name_not_starts_with', alias?: string  } 
+  | { name: 'name_ends_with', alias?: string  } 
+  | { name: 'name_not_ends_with', alias?: string  } 
+  | { name: 'desc', alias?: string  } 
+  | { name: 'desc_not', alias?: string  } 
+  | { name: 'desc_in', alias?: string  } 
+  | { name: 'desc_not_in', alias?: string  } 
+  | { name: 'desc_lt', alias?: string  } 
+  | { name: 'desc_lte', alias?: string  } 
+  | { name: 'desc_gt', alias?: string  } 
+  | { name: 'desc_gte', alias?: string  } 
+  | { name: 'desc_contains', alias?: string  } 
+  | { name: 'desc_not_contains', alias?: string  } 
+  | { name: 'desc_starts_with', alias?: string  } 
+  | { name: 'desc_not_starts_with', alias?: string  } 
+  | { name: 'desc_ends_with', alias?: string  } 
+  | { name: 'desc_not_ends_with', alias?: string  } 
+  | { name: 'project', alias?: string  } 
+  | { name: 'project_not', alias?: string  } 
+  | { name: 'project_in', alias?: string  } 
+  | { name: 'project_not_in', alias?: string  } 
+  | { name: 'project_lt', alias?: string  } 
+  | { name: 'project_lte', alias?: string  } 
+  | { name: 'project_gt', alias?: string  } 
+  | { name: 'project_gte', alias?: string  } 
+  | { name: 'project_contains', alias?: string  } 
+  | { name: 'project_not_contains', alias?: string  } 
+  | { name: 'project_starts_with', alias?: string  } 
+  | { name: 'project_not_starts_with', alias?: string  } 
+  | { name: 'project_ends_with', alias?: string  } 
+  | { name: 'project_not_ends_with', alias?: string  } 
+  | { name: 'system', alias?: string  } 
+  | { name: 'system_not', alias?: string  } 
+  | { name: 'system_in', alias?: string  } 
+  | { name: 'system_not_in', alias?: string  } 
+  | { name: 'system_lt', alias?: string  } 
+  | { name: 'system_lte', alias?: string  } 
+  | { name: 'system_gt', alias?: string  } 
+  | { name: 'system_gte', alias?: string  } 
+  | { name: 'system_contains', alias?: string  } 
+  | { name: 'system_not_contains', alias?: string  } 
+  | { name: 'system_starts_with', alias?: string  } 
+  | { name: 'system_not_starts_with', alias?: string  } 
+  | { name: 'system_ends_with', alias?: string  } 
+  | { name: 'system_not_ends_with', alias?: string  } 
+  | { name: 'domain', alias?: string  } 
+  | { name: 'domain_not', alias?: string  } 
+  | { name: 'domain_in', alias?: string  } 
+  | { name: 'domain_not_in', alias?: string  } 
+  | { name: 'domain_lt', alias?: string  } 
+  | { name: 'domain_lte', alias?: string  } 
+  | { name: 'domain_gt', alias?: string  } 
+  | { name: 'domain_gte', alias?: string  } 
+  | { name: 'domain_contains', alias?: string  } 
+  | { name: 'domain_not_contains', alias?: string  } 
+  | { name: 'domain_starts_with', alias?: string  } 
+  | { name: 'domain_not_starts_with', alias?: string  } 
+  | { name: 'domain_ends_with', alias?: string  } 
+  | { name: 'domain_not_ends_with', alias?: string  } 
+  | { name: 'type', alias?: string  } 
+  | { name: 'type_not', alias?: string  } 
+  | { name: 'type_in', alias?: string  } 
+  | { name: 'type_not_in', alias?: string  } 
+  | { name: 'type_lt', alias?: string  } 
+  | { name: 'type_lte', alias?: string  } 
+  | { name: 'type_gt', alias?: string  } 
+  | { name: 'type_gte', alias?: string  } 
+  | { name: 'type_contains', alias?: string  } 
+  | { name: 'type_not_contains', alias?: string  } 
+  | { name: 'type_starts_with', alias?: string  } 
+  | { name: 'type_not_starts_with', alias?: string  } 
+  | { name: 'type_ends_with', alias?: string  } 
+  | { name: 'type_not_ends_with', alias?: string  } 
+  | { name: 'wikiUrl', alias?: string  } 
+  | { name: 'wikiUrl_not', alias?: string  } 
+  | { name: 'wikiUrl_in', alias?: string  } 
+  | { name: 'wikiUrl_not_in', alias?: string  } 
+  | { name: 'wikiUrl_lt', alias?: string  } 
+  | { name: 'wikiUrl_lte', alias?: string  } 
+  | { name: 'wikiUrl_gt', alias?: string  } 
+  | { name: 'wikiUrl_gte', alias?: string  } 
+  | { name: 'wikiUrl_contains', alias?: string  } 
+  | { name: 'wikiUrl_not_contains', alias?: string  } 
+  | { name: 'wikiUrl_starts_with', alias?: string  } 
+  | { name: 'wikiUrl_not_starts_with', alias?: string  } 
+  | { name: 'wikiUrl_ends_with', alias?: string  } 
+  | { name: 'wikiUrl_not_ends_with', alias?: string  } 
+  | { name: 'bos_every', alias?: string  } 
+  | { name: 'bos_some', alias?: string  } 
+  | { name: 'bos_none', alias?: string  } 
+  | { name: 'enums_every', alias?: string  } 
+  | { name: 'enums_some', alias?: string  } 
+  | { name: 'enums_none', alias?: string  } 
+  | { name: 'AND', alias?: string  } 
+  | { name: 'OR', alias?: string  } 
+  | { name: 'NOT', alias?: string  } 
+  
+export interface EnumTypeCreateInput {
+  name?: string | null
+  desc?: string | null
+  props?: EnumPropCreateManyInput | null
+  wikiUrl?: string | null
+}
+export type EnumTypeCreateInputInputObject =
+  | Extract<keyof EnumTypeCreateInput, string>
+  | { name: 'name', alias?: string  } 
+  | { name: 'desc', alias?: string  } 
+  | { name: 'props', alias?: string  } 
+  | { name: 'wikiUrl', alias?: string  } 
+  
+export interface EnumPropCreateManyInput {
+  create?: EnumPropCreateInput[]
+  connect?: EnumPropWhereUniqueInput[]
+}
+export type EnumPropCreateManyInputInputObject =
+  | Extract<keyof EnumPropCreateManyInput, string>
   | { name: 'create', alias?: string  } 
   | { name: 'connect', alias?: string  } 
   
-export interface UserCreateWithoutPostsInput {
-  email?: string
+export interface EnumPropCreateInput {
+  key?: string
+  value?: number
+}
+export type EnumPropCreateInputInputObject =
+  | Extract<keyof EnumPropCreateInput, string>
+  | { name: 'key', alias?: string  } 
+  | { name: 'value', alias?: string  } 
+  
+export interface EnumTypeUpdateInput {
   name?: string | null
+  desc?: string | null
+  props?: EnumPropUpdateManyInput | null
+  wikiUrl?: string | null
 }
-export type UserCreateWithoutPostsInputInputObject =
-  | Extract<keyof UserCreateWithoutPostsInput, string>
-  | { name: 'email', alias?: string  } 
+export type EnumTypeUpdateInputInputObject =
+  | Extract<keyof EnumTypeUpdateInput, string>
   | { name: 'name', alias?: string  } 
+  | { name: 'desc', alias?: string  } 
+  | { name: 'props', alias?: string  } 
+  | { name: 'wikiUrl', alias?: string  } 
   
-export interface PostUpdateInput {
-  published?: boolean | null
-  title?: string | null
-  content?: string | null
-  author?: UserUpdateOneRequiredWithoutPostsInput | null
+export interface EnumPropUpdateManyInput {
+  create?: EnumPropCreateInput[]
+  update?: EnumPropUpdateWithWhereUniqueNestedInput[]
+  upsert?: EnumPropUpsertWithWhereUniqueNestedInput[]
+  delete?: EnumPropWhereUniqueInput[]
+  connect?: EnumPropWhereUniqueInput[]
+  set?: EnumPropWhereUniqueInput[]
+  disconnect?: EnumPropWhereUniqueInput[]
+  deleteMany?: EnumPropScalarWhereInput[]
+  updateMany?: EnumPropUpdateManyWithWhereNestedInput[]
 }
-export type PostUpdateInputInputObject =
-  | Extract<keyof PostUpdateInput, string>
-  | { name: 'published', alias?: string  } 
-  | { name: 'title', alias?: string  } 
-  | { name: 'content', alias?: string  } 
-  | { name: 'author', alias?: string  } 
-  
-export interface UserUpdateOneRequiredWithoutPostsInput {
-  create?: UserCreateWithoutPostsInput | null
-  update?: UserUpdateWithoutPostsDataInput | null
-  upsert?: UserUpsertWithoutPostsInput | null
-  connect?: UserWhereUniqueInput | null
-}
-export type UserUpdateOneRequiredWithoutPostsInputInputObject =
-  | Extract<keyof UserUpdateOneRequiredWithoutPostsInput, string>
+export type EnumPropUpdateManyInputInputObject =
+  | Extract<keyof EnumPropUpdateManyInput, string>
   | { name: 'create', alias?: string  } 
   | { name: 'update', alias?: string  } 
   | { name: 'upsert', alias?: string  } 
+  | { name: 'delete', alias?: string  } 
   | { name: 'connect', alias?: string  } 
+  | { name: 'set', alias?: string  } 
+  | { name: 'disconnect', alias?: string  } 
+  | { name: 'deleteMany', alias?: string  } 
+  | { name: 'updateMany', alias?: string  } 
   
-export interface UserUpdateWithoutPostsDataInput {
-  email?: string | null
-  name?: string | null
+export interface EnumPropUpdateWithWhereUniqueNestedInput {
+  where?: EnumPropWhereUniqueInput
+  data?: EnumPropUpdateDataInput
 }
-export type UserUpdateWithoutPostsDataInputInputObject =
-  | Extract<keyof UserUpdateWithoutPostsDataInput, string>
-  | { name: 'email', alias?: string  } 
-  | { name: 'name', alias?: string  } 
+export type EnumPropUpdateWithWhereUniqueNestedInputInputObject =
+  | Extract<keyof EnumPropUpdateWithWhereUniqueNestedInput, string>
+  | { name: 'where', alias?: string  } 
+  | { name: 'data', alias?: string  } 
   
-export interface UserUpsertWithoutPostsInput {
-  update?: UserUpdateWithoutPostsDataInput
-  create?: UserCreateWithoutPostsInput
+export interface EnumPropUpdateDataInput {
+  key?: string | null
+  value?: number | null
 }
-export type UserUpsertWithoutPostsInputInputObject =
-  | Extract<keyof UserUpsertWithoutPostsInput, string>
+export type EnumPropUpdateDataInputInputObject =
+  | Extract<keyof EnumPropUpdateDataInput, string>
+  | { name: 'key', alias?: string  } 
+  | { name: 'value', alias?: string  } 
+  
+export interface EnumPropUpsertWithWhereUniqueNestedInput {
+  where?: EnumPropWhereUniqueInput
+  update?: EnumPropUpdateDataInput
+  create?: EnumPropCreateInput
+}
+export type EnumPropUpsertWithWhereUniqueNestedInputInputObject =
+  | Extract<keyof EnumPropUpsertWithWhereUniqueNestedInput, string>
+  | { name: 'where', alias?: string  } 
   | { name: 'update', alias?: string  } 
   | { name: 'create', alias?: string  } 
   
-export interface PostUpdateManyMutationInput {
-  published?: boolean | null
-  title?: string | null
-  content?: string | null
+export interface EnumPropScalarWhereInput {
+  id?: string | null
+  id_not?: string | null
+  id_in?: string[]
+  id_not_in?: string[]
+  id_lt?: string | null
+  id_lte?: string | null
+  id_gt?: string | null
+  id_gte?: string | null
+  id_contains?: string | null
+  id_not_contains?: string | null
+  id_starts_with?: string | null
+  id_not_starts_with?: string | null
+  id_ends_with?: string | null
+  id_not_ends_with?: string | null
+  key?: string | null
+  key_not?: string | null
+  key_in?: string[]
+  key_not_in?: string[]
+  key_lt?: string | null
+  key_lte?: string | null
+  key_gt?: string | null
+  key_gte?: string | null
+  key_contains?: string | null
+  key_not_contains?: string | null
+  key_starts_with?: string | null
+  key_not_starts_with?: string | null
+  key_ends_with?: string | null
+  key_not_ends_with?: string | null
+  value?: number | null
+  value_not?: number | null
+  value_in?: number[]
+  value_not_in?: number[]
+  value_lt?: number | null
+  value_lte?: number | null
+  value_gt?: number | null
+  value_gte?: number | null
+  AND?: EnumPropScalarWhereInput[]
+  OR?: EnumPropScalarWhereInput[]
+  NOT?: EnumPropScalarWhereInput[]
 }
-export type PostUpdateManyMutationInputInputObject =
-  | Extract<keyof PostUpdateManyMutationInput, string>
-  | { name: 'published', alias?: string  } 
-  | { name: 'title', alias?: string  } 
-  | { name: 'content', alias?: string  } 
+export type EnumPropScalarWhereInputInputObject =
+  | Extract<keyof EnumPropScalarWhereInput, string>
+  | { name: 'id', alias?: string  } 
+  | { name: 'id_not', alias?: string  } 
+  | { name: 'id_in', alias?: string  } 
+  | { name: 'id_not_in', alias?: string  } 
+  | { name: 'id_lt', alias?: string  } 
+  | { name: 'id_lte', alias?: string  } 
+  | { name: 'id_gt', alias?: string  } 
+  | { name: 'id_gte', alias?: string  } 
+  | { name: 'id_contains', alias?: string  } 
+  | { name: 'id_not_contains', alias?: string  } 
+  | { name: 'id_starts_with', alias?: string  } 
+  | { name: 'id_not_starts_with', alias?: string  } 
+  | { name: 'id_ends_with', alias?: string  } 
+  | { name: 'id_not_ends_with', alias?: string  } 
+  | { name: 'key', alias?: string  } 
+  | { name: 'key_not', alias?: string  } 
+  | { name: 'key_in', alias?: string  } 
+  | { name: 'key_not_in', alias?: string  } 
+  | { name: 'key_lt', alias?: string  } 
+  | { name: 'key_lte', alias?: string  } 
+  | { name: 'key_gt', alias?: string  } 
+  | { name: 'key_gte', alias?: string  } 
+  | { name: 'key_contains', alias?: string  } 
+  | { name: 'key_not_contains', alias?: string  } 
+  | { name: 'key_starts_with', alias?: string  } 
+  | { name: 'key_not_starts_with', alias?: string  } 
+  | { name: 'key_ends_with', alias?: string  } 
+  | { name: 'key_not_ends_with', alias?: string  } 
+  | { name: 'value', alias?: string  } 
+  | { name: 'value_not', alias?: string  } 
+  | { name: 'value_in', alias?: string  } 
+  | { name: 'value_not_in', alias?: string  } 
+  | { name: 'value_lt', alias?: string  } 
+  | { name: 'value_lte', alias?: string  } 
+  | { name: 'value_gt', alias?: string  } 
+  | { name: 'value_gte', alias?: string  } 
+  | { name: 'AND', alias?: string  } 
+  | { name: 'OR', alias?: string  } 
+  | { name: 'NOT', alias?: string  } 
   
-export interface UserSubscriptionWhereInput {
+export interface EnumPropUpdateManyWithWhereNestedInput {
+  where?: EnumPropScalarWhereInput
+  data?: EnumPropUpdateManyDataInput
+}
+export type EnumPropUpdateManyWithWhereNestedInputInputObject =
+  | Extract<keyof EnumPropUpdateManyWithWhereNestedInput, string>
+  | { name: 'where', alias?: string  } 
+  | { name: 'data', alias?: string  } 
+  
+export interface EnumPropUpdateManyDataInput {
+  key?: string | null
+  value?: number | null
+}
+export type EnumPropUpdateManyDataInputInputObject =
+  | Extract<keyof EnumPropUpdateManyDataInput, string>
+  | { name: 'key', alias?: string  } 
+  | { name: 'value', alias?: string  } 
+  
+export interface EnumTypeUpdateManyMutationInput {
+  name?: string | null
+  desc?: string | null
+  wikiUrl?: string | null
+}
+export type EnumTypeUpdateManyMutationInputInputObject =
+  | Extract<keyof EnumTypeUpdateManyMutationInput, string>
+  | { name: 'name', alias?: string  } 
+  | { name: 'desc', alias?: string  } 
+  | { name: 'wikiUrl', alias?: string  } 
+  
+export interface EnumPropUpdateInput {
+  key?: string | null
+  value?: number | null
+}
+export type EnumPropUpdateInputInputObject =
+  | Extract<keyof EnumPropUpdateInput, string>
+  | { name: 'key', alias?: string  } 
+  | { name: 'value', alias?: string  } 
+  
+export interface EnumPropUpdateManyMutationInput {
+  key?: string | null
+  value?: number | null
+}
+export type EnumPropUpdateManyMutationInputInputObject =
+  | Extract<keyof EnumPropUpdateManyMutationInput, string>
+  | { name: 'key', alias?: string  } 
+  | { name: 'value', alias?: string  } 
+  
+export interface BoCreateInput {
+  name?: string | null
+  desc?: string | null
+  props?: BoPropCreateManyWithoutLinkBoInput | null
+  wikiUrl?: string | null
+  details?: BoCreateManyInput | null
+}
+export type BoCreateInputInputObject =
+  | Extract<keyof BoCreateInput, string>
+  | { name: 'name', alias?: string  } 
+  | { name: 'desc', alias?: string  } 
+  | { name: 'props', alias?: string  } 
+  | { name: 'wikiUrl', alias?: string  } 
+  | { name: 'details', alias?: string  } 
+  
+export interface BoPropCreateManyWithoutLinkBoInput {
+  create?: BoPropCreateWithoutLinkBoInput[]
+  connect?: BoPropWhereUniqueInput[]
+}
+export type BoPropCreateManyWithoutLinkBoInputInputObject =
+  | Extract<keyof BoPropCreateManyWithoutLinkBoInput, string>
+  | { name: 'create', alias?: string  } 
+  | { name: 'connect', alias?: string  } 
+  
+export interface BoPropCreateWithoutLinkBoInput {
+  name?: string | null
+  desc?: string | null
+  type?: string | null
+  required?: boolean | null
+  unique?: boolean | null
+  redundant?: boolean | null
+  linkEnumType?: EnumTypeCreateOneInput | null
+}
+export type BoPropCreateWithoutLinkBoInputInputObject =
+  | Extract<keyof BoPropCreateWithoutLinkBoInput, string>
+  | { name: 'name', alias?: string  } 
+  | { name: 'desc', alias?: string  } 
+  | { name: 'type', alias?: string  } 
+  | { name: 'required', alias?: string  } 
+  | { name: 'unique', alias?: string  } 
+  | { name: 'redundant', alias?: string  } 
+  | { name: 'linkEnumType', alias?: string  } 
+  
+export interface EnumTypeCreateOneInput {
+  create?: EnumTypeCreateInput | null
+  connect?: EnumTypeWhereUniqueInput | null
+}
+export type EnumTypeCreateOneInputInputObject =
+  | Extract<keyof EnumTypeCreateOneInput, string>
+  | { name: 'create', alias?: string  } 
+  | { name: 'connect', alias?: string  } 
+  
+export interface BoCreateManyInput {
+  create?: BoCreateInput[]
+  connect?: BoWhereUniqueInput[]
+}
+export type BoCreateManyInputInputObject =
+  | Extract<keyof BoCreateManyInput, string>
+  | { name: 'create', alias?: string  } 
+  | { name: 'connect', alias?: string  } 
+  
+export interface BoUpdateInput {
+  name?: string | null
+  desc?: string | null
+  props?: BoPropUpdateManyWithoutLinkBoInput | null
+  wikiUrl?: string | null
+  details?: BoUpdateManyInput | null
+}
+export type BoUpdateInputInputObject =
+  | Extract<keyof BoUpdateInput, string>
+  | { name: 'name', alias?: string  } 
+  | { name: 'desc', alias?: string  } 
+  | { name: 'props', alias?: string  } 
+  | { name: 'wikiUrl', alias?: string  } 
+  | { name: 'details', alias?: string  } 
+  
+export interface BoPropUpdateManyWithoutLinkBoInput {
+  create?: BoPropCreateWithoutLinkBoInput[]
+  delete?: BoPropWhereUniqueInput[]
+  connect?: BoPropWhereUniqueInput[]
+  set?: BoPropWhereUniqueInput[]
+  disconnect?: BoPropWhereUniqueInput[]
+  update?: BoPropUpdateWithWhereUniqueWithoutLinkBoInput[]
+  upsert?: BoPropUpsertWithWhereUniqueWithoutLinkBoInput[]
+  deleteMany?: BoPropScalarWhereInput[]
+  updateMany?: BoPropUpdateManyWithWhereNestedInput[]
+}
+export type BoPropUpdateManyWithoutLinkBoInputInputObject =
+  | Extract<keyof BoPropUpdateManyWithoutLinkBoInput, string>
+  | { name: 'create', alias?: string  } 
+  | { name: 'delete', alias?: string  } 
+  | { name: 'connect', alias?: string  } 
+  | { name: 'set', alias?: string  } 
+  | { name: 'disconnect', alias?: string  } 
+  | { name: 'update', alias?: string  } 
+  | { name: 'upsert', alias?: string  } 
+  | { name: 'deleteMany', alias?: string  } 
+  | { name: 'updateMany', alias?: string  } 
+  
+export interface BoPropUpdateWithWhereUniqueWithoutLinkBoInput {
+  where?: BoPropWhereUniqueInput
+  data?: BoPropUpdateWithoutLinkBoDataInput
+}
+export type BoPropUpdateWithWhereUniqueWithoutLinkBoInputInputObject =
+  | Extract<keyof BoPropUpdateWithWhereUniqueWithoutLinkBoInput, string>
+  | { name: 'where', alias?: string  } 
+  | { name: 'data', alias?: string  } 
+  
+export interface BoPropUpdateWithoutLinkBoDataInput {
+  name?: string | null
+  desc?: string | null
+  type?: string | null
+  required?: boolean | null
+  unique?: boolean | null
+  redundant?: boolean | null
+  linkEnumType?: EnumTypeUpdateOneInput | null
+}
+export type BoPropUpdateWithoutLinkBoDataInputInputObject =
+  | Extract<keyof BoPropUpdateWithoutLinkBoDataInput, string>
+  | { name: 'name', alias?: string  } 
+  | { name: 'desc', alias?: string  } 
+  | { name: 'type', alias?: string  } 
+  | { name: 'required', alias?: string  } 
+  | { name: 'unique', alias?: string  } 
+  | { name: 'redundant', alias?: string  } 
+  | { name: 'linkEnumType', alias?: string  } 
+  
+export interface EnumTypeUpdateOneInput {
+  create?: EnumTypeCreateInput | null
+  update?: EnumTypeUpdateDataInput | null
+  upsert?: EnumTypeUpsertNestedInput | null
+  delete?: boolean | null
+  disconnect?: boolean | null
+  connect?: EnumTypeWhereUniqueInput | null
+}
+export type EnumTypeUpdateOneInputInputObject =
+  | Extract<keyof EnumTypeUpdateOneInput, string>
+  | { name: 'create', alias?: string  } 
+  | { name: 'update', alias?: string  } 
+  | { name: 'upsert', alias?: string  } 
+  | { name: 'delete', alias?: string  } 
+  | { name: 'disconnect', alias?: string  } 
+  | { name: 'connect', alias?: string  } 
+  
+export interface EnumTypeUpdateDataInput {
+  name?: string | null
+  desc?: string | null
+  props?: EnumPropUpdateManyInput | null
+  wikiUrl?: string | null
+}
+export type EnumTypeUpdateDataInputInputObject =
+  | Extract<keyof EnumTypeUpdateDataInput, string>
+  | { name: 'name', alias?: string  } 
+  | { name: 'desc', alias?: string  } 
+  | { name: 'props', alias?: string  } 
+  | { name: 'wikiUrl', alias?: string  } 
+  
+export interface EnumTypeUpsertNestedInput {
+  update?: EnumTypeUpdateDataInput
+  create?: EnumTypeCreateInput
+}
+export type EnumTypeUpsertNestedInputInputObject =
+  | Extract<keyof EnumTypeUpsertNestedInput, string>
+  | { name: 'update', alias?: string  } 
+  | { name: 'create', alias?: string  } 
+  
+export interface BoPropUpsertWithWhereUniqueWithoutLinkBoInput {
+  where?: BoPropWhereUniqueInput
+  update?: BoPropUpdateWithoutLinkBoDataInput
+  create?: BoPropCreateWithoutLinkBoInput
+}
+export type BoPropUpsertWithWhereUniqueWithoutLinkBoInputInputObject =
+  | Extract<keyof BoPropUpsertWithWhereUniqueWithoutLinkBoInput, string>
+  | { name: 'where', alias?: string  } 
+  | { name: 'update', alias?: string  } 
+  | { name: 'create', alias?: string  } 
+  
+export interface BoPropScalarWhereInput {
+  id?: string | null
+  id_not?: string | null
+  id_in?: string[]
+  id_not_in?: string[]
+  id_lt?: string | null
+  id_lte?: string | null
+  id_gt?: string | null
+  id_gte?: string | null
+  id_contains?: string | null
+  id_not_contains?: string | null
+  id_starts_with?: string | null
+  id_not_starts_with?: string | null
+  id_ends_with?: string | null
+  id_not_ends_with?: string | null
+  name?: string | null
+  name_not?: string | null
+  name_in?: string[]
+  name_not_in?: string[]
+  name_lt?: string | null
+  name_lte?: string | null
+  name_gt?: string | null
+  name_gte?: string | null
+  name_contains?: string | null
+  name_not_contains?: string | null
+  name_starts_with?: string | null
+  name_not_starts_with?: string | null
+  name_ends_with?: string | null
+  name_not_ends_with?: string | null
+  desc?: string | null
+  desc_not?: string | null
+  desc_in?: string[]
+  desc_not_in?: string[]
+  desc_lt?: string | null
+  desc_lte?: string | null
+  desc_gt?: string | null
+  desc_gte?: string | null
+  desc_contains?: string | null
+  desc_not_contains?: string | null
+  desc_starts_with?: string | null
+  desc_not_starts_with?: string | null
+  desc_ends_with?: string | null
+  desc_not_ends_with?: string | null
+  type?: string | null
+  type_not?: string | null
+  type_in?: string[]
+  type_not_in?: string[]
+  type_lt?: string | null
+  type_lte?: string | null
+  type_gt?: string | null
+  type_gte?: string | null
+  type_contains?: string | null
+  type_not_contains?: string | null
+  type_starts_with?: string | null
+  type_not_starts_with?: string | null
+  type_ends_with?: string | null
+  type_not_ends_with?: string | null
+  required?: boolean | null
+  required_not?: boolean | null
+  unique?: boolean | null
+  unique_not?: boolean | null
+  redundant?: boolean | null
+  redundant_not?: boolean | null
+  AND?: BoPropScalarWhereInput[]
+  OR?: BoPropScalarWhereInput[]
+  NOT?: BoPropScalarWhereInput[]
+}
+export type BoPropScalarWhereInputInputObject =
+  | Extract<keyof BoPropScalarWhereInput, string>
+  | { name: 'id', alias?: string  } 
+  | { name: 'id_not', alias?: string  } 
+  | { name: 'id_in', alias?: string  } 
+  | { name: 'id_not_in', alias?: string  } 
+  | { name: 'id_lt', alias?: string  } 
+  | { name: 'id_lte', alias?: string  } 
+  | { name: 'id_gt', alias?: string  } 
+  | { name: 'id_gte', alias?: string  } 
+  | { name: 'id_contains', alias?: string  } 
+  | { name: 'id_not_contains', alias?: string  } 
+  | { name: 'id_starts_with', alias?: string  } 
+  | { name: 'id_not_starts_with', alias?: string  } 
+  | { name: 'id_ends_with', alias?: string  } 
+  | { name: 'id_not_ends_with', alias?: string  } 
+  | { name: 'name', alias?: string  } 
+  | { name: 'name_not', alias?: string  } 
+  | { name: 'name_in', alias?: string  } 
+  | { name: 'name_not_in', alias?: string  } 
+  | { name: 'name_lt', alias?: string  } 
+  | { name: 'name_lte', alias?: string  } 
+  | { name: 'name_gt', alias?: string  } 
+  | { name: 'name_gte', alias?: string  } 
+  | { name: 'name_contains', alias?: string  } 
+  | { name: 'name_not_contains', alias?: string  } 
+  | { name: 'name_starts_with', alias?: string  } 
+  | { name: 'name_not_starts_with', alias?: string  } 
+  | { name: 'name_ends_with', alias?: string  } 
+  | { name: 'name_not_ends_with', alias?: string  } 
+  | { name: 'desc', alias?: string  } 
+  | { name: 'desc_not', alias?: string  } 
+  | { name: 'desc_in', alias?: string  } 
+  | { name: 'desc_not_in', alias?: string  } 
+  | { name: 'desc_lt', alias?: string  } 
+  | { name: 'desc_lte', alias?: string  } 
+  | { name: 'desc_gt', alias?: string  } 
+  | { name: 'desc_gte', alias?: string  } 
+  | { name: 'desc_contains', alias?: string  } 
+  | { name: 'desc_not_contains', alias?: string  } 
+  | { name: 'desc_starts_with', alias?: string  } 
+  | { name: 'desc_not_starts_with', alias?: string  } 
+  | { name: 'desc_ends_with', alias?: string  } 
+  | { name: 'desc_not_ends_with', alias?: string  } 
+  | { name: 'type', alias?: string  } 
+  | { name: 'type_not', alias?: string  } 
+  | { name: 'type_in', alias?: string  } 
+  | { name: 'type_not_in', alias?: string  } 
+  | { name: 'type_lt', alias?: string  } 
+  | { name: 'type_lte', alias?: string  } 
+  | { name: 'type_gt', alias?: string  } 
+  | { name: 'type_gte', alias?: string  } 
+  | { name: 'type_contains', alias?: string  } 
+  | { name: 'type_not_contains', alias?: string  } 
+  | { name: 'type_starts_with', alias?: string  } 
+  | { name: 'type_not_starts_with', alias?: string  } 
+  | { name: 'type_ends_with', alias?: string  } 
+  | { name: 'type_not_ends_with', alias?: string  } 
+  | { name: 'required', alias?: string  } 
+  | { name: 'required_not', alias?: string  } 
+  | { name: 'unique', alias?: string  } 
+  | { name: 'unique_not', alias?: string  } 
+  | { name: 'redundant', alias?: string  } 
+  | { name: 'redundant_not', alias?: string  } 
+  | { name: 'AND', alias?: string  } 
+  | { name: 'OR', alias?: string  } 
+  | { name: 'NOT', alias?: string  } 
+  
+export interface BoPropUpdateManyWithWhereNestedInput {
+  where?: BoPropScalarWhereInput
+  data?: BoPropUpdateManyDataInput
+}
+export type BoPropUpdateManyWithWhereNestedInputInputObject =
+  | Extract<keyof BoPropUpdateManyWithWhereNestedInput, string>
+  | { name: 'where', alias?: string  } 
+  | { name: 'data', alias?: string  } 
+  
+export interface BoPropUpdateManyDataInput {
+  name?: string | null
+  desc?: string | null
+  type?: string | null
+  required?: boolean | null
+  unique?: boolean | null
+  redundant?: boolean | null
+}
+export type BoPropUpdateManyDataInputInputObject =
+  | Extract<keyof BoPropUpdateManyDataInput, string>
+  | { name: 'name', alias?: string  } 
+  | { name: 'desc', alias?: string  } 
+  | { name: 'type', alias?: string  } 
+  | { name: 'required', alias?: string  } 
+  | { name: 'unique', alias?: string  } 
+  | { name: 'redundant', alias?: string  } 
+  
+export interface BoUpdateManyInput {
+  create?: BoCreateInput[]
+  update?: BoUpdateWithWhereUniqueNestedInput[]
+  upsert?: BoUpsertWithWhereUniqueNestedInput[]
+  delete?: BoWhereUniqueInput[]
+  connect?: BoWhereUniqueInput[]
+  set?: BoWhereUniqueInput[]
+  disconnect?: BoWhereUniqueInput[]
+  deleteMany?: BoScalarWhereInput[]
+  updateMany?: BoUpdateManyWithWhereNestedInput[]
+}
+export type BoUpdateManyInputInputObject =
+  | Extract<keyof BoUpdateManyInput, string>
+  | { name: 'create', alias?: string  } 
+  | { name: 'update', alias?: string  } 
+  | { name: 'upsert', alias?: string  } 
+  | { name: 'delete', alias?: string  } 
+  | { name: 'connect', alias?: string  } 
+  | { name: 'set', alias?: string  } 
+  | { name: 'disconnect', alias?: string  } 
+  | { name: 'deleteMany', alias?: string  } 
+  | { name: 'updateMany', alias?: string  } 
+  
+export interface BoUpdateWithWhereUniqueNestedInput {
+  where?: BoWhereUniqueInput
+  data?: BoUpdateDataInput
+}
+export type BoUpdateWithWhereUniqueNestedInputInputObject =
+  | Extract<keyof BoUpdateWithWhereUniqueNestedInput, string>
+  | { name: 'where', alias?: string  } 
+  | { name: 'data', alias?: string  } 
+  
+export interface BoUpdateDataInput {
+  name?: string | null
+  desc?: string | null
+  props?: BoPropUpdateManyWithoutLinkBoInput | null
+  wikiUrl?: string | null
+  details?: BoUpdateManyInput | null
+}
+export type BoUpdateDataInputInputObject =
+  | Extract<keyof BoUpdateDataInput, string>
+  | { name: 'name', alias?: string  } 
+  | { name: 'desc', alias?: string  } 
+  | { name: 'props', alias?: string  } 
+  | { name: 'wikiUrl', alias?: string  } 
+  | { name: 'details', alias?: string  } 
+  
+export interface BoUpsertWithWhereUniqueNestedInput {
+  where?: BoWhereUniqueInput
+  update?: BoUpdateDataInput
+  create?: BoCreateInput
+}
+export type BoUpsertWithWhereUniqueNestedInputInputObject =
+  | Extract<keyof BoUpsertWithWhereUniqueNestedInput, string>
+  | { name: 'where', alias?: string  } 
+  | { name: 'update', alias?: string  } 
+  | { name: 'create', alias?: string  } 
+  
+export interface BoScalarWhereInput {
+  id?: string | null
+  id_not?: string | null
+  id_in?: string[]
+  id_not_in?: string[]
+  id_lt?: string | null
+  id_lte?: string | null
+  id_gt?: string | null
+  id_gte?: string | null
+  id_contains?: string | null
+  id_not_contains?: string | null
+  id_starts_with?: string | null
+  id_not_starts_with?: string | null
+  id_ends_with?: string | null
+  id_not_ends_with?: string | null
+  name?: string | null
+  name_not?: string | null
+  name_in?: string[]
+  name_not_in?: string[]
+  name_lt?: string | null
+  name_lte?: string | null
+  name_gt?: string | null
+  name_gte?: string | null
+  name_contains?: string | null
+  name_not_contains?: string | null
+  name_starts_with?: string | null
+  name_not_starts_with?: string | null
+  name_ends_with?: string | null
+  name_not_ends_with?: string | null
+  desc?: string | null
+  desc_not?: string | null
+  desc_in?: string[]
+  desc_not_in?: string[]
+  desc_lt?: string | null
+  desc_lte?: string | null
+  desc_gt?: string | null
+  desc_gte?: string | null
+  desc_contains?: string | null
+  desc_not_contains?: string | null
+  desc_starts_with?: string | null
+  desc_not_starts_with?: string | null
+  desc_ends_with?: string | null
+  desc_not_ends_with?: string | null
+  wikiUrl?: string | null
+  wikiUrl_not?: string | null
+  wikiUrl_in?: string[]
+  wikiUrl_not_in?: string[]
+  wikiUrl_lt?: string | null
+  wikiUrl_lte?: string | null
+  wikiUrl_gt?: string | null
+  wikiUrl_gte?: string | null
+  wikiUrl_contains?: string | null
+  wikiUrl_not_contains?: string | null
+  wikiUrl_starts_with?: string | null
+  wikiUrl_not_starts_with?: string | null
+  wikiUrl_ends_with?: string | null
+  wikiUrl_not_ends_with?: string | null
+  AND?: BoScalarWhereInput[]
+  OR?: BoScalarWhereInput[]
+  NOT?: BoScalarWhereInput[]
+}
+export type BoScalarWhereInputInputObject =
+  | Extract<keyof BoScalarWhereInput, string>
+  | { name: 'id', alias?: string  } 
+  | { name: 'id_not', alias?: string  } 
+  | { name: 'id_in', alias?: string  } 
+  | { name: 'id_not_in', alias?: string  } 
+  | { name: 'id_lt', alias?: string  } 
+  | { name: 'id_lte', alias?: string  } 
+  | { name: 'id_gt', alias?: string  } 
+  | { name: 'id_gte', alias?: string  } 
+  | { name: 'id_contains', alias?: string  } 
+  | { name: 'id_not_contains', alias?: string  } 
+  | { name: 'id_starts_with', alias?: string  } 
+  | { name: 'id_not_starts_with', alias?: string  } 
+  | { name: 'id_ends_with', alias?: string  } 
+  | { name: 'id_not_ends_with', alias?: string  } 
+  | { name: 'name', alias?: string  } 
+  | { name: 'name_not', alias?: string  } 
+  | { name: 'name_in', alias?: string  } 
+  | { name: 'name_not_in', alias?: string  } 
+  | { name: 'name_lt', alias?: string  } 
+  | { name: 'name_lte', alias?: string  } 
+  | { name: 'name_gt', alias?: string  } 
+  | { name: 'name_gte', alias?: string  } 
+  | { name: 'name_contains', alias?: string  } 
+  | { name: 'name_not_contains', alias?: string  } 
+  | { name: 'name_starts_with', alias?: string  } 
+  | { name: 'name_not_starts_with', alias?: string  } 
+  | { name: 'name_ends_with', alias?: string  } 
+  | { name: 'name_not_ends_with', alias?: string  } 
+  | { name: 'desc', alias?: string  } 
+  | { name: 'desc_not', alias?: string  } 
+  | { name: 'desc_in', alias?: string  } 
+  | { name: 'desc_not_in', alias?: string  } 
+  | { name: 'desc_lt', alias?: string  } 
+  | { name: 'desc_lte', alias?: string  } 
+  | { name: 'desc_gt', alias?: string  } 
+  | { name: 'desc_gte', alias?: string  } 
+  | { name: 'desc_contains', alias?: string  } 
+  | { name: 'desc_not_contains', alias?: string  } 
+  | { name: 'desc_starts_with', alias?: string  } 
+  | { name: 'desc_not_starts_with', alias?: string  } 
+  | { name: 'desc_ends_with', alias?: string  } 
+  | { name: 'desc_not_ends_with', alias?: string  } 
+  | { name: 'wikiUrl', alias?: string  } 
+  | { name: 'wikiUrl_not', alias?: string  } 
+  | { name: 'wikiUrl_in', alias?: string  } 
+  | { name: 'wikiUrl_not_in', alias?: string  } 
+  | { name: 'wikiUrl_lt', alias?: string  } 
+  | { name: 'wikiUrl_lte', alias?: string  } 
+  | { name: 'wikiUrl_gt', alias?: string  } 
+  | { name: 'wikiUrl_gte', alias?: string  } 
+  | { name: 'wikiUrl_contains', alias?: string  } 
+  | { name: 'wikiUrl_not_contains', alias?: string  } 
+  | { name: 'wikiUrl_starts_with', alias?: string  } 
+  | { name: 'wikiUrl_not_starts_with', alias?: string  } 
+  | { name: 'wikiUrl_ends_with', alias?: string  } 
+  | { name: 'wikiUrl_not_ends_with', alias?: string  } 
+  | { name: 'AND', alias?: string  } 
+  | { name: 'OR', alias?: string  } 
+  | { name: 'NOT', alias?: string  } 
+  
+export interface BoUpdateManyWithWhereNestedInput {
+  where?: BoScalarWhereInput
+  data?: BoUpdateManyDataInput
+}
+export type BoUpdateManyWithWhereNestedInputInputObject =
+  | Extract<keyof BoUpdateManyWithWhereNestedInput, string>
+  | { name: 'where', alias?: string  } 
+  | { name: 'data', alias?: string  } 
+  
+export interface BoUpdateManyDataInput {
+  name?: string | null
+  desc?: string | null
+  wikiUrl?: string | null
+}
+export type BoUpdateManyDataInputInputObject =
+  | Extract<keyof BoUpdateManyDataInput, string>
+  | { name: 'name', alias?: string  } 
+  | { name: 'desc', alias?: string  } 
+  | { name: 'wikiUrl', alias?: string  } 
+  
+export interface BoUpdateManyMutationInput {
+  name?: string | null
+  desc?: string | null
+  wikiUrl?: string | null
+}
+export type BoUpdateManyMutationInputInputObject =
+  | Extract<keyof BoUpdateManyMutationInput, string>
+  | { name: 'name', alias?: string  } 
+  | { name: 'desc', alias?: string  } 
+  | { name: 'wikiUrl', alias?: string  } 
+  
+export interface BoPropCreateInput {
+  name?: string | null
+  desc?: string | null
+  type?: string | null
+  required?: boolean | null
+  unique?: boolean | null
+  redundant?: boolean | null
+  linkBo?: BoCreateOneWithoutPropsInput | null
+  linkEnumType?: EnumTypeCreateOneInput | null
+}
+export type BoPropCreateInputInputObject =
+  | Extract<keyof BoPropCreateInput, string>
+  | { name: 'name', alias?: string  } 
+  | { name: 'desc', alias?: string  } 
+  | { name: 'type', alias?: string  } 
+  | { name: 'required', alias?: string  } 
+  | { name: 'unique', alias?: string  } 
+  | { name: 'redundant', alias?: string  } 
+  | { name: 'linkBo', alias?: string  } 
+  | { name: 'linkEnumType', alias?: string  } 
+  
+export interface BoCreateOneWithoutPropsInput {
+  create?: BoCreateWithoutPropsInput | null
+  connect?: BoWhereUniqueInput | null
+}
+export type BoCreateOneWithoutPropsInputInputObject =
+  | Extract<keyof BoCreateOneWithoutPropsInput, string>
+  | { name: 'create', alias?: string  } 
+  | { name: 'connect', alias?: string  } 
+  
+export interface BoCreateWithoutPropsInput {
+  name?: string | null
+  desc?: string | null
+  wikiUrl?: string | null
+  details?: BoCreateManyInput | null
+}
+export type BoCreateWithoutPropsInputInputObject =
+  | Extract<keyof BoCreateWithoutPropsInput, string>
+  | { name: 'name', alias?: string  } 
+  | { name: 'desc', alias?: string  } 
+  | { name: 'wikiUrl', alias?: string  } 
+  | { name: 'details', alias?: string  } 
+  
+export interface BoPropUpdateInput {
+  name?: string | null
+  desc?: string | null
+  type?: string | null
+  required?: boolean | null
+  unique?: boolean | null
+  redundant?: boolean | null
+  linkBo?: BoUpdateOneWithoutPropsInput | null
+  linkEnumType?: EnumTypeUpdateOneInput | null
+}
+export type BoPropUpdateInputInputObject =
+  | Extract<keyof BoPropUpdateInput, string>
+  | { name: 'name', alias?: string  } 
+  | { name: 'desc', alias?: string  } 
+  | { name: 'type', alias?: string  } 
+  | { name: 'required', alias?: string  } 
+  | { name: 'unique', alias?: string  } 
+  | { name: 'redundant', alias?: string  } 
+  | { name: 'linkBo', alias?: string  } 
+  | { name: 'linkEnumType', alias?: string  } 
+  
+export interface BoUpdateOneWithoutPropsInput {
+  create?: BoCreateWithoutPropsInput | null
+  update?: BoUpdateWithoutPropsDataInput | null
+  upsert?: BoUpsertWithoutPropsInput | null
+  delete?: boolean | null
+  disconnect?: boolean | null
+  connect?: BoWhereUniqueInput | null
+}
+export type BoUpdateOneWithoutPropsInputInputObject =
+  | Extract<keyof BoUpdateOneWithoutPropsInput, string>
+  | { name: 'create', alias?: string  } 
+  | { name: 'update', alias?: string  } 
+  | { name: 'upsert', alias?: string  } 
+  | { name: 'delete', alias?: string  } 
+  | { name: 'disconnect', alias?: string  } 
+  | { name: 'connect', alias?: string  } 
+  
+export interface BoUpdateWithoutPropsDataInput {
+  name?: string | null
+  desc?: string | null
+  wikiUrl?: string | null
+  details?: BoUpdateManyInput | null
+}
+export type BoUpdateWithoutPropsDataInputInputObject =
+  | Extract<keyof BoUpdateWithoutPropsDataInput, string>
+  | { name: 'name', alias?: string  } 
+  | { name: 'desc', alias?: string  } 
+  | { name: 'wikiUrl', alias?: string  } 
+  | { name: 'details', alias?: string  } 
+  
+export interface BoUpsertWithoutPropsInput {
+  update?: BoUpdateWithoutPropsDataInput
+  create?: BoCreateWithoutPropsInput
+}
+export type BoUpsertWithoutPropsInputInputObject =
+  | Extract<keyof BoUpsertWithoutPropsInput, string>
+  | { name: 'update', alias?: string  } 
+  | { name: 'create', alias?: string  } 
+  
+export interface BoPropUpdateManyMutationInput {
+  name?: string | null
+  desc?: string | null
+  type?: string | null
+  required?: boolean | null
+  unique?: boolean | null
+  redundant?: boolean | null
+}
+export type BoPropUpdateManyMutationInputInputObject =
+  | Extract<keyof BoPropUpdateManyMutationInput, string>
+  | { name: 'name', alias?: string  } 
+  | { name: 'desc', alias?: string  } 
+  | { name: 'type', alias?: string  } 
+  | { name: 'required', alias?: string  } 
+  | { name: 'unique', alias?: string  } 
+  | { name: 'redundant', alias?: string  } 
+  
+export interface PageCreateInput {
+  name?: string | null
+  desc?: string | null
+  project?: string | null
+  system?: string | null
+  domain?: string | null
+  type?: string | null
+  wikiUrl?: string | null
+  bos?: BoCreateManyInput | null
+  enums?: EnumTypeCreateManyInput | null
+}
+export type PageCreateInputInputObject =
+  | Extract<keyof PageCreateInput, string>
+  | { name: 'name', alias?: string  } 
+  | { name: 'desc', alias?: string  } 
+  | { name: 'project', alias?: string  } 
+  | { name: 'system', alias?: string  } 
+  | { name: 'domain', alias?: string  } 
+  | { name: 'type', alias?: string  } 
+  | { name: 'wikiUrl', alias?: string  } 
+  | { name: 'bos', alias?: string  } 
+  | { name: 'enums', alias?: string  } 
+  
+export interface EnumTypeCreateManyInput {
+  create?: EnumTypeCreateInput[]
+  connect?: EnumTypeWhereUniqueInput[]
+}
+export type EnumTypeCreateManyInputInputObject =
+  | Extract<keyof EnumTypeCreateManyInput, string>
+  | { name: 'create', alias?: string  } 
+  | { name: 'connect', alias?: string  } 
+  
+export interface PageUpdateInput {
+  name?: string | null
+  desc?: string | null
+  project?: string | null
+  system?: string | null
+  domain?: string | null
+  type?: string | null
+  wikiUrl?: string | null
+  bos?: BoUpdateManyInput | null
+  enums?: EnumTypeUpdateManyInput | null
+}
+export type PageUpdateInputInputObject =
+  | Extract<keyof PageUpdateInput, string>
+  | { name: 'name', alias?: string  } 
+  | { name: 'desc', alias?: string  } 
+  | { name: 'project', alias?: string  } 
+  | { name: 'system', alias?: string  } 
+  | { name: 'domain', alias?: string  } 
+  | { name: 'type', alias?: string  } 
+  | { name: 'wikiUrl', alias?: string  } 
+  | { name: 'bos', alias?: string  } 
+  | { name: 'enums', alias?: string  } 
+  
+export interface EnumTypeUpdateManyInput {
+  create?: EnumTypeCreateInput[]
+  update?: EnumTypeUpdateWithWhereUniqueNestedInput[]
+  upsert?: EnumTypeUpsertWithWhereUniqueNestedInput[]
+  delete?: EnumTypeWhereUniqueInput[]
+  connect?: EnumTypeWhereUniqueInput[]
+  set?: EnumTypeWhereUniqueInput[]
+  disconnect?: EnumTypeWhereUniqueInput[]
+  deleteMany?: EnumTypeScalarWhereInput[]
+  updateMany?: EnumTypeUpdateManyWithWhereNestedInput[]
+}
+export type EnumTypeUpdateManyInputInputObject =
+  | Extract<keyof EnumTypeUpdateManyInput, string>
+  | { name: 'create', alias?: string  } 
+  | { name: 'update', alias?: string  } 
+  | { name: 'upsert', alias?: string  } 
+  | { name: 'delete', alias?: string  } 
+  | { name: 'connect', alias?: string  } 
+  | { name: 'set', alias?: string  } 
+  | { name: 'disconnect', alias?: string  } 
+  | { name: 'deleteMany', alias?: string  } 
+  | { name: 'updateMany', alias?: string  } 
+  
+export interface EnumTypeUpdateWithWhereUniqueNestedInput {
+  where?: EnumTypeWhereUniqueInput
+  data?: EnumTypeUpdateDataInput
+}
+export type EnumTypeUpdateWithWhereUniqueNestedInputInputObject =
+  | Extract<keyof EnumTypeUpdateWithWhereUniqueNestedInput, string>
+  | { name: 'where', alias?: string  } 
+  | { name: 'data', alias?: string  } 
+  
+export interface EnumTypeUpsertWithWhereUniqueNestedInput {
+  where?: EnumTypeWhereUniqueInput
+  update?: EnumTypeUpdateDataInput
+  create?: EnumTypeCreateInput
+}
+export type EnumTypeUpsertWithWhereUniqueNestedInputInputObject =
+  | Extract<keyof EnumTypeUpsertWithWhereUniqueNestedInput, string>
+  | { name: 'where', alias?: string  } 
+  | { name: 'update', alias?: string  } 
+  | { name: 'create', alias?: string  } 
+  
+export interface EnumTypeScalarWhereInput {
+  id?: string | null
+  id_not?: string | null
+  id_in?: string[]
+  id_not_in?: string[]
+  id_lt?: string | null
+  id_lte?: string | null
+  id_gt?: string | null
+  id_gte?: string | null
+  id_contains?: string | null
+  id_not_contains?: string | null
+  id_starts_with?: string | null
+  id_not_starts_with?: string | null
+  id_ends_with?: string | null
+  id_not_ends_with?: string | null
+  name?: string | null
+  name_not?: string | null
+  name_in?: string[]
+  name_not_in?: string[]
+  name_lt?: string | null
+  name_lte?: string | null
+  name_gt?: string | null
+  name_gte?: string | null
+  name_contains?: string | null
+  name_not_contains?: string | null
+  name_starts_with?: string | null
+  name_not_starts_with?: string | null
+  name_ends_with?: string | null
+  name_not_ends_with?: string | null
+  desc?: string | null
+  desc_not?: string | null
+  desc_in?: string[]
+  desc_not_in?: string[]
+  desc_lt?: string | null
+  desc_lte?: string | null
+  desc_gt?: string | null
+  desc_gte?: string | null
+  desc_contains?: string | null
+  desc_not_contains?: string | null
+  desc_starts_with?: string | null
+  desc_not_starts_with?: string | null
+  desc_ends_with?: string | null
+  desc_not_ends_with?: string | null
+  wikiUrl?: string | null
+  wikiUrl_not?: string | null
+  wikiUrl_in?: string[]
+  wikiUrl_not_in?: string[]
+  wikiUrl_lt?: string | null
+  wikiUrl_lte?: string | null
+  wikiUrl_gt?: string | null
+  wikiUrl_gte?: string | null
+  wikiUrl_contains?: string | null
+  wikiUrl_not_contains?: string | null
+  wikiUrl_starts_with?: string | null
+  wikiUrl_not_starts_with?: string | null
+  wikiUrl_ends_with?: string | null
+  wikiUrl_not_ends_with?: string | null
+  AND?: EnumTypeScalarWhereInput[]
+  OR?: EnumTypeScalarWhereInput[]
+  NOT?: EnumTypeScalarWhereInput[]
+}
+export type EnumTypeScalarWhereInputInputObject =
+  | Extract<keyof EnumTypeScalarWhereInput, string>
+  | { name: 'id', alias?: string  } 
+  | { name: 'id_not', alias?: string  } 
+  | { name: 'id_in', alias?: string  } 
+  | { name: 'id_not_in', alias?: string  } 
+  | { name: 'id_lt', alias?: string  } 
+  | { name: 'id_lte', alias?: string  } 
+  | { name: 'id_gt', alias?: string  } 
+  | { name: 'id_gte', alias?: string  } 
+  | { name: 'id_contains', alias?: string  } 
+  | { name: 'id_not_contains', alias?: string  } 
+  | { name: 'id_starts_with', alias?: string  } 
+  | { name: 'id_not_starts_with', alias?: string  } 
+  | { name: 'id_ends_with', alias?: string  } 
+  | { name: 'id_not_ends_with', alias?: string  } 
+  | { name: 'name', alias?: string  } 
+  | { name: 'name_not', alias?: string  } 
+  | { name: 'name_in', alias?: string  } 
+  | { name: 'name_not_in', alias?: string  } 
+  | { name: 'name_lt', alias?: string  } 
+  | { name: 'name_lte', alias?: string  } 
+  | { name: 'name_gt', alias?: string  } 
+  | { name: 'name_gte', alias?: string  } 
+  | { name: 'name_contains', alias?: string  } 
+  | { name: 'name_not_contains', alias?: string  } 
+  | { name: 'name_starts_with', alias?: string  } 
+  | { name: 'name_not_starts_with', alias?: string  } 
+  | { name: 'name_ends_with', alias?: string  } 
+  | { name: 'name_not_ends_with', alias?: string  } 
+  | { name: 'desc', alias?: string  } 
+  | { name: 'desc_not', alias?: string  } 
+  | { name: 'desc_in', alias?: string  } 
+  | { name: 'desc_not_in', alias?: string  } 
+  | { name: 'desc_lt', alias?: string  } 
+  | { name: 'desc_lte', alias?: string  } 
+  | { name: 'desc_gt', alias?: string  } 
+  | { name: 'desc_gte', alias?: string  } 
+  | { name: 'desc_contains', alias?: string  } 
+  | { name: 'desc_not_contains', alias?: string  } 
+  | { name: 'desc_starts_with', alias?: string  } 
+  | { name: 'desc_not_starts_with', alias?: string  } 
+  | { name: 'desc_ends_with', alias?: string  } 
+  | { name: 'desc_not_ends_with', alias?: string  } 
+  | { name: 'wikiUrl', alias?: string  } 
+  | { name: 'wikiUrl_not', alias?: string  } 
+  | { name: 'wikiUrl_in', alias?: string  } 
+  | { name: 'wikiUrl_not_in', alias?: string  } 
+  | { name: 'wikiUrl_lt', alias?: string  } 
+  | { name: 'wikiUrl_lte', alias?: string  } 
+  | { name: 'wikiUrl_gt', alias?: string  } 
+  | { name: 'wikiUrl_gte', alias?: string  } 
+  | { name: 'wikiUrl_contains', alias?: string  } 
+  | { name: 'wikiUrl_not_contains', alias?: string  } 
+  | { name: 'wikiUrl_starts_with', alias?: string  } 
+  | { name: 'wikiUrl_not_starts_with', alias?: string  } 
+  | { name: 'wikiUrl_ends_with', alias?: string  } 
+  | { name: 'wikiUrl_not_ends_with', alias?: string  } 
+  | { name: 'AND', alias?: string  } 
+  | { name: 'OR', alias?: string  } 
+  | { name: 'NOT', alias?: string  } 
+  
+export interface EnumTypeUpdateManyWithWhereNestedInput {
+  where?: EnumTypeScalarWhereInput
+  data?: EnumTypeUpdateManyDataInput
+}
+export type EnumTypeUpdateManyWithWhereNestedInputInputObject =
+  | Extract<keyof EnumTypeUpdateManyWithWhereNestedInput, string>
+  | { name: 'where', alias?: string  } 
+  | { name: 'data', alias?: string  } 
+  
+export interface EnumTypeUpdateManyDataInput {
+  name?: string | null
+  desc?: string | null
+  wikiUrl?: string | null
+}
+export type EnumTypeUpdateManyDataInputInputObject =
+  | Extract<keyof EnumTypeUpdateManyDataInput, string>
+  | { name: 'name', alias?: string  } 
+  | { name: 'desc', alias?: string  } 
+  | { name: 'wikiUrl', alias?: string  } 
+  
+export interface PageUpdateManyMutationInput {
+  name?: string | null
+  desc?: string | null
+  project?: string | null
+  system?: string | null
+  domain?: string | null
+  type?: string | null
+  wikiUrl?: string | null
+}
+export type PageUpdateManyMutationInputInputObject =
+  | Extract<keyof PageUpdateManyMutationInput, string>
+  | { name: 'name', alias?: string  } 
+  | { name: 'desc', alias?: string  } 
+  | { name: 'project', alias?: string  } 
+  | { name: 'system', alias?: string  } 
+  | { name: 'domain', alias?: string  } 
+  | { name: 'type', alias?: string  } 
+  | { name: 'wikiUrl', alias?: string  } 
+  
+export interface EnumTypeSubscriptionWhereInput {
   mutation_in?: prisma.MutationType[]
   updatedFields_contains?: string | null
   updatedFields_contains_every?: string[]
   updatedFields_contains_some?: string[]
-  node?: UserWhereInput | null
-  AND?: UserSubscriptionWhereInput[]
-  OR?: UserSubscriptionWhereInput[]
-  NOT?: UserSubscriptionWhereInput[]
+  node?: EnumTypeWhereInput | null
+  AND?: EnumTypeSubscriptionWhereInput[]
+  OR?: EnumTypeSubscriptionWhereInput[]
+  NOT?: EnumTypeSubscriptionWhereInput[]
 }
-export type UserSubscriptionWhereInputInputObject =
-  | Extract<keyof UserSubscriptionWhereInput, string>
+export type EnumTypeSubscriptionWhereInputInputObject =
+  | Extract<keyof EnumTypeSubscriptionWhereInput, string>
   | { name: 'mutation_in', alias?: string  } 
   | { name: 'updatedFields_contains', alias?: string  } 
   | { name: 'updatedFields_contains_every', alias?: string  } 
@@ -1864,18 +4958,81 @@ export type UserSubscriptionWhereInputInputObject =
   | { name: 'OR', alias?: string  } 
   | { name: 'NOT', alias?: string  } 
   
-export interface PostSubscriptionWhereInput {
+export interface EnumPropSubscriptionWhereInput {
   mutation_in?: prisma.MutationType[]
   updatedFields_contains?: string | null
   updatedFields_contains_every?: string[]
   updatedFields_contains_some?: string[]
-  node?: PostWhereInput | null
-  AND?: PostSubscriptionWhereInput[]
-  OR?: PostSubscriptionWhereInput[]
-  NOT?: PostSubscriptionWhereInput[]
+  node?: EnumPropWhereInput | null
+  AND?: EnumPropSubscriptionWhereInput[]
+  OR?: EnumPropSubscriptionWhereInput[]
+  NOT?: EnumPropSubscriptionWhereInput[]
 }
-export type PostSubscriptionWhereInputInputObject =
-  | Extract<keyof PostSubscriptionWhereInput, string>
+export type EnumPropSubscriptionWhereInputInputObject =
+  | Extract<keyof EnumPropSubscriptionWhereInput, string>
+  | { name: 'mutation_in', alias?: string  } 
+  | { name: 'updatedFields_contains', alias?: string  } 
+  | { name: 'updatedFields_contains_every', alias?: string  } 
+  | { name: 'updatedFields_contains_some', alias?: string  } 
+  | { name: 'node', alias?: string  } 
+  | { name: 'AND', alias?: string  } 
+  | { name: 'OR', alias?: string  } 
+  | { name: 'NOT', alias?: string  } 
+  
+export interface BoSubscriptionWhereInput {
+  mutation_in?: prisma.MutationType[]
+  updatedFields_contains?: string | null
+  updatedFields_contains_every?: string[]
+  updatedFields_contains_some?: string[]
+  node?: BoWhereInput | null
+  AND?: BoSubscriptionWhereInput[]
+  OR?: BoSubscriptionWhereInput[]
+  NOT?: BoSubscriptionWhereInput[]
+}
+export type BoSubscriptionWhereInputInputObject =
+  | Extract<keyof BoSubscriptionWhereInput, string>
+  | { name: 'mutation_in', alias?: string  } 
+  | { name: 'updatedFields_contains', alias?: string  } 
+  | { name: 'updatedFields_contains_every', alias?: string  } 
+  | { name: 'updatedFields_contains_some', alias?: string  } 
+  | { name: 'node', alias?: string  } 
+  | { name: 'AND', alias?: string  } 
+  | { name: 'OR', alias?: string  } 
+  | { name: 'NOT', alias?: string  } 
+  
+export interface BoPropSubscriptionWhereInput {
+  mutation_in?: prisma.MutationType[]
+  updatedFields_contains?: string | null
+  updatedFields_contains_every?: string[]
+  updatedFields_contains_some?: string[]
+  node?: BoPropWhereInput | null
+  AND?: BoPropSubscriptionWhereInput[]
+  OR?: BoPropSubscriptionWhereInput[]
+  NOT?: BoPropSubscriptionWhereInput[]
+}
+export type BoPropSubscriptionWhereInputInputObject =
+  | Extract<keyof BoPropSubscriptionWhereInput, string>
+  | { name: 'mutation_in', alias?: string  } 
+  | { name: 'updatedFields_contains', alias?: string  } 
+  | { name: 'updatedFields_contains_every', alias?: string  } 
+  | { name: 'updatedFields_contains_some', alias?: string  } 
+  | { name: 'node', alias?: string  } 
+  | { name: 'AND', alias?: string  } 
+  | { name: 'OR', alias?: string  } 
+  | { name: 'NOT', alias?: string  } 
+  
+export interface PageSubscriptionWhereInput {
+  mutation_in?: prisma.MutationType[]
+  updatedFields_contains?: string | null
+  updatedFields_contains_every?: string[]
+  updatedFields_contains_some?: string[]
+  node?: PageWhereInput | null
+  AND?: PageSubscriptionWhereInput[]
+  OR?: PageSubscriptionWhereInput[]
+  NOT?: PageSubscriptionWhereInput[]
+}
+export type PageSubscriptionWhereInputInputObject =
+  | Extract<keyof PageSubscriptionWhereInput, string>
   | { name: 'mutation_in', alias?: string  } 
   | { name: 'updatedFields_contains', alias?: string  } 
   | { name: 'updatedFields_contains_every', alias?: string  } 
@@ -1886,27 +5043,83 @@ export type PostSubscriptionWhereInputInputObject =
   | { name: 'NOT', alias?: string  } 
   
 
-export type PostOrderByInputValues =
+export type EnumPropOrderByInputValues =
   | 'id_ASC'
   | 'id_DESC'
+  | 'key_ASC'
+  | 'key_DESC'
+  | 'value_ASC'
+  | 'value_DESC'
   | 'createdAt_ASC'
   | 'createdAt_DESC'
   | 'updatedAt_ASC'
   | 'updatedAt_DESC'
-  | 'published_ASC'
-  | 'published_DESC'
-  | 'title_ASC'
-  | 'title_DESC'
-  | 'content_ASC'
-  | 'content_DESC'
   
-export type UserOrderByInputValues =
+export type EnumTypeOrderByInputValues =
   | 'id_ASC'
   | 'id_DESC'
-  | 'email_ASC'
-  | 'email_DESC'
   | 'name_ASC'
   | 'name_DESC'
+  | 'desc_ASC'
+  | 'desc_DESC'
+  | 'wikiUrl_ASC'
+  | 'wikiUrl_DESC'
+  | 'createdAt_ASC'
+  | 'createdAt_DESC'
+  | 'updatedAt_ASC'
+  | 'updatedAt_DESC'
+  
+export type BoPropOrderByInputValues =
+  | 'id_ASC'
+  | 'id_DESC'
+  | 'name_ASC'
+  | 'name_DESC'
+  | 'desc_ASC'
+  | 'desc_DESC'
+  | 'type_ASC'
+  | 'type_DESC'
+  | 'required_ASC'
+  | 'required_DESC'
+  | 'unique_ASC'
+  | 'unique_DESC'
+  | 'redundant_ASC'
+  | 'redundant_DESC'
+  | 'createdAt_ASC'
+  | 'createdAt_DESC'
+  | 'updatedAt_ASC'
+  | 'updatedAt_DESC'
+  
+export type BoOrderByInputValues =
+  | 'id_ASC'
+  | 'id_DESC'
+  | 'name_ASC'
+  | 'name_DESC'
+  | 'desc_ASC'
+  | 'desc_DESC'
+  | 'wikiUrl_ASC'
+  | 'wikiUrl_DESC'
+  | 'createdAt_ASC'
+  | 'createdAt_DESC'
+  | 'updatedAt_ASC'
+  | 'updatedAt_DESC'
+  
+export type PageOrderByInputValues =
+  | 'id_ASC'
+  | 'id_DESC'
+  | 'name_ASC'
+  | 'name_DESC'
+  | 'desc_ASC'
+  | 'desc_DESC'
+  | 'project_ASC'
+  | 'project_DESC'
+  | 'system_ASC'
+  | 'system_DESC'
+  | 'domain_ASC'
+  | 'domain_DESC'
+  | 'type_ASC'
+  | 'type_DESC'
+  | 'wikiUrl_ASC'
+  | 'wikiUrl_DESC'
   | 'createdAt_ASC'
   | 'createdAt_DESC'
   | 'updatedAt_ASC'

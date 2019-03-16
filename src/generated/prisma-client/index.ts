@@ -14,8 +14,11 @@ export type AtLeastOne<T, U = { [K in keyof T]: Pick<T, K> }> = Partial<T> &
   U[keyof U];
 
 export interface Exists {
-  post: (where?: PostWhereInput) => Promise<boolean>;
-  user: (where?: UserWhereInput) => Promise<boolean>;
+  bo: (where?: BoWhereInput) => Promise<boolean>;
+  boProp: (where?: BoPropWhereInput) => Promise<boolean>;
+  enumProp: (where?: EnumPropWhereInput) => Promise<boolean>;
+  enumType: (where?: EnumTypeWhereInput) => Promise<boolean>;
+  page: (where?: PageWhereInput) => Promise<boolean>;
 }
 
 export interface Node {}
@@ -37,90 +40,207 @@ export interface Prisma {
    * Queries
    */
 
-  post: (where: PostWhereUniqueInput) => PostPromise;
-  posts: (
+  bo: (where: BoWhereUniqueInput) => BoPromise;
+  boes: (
     args?: {
-      where?: PostWhereInput;
-      orderBy?: PostOrderByInput;
+      where?: BoWhereInput;
+      orderBy?: BoOrderByInput;
       skip?: Int;
       after?: String;
       before?: String;
       first?: Int;
       last?: Int;
     }
-  ) => FragmentableArray<Post>;
-  postsConnection: (
+  ) => FragmentableArray<Bo>;
+  boesConnection: (
     args?: {
-      where?: PostWhereInput;
-      orderBy?: PostOrderByInput;
+      where?: BoWhereInput;
+      orderBy?: BoOrderByInput;
       skip?: Int;
       after?: String;
       before?: String;
       first?: Int;
       last?: Int;
     }
-  ) => PostConnectionPromise;
-  user: (where: UserWhereUniqueInput) => UserPromise;
-  users: (
+  ) => BoConnectionPromise;
+  boProp: (where: BoPropWhereUniqueInput) => BoPropPromise;
+  boProps: (
     args?: {
-      where?: UserWhereInput;
-      orderBy?: UserOrderByInput;
+      where?: BoPropWhereInput;
+      orderBy?: BoPropOrderByInput;
       skip?: Int;
       after?: String;
       before?: String;
       first?: Int;
       last?: Int;
     }
-  ) => FragmentableArray<User>;
-  usersConnection: (
+  ) => FragmentableArray<BoProp>;
+  boPropsConnection: (
     args?: {
-      where?: UserWhereInput;
-      orderBy?: UserOrderByInput;
+      where?: BoPropWhereInput;
+      orderBy?: BoPropOrderByInput;
       skip?: Int;
       after?: String;
       before?: String;
       first?: Int;
       last?: Int;
     }
-  ) => UserConnectionPromise;
+  ) => BoPropConnectionPromise;
+  enumProp: (where: EnumPropWhereUniqueInput) => EnumPropPromise;
+  enumProps: (
+    args?: {
+      where?: EnumPropWhereInput;
+      orderBy?: EnumPropOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => FragmentableArray<EnumProp>;
+  enumPropsConnection: (
+    args?: {
+      where?: EnumPropWhereInput;
+      orderBy?: EnumPropOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => EnumPropConnectionPromise;
+  enumType: (where: EnumTypeWhereUniqueInput) => EnumTypePromise;
+  enumTypes: (
+    args?: {
+      where?: EnumTypeWhereInput;
+      orderBy?: EnumTypeOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => FragmentableArray<EnumType>;
+  enumTypesConnection: (
+    args?: {
+      where?: EnumTypeWhereInput;
+      orderBy?: EnumTypeOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => EnumTypeConnectionPromise;
+  page: (where: PageWhereUniqueInput) => PagePromise;
+  pages: (
+    args?: {
+      where?: PageWhereInput;
+      orderBy?: PageOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => FragmentableArray<Page>;
+  pagesConnection: (
+    args?: {
+      where?: PageWhereInput;
+      orderBy?: PageOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => PageConnectionPromise;
   node: (args: { id: ID_Output }) => Node;
 
   /**
    * Mutations
    */
 
-  createPost: (data: PostCreateInput) => PostPromise;
-  updatePost: (
-    args: { data: PostUpdateInput; where: PostWhereUniqueInput }
-  ) => PostPromise;
-  updateManyPosts: (
-    args: { data: PostUpdateManyMutationInput; where?: PostWhereInput }
+  createBo: (data: BoCreateInput) => BoPromise;
+  updateBo: (
+    args: { data: BoUpdateInput; where: BoWhereUniqueInput }
+  ) => BoPromise;
+  updateManyBoes: (
+    args: { data: BoUpdateManyMutationInput; where?: BoWhereInput }
   ) => BatchPayloadPromise;
-  upsertPost: (
+  upsertBo: (
     args: {
-      where: PostWhereUniqueInput;
-      create: PostCreateInput;
-      update: PostUpdateInput;
+      where: BoWhereUniqueInput;
+      create: BoCreateInput;
+      update: BoUpdateInput;
     }
-  ) => PostPromise;
-  deletePost: (where: PostWhereUniqueInput) => PostPromise;
-  deleteManyPosts: (where?: PostWhereInput) => BatchPayloadPromise;
-  createUser: (data: UserCreateInput) => UserPromise;
-  updateUser: (
-    args: { data: UserUpdateInput; where: UserWhereUniqueInput }
-  ) => UserPromise;
-  updateManyUsers: (
-    args: { data: UserUpdateManyMutationInput; where?: UserWhereInput }
+  ) => BoPromise;
+  deleteBo: (where: BoWhereUniqueInput) => BoPromise;
+  deleteManyBoes: (where?: BoWhereInput) => BatchPayloadPromise;
+  createBoProp: (data: BoPropCreateInput) => BoPropPromise;
+  updateBoProp: (
+    args: { data: BoPropUpdateInput; where: BoPropWhereUniqueInput }
+  ) => BoPropPromise;
+  updateManyBoProps: (
+    args: { data: BoPropUpdateManyMutationInput; where?: BoPropWhereInput }
   ) => BatchPayloadPromise;
-  upsertUser: (
+  upsertBoProp: (
     args: {
-      where: UserWhereUniqueInput;
-      create: UserCreateInput;
-      update: UserUpdateInput;
+      where: BoPropWhereUniqueInput;
+      create: BoPropCreateInput;
+      update: BoPropUpdateInput;
     }
-  ) => UserPromise;
-  deleteUser: (where: UserWhereUniqueInput) => UserPromise;
-  deleteManyUsers: (where?: UserWhereInput) => BatchPayloadPromise;
+  ) => BoPropPromise;
+  deleteBoProp: (where: BoPropWhereUniqueInput) => BoPropPromise;
+  deleteManyBoProps: (where?: BoPropWhereInput) => BatchPayloadPromise;
+  createEnumProp: (data: EnumPropCreateInput) => EnumPropPromise;
+  updateEnumProp: (
+    args: { data: EnumPropUpdateInput; where: EnumPropWhereUniqueInput }
+  ) => EnumPropPromise;
+  updateManyEnumProps: (
+    args: { data: EnumPropUpdateManyMutationInput; where?: EnumPropWhereInput }
+  ) => BatchPayloadPromise;
+  upsertEnumProp: (
+    args: {
+      where: EnumPropWhereUniqueInput;
+      create: EnumPropCreateInput;
+      update: EnumPropUpdateInput;
+    }
+  ) => EnumPropPromise;
+  deleteEnumProp: (where: EnumPropWhereUniqueInput) => EnumPropPromise;
+  deleteManyEnumProps: (where?: EnumPropWhereInput) => BatchPayloadPromise;
+  createEnumType: (data: EnumTypeCreateInput) => EnumTypePromise;
+  updateEnumType: (
+    args: { data: EnumTypeUpdateInput; where: EnumTypeWhereUniqueInput }
+  ) => EnumTypePromise;
+  updateManyEnumTypes: (
+    args: { data: EnumTypeUpdateManyMutationInput; where?: EnumTypeWhereInput }
+  ) => BatchPayloadPromise;
+  upsertEnumType: (
+    args: {
+      where: EnumTypeWhereUniqueInput;
+      create: EnumTypeCreateInput;
+      update: EnumTypeUpdateInput;
+    }
+  ) => EnumTypePromise;
+  deleteEnumType: (where: EnumTypeWhereUniqueInput) => EnumTypePromise;
+  deleteManyEnumTypes: (where?: EnumTypeWhereInput) => BatchPayloadPromise;
+  createPage: (data: PageCreateInput) => PagePromise;
+  updatePage: (
+    args: { data: PageUpdateInput; where: PageWhereUniqueInput }
+  ) => PagePromise;
+  updateManyPages: (
+    args: { data: PageUpdateManyMutationInput; where?: PageWhereInput }
+  ) => BatchPayloadPromise;
+  upsertPage: (
+    args: {
+      where: PageWhereUniqueInput;
+      create: PageCreateInput;
+      update: PageUpdateInput;
+    }
+  ) => PagePromise;
+  deletePage: (where: PageWhereUniqueInput) => PagePromise;
+  deleteManyPages: (where?: PageWhereInput) => BatchPayloadPromise;
 
   /**
    * Subscriptions
@@ -130,12 +250,19 @@ export interface Prisma {
 }
 
 export interface Subscription {
-  post: (
-    where?: PostSubscriptionWhereInput
-  ) => PostSubscriptionPayloadSubscription;
-  user: (
-    where?: UserSubscriptionWhereInput
-  ) => UserSubscriptionPayloadSubscription;
+  bo: (where?: BoSubscriptionWhereInput) => BoSubscriptionPayloadSubscription;
+  boProp: (
+    where?: BoPropSubscriptionWhereInput
+  ) => BoPropSubscriptionPayloadSubscription;
+  enumProp: (
+    where?: EnumPropSubscriptionWhereInput
+  ) => EnumPropSubscriptionPayloadSubscription;
+  enumType: (
+    where?: EnumTypeSubscriptionWhereInput
+  ) => EnumTypeSubscriptionPayloadSubscription;
+  page: (
+    where?: PageSubscriptionWhereInput
+  ) => PageSubscriptionPayloadSubscription;
 }
 
 export interface ClientConstructor<T> {
@@ -146,27 +273,83 @@ export interface ClientConstructor<T> {
  * Types
  */
 
-export type PostOrderByInput =
+export type BoPropOrderByInput =
   | "id_ASC"
   | "id_DESC"
+  | "name_ASC"
+  | "name_DESC"
+  | "desc_ASC"
+  | "desc_DESC"
+  | "type_ASC"
+  | "type_DESC"
+  | "required_ASC"
+  | "required_DESC"
+  | "unique_ASC"
+  | "unique_DESC"
+  | "redundant_ASC"
+  | "redundant_DESC"
   | "createdAt_ASC"
   | "createdAt_DESC"
   | "updatedAt_ASC"
-  | "updatedAt_DESC"
-  | "published_ASC"
-  | "published_DESC"
-  | "title_ASC"
-  | "title_DESC"
-  | "content_ASC"
-  | "content_DESC";
+  | "updatedAt_DESC";
 
-export type UserOrderByInput =
+export type EnumPropOrderByInput =
   | "id_ASC"
   | "id_DESC"
-  | "email_ASC"
-  | "email_DESC"
+  | "key_ASC"
+  | "key_DESC"
+  | "value_ASC"
+  | "value_DESC"
+  | "createdAt_ASC"
+  | "createdAt_DESC"
+  | "updatedAt_ASC"
+  | "updatedAt_DESC";
+
+export type BoOrderByInput =
+  | "id_ASC"
+  | "id_DESC"
   | "name_ASC"
   | "name_DESC"
+  | "desc_ASC"
+  | "desc_DESC"
+  | "wikiUrl_ASC"
+  | "wikiUrl_DESC"
+  | "createdAt_ASC"
+  | "createdAt_DESC"
+  | "updatedAt_ASC"
+  | "updatedAt_DESC";
+
+export type EnumTypeOrderByInput =
+  | "id_ASC"
+  | "id_DESC"
+  | "name_ASC"
+  | "name_DESC"
+  | "desc_ASC"
+  | "desc_DESC"
+  | "wikiUrl_ASC"
+  | "wikiUrl_DESC"
+  | "createdAt_ASC"
+  | "createdAt_DESC"
+  | "updatedAt_ASC"
+  | "updatedAt_DESC";
+
+export type PageOrderByInput =
+  | "id_ASC"
+  | "id_DESC"
+  | "name_ASC"
+  | "name_DESC"
+  | "desc_ASC"
+  | "desc_DESC"
+  | "project_ASC"
+  | "project_DESC"
+  | "system_ASC"
+  | "system_DESC"
+  | "domain_ASC"
+  | "domain_DESC"
+  | "type_ASC"
+  | "type_DESC"
+  | "wikiUrl_ASC"
+  | "wikiUrl_DESC"
   | "createdAt_ASC"
   | "createdAt_DESC"
   | "updatedAt_ASC"
@@ -174,52 +357,21 @@ export type UserOrderByInput =
 
 export type MutationType = "CREATED" | "UPDATED" | "DELETED";
 
-export interface UserUpdateOneRequiredWithoutPostsInput {
-  create?: UserCreateWithoutPostsInput;
-  update?: UserUpdateWithoutPostsDataInput;
-  upsert?: UserUpsertWithoutPostsInput;
-  connect?: UserWhereUniqueInput;
+export interface EnumPropUpdateDataInput {
+  key?: String;
+  value?: Int;
 }
 
-export type PostWhereUniqueInput = AtLeastOne<{
+export type BoWhereUniqueInput = AtLeastOne<{
   id: ID_Input;
 }>;
 
-export interface PostUpdateWithWhereUniqueWithoutAuthorInput {
-  where: PostWhereUniqueInput;
-  data: PostUpdateWithoutAuthorDataInput;
+export interface EnumPropUpdateManyDataInput {
+  key?: String;
+  value?: Int;
 }
 
-export interface UserCreateInput {
-  email: String;
-  name?: String;
-  posts?: PostCreateManyWithoutAuthorInput;
-}
-
-export interface PostUpdateManyWithoutAuthorInput {
-  create?: PostCreateWithoutAuthorInput[] | PostCreateWithoutAuthorInput;
-  delete?: PostWhereUniqueInput[] | PostWhereUniqueInput;
-  connect?: PostWhereUniqueInput[] | PostWhereUniqueInput;
-  set?: PostWhereUniqueInput[] | PostWhereUniqueInput;
-  disconnect?: PostWhereUniqueInput[] | PostWhereUniqueInput;
-  update?:
-    | PostUpdateWithWhereUniqueWithoutAuthorInput[]
-    | PostUpdateWithWhereUniqueWithoutAuthorInput;
-  upsert?:
-    | PostUpsertWithWhereUniqueWithoutAuthorInput[]
-    | PostUpsertWithWhereUniqueWithoutAuthorInput;
-  deleteMany?: PostScalarWhereInput[] | PostScalarWhereInput;
-  updateMany?:
-    | PostUpdateManyWithWhereNestedInput[]
-    | PostUpdateManyWithWhereNestedInput;
-}
-
-export interface UserUpsertWithoutPostsInput {
-  update: UserUpdateWithoutPostsDataInput;
-  create: UserCreateWithoutPostsInput;
-}
-
-export interface UserWhereInput {
+export interface EnumPropWhereInput {
   id?: ID_Input;
   id_not?: ID_Input;
   id_in?: ID_Input[] | ID_Input;
@@ -234,20 +386,53 @@ export interface UserWhereInput {
   id_not_starts_with?: ID_Input;
   id_ends_with?: ID_Input;
   id_not_ends_with?: ID_Input;
-  email?: String;
-  email_not?: String;
-  email_in?: String[] | String;
-  email_not_in?: String[] | String;
-  email_lt?: String;
-  email_lte?: String;
-  email_gt?: String;
-  email_gte?: String;
-  email_contains?: String;
-  email_not_contains?: String;
-  email_starts_with?: String;
-  email_not_starts_with?: String;
-  email_ends_with?: String;
-  email_not_ends_with?: String;
+  key?: String;
+  key_not?: String;
+  key_in?: String[] | String;
+  key_not_in?: String[] | String;
+  key_lt?: String;
+  key_lte?: String;
+  key_gt?: String;
+  key_gte?: String;
+  key_contains?: String;
+  key_not_contains?: String;
+  key_starts_with?: String;
+  key_not_starts_with?: String;
+  key_ends_with?: String;
+  key_not_ends_with?: String;
+  value?: Int;
+  value_not?: Int;
+  value_in?: Int[] | Int;
+  value_not_in?: Int[] | Int;
+  value_lt?: Int;
+  value_lte?: Int;
+  value_gt?: Int;
+  value_gte?: Int;
+  AND?: EnumPropWhereInput[] | EnumPropWhereInput;
+  OR?: EnumPropWhereInput[] | EnumPropWhereInput;
+  NOT?: EnumPropWhereInput[] | EnumPropWhereInput;
+}
+
+export interface EnumTypeUpsertNestedInput {
+  update: EnumTypeUpdateDataInput;
+  create: EnumTypeCreateInput;
+}
+
+export interface EnumTypeWhereInput {
+  id?: ID_Input;
+  id_not?: ID_Input;
+  id_in?: ID_Input[] | ID_Input;
+  id_not_in?: ID_Input[] | ID_Input;
+  id_lt?: ID_Input;
+  id_lte?: ID_Input;
+  id_gt?: ID_Input;
+  id_gte?: ID_Input;
+  id_contains?: ID_Input;
+  id_not_contains?: ID_Input;
+  id_starts_with?: ID_Input;
+  id_not_starts_with?: ID_Input;
+  id_ends_with?: ID_Input;
+  id_not_ends_with?: ID_Input;
   name?: String;
   name_not?: String;
   name_in?: String[] | String;
@@ -262,44 +447,148 @@ export interface UserWhereInput {
   name_not_starts_with?: String;
   name_ends_with?: String;
   name_not_ends_with?: String;
-  posts_every?: PostWhereInput;
-  posts_some?: PostWhereInput;
-  posts_none?: PostWhereInput;
-  AND?: UserWhereInput[] | UserWhereInput;
-  OR?: UserWhereInput[] | UserWhereInput;
-  NOT?: UserWhereInput[] | UserWhereInput;
+  desc?: String;
+  desc_not?: String;
+  desc_in?: String[] | String;
+  desc_not_in?: String[] | String;
+  desc_lt?: String;
+  desc_lte?: String;
+  desc_gt?: String;
+  desc_gte?: String;
+  desc_contains?: String;
+  desc_not_contains?: String;
+  desc_starts_with?: String;
+  desc_not_starts_with?: String;
+  desc_ends_with?: String;
+  desc_not_ends_with?: String;
+  props_every?: EnumPropWhereInput;
+  props_some?: EnumPropWhereInput;
+  props_none?: EnumPropWhereInput;
+  wikiUrl?: String;
+  wikiUrl_not?: String;
+  wikiUrl_in?: String[] | String;
+  wikiUrl_not_in?: String[] | String;
+  wikiUrl_lt?: String;
+  wikiUrl_lte?: String;
+  wikiUrl_gt?: String;
+  wikiUrl_gte?: String;
+  wikiUrl_contains?: String;
+  wikiUrl_not_contains?: String;
+  wikiUrl_starts_with?: String;
+  wikiUrl_not_starts_with?: String;
+  wikiUrl_ends_with?: String;
+  wikiUrl_not_ends_with?: String;
+  AND?: EnumTypeWhereInput[] | EnumTypeWhereInput;
+  OR?: EnumTypeWhereInput[] | EnumTypeWhereInput;
+  NOT?: EnumTypeWhereInput[] | EnumTypeWhereInput;
 }
 
-export interface PostSubscriptionWhereInput {
+export interface EnumPropCreateManyInput {
+  create?: EnumPropCreateInput[] | EnumPropCreateInput;
+  connect?: EnumPropWhereUniqueInput[] | EnumPropWhereUniqueInput;
+}
+
+export interface BoCreateOneWithoutPropsInput {
+  create?: BoCreateWithoutPropsInput;
+  connect?: BoWhereUniqueInput;
+}
+
+export interface EnumPropCreateInput {
+  key: String;
+  value: Int;
+}
+
+export interface BoPropUpsertWithWhereUniqueWithoutLinkBoInput {
+  where: BoPropWhereUniqueInput;
+  update: BoPropUpdateWithoutLinkBoDataInput;
+  create: BoPropCreateWithoutLinkBoInput;
+}
+
+export interface BoCreateManyInput {
+  create?: BoCreateInput[] | BoCreateInput;
+  connect?: BoWhereUniqueInput[] | BoWhereUniqueInput;
+}
+
+export interface EnumTypeSubscriptionWhereInput {
   mutation_in?: MutationType[] | MutationType;
   updatedFields_contains?: String;
   updatedFields_contains_every?: String[] | String;
   updatedFields_contains_some?: String[] | String;
-  node?: PostWhereInput;
-  AND?: PostSubscriptionWhereInput[] | PostSubscriptionWhereInput;
-  OR?: PostSubscriptionWhereInput[] | PostSubscriptionWhereInput;
-  NOT?: PostSubscriptionWhereInput[] | PostSubscriptionWhereInput;
+  node?: EnumTypeWhereInput;
+  AND?: EnumTypeSubscriptionWhereInput[] | EnumTypeSubscriptionWhereInput;
+  OR?: EnumTypeSubscriptionWhereInput[] | EnumTypeSubscriptionWhereInput;
+  NOT?: EnumTypeSubscriptionWhereInput[] | EnumTypeSubscriptionWhereInput;
 }
 
-export interface PostCreateInput {
-  published?: Boolean;
-  title: String;
-  content?: String;
-  author: UserCreateOneWithoutPostsInput;
+export interface BoUpdateInput {
+  name?: String;
+  desc?: String;
+  props?: BoPropUpdateManyWithoutLinkBoInput;
+  wikiUrl?: String;
+  details?: BoUpdateManyInput;
 }
 
-export interface PostUpdateManyDataInput {
-  published?: Boolean;
-  title?: String;
-  content?: String;
+export interface BoPropSubscriptionWhereInput {
+  mutation_in?: MutationType[] | MutationType;
+  updatedFields_contains?: String;
+  updatedFields_contains_every?: String[] | String;
+  updatedFields_contains_some?: String[] | String;
+  node?: BoPropWhereInput;
+  AND?: BoPropSubscriptionWhereInput[] | BoPropSubscriptionWhereInput;
+  OR?: BoPropSubscriptionWhereInput[] | BoPropSubscriptionWhereInput;
+  NOT?: BoPropSubscriptionWhereInput[] | BoPropSubscriptionWhereInput;
 }
 
-export interface UserCreateOneWithoutPostsInput {
-  create?: UserCreateWithoutPostsInput;
-  connect?: UserWhereUniqueInput;
+export interface BoPropUpdateManyWithoutLinkBoInput {
+  create?: BoPropCreateWithoutLinkBoInput[] | BoPropCreateWithoutLinkBoInput;
+  delete?: BoPropWhereUniqueInput[] | BoPropWhereUniqueInput;
+  connect?: BoPropWhereUniqueInput[] | BoPropWhereUniqueInput;
+  set?: BoPropWhereUniqueInput[] | BoPropWhereUniqueInput;
+  disconnect?: BoPropWhereUniqueInput[] | BoPropWhereUniqueInput;
+  update?:
+    | BoPropUpdateWithWhereUniqueWithoutLinkBoInput[]
+    | BoPropUpdateWithWhereUniqueWithoutLinkBoInput;
+  upsert?:
+    | BoPropUpsertWithWhereUniqueWithoutLinkBoInput[]
+    | BoPropUpsertWithWhereUniqueWithoutLinkBoInput;
+  deleteMany?: BoPropScalarWhereInput[] | BoPropScalarWhereInput;
+  updateMany?:
+    | BoPropUpdateManyWithWhereNestedInput[]
+    | BoPropUpdateManyWithWhereNestedInput;
 }
 
-export interface PostScalarWhereInput {
+export interface PageUpdateManyMutationInput {
+  name?: String;
+  desc?: String;
+  project?: String;
+  system?: String;
+  domain?: String;
+  type?: String;
+  wikiUrl?: String;
+}
+
+export interface BoPropUpdateWithWhereUniqueWithoutLinkBoInput {
+  where: BoPropWhereUniqueInput;
+  data: BoPropUpdateWithoutLinkBoDataInput;
+}
+
+export interface EnumTypeUpdateManyDataInput {
+  name?: String;
+  desc?: String;
+  wikiUrl?: String;
+}
+
+export interface BoPropUpdateWithoutLinkBoDataInput {
+  name?: String;
+  desc?: String;
+  type?: String;
+  required?: Boolean;
+  unique?: Boolean;
+  redundant?: Boolean;
+  linkEnumType?: EnumTypeUpdateOneInput;
+}
+
+export interface EnumTypeScalarWhereInput {
   id?: ID_Input;
   id_not?: ID_Input;
   id_in?: ID_Input[] | ID_Input;
@@ -314,76 +603,112 @@ export interface PostScalarWhereInput {
   id_not_starts_with?: ID_Input;
   id_ends_with?: ID_Input;
   id_not_ends_with?: ID_Input;
-  createdAt?: DateTimeInput;
-  createdAt_not?: DateTimeInput;
-  createdAt_in?: DateTimeInput[] | DateTimeInput;
-  createdAt_not_in?: DateTimeInput[] | DateTimeInput;
-  createdAt_lt?: DateTimeInput;
-  createdAt_lte?: DateTimeInput;
-  createdAt_gt?: DateTimeInput;
-  createdAt_gte?: DateTimeInput;
-  updatedAt?: DateTimeInput;
-  updatedAt_not?: DateTimeInput;
-  updatedAt_in?: DateTimeInput[] | DateTimeInput;
-  updatedAt_not_in?: DateTimeInput[] | DateTimeInput;
-  updatedAt_lt?: DateTimeInput;
-  updatedAt_lte?: DateTimeInput;
-  updatedAt_gt?: DateTimeInput;
-  updatedAt_gte?: DateTimeInput;
-  published?: Boolean;
-  published_not?: Boolean;
-  title?: String;
-  title_not?: String;
-  title_in?: String[] | String;
-  title_not_in?: String[] | String;
-  title_lt?: String;
-  title_lte?: String;
-  title_gt?: String;
-  title_gte?: String;
-  title_contains?: String;
-  title_not_contains?: String;
-  title_starts_with?: String;
-  title_not_starts_with?: String;
-  title_ends_with?: String;
-  title_not_ends_with?: String;
-  content?: String;
-  content_not?: String;
-  content_in?: String[] | String;
-  content_not_in?: String[] | String;
-  content_lt?: String;
-  content_lte?: String;
-  content_gt?: String;
-  content_gte?: String;
-  content_contains?: String;
-  content_not_contains?: String;
-  content_starts_with?: String;
-  content_not_starts_with?: String;
-  content_ends_with?: String;
-  content_not_ends_with?: String;
-  AND?: PostScalarWhereInput[] | PostScalarWhereInput;
-  OR?: PostScalarWhereInput[] | PostScalarWhereInput;
-  NOT?: PostScalarWhereInput[] | PostScalarWhereInput;
-}
-
-export interface UserCreateWithoutPostsInput {
-  email: String;
   name?: String;
+  name_not?: String;
+  name_in?: String[] | String;
+  name_not_in?: String[] | String;
+  name_lt?: String;
+  name_lte?: String;
+  name_gt?: String;
+  name_gte?: String;
+  name_contains?: String;
+  name_not_contains?: String;
+  name_starts_with?: String;
+  name_not_starts_with?: String;
+  name_ends_with?: String;
+  name_not_ends_with?: String;
+  desc?: String;
+  desc_not?: String;
+  desc_in?: String[] | String;
+  desc_not_in?: String[] | String;
+  desc_lt?: String;
+  desc_lte?: String;
+  desc_gt?: String;
+  desc_gte?: String;
+  desc_contains?: String;
+  desc_not_contains?: String;
+  desc_starts_with?: String;
+  desc_not_starts_with?: String;
+  desc_ends_with?: String;
+  desc_not_ends_with?: String;
+  wikiUrl?: String;
+  wikiUrl_not?: String;
+  wikiUrl_in?: String[] | String;
+  wikiUrl_not_in?: String[] | String;
+  wikiUrl_lt?: String;
+  wikiUrl_lte?: String;
+  wikiUrl_gt?: String;
+  wikiUrl_gte?: String;
+  wikiUrl_contains?: String;
+  wikiUrl_not_contains?: String;
+  wikiUrl_starts_with?: String;
+  wikiUrl_not_starts_with?: String;
+  wikiUrl_ends_with?: String;
+  wikiUrl_not_ends_with?: String;
+  AND?: EnumTypeScalarWhereInput[] | EnumTypeScalarWhereInput;
+  OR?: EnumTypeScalarWhereInput[] | EnumTypeScalarWhereInput;
+  NOT?: EnumTypeScalarWhereInput[] | EnumTypeScalarWhereInput;
 }
 
-export interface PostUpsertWithWhereUniqueWithoutAuthorInput {
-  where: PostWhereUniqueInput;
-  update: PostUpdateWithoutAuthorDataInput;
-  create: PostCreateWithoutAuthorInput;
+export interface EnumTypeUpdateOneInput {
+  create?: EnumTypeCreateInput;
+  update?: EnumTypeUpdateDataInput;
+  upsert?: EnumTypeUpsertNestedInput;
+  delete?: Boolean;
+  disconnect?: Boolean;
+  connect?: EnumTypeWhereUniqueInput;
 }
 
-export interface PostUpdateInput {
-  published?: Boolean;
-  title?: String;
-  content?: String;
-  author?: UserUpdateOneRequiredWithoutPostsInput;
+export interface EnumTypeUpsertWithWhereUniqueNestedInput {
+  where: EnumTypeWhereUniqueInput;
+  update: EnumTypeUpdateDataInput;
+  create: EnumTypeCreateInput;
 }
 
-export interface PostWhereInput {
+export interface EnumTypeUpdateDataInput {
+  name?: String;
+  desc?: String;
+  props?: EnumPropUpdateManyInput;
+  wikiUrl?: String;
+}
+
+export interface EnumTypeUpdateManyInput {
+  create?: EnumTypeCreateInput[] | EnumTypeCreateInput;
+  update?:
+    | EnumTypeUpdateWithWhereUniqueNestedInput[]
+    | EnumTypeUpdateWithWhereUniqueNestedInput;
+  upsert?:
+    | EnumTypeUpsertWithWhereUniqueNestedInput[]
+    | EnumTypeUpsertWithWhereUniqueNestedInput;
+  delete?: EnumTypeWhereUniqueInput[] | EnumTypeWhereUniqueInput;
+  connect?: EnumTypeWhereUniqueInput[] | EnumTypeWhereUniqueInput;
+  set?: EnumTypeWhereUniqueInput[] | EnumTypeWhereUniqueInput;
+  disconnect?: EnumTypeWhereUniqueInput[] | EnumTypeWhereUniqueInput;
+  deleteMany?: EnumTypeScalarWhereInput[] | EnumTypeScalarWhereInput;
+  updateMany?:
+    | EnumTypeUpdateManyWithWhereNestedInput[]
+    | EnumTypeUpdateManyWithWhereNestedInput;
+}
+
+export interface EnumPropUpdateManyInput {
+  create?: EnumPropCreateInput[] | EnumPropCreateInput;
+  update?:
+    | EnumPropUpdateWithWhereUniqueNestedInput[]
+    | EnumPropUpdateWithWhereUniqueNestedInput;
+  upsert?:
+    | EnumPropUpsertWithWhereUniqueNestedInput[]
+    | EnumPropUpsertWithWhereUniqueNestedInput;
+  delete?: EnumPropWhereUniqueInput[] | EnumPropWhereUniqueInput;
+  connect?: EnumPropWhereUniqueInput[] | EnumPropWhereUniqueInput;
+  set?: EnumPropWhereUniqueInput[] | EnumPropWhereUniqueInput;
+  disconnect?: EnumPropWhereUniqueInput[] | EnumPropWhereUniqueInput;
+  deleteMany?: EnumPropScalarWhereInput[] | EnumPropScalarWhereInput;
+  updateMany?:
+    | EnumPropUpdateManyWithWhereNestedInput[]
+    | EnumPropUpdateManyWithWhereNestedInput;
+}
+
+export interface BoPropWhereInput {
   id?: ID_Input;
   id_not?: ID_Input;
   id_in?: ID_Input[] | ID_Input;
@@ -398,308 +723,1215 @@ export interface PostWhereInput {
   id_not_starts_with?: ID_Input;
   id_ends_with?: ID_Input;
   id_not_ends_with?: ID_Input;
-  createdAt?: DateTimeInput;
-  createdAt_not?: DateTimeInput;
-  createdAt_in?: DateTimeInput[] | DateTimeInput;
-  createdAt_not_in?: DateTimeInput[] | DateTimeInput;
-  createdAt_lt?: DateTimeInput;
-  createdAt_lte?: DateTimeInput;
-  createdAt_gt?: DateTimeInput;
-  createdAt_gte?: DateTimeInput;
-  updatedAt?: DateTimeInput;
-  updatedAt_not?: DateTimeInput;
-  updatedAt_in?: DateTimeInput[] | DateTimeInput;
-  updatedAt_not_in?: DateTimeInput[] | DateTimeInput;
-  updatedAt_lt?: DateTimeInput;
-  updatedAt_lte?: DateTimeInput;
-  updatedAt_gt?: DateTimeInput;
-  updatedAt_gte?: DateTimeInput;
-  published?: Boolean;
-  published_not?: Boolean;
-  title?: String;
-  title_not?: String;
-  title_in?: String[] | String;
-  title_not_in?: String[] | String;
-  title_lt?: String;
-  title_lte?: String;
-  title_gt?: String;
-  title_gte?: String;
-  title_contains?: String;
-  title_not_contains?: String;
-  title_starts_with?: String;
-  title_not_starts_with?: String;
-  title_ends_with?: String;
-  title_not_ends_with?: String;
-  content?: String;
-  content_not?: String;
-  content_in?: String[] | String;
-  content_not_in?: String[] | String;
-  content_lt?: String;
-  content_lte?: String;
-  content_gt?: String;
-  content_gte?: String;
-  content_contains?: String;
-  content_not_contains?: String;
-  content_starts_with?: String;
-  content_not_starts_with?: String;
-  content_ends_with?: String;
-  content_not_ends_with?: String;
-  author?: UserWhereInput;
-  AND?: PostWhereInput[] | PostWhereInput;
-  OR?: PostWhereInput[] | PostWhereInput;
-  NOT?: PostWhereInput[] | PostWhereInput;
-}
-
-export interface UserUpdateInput {
-  email?: String;
   name?: String;
-  posts?: PostUpdateManyWithoutAuthorInput;
+  name_not?: String;
+  name_in?: String[] | String;
+  name_not_in?: String[] | String;
+  name_lt?: String;
+  name_lte?: String;
+  name_gt?: String;
+  name_gte?: String;
+  name_contains?: String;
+  name_not_contains?: String;
+  name_starts_with?: String;
+  name_not_starts_with?: String;
+  name_ends_with?: String;
+  name_not_ends_with?: String;
+  desc?: String;
+  desc_not?: String;
+  desc_in?: String[] | String;
+  desc_not_in?: String[] | String;
+  desc_lt?: String;
+  desc_lte?: String;
+  desc_gt?: String;
+  desc_gte?: String;
+  desc_contains?: String;
+  desc_not_contains?: String;
+  desc_starts_with?: String;
+  desc_not_starts_with?: String;
+  desc_ends_with?: String;
+  desc_not_ends_with?: String;
+  type?: String;
+  type_not?: String;
+  type_in?: String[] | String;
+  type_not_in?: String[] | String;
+  type_lt?: String;
+  type_lte?: String;
+  type_gt?: String;
+  type_gte?: String;
+  type_contains?: String;
+  type_not_contains?: String;
+  type_starts_with?: String;
+  type_not_starts_with?: String;
+  type_ends_with?: String;
+  type_not_ends_with?: String;
+  required?: Boolean;
+  required_not?: Boolean;
+  unique?: Boolean;
+  unique_not?: Boolean;
+  redundant?: Boolean;
+  redundant_not?: Boolean;
+  linkBo?: BoWhereInput;
+  linkEnumType?: EnumTypeWhereInput;
+  AND?: BoPropWhereInput[] | BoPropWhereInput;
+  OR?: BoPropWhereInput[] | BoPropWhereInput;
+  NOT?: BoPropWhereInput[] | BoPropWhereInput;
 }
 
-export interface UserUpdateManyMutationInput {
-  email?: String;
-  name?: String;
+export interface EnumPropUpdateWithWhereUniqueNestedInput {
+  where: EnumPropWhereUniqueInput;
+  data: EnumPropUpdateDataInput;
 }
 
-export interface PostCreateManyWithoutAuthorInput {
-  create?: PostCreateWithoutAuthorInput[] | PostCreateWithoutAuthorInput;
-  connect?: PostWhereUniqueInput[] | PostWhereUniqueInput;
+export interface EnumTypeCreateManyInput {
+  create?: EnumTypeCreateInput[] | EnumTypeCreateInput;
+  connect?: EnumTypeWhereUniqueInput[] | EnumTypeWhereUniqueInput;
 }
 
-export interface PostUpdateManyMutationInput {
-  published?: Boolean;
-  title?: String;
-  content?: String;
+export interface BoUpsertWithoutPropsInput {
+  update: BoUpdateWithoutPropsDataInput;
+  create: BoCreateWithoutPropsInput;
 }
 
-export interface PostCreateWithoutAuthorInput {
-  published?: Boolean;
-  title: String;
-  content?: String;
-}
-
-export interface UserUpdateWithoutPostsDataInput {
-  email?: String;
-  name?: String;
-}
-
-export interface PostUpdateManyWithWhereNestedInput {
-  where: PostScalarWhereInput;
-  data: PostUpdateManyDataInput;
-}
-
-export interface UserSubscriptionWhereInput {
-  mutation_in?: MutationType[] | MutationType;
-  updatedFields_contains?: String;
-  updatedFields_contains_every?: String[] | String;
-  updatedFields_contains_some?: String[] | String;
-  node?: UserWhereInput;
-  AND?: UserSubscriptionWhereInput[] | UserSubscriptionWhereInput;
-  OR?: UserSubscriptionWhereInput[] | UserSubscriptionWhereInput;
-  NOT?: UserSubscriptionWhereInput[] | UserSubscriptionWhereInput;
-}
-
-export interface PostUpdateWithoutAuthorDataInput {
-  published?: Boolean;
-  title?: String;
-  content?: String;
-}
-
-export type UserWhereUniqueInput = AtLeastOne<{
+export type PageWhereUniqueInput = AtLeastOne<{
   id: ID_Input;
-  email?: String;
 }>;
+
+export interface EnumPropUpsertWithWhereUniqueNestedInput {
+  where: EnumPropWhereUniqueInput;
+  update: EnumPropUpdateDataInput;
+  create: EnumPropCreateInput;
+}
+
+export interface PageWhereInput {
+  id?: ID_Input;
+  id_not?: ID_Input;
+  id_in?: ID_Input[] | ID_Input;
+  id_not_in?: ID_Input[] | ID_Input;
+  id_lt?: ID_Input;
+  id_lte?: ID_Input;
+  id_gt?: ID_Input;
+  id_gte?: ID_Input;
+  id_contains?: ID_Input;
+  id_not_contains?: ID_Input;
+  id_starts_with?: ID_Input;
+  id_not_starts_with?: ID_Input;
+  id_ends_with?: ID_Input;
+  id_not_ends_with?: ID_Input;
+  name?: String;
+  name_not?: String;
+  name_in?: String[] | String;
+  name_not_in?: String[] | String;
+  name_lt?: String;
+  name_lte?: String;
+  name_gt?: String;
+  name_gte?: String;
+  name_contains?: String;
+  name_not_contains?: String;
+  name_starts_with?: String;
+  name_not_starts_with?: String;
+  name_ends_with?: String;
+  name_not_ends_with?: String;
+  desc?: String;
+  desc_not?: String;
+  desc_in?: String[] | String;
+  desc_not_in?: String[] | String;
+  desc_lt?: String;
+  desc_lte?: String;
+  desc_gt?: String;
+  desc_gte?: String;
+  desc_contains?: String;
+  desc_not_contains?: String;
+  desc_starts_with?: String;
+  desc_not_starts_with?: String;
+  desc_ends_with?: String;
+  desc_not_ends_with?: String;
+  project?: String;
+  project_not?: String;
+  project_in?: String[] | String;
+  project_not_in?: String[] | String;
+  project_lt?: String;
+  project_lte?: String;
+  project_gt?: String;
+  project_gte?: String;
+  project_contains?: String;
+  project_not_contains?: String;
+  project_starts_with?: String;
+  project_not_starts_with?: String;
+  project_ends_with?: String;
+  project_not_ends_with?: String;
+  system?: String;
+  system_not?: String;
+  system_in?: String[] | String;
+  system_not_in?: String[] | String;
+  system_lt?: String;
+  system_lte?: String;
+  system_gt?: String;
+  system_gte?: String;
+  system_contains?: String;
+  system_not_contains?: String;
+  system_starts_with?: String;
+  system_not_starts_with?: String;
+  system_ends_with?: String;
+  system_not_ends_with?: String;
+  domain?: String;
+  domain_not?: String;
+  domain_in?: String[] | String;
+  domain_not_in?: String[] | String;
+  domain_lt?: String;
+  domain_lte?: String;
+  domain_gt?: String;
+  domain_gte?: String;
+  domain_contains?: String;
+  domain_not_contains?: String;
+  domain_starts_with?: String;
+  domain_not_starts_with?: String;
+  domain_ends_with?: String;
+  domain_not_ends_with?: String;
+  type?: String;
+  type_not?: String;
+  type_in?: String[] | String;
+  type_not_in?: String[] | String;
+  type_lt?: String;
+  type_lte?: String;
+  type_gt?: String;
+  type_gte?: String;
+  type_contains?: String;
+  type_not_contains?: String;
+  type_starts_with?: String;
+  type_not_starts_with?: String;
+  type_ends_with?: String;
+  type_not_ends_with?: String;
+  wikiUrl?: String;
+  wikiUrl_not?: String;
+  wikiUrl_in?: String[] | String;
+  wikiUrl_not_in?: String[] | String;
+  wikiUrl_lt?: String;
+  wikiUrl_lte?: String;
+  wikiUrl_gt?: String;
+  wikiUrl_gte?: String;
+  wikiUrl_contains?: String;
+  wikiUrl_not_contains?: String;
+  wikiUrl_starts_with?: String;
+  wikiUrl_not_starts_with?: String;
+  wikiUrl_ends_with?: String;
+  wikiUrl_not_ends_with?: String;
+  bos_every?: BoWhereInput;
+  bos_some?: BoWhereInput;
+  bos_none?: BoWhereInput;
+  enums_every?: EnumTypeWhereInput;
+  enums_some?: EnumTypeWhereInput;
+  enums_none?: EnumTypeWhereInput;
+  AND?: PageWhereInput[] | PageWhereInput;
+  OR?: PageWhereInput[] | PageWhereInput;
+  NOT?: PageWhereInput[] | PageWhereInput;
+}
+
+export interface EnumPropScalarWhereInput {
+  id?: ID_Input;
+  id_not?: ID_Input;
+  id_in?: ID_Input[] | ID_Input;
+  id_not_in?: ID_Input[] | ID_Input;
+  id_lt?: ID_Input;
+  id_lte?: ID_Input;
+  id_gt?: ID_Input;
+  id_gte?: ID_Input;
+  id_contains?: ID_Input;
+  id_not_contains?: ID_Input;
+  id_starts_with?: ID_Input;
+  id_not_starts_with?: ID_Input;
+  id_ends_with?: ID_Input;
+  id_not_ends_with?: ID_Input;
+  key?: String;
+  key_not?: String;
+  key_in?: String[] | String;
+  key_not_in?: String[] | String;
+  key_lt?: String;
+  key_lte?: String;
+  key_gt?: String;
+  key_gte?: String;
+  key_contains?: String;
+  key_not_contains?: String;
+  key_starts_with?: String;
+  key_not_starts_with?: String;
+  key_ends_with?: String;
+  key_not_ends_with?: String;
+  value?: Int;
+  value_not?: Int;
+  value_in?: Int[] | Int;
+  value_not_in?: Int[] | Int;
+  value_lt?: Int;
+  value_lte?: Int;
+  value_gt?: Int;
+  value_gte?: Int;
+  AND?: EnumPropScalarWhereInput[] | EnumPropScalarWhereInput;
+  OR?: EnumPropScalarWhereInput[] | EnumPropScalarWhereInput;
+  NOT?: EnumPropScalarWhereInput[] | EnumPropScalarWhereInput;
+}
+
+export interface EnumPropUpdateManyMutationInput {
+  key?: String;
+  value?: Int;
+}
+
+export interface EnumPropUpdateManyWithWhereNestedInput {
+  where: EnumPropScalarWhereInput;
+  data: EnumPropUpdateManyDataInput;
+}
+
+export interface BoPropUpdateManyMutationInput {
+  name?: String;
+  desc?: String;
+  type?: String;
+  required?: Boolean;
+  unique?: Boolean;
+  redundant?: Boolean;
+}
+
+export interface BoUpdateWithoutPropsDataInput {
+  name?: String;
+  desc?: String;
+  wikiUrl?: String;
+  details?: BoUpdateManyInput;
+}
+
+export interface BoCreateInput {
+  name?: String;
+  desc?: String;
+  props?: BoPropCreateManyWithoutLinkBoInput;
+  wikiUrl?: String;
+  details?: BoCreateManyInput;
+}
+
+export interface BoUpdateOneWithoutPropsInput {
+  create?: BoCreateWithoutPropsInput;
+  update?: BoUpdateWithoutPropsDataInput;
+  upsert?: BoUpsertWithoutPropsInput;
+  delete?: Boolean;
+  disconnect?: Boolean;
+  connect?: BoWhereUniqueInput;
+}
+
+export interface BoPropCreateWithoutLinkBoInput {
+  name?: String;
+  desc?: String;
+  type?: String;
+  required?: Boolean;
+  unique?: Boolean;
+  redundant?: Boolean;
+  linkEnumType?: EnumTypeCreateOneInput;
+}
+
+export interface BoWhereInput {
+  id?: ID_Input;
+  id_not?: ID_Input;
+  id_in?: ID_Input[] | ID_Input;
+  id_not_in?: ID_Input[] | ID_Input;
+  id_lt?: ID_Input;
+  id_lte?: ID_Input;
+  id_gt?: ID_Input;
+  id_gte?: ID_Input;
+  id_contains?: ID_Input;
+  id_not_contains?: ID_Input;
+  id_starts_with?: ID_Input;
+  id_not_starts_with?: ID_Input;
+  id_ends_with?: ID_Input;
+  id_not_ends_with?: ID_Input;
+  name?: String;
+  name_not?: String;
+  name_in?: String[] | String;
+  name_not_in?: String[] | String;
+  name_lt?: String;
+  name_lte?: String;
+  name_gt?: String;
+  name_gte?: String;
+  name_contains?: String;
+  name_not_contains?: String;
+  name_starts_with?: String;
+  name_not_starts_with?: String;
+  name_ends_with?: String;
+  name_not_ends_with?: String;
+  desc?: String;
+  desc_not?: String;
+  desc_in?: String[] | String;
+  desc_not_in?: String[] | String;
+  desc_lt?: String;
+  desc_lte?: String;
+  desc_gt?: String;
+  desc_gte?: String;
+  desc_contains?: String;
+  desc_not_contains?: String;
+  desc_starts_with?: String;
+  desc_not_starts_with?: String;
+  desc_ends_with?: String;
+  desc_not_ends_with?: String;
+  props_every?: BoPropWhereInput;
+  props_some?: BoPropWhereInput;
+  props_none?: BoPropWhereInput;
+  wikiUrl?: String;
+  wikiUrl_not?: String;
+  wikiUrl_in?: String[] | String;
+  wikiUrl_not_in?: String[] | String;
+  wikiUrl_lt?: String;
+  wikiUrl_lte?: String;
+  wikiUrl_gt?: String;
+  wikiUrl_gte?: String;
+  wikiUrl_contains?: String;
+  wikiUrl_not_contains?: String;
+  wikiUrl_starts_with?: String;
+  wikiUrl_not_starts_with?: String;
+  wikiUrl_ends_with?: String;
+  wikiUrl_not_ends_with?: String;
+  details_every?: BoWhereInput;
+  details_some?: BoWhereInput;
+  details_none?: BoWhereInput;
+  AND?: BoWhereInput[] | BoWhereInput;
+  OR?: BoWhereInput[] | BoWhereInput;
+  NOT?: BoWhereInput[] | BoWhereInput;
+}
+
+export interface EnumTypeCreateInput {
+  name?: String;
+  desc?: String;
+  props?: EnumPropCreateManyInput;
+  wikiUrl?: String;
+}
+
+export interface BoPropScalarWhereInput {
+  id?: ID_Input;
+  id_not?: ID_Input;
+  id_in?: ID_Input[] | ID_Input;
+  id_not_in?: ID_Input[] | ID_Input;
+  id_lt?: ID_Input;
+  id_lte?: ID_Input;
+  id_gt?: ID_Input;
+  id_gte?: ID_Input;
+  id_contains?: ID_Input;
+  id_not_contains?: ID_Input;
+  id_starts_with?: ID_Input;
+  id_not_starts_with?: ID_Input;
+  id_ends_with?: ID_Input;
+  id_not_ends_with?: ID_Input;
+  name?: String;
+  name_not?: String;
+  name_in?: String[] | String;
+  name_not_in?: String[] | String;
+  name_lt?: String;
+  name_lte?: String;
+  name_gt?: String;
+  name_gte?: String;
+  name_contains?: String;
+  name_not_contains?: String;
+  name_starts_with?: String;
+  name_not_starts_with?: String;
+  name_ends_with?: String;
+  name_not_ends_with?: String;
+  desc?: String;
+  desc_not?: String;
+  desc_in?: String[] | String;
+  desc_not_in?: String[] | String;
+  desc_lt?: String;
+  desc_lte?: String;
+  desc_gt?: String;
+  desc_gte?: String;
+  desc_contains?: String;
+  desc_not_contains?: String;
+  desc_starts_with?: String;
+  desc_not_starts_with?: String;
+  desc_ends_with?: String;
+  desc_not_ends_with?: String;
+  type?: String;
+  type_not?: String;
+  type_in?: String[] | String;
+  type_not_in?: String[] | String;
+  type_lt?: String;
+  type_lte?: String;
+  type_gt?: String;
+  type_gte?: String;
+  type_contains?: String;
+  type_not_contains?: String;
+  type_starts_with?: String;
+  type_not_starts_with?: String;
+  type_ends_with?: String;
+  type_not_ends_with?: String;
+  required?: Boolean;
+  required_not?: Boolean;
+  unique?: Boolean;
+  unique_not?: Boolean;
+  redundant?: Boolean;
+  redundant_not?: Boolean;
+  AND?: BoPropScalarWhereInput[] | BoPropScalarWhereInput;
+  OR?: BoPropScalarWhereInput[] | BoPropScalarWhereInput;
+  NOT?: BoPropScalarWhereInput[] | BoPropScalarWhereInput;
+}
+
+export interface EnumPropSubscriptionWhereInput {
+  mutation_in?: MutationType[] | MutationType;
+  updatedFields_contains?: String;
+  updatedFields_contains_every?: String[] | String;
+  updatedFields_contains_some?: String[] | String;
+  node?: EnumPropWhereInput;
+  AND?: EnumPropSubscriptionWhereInput[] | EnumPropSubscriptionWhereInput;
+  OR?: EnumPropSubscriptionWhereInput[] | EnumPropSubscriptionWhereInput;
+  NOT?: EnumPropSubscriptionWhereInput[] | EnumPropSubscriptionWhereInput;
+}
+
+export interface BoPropUpdateManyWithWhereNestedInput {
+  where: BoPropScalarWhereInput;
+  data: BoPropUpdateManyDataInput;
+}
+
+export type BoPropWhereUniqueInput = AtLeastOne<{
+  id: ID_Input;
+}>;
+
+export interface BoPropUpdateManyDataInput {
+  name?: String;
+  desc?: String;
+  type?: String;
+  required?: Boolean;
+  unique?: Boolean;
+  redundant?: Boolean;
+}
+
+export type EnumPropWhereUniqueInput = AtLeastOne<{
+  id: ID_Input;
+}>;
+
+export interface BoUpdateManyInput {
+  create?: BoCreateInput[] | BoCreateInput;
+  update?:
+    | BoUpdateWithWhereUniqueNestedInput[]
+    | BoUpdateWithWhereUniqueNestedInput;
+  upsert?:
+    | BoUpsertWithWhereUniqueNestedInput[]
+    | BoUpsertWithWhereUniqueNestedInput;
+  delete?: BoWhereUniqueInput[] | BoWhereUniqueInput;
+  connect?: BoWhereUniqueInput[] | BoWhereUniqueInput;
+  set?: BoWhereUniqueInput[] | BoWhereUniqueInput;
+  disconnect?: BoWhereUniqueInput[] | BoWhereUniqueInput;
+  deleteMany?: BoScalarWhereInput[] | BoScalarWhereInput;
+  updateMany?:
+    | BoUpdateManyWithWhereNestedInput[]
+    | BoUpdateManyWithWhereNestedInput;
+}
+
+export type EnumTypeWhereUniqueInput = AtLeastOne<{
+  id: ID_Input;
+}>;
+
+export interface BoUpdateWithWhereUniqueNestedInput {
+  where: BoWhereUniqueInput;
+  data: BoUpdateDataInput;
+}
+
+export interface PageCreateInput {
+  name?: String;
+  desc?: String;
+  project?: String;
+  system?: String;
+  domain?: String;
+  type?: String;
+  wikiUrl?: String;
+  bos?: BoCreateManyInput;
+  enums?: EnumTypeCreateManyInput;
+}
+
+export interface BoUpdateDataInput {
+  name?: String;
+  desc?: String;
+  props?: BoPropUpdateManyWithoutLinkBoInput;
+  wikiUrl?: String;
+  details?: BoUpdateManyInput;
+}
+
+export interface EnumTypeUpdateInput {
+  name?: String;
+  desc?: String;
+  props?: EnumPropUpdateManyInput;
+  wikiUrl?: String;
+}
+
+export interface BoUpsertWithWhereUniqueNestedInput {
+  where: BoWhereUniqueInput;
+  update: BoUpdateDataInput;
+  create: BoCreateInput;
+}
+
+export interface EnumTypeCreateOneInput {
+  create?: EnumTypeCreateInput;
+  connect?: EnumTypeWhereUniqueInput;
+}
+
+export interface BoScalarWhereInput {
+  id?: ID_Input;
+  id_not?: ID_Input;
+  id_in?: ID_Input[] | ID_Input;
+  id_not_in?: ID_Input[] | ID_Input;
+  id_lt?: ID_Input;
+  id_lte?: ID_Input;
+  id_gt?: ID_Input;
+  id_gte?: ID_Input;
+  id_contains?: ID_Input;
+  id_not_contains?: ID_Input;
+  id_starts_with?: ID_Input;
+  id_not_starts_with?: ID_Input;
+  id_ends_with?: ID_Input;
+  id_not_ends_with?: ID_Input;
+  name?: String;
+  name_not?: String;
+  name_in?: String[] | String;
+  name_not_in?: String[] | String;
+  name_lt?: String;
+  name_lte?: String;
+  name_gt?: String;
+  name_gte?: String;
+  name_contains?: String;
+  name_not_contains?: String;
+  name_starts_with?: String;
+  name_not_starts_with?: String;
+  name_ends_with?: String;
+  name_not_ends_with?: String;
+  desc?: String;
+  desc_not?: String;
+  desc_in?: String[] | String;
+  desc_not_in?: String[] | String;
+  desc_lt?: String;
+  desc_lte?: String;
+  desc_gt?: String;
+  desc_gte?: String;
+  desc_contains?: String;
+  desc_not_contains?: String;
+  desc_starts_with?: String;
+  desc_not_starts_with?: String;
+  desc_ends_with?: String;
+  desc_not_ends_with?: String;
+  wikiUrl?: String;
+  wikiUrl_not?: String;
+  wikiUrl_in?: String[] | String;
+  wikiUrl_not_in?: String[] | String;
+  wikiUrl_lt?: String;
+  wikiUrl_lte?: String;
+  wikiUrl_gt?: String;
+  wikiUrl_gte?: String;
+  wikiUrl_contains?: String;
+  wikiUrl_not_contains?: String;
+  wikiUrl_starts_with?: String;
+  wikiUrl_not_starts_with?: String;
+  wikiUrl_ends_with?: String;
+  wikiUrl_not_ends_with?: String;
+  AND?: BoScalarWhereInput[] | BoScalarWhereInput;
+  OR?: BoScalarWhereInput[] | BoScalarWhereInput;
+  NOT?: BoScalarWhereInput[] | BoScalarWhereInput;
+}
+
+export interface BoSubscriptionWhereInput {
+  mutation_in?: MutationType[] | MutationType;
+  updatedFields_contains?: String;
+  updatedFields_contains_every?: String[] | String;
+  updatedFields_contains_some?: String[] | String;
+  node?: BoWhereInput;
+  AND?: BoSubscriptionWhereInput[] | BoSubscriptionWhereInput;
+  OR?: BoSubscriptionWhereInput[] | BoSubscriptionWhereInput;
+  NOT?: BoSubscriptionWhereInput[] | BoSubscriptionWhereInput;
+}
+
+export interface BoUpdateManyWithWhereNestedInput {
+  where: BoScalarWhereInput;
+  data: BoUpdateManyDataInput;
+}
+
+export interface EnumTypeUpdateWithWhereUniqueNestedInput {
+  where: EnumTypeWhereUniqueInput;
+  data: EnumTypeUpdateDataInput;
+}
+
+export interface BoUpdateManyDataInput {
+  name?: String;
+  desc?: String;
+  wikiUrl?: String;
+}
+
+export interface EnumTypeUpdateManyMutationInput {
+  name?: String;
+  desc?: String;
+  wikiUrl?: String;
+}
+
+export interface BoPropCreateInput {
+  name?: String;
+  desc?: String;
+  type?: String;
+  required?: Boolean;
+  unique?: Boolean;
+  redundant?: Boolean;
+  linkBo?: BoCreateOneWithoutPropsInput;
+  linkEnumType?: EnumTypeCreateOneInput;
+}
+
+export interface BoCreateWithoutPropsInput {
+  name?: String;
+  desc?: String;
+  wikiUrl?: String;
+  details?: BoCreateManyInput;
+}
+
+export interface BoPropUpdateInput {
+  name?: String;
+  desc?: String;
+  type?: String;
+  required?: Boolean;
+  unique?: Boolean;
+  redundant?: Boolean;
+  linkBo?: BoUpdateOneWithoutPropsInput;
+  linkEnumType?: EnumTypeUpdateOneInput;
+}
+
+export interface BoUpdateManyMutationInput {
+  name?: String;
+  desc?: String;
+  wikiUrl?: String;
+}
+
+export interface EnumPropUpdateInput {
+  key?: String;
+  value?: Int;
+}
+
+export interface PageUpdateInput {
+  name?: String;
+  desc?: String;
+  project?: String;
+  system?: String;
+  domain?: String;
+  type?: String;
+  wikiUrl?: String;
+  bos?: BoUpdateManyInput;
+  enums?: EnumTypeUpdateManyInput;
+}
+
+export interface EnumTypeUpdateManyWithWhereNestedInput {
+  where: EnumTypeScalarWhereInput;
+  data: EnumTypeUpdateManyDataInput;
+}
+
+export interface PageSubscriptionWhereInput {
+  mutation_in?: MutationType[] | MutationType;
+  updatedFields_contains?: String;
+  updatedFields_contains_every?: String[] | String;
+  updatedFields_contains_some?: String[] | String;
+  node?: PageWhereInput;
+  AND?: PageSubscriptionWhereInput[] | PageSubscriptionWhereInput;
+  OR?: PageSubscriptionWhereInput[] | PageSubscriptionWhereInput;
+  NOT?: PageSubscriptionWhereInput[] | PageSubscriptionWhereInput;
+}
+
+export interface BoPropCreateManyWithoutLinkBoInput {
+  create?: BoPropCreateWithoutLinkBoInput[] | BoPropCreateWithoutLinkBoInput;
+  connect?: BoPropWhereUniqueInput[] | BoPropWhereUniqueInput;
+}
 
 export interface NodeNode {
   id: ID_Output;
 }
 
-export interface UserPreviousValues {
+export interface PagePreviousValues {
   id: ID_Output;
-  email: String;
   name?: String;
+  desc?: String;
+  project?: String;
+  system?: String;
+  domain?: String;
+  type?: String;
+  wikiUrl?: String;
 }
 
-export interface UserPreviousValuesPromise
-  extends Promise<UserPreviousValues>,
+export interface PagePreviousValuesPromise
+  extends Promise<PagePreviousValues>,
     Fragmentable {
   id: () => Promise<ID_Output>;
-  email: () => Promise<String>;
   name: () => Promise<String>;
+  desc: () => Promise<String>;
+  project: () => Promise<String>;
+  system: () => Promise<String>;
+  domain: () => Promise<String>;
+  type: () => Promise<String>;
+  wikiUrl: () => Promise<String>;
 }
 
-export interface UserPreviousValuesSubscription
-  extends Promise<AsyncIterator<UserPreviousValues>>,
+export interface PagePreviousValuesSubscription
+  extends Promise<AsyncIterator<PagePreviousValues>>,
     Fragmentable {
   id: () => Promise<AsyncIterator<ID_Output>>;
-  email: () => Promise<AsyncIterator<String>>;
   name: () => Promise<AsyncIterator<String>>;
+  desc: () => Promise<AsyncIterator<String>>;
+  project: () => Promise<AsyncIterator<String>>;
+  system: () => Promise<AsyncIterator<String>>;
+  domain: () => Promise<AsyncIterator<String>>;
+  type: () => Promise<AsyncIterator<String>>;
+  wikiUrl: () => Promise<AsyncIterator<String>>;
 }
 
-export interface PostPreviousValues {
-  id: ID_Output;
-  createdAt: DateTimeOutput;
-  updatedAt: DateTimeOutput;
-  published: Boolean;
-  title: String;
-  content?: String;
+export interface BoPropConnection {
+  pageInfo: PageInfo;
+  edges: BoPropEdge[];
 }
 
-export interface PostPreviousValuesPromise
-  extends Promise<PostPreviousValues>,
+export interface BoPropConnectionPromise
+  extends Promise<BoPropConnection>,
     Fragmentable {
-  id: () => Promise<ID_Output>;
-  createdAt: () => Promise<DateTimeOutput>;
-  updatedAt: () => Promise<DateTimeOutput>;
-  published: () => Promise<Boolean>;
-  title: () => Promise<String>;
-  content: () => Promise<String>;
+  pageInfo: <T = PageInfoPromise>() => T;
+  edges: <T = FragmentableArray<BoPropEdge>>() => T;
+  aggregate: <T = AggregateBoPropPromise>() => T;
 }
 
-export interface PostPreviousValuesSubscription
-  extends Promise<AsyncIterator<PostPreviousValues>>,
+export interface BoPropConnectionSubscription
+  extends Promise<AsyncIterator<BoPropConnection>>,
+    Fragmentable {
+  pageInfo: <T = PageInfoSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<BoPropEdgeSubscription>>>() => T;
+  aggregate: <T = AggregateBoPropSubscription>() => T;
+}
+
+export interface EnumType {
+  id: ID_Output;
+  name?: String;
+  desc?: String;
+  wikiUrl?: String;
+}
+
+export interface EnumTypePromise extends Promise<EnumType>, Fragmentable {
+  id: () => Promise<ID_Output>;
+  name: () => Promise<String>;
+  desc: () => Promise<String>;
+  props: <T = FragmentableArray<EnumProp>>(
+    args?: {
+      where?: EnumPropWhereInput;
+      orderBy?: EnumPropOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => T;
+  wikiUrl: () => Promise<String>;
+}
+
+export interface EnumTypeSubscription
+  extends Promise<AsyncIterator<EnumType>>,
     Fragmentable {
   id: () => Promise<AsyncIterator<ID_Output>>;
-  createdAt: () => Promise<AsyncIterator<DateTimeOutput>>;
-  updatedAt: () => Promise<AsyncIterator<DateTimeOutput>>;
-  published: () => Promise<AsyncIterator<Boolean>>;
-  title: () => Promise<AsyncIterator<String>>;
-  content: () => Promise<AsyncIterator<String>>;
+  name: () => Promise<AsyncIterator<String>>;
+  desc: () => Promise<AsyncIterator<String>>;
+  props: <T = Promise<AsyncIterator<EnumPropSubscription>>>(
+    args?: {
+      where?: EnumPropWhereInput;
+      orderBy?: EnumPropOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => T;
+  wikiUrl: () => Promise<AsyncIterator<String>>;
 }
 
-export interface Post {
-  id: ID_Output;
-  createdAt: DateTimeOutput;
-  updatedAt: DateTimeOutput;
-  published: Boolean;
-  title: String;
-  content?: String;
-}
-
-export interface PostPromise extends Promise<Post>, Fragmentable {
-  id: () => Promise<ID_Output>;
-  createdAt: () => Promise<DateTimeOutput>;
-  updatedAt: () => Promise<DateTimeOutput>;
-  published: () => Promise<Boolean>;
-  title: () => Promise<String>;
-  content: () => Promise<String>;
-  author: <T = UserPromise>() => T;
-}
-
-export interface PostSubscription
-  extends Promise<AsyncIterator<Post>>,
-    Fragmentable {
-  id: () => Promise<AsyncIterator<ID_Output>>;
-  createdAt: () => Promise<AsyncIterator<DateTimeOutput>>;
-  updatedAt: () => Promise<AsyncIterator<DateTimeOutput>>;
-  published: () => Promise<AsyncIterator<Boolean>>;
-  title: () => Promise<AsyncIterator<String>>;
-  content: () => Promise<AsyncIterator<String>>;
-  author: <T = UserSubscription>() => T;
-}
-
-export interface AggregatePost {
+export interface AggregateBo {
   count: Int;
 }
 
-export interface AggregatePostPromise
-  extends Promise<AggregatePost>,
-    Fragmentable {
+export interface AggregateBoPromise extends Promise<AggregateBo>, Fragmentable {
   count: () => Promise<Int>;
 }
 
-export interface AggregatePostSubscription
-  extends Promise<AsyncIterator<AggregatePost>>,
+export interface AggregateBoSubscription
+  extends Promise<AsyncIterator<AggregateBo>>,
     Fragmentable {
   count: () => Promise<AsyncIterator<Int>>;
 }
 
-export interface PostEdge {
-  node: Post;
+export interface BoProp {
+  id: ID_Output;
+  name?: String;
+  desc?: String;
+  type?: String;
+  required?: Boolean;
+  unique?: Boolean;
+  redundant?: Boolean;
+}
+
+export interface BoPropPromise extends Promise<BoProp>, Fragmentable {
+  id: () => Promise<ID_Output>;
+  name: () => Promise<String>;
+  desc: () => Promise<String>;
+  type: () => Promise<String>;
+  required: () => Promise<Boolean>;
+  unique: () => Promise<Boolean>;
+  redundant: () => Promise<Boolean>;
+  linkBo: <T = BoPromise>() => T;
+  linkEnumType: <T = EnumTypePromise>() => T;
+}
+
+export interface BoPropSubscription
+  extends Promise<AsyncIterator<BoProp>>,
+    Fragmentable {
+  id: () => Promise<AsyncIterator<ID_Output>>;
+  name: () => Promise<AsyncIterator<String>>;
+  desc: () => Promise<AsyncIterator<String>>;
+  type: () => Promise<AsyncIterator<String>>;
+  required: () => Promise<AsyncIterator<Boolean>>;
+  unique: () => Promise<AsyncIterator<Boolean>>;
+  redundant: () => Promise<AsyncIterator<Boolean>>;
+  linkBo: <T = BoSubscription>() => T;
+  linkEnumType: <T = EnumTypeSubscription>() => T;
+}
+
+export interface BatchPayload {
+  count: Long;
+}
+
+export interface BatchPayloadPromise
+  extends Promise<BatchPayload>,
+    Fragmentable {
+  count: () => Promise<Long>;
+}
+
+export interface BatchPayloadSubscription
+  extends Promise<AsyncIterator<BatchPayload>>,
+    Fragmentable {
+  count: () => Promise<AsyncIterator<Long>>;
+}
+
+export interface EnumTypeSubscriptionPayload {
+  mutation: MutationType;
+  node: EnumType;
+  updatedFields: String[];
+  previousValues: EnumTypePreviousValues;
+}
+
+export interface EnumTypeSubscriptionPayloadPromise
+  extends Promise<EnumTypeSubscriptionPayload>,
+    Fragmentable {
+  mutation: () => Promise<MutationType>;
+  node: <T = EnumTypePromise>() => T;
+  updatedFields: () => Promise<String[]>;
+  previousValues: <T = EnumTypePreviousValuesPromise>() => T;
+}
+
+export interface EnumTypeSubscriptionPayloadSubscription
+  extends Promise<AsyncIterator<EnumTypeSubscriptionPayload>>,
+    Fragmentable {
+  mutation: () => Promise<AsyncIterator<MutationType>>;
+  node: <T = EnumTypeSubscription>() => T;
+  updatedFields: () => Promise<AsyncIterator<String[]>>;
+  previousValues: <T = EnumTypePreviousValuesSubscription>() => T;
+}
+
+export interface EnumProp {
+  id: ID_Output;
+  key: String;
+  value: Int;
+}
+
+export interface EnumPropPromise extends Promise<EnumProp>, Fragmentable {
+  id: () => Promise<ID_Output>;
+  key: () => Promise<String>;
+  value: () => Promise<Int>;
+}
+
+export interface EnumPropSubscription
+  extends Promise<AsyncIterator<EnumProp>>,
+    Fragmentable {
+  id: () => Promise<AsyncIterator<ID_Output>>;
+  key: () => Promise<AsyncIterator<String>>;
+  value: () => Promise<AsyncIterator<Int>>;
+}
+
+export interface BoEdge {
+  node: Bo;
   cursor: String;
 }
 
-export interface PostEdgePromise extends Promise<PostEdge>, Fragmentable {
-  node: <T = PostPromise>() => T;
+export interface BoEdgePromise extends Promise<BoEdge>, Fragmentable {
+  node: <T = BoPromise>() => T;
   cursor: () => Promise<String>;
 }
 
-export interface PostEdgeSubscription
-  extends Promise<AsyncIterator<PostEdge>>,
+export interface BoEdgeSubscription
+  extends Promise<AsyncIterator<BoEdge>>,
     Fragmentable {
-  node: <T = PostSubscription>() => T;
+  node: <T = BoSubscription>() => T;
   cursor: () => Promise<AsyncIterator<String>>;
 }
 
-export interface UserSubscriptionPayload {
-  mutation: MutationType;
-  node: User;
-  updatedFields: String[];
-  previousValues: UserPreviousValues;
+export interface AggregatePage {
+  count: Int;
 }
 
-export interface UserSubscriptionPayloadPromise
-  extends Promise<UserSubscriptionPayload>,
+export interface AggregatePagePromise
+  extends Promise<AggregatePage>,
     Fragmentable {
-  mutation: () => Promise<MutationType>;
-  node: <T = UserPromise>() => T;
-  updatedFields: () => Promise<String[]>;
-  previousValues: <T = UserPreviousValuesPromise>() => T;
+  count: () => Promise<Int>;
 }
 
-export interface UserSubscriptionPayloadSubscription
-  extends Promise<AsyncIterator<UserSubscriptionPayload>>,
+export interface AggregatePageSubscription
+  extends Promise<AsyncIterator<AggregatePage>>,
     Fragmentable {
-  mutation: () => Promise<AsyncIterator<MutationType>>;
-  node: <T = UserSubscription>() => T;
-  updatedFields: () => Promise<AsyncIterator<String[]>>;
-  previousValues: <T = UserPreviousValuesSubscription>() => T;
+  count: () => Promise<AsyncIterator<Int>>;
 }
 
-export interface PostSubscriptionPayload {
-  mutation: MutationType;
-  node: Post;
-  updatedFields: String[];
-  previousValues: PostPreviousValues;
-}
-
-export interface PostSubscriptionPayloadPromise
-  extends Promise<PostSubscriptionPayload>,
-    Fragmentable {
-  mutation: () => Promise<MutationType>;
-  node: <T = PostPromise>() => T;
-  updatedFields: () => Promise<String[]>;
-  previousValues: <T = PostPreviousValuesPromise>() => T;
-}
-
-export interface PostSubscriptionPayloadSubscription
-  extends Promise<AsyncIterator<PostSubscriptionPayload>>,
-    Fragmentable {
-  mutation: () => Promise<AsyncIterator<MutationType>>;
-  node: <T = PostSubscription>() => T;
-  updatedFields: () => Promise<AsyncIterator<String[]>>;
-  previousValues: <T = PostPreviousValuesSubscription>() => T;
-}
-
-export interface PostConnection {
+export interface PageConnection {
   pageInfo: PageInfo;
-  edges: PostEdge[];
+  edges: PageEdge[];
 }
 
-export interface PostConnectionPromise
-  extends Promise<PostConnection>,
+export interface PageConnectionPromise
+  extends Promise<PageConnection>,
     Fragmentable {
   pageInfo: <T = PageInfoPromise>() => T;
-  edges: <T = FragmentableArray<PostEdge>>() => T;
-  aggregate: <T = AggregatePostPromise>() => T;
+  edges: <T = FragmentableArray<PageEdge>>() => T;
+  aggregate: <T = AggregatePagePromise>() => T;
 }
 
-export interface PostConnectionSubscription
-  extends Promise<AsyncIterator<PostConnection>>,
+export interface PageConnectionSubscription
+  extends Promise<AsyncIterator<PageConnection>>,
     Fragmentable {
   pageInfo: <T = PageInfoSubscription>() => T;
-  edges: <T = Promise<AsyncIterator<PostEdgeSubscription>>>() => T;
-  aggregate: <T = AggregatePostSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<PageEdgeSubscription>>>() => T;
+  aggregate: <T = AggregatePageSubscription>() => T;
+}
+
+export interface Bo {
+  id: ID_Output;
+  name?: String;
+  desc?: String;
+  wikiUrl?: String;
+}
+
+export interface BoPromise extends Promise<Bo>, Fragmentable {
+  id: () => Promise<ID_Output>;
+  name: () => Promise<String>;
+  desc: () => Promise<String>;
+  props: <T = FragmentableArray<BoProp>>(
+    args?: {
+      where?: BoPropWhereInput;
+      orderBy?: BoPropOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => T;
+  wikiUrl: () => Promise<String>;
+  details: <T = FragmentableArray<Bo>>(
+    args?: {
+      where?: BoWhereInput;
+      orderBy?: BoOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => T;
+}
+
+export interface BoSubscription
+  extends Promise<AsyncIterator<Bo>>,
+    Fragmentable {
+  id: () => Promise<AsyncIterator<ID_Output>>;
+  name: () => Promise<AsyncIterator<String>>;
+  desc: () => Promise<AsyncIterator<String>>;
+  props: <T = Promise<AsyncIterator<BoPropSubscription>>>(
+    args?: {
+      where?: BoPropWhereInput;
+      orderBy?: BoPropOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => T;
+  wikiUrl: () => Promise<AsyncIterator<String>>;
+  details: <T = Promise<AsyncIterator<BoSubscription>>>(
+    args?: {
+      where?: BoWhereInput;
+      orderBy?: BoOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => T;
+}
+
+export interface Page {
+  id: ID_Output;
+  name?: String;
+  desc?: String;
+  project?: String;
+  system?: String;
+  domain?: String;
+  type?: String;
+  wikiUrl?: String;
+}
+
+export interface PagePromise extends Promise<Page>, Fragmentable {
+  id: () => Promise<ID_Output>;
+  name: () => Promise<String>;
+  desc: () => Promise<String>;
+  project: () => Promise<String>;
+  system: () => Promise<String>;
+  domain: () => Promise<String>;
+  type: () => Promise<String>;
+  wikiUrl: () => Promise<String>;
+  bos: <T = FragmentableArray<Bo>>(
+    args?: {
+      where?: BoWhereInput;
+      orderBy?: BoOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => T;
+  enums: <T = FragmentableArray<EnumType>>(
+    args?: {
+      where?: EnumTypeWhereInput;
+      orderBy?: EnumTypeOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => T;
+}
+
+export interface PageSubscription
+  extends Promise<AsyncIterator<Page>>,
+    Fragmentable {
+  id: () => Promise<AsyncIterator<ID_Output>>;
+  name: () => Promise<AsyncIterator<String>>;
+  desc: () => Promise<AsyncIterator<String>>;
+  project: () => Promise<AsyncIterator<String>>;
+  system: () => Promise<AsyncIterator<String>>;
+  domain: () => Promise<AsyncIterator<String>>;
+  type: () => Promise<AsyncIterator<String>>;
+  wikiUrl: () => Promise<AsyncIterator<String>>;
+  bos: <T = Promise<AsyncIterator<BoSubscription>>>(
+    args?: {
+      where?: BoWhereInput;
+      orderBy?: BoOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => T;
+  enums: <T = Promise<AsyncIterator<EnumTypeSubscription>>>(
+    args?: {
+      where?: EnumTypeWhereInput;
+      orderBy?: EnumTypeOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => T;
+}
+
+export interface BoSubscriptionPayload {
+  mutation: MutationType;
+  node: Bo;
+  updatedFields: String[];
+  previousValues: BoPreviousValues;
+}
+
+export interface BoSubscriptionPayloadPromise
+  extends Promise<BoSubscriptionPayload>,
+    Fragmentable {
+  mutation: () => Promise<MutationType>;
+  node: <T = BoPromise>() => T;
+  updatedFields: () => Promise<String[]>;
+  previousValues: <T = BoPreviousValuesPromise>() => T;
+}
+
+export interface BoSubscriptionPayloadSubscription
+  extends Promise<AsyncIterator<BoSubscriptionPayload>>,
+    Fragmentable {
+  mutation: () => Promise<AsyncIterator<MutationType>>;
+  node: <T = BoSubscription>() => T;
+  updatedFields: () => Promise<AsyncIterator<String[]>>;
+  previousValues: <T = BoPreviousValuesSubscription>() => T;
+}
+
+export interface EnumTypeEdge {
+  node: EnumType;
+  cursor: String;
+}
+
+export interface EnumTypeEdgePromise
+  extends Promise<EnumTypeEdge>,
+    Fragmentable {
+  node: <T = EnumTypePromise>() => T;
+  cursor: () => Promise<String>;
+}
+
+export interface EnumTypeEdgeSubscription
+  extends Promise<AsyncIterator<EnumTypeEdge>>,
+    Fragmentable {
+  node: <T = EnumTypeSubscription>() => T;
+  cursor: () => Promise<AsyncIterator<String>>;
+}
+
+export interface BoPreviousValues {
+  id: ID_Output;
+  name?: String;
+  desc?: String;
+  wikiUrl?: String;
+}
+
+export interface BoPreviousValuesPromise
+  extends Promise<BoPreviousValues>,
+    Fragmentable {
+  id: () => Promise<ID_Output>;
+  name: () => Promise<String>;
+  desc: () => Promise<String>;
+  wikiUrl: () => Promise<String>;
+}
+
+export interface BoPreviousValuesSubscription
+  extends Promise<AsyncIterator<BoPreviousValues>>,
+    Fragmentable {
+  id: () => Promise<AsyncIterator<ID_Output>>;
+  name: () => Promise<AsyncIterator<String>>;
+  desc: () => Promise<AsyncIterator<String>>;
+  wikiUrl: () => Promise<AsyncIterator<String>>;
+}
+
+export interface AggregateEnumProp {
+  count: Int;
+}
+
+export interface AggregateEnumPropPromise
+  extends Promise<AggregateEnumProp>,
+    Fragmentable {
+  count: () => Promise<Int>;
+}
+
+export interface AggregateEnumPropSubscription
+  extends Promise<AsyncIterator<AggregateEnumProp>>,
+    Fragmentable {
+  count: () => Promise<AsyncIterator<Int>>;
 }
 
 export interface PageInfo {
@@ -725,122 +1957,309 @@ export interface PageInfoSubscription
   endCursor: () => Promise<AsyncIterator<String>>;
 }
 
-export interface BatchPayload {
-  count: Long;
+export interface EnumPropConnection {
+  pageInfo: PageInfo;
+  edges: EnumPropEdge[];
 }
 
-export interface BatchPayloadPromise
-  extends Promise<BatchPayload>,
+export interface EnumPropConnectionPromise
+  extends Promise<EnumPropConnection>,
     Fragmentable {
-  count: () => Promise<Long>;
+  pageInfo: <T = PageInfoPromise>() => T;
+  edges: <T = FragmentableArray<EnumPropEdge>>() => T;
+  aggregate: <T = AggregateEnumPropPromise>() => T;
 }
 
-export interface BatchPayloadSubscription
-  extends Promise<AsyncIterator<BatchPayload>>,
+export interface EnumPropConnectionSubscription
+  extends Promise<AsyncIterator<EnumPropConnection>>,
     Fragmentable {
-  count: () => Promise<AsyncIterator<Long>>;
+  pageInfo: <T = PageInfoSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<EnumPropEdgeSubscription>>>() => T;
+  aggregate: <T = AggregateEnumPropSubscription>() => T;
 }
 
-export interface AggregateUser {
+export interface BoPropSubscriptionPayload {
+  mutation: MutationType;
+  node: BoProp;
+  updatedFields: String[];
+  previousValues: BoPropPreviousValues;
+}
+
+export interface BoPropSubscriptionPayloadPromise
+  extends Promise<BoPropSubscriptionPayload>,
+    Fragmentable {
+  mutation: () => Promise<MutationType>;
+  node: <T = BoPropPromise>() => T;
+  updatedFields: () => Promise<String[]>;
+  previousValues: <T = BoPropPreviousValuesPromise>() => T;
+}
+
+export interface BoPropSubscriptionPayloadSubscription
+  extends Promise<AsyncIterator<BoPropSubscriptionPayload>>,
+    Fragmentable {
+  mutation: () => Promise<AsyncIterator<MutationType>>;
+  node: <T = BoPropSubscription>() => T;
+  updatedFields: () => Promise<AsyncIterator<String[]>>;
+  previousValues: <T = BoPropPreviousValuesSubscription>() => T;
+}
+
+export interface BoPropEdge {
+  node: BoProp;
+  cursor: String;
+}
+
+export interface BoPropEdgePromise extends Promise<BoPropEdge>, Fragmentable {
+  node: <T = BoPropPromise>() => T;
+  cursor: () => Promise<String>;
+}
+
+export interface BoPropEdgeSubscription
+  extends Promise<AsyncIterator<BoPropEdge>>,
+    Fragmentable {
+  node: <T = BoPropSubscription>() => T;
+  cursor: () => Promise<AsyncIterator<String>>;
+}
+
+export interface BoPropPreviousValues {
+  id: ID_Output;
+  name?: String;
+  desc?: String;
+  type?: String;
+  required?: Boolean;
+  unique?: Boolean;
+  redundant?: Boolean;
+}
+
+export interface BoPropPreviousValuesPromise
+  extends Promise<BoPropPreviousValues>,
+    Fragmentable {
+  id: () => Promise<ID_Output>;
+  name: () => Promise<String>;
+  desc: () => Promise<String>;
+  type: () => Promise<String>;
+  required: () => Promise<Boolean>;
+  unique: () => Promise<Boolean>;
+  redundant: () => Promise<Boolean>;
+}
+
+export interface BoPropPreviousValuesSubscription
+  extends Promise<AsyncIterator<BoPropPreviousValues>>,
+    Fragmentable {
+  id: () => Promise<AsyncIterator<ID_Output>>;
+  name: () => Promise<AsyncIterator<String>>;
+  desc: () => Promise<AsyncIterator<String>>;
+  type: () => Promise<AsyncIterator<String>>;
+  required: () => Promise<AsyncIterator<Boolean>>;
+  unique: () => Promise<AsyncIterator<Boolean>>;
+  redundant: () => Promise<AsyncIterator<Boolean>>;
+}
+
+export interface PageSubscriptionPayload {
+  mutation: MutationType;
+  node: Page;
+  updatedFields: String[];
+  previousValues: PagePreviousValues;
+}
+
+export interface PageSubscriptionPayloadPromise
+  extends Promise<PageSubscriptionPayload>,
+    Fragmentable {
+  mutation: () => Promise<MutationType>;
+  node: <T = PagePromise>() => T;
+  updatedFields: () => Promise<String[]>;
+  previousValues: <T = PagePreviousValuesPromise>() => T;
+}
+
+export interface PageSubscriptionPayloadSubscription
+  extends Promise<AsyncIterator<PageSubscriptionPayload>>,
+    Fragmentable {
+  mutation: () => Promise<AsyncIterator<MutationType>>;
+  node: <T = PageSubscription>() => T;
+  updatedFields: () => Promise<AsyncIterator<String[]>>;
+  previousValues: <T = PagePreviousValuesSubscription>() => T;
+}
+
+export interface EnumTypeConnection {
+  pageInfo: PageInfo;
+  edges: EnumTypeEdge[];
+}
+
+export interface EnumTypeConnectionPromise
+  extends Promise<EnumTypeConnection>,
+    Fragmentable {
+  pageInfo: <T = PageInfoPromise>() => T;
+  edges: <T = FragmentableArray<EnumTypeEdge>>() => T;
+  aggregate: <T = AggregateEnumTypePromise>() => T;
+}
+
+export interface EnumTypeConnectionSubscription
+  extends Promise<AsyncIterator<EnumTypeConnection>>,
+    Fragmentable {
+  pageInfo: <T = PageInfoSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<EnumTypeEdgeSubscription>>>() => T;
+  aggregate: <T = AggregateEnumTypeSubscription>() => T;
+}
+
+export interface EnumTypePreviousValues {
+  id: ID_Output;
+  name?: String;
+  desc?: String;
+  wikiUrl?: String;
+}
+
+export interface EnumTypePreviousValuesPromise
+  extends Promise<EnumTypePreviousValues>,
+    Fragmentable {
+  id: () => Promise<ID_Output>;
+  name: () => Promise<String>;
+  desc: () => Promise<String>;
+  wikiUrl: () => Promise<String>;
+}
+
+export interface EnumTypePreviousValuesSubscription
+  extends Promise<AsyncIterator<EnumTypePreviousValues>>,
+    Fragmentable {
+  id: () => Promise<AsyncIterator<ID_Output>>;
+  name: () => Promise<AsyncIterator<String>>;
+  desc: () => Promise<AsyncIterator<String>>;
+  wikiUrl: () => Promise<AsyncIterator<String>>;
+}
+
+export interface EnumPropPreviousValues {
+  id: ID_Output;
+  key: String;
+  value: Int;
+}
+
+export interface EnumPropPreviousValuesPromise
+  extends Promise<EnumPropPreviousValues>,
+    Fragmentable {
+  id: () => Promise<ID_Output>;
+  key: () => Promise<String>;
+  value: () => Promise<Int>;
+}
+
+export interface EnumPropPreviousValuesSubscription
+  extends Promise<AsyncIterator<EnumPropPreviousValues>>,
+    Fragmentable {
+  id: () => Promise<AsyncIterator<ID_Output>>;
+  key: () => Promise<AsyncIterator<String>>;
+  value: () => Promise<AsyncIterator<Int>>;
+}
+
+export interface EnumPropSubscriptionPayload {
+  mutation: MutationType;
+  node: EnumProp;
+  updatedFields: String[];
+  previousValues: EnumPropPreviousValues;
+}
+
+export interface EnumPropSubscriptionPayloadPromise
+  extends Promise<EnumPropSubscriptionPayload>,
+    Fragmentable {
+  mutation: () => Promise<MutationType>;
+  node: <T = EnumPropPromise>() => T;
+  updatedFields: () => Promise<String[]>;
+  previousValues: <T = EnumPropPreviousValuesPromise>() => T;
+}
+
+export interface EnumPropSubscriptionPayloadSubscription
+  extends Promise<AsyncIterator<EnumPropSubscriptionPayload>>,
+    Fragmentable {
+  mutation: () => Promise<AsyncIterator<MutationType>>;
+  node: <T = EnumPropSubscription>() => T;
+  updatedFields: () => Promise<AsyncIterator<String[]>>;
+  previousValues: <T = EnumPropPreviousValuesSubscription>() => T;
+}
+
+export interface BoConnection {
+  pageInfo: PageInfo;
+  edges: BoEdge[];
+}
+
+export interface BoConnectionPromise
+  extends Promise<BoConnection>,
+    Fragmentable {
+  pageInfo: <T = PageInfoPromise>() => T;
+  edges: <T = FragmentableArray<BoEdge>>() => T;
+  aggregate: <T = AggregateBoPromise>() => T;
+}
+
+export interface BoConnectionSubscription
+  extends Promise<AsyncIterator<BoConnection>>,
+    Fragmentable {
+  pageInfo: <T = PageInfoSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<BoEdgeSubscription>>>() => T;
+  aggregate: <T = AggregateBoSubscription>() => T;
+}
+
+export interface EnumPropEdge {
+  node: EnumProp;
+  cursor: String;
+}
+
+export interface EnumPropEdgePromise
+  extends Promise<EnumPropEdge>,
+    Fragmentable {
+  node: <T = EnumPropPromise>() => T;
+  cursor: () => Promise<String>;
+}
+
+export interface EnumPropEdgeSubscription
+  extends Promise<AsyncIterator<EnumPropEdge>>,
+    Fragmentable {
+  node: <T = EnumPropSubscription>() => T;
+  cursor: () => Promise<AsyncIterator<String>>;
+}
+
+export interface AggregateEnumType {
   count: Int;
 }
 
-export interface AggregateUserPromise
-  extends Promise<AggregateUser>,
+export interface AggregateEnumTypePromise
+  extends Promise<AggregateEnumType>,
     Fragmentable {
   count: () => Promise<Int>;
 }
 
-export interface AggregateUserSubscription
-  extends Promise<AsyncIterator<AggregateUser>>,
+export interface AggregateEnumTypeSubscription
+  extends Promise<AsyncIterator<AggregateEnumType>>,
     Fragmentable {
   count: () => Promise<AsyncIterator<Int>>;
 }
 
-export interface User {
-  id: ID_Output;
-  email: String;
-  name?: String;
-}
-
-export interface UserPromise extends Promise<User>, Fragmentable {
-  id: () => Promise<ID_Output>;
-  email: () => Promise<String>;
-  name: () => Promise<String>;
-  posts: <T = FragmentableArray<Post>>(
-    args?: {
-      where?: PostWhereInput;
-      orderBy?: PostOrderByInput;
-      skip?: Int;
-      after?: String;
-      before?: String;
-      first?: Int;
-      last?: Int;
-    }
-  ) => T;
-}
-
-export interface UserSubscription
-  extends Promise<AsyncIterator<User>>,
-    Fragmentable {
-  id: () => Promise<AsyncIterator<ID_Output>>;
-  email: () => Promise<AsyncIterator<String>>;
-  name: () => Promise<AsyncIterator<String>>;
-  posts: <T = Promise<AsyncIterator<PostSubscription>>>(
-    args?: {
-      where?: PostWhereInput;
-      orderBy?: PostOrderByInput;
-      skip?: Int;
-      after?: String;
-      before?: String;
-      first?: Int;
-      last?: Int;
-    }
-  ) => T;
-}
-
-export interface UserConnection {
-  pageInfo: PageInfo;
-  edges: UserEdge[];
-}
-
-export interface UserConnectionPromise
-  extends Promise<UserConnection>,
-    Fragmentable {
-  pageInfo: <T = PageInfoPromise>() => T;
-  edges: <T = FragmentableArray<UserEdge>>() => T;
-  aggregate: <T = AggregateUserPromise>() => T;
-}
-
-export interface UserConnectionSubscription
-  extends Promise<AsyncIterator<UserConnection>>,
-    Fragmentable {
-  pageInfo: <T = PageInfoSubscription>() => T;
-  edges: <T = Promise<AsyncIterator<UserEdgeSubscription>>>() => T;
-  aggregate: <T = AggregateUserSubscription>() => T;
-}
-
-export interface UserEdge {
-  node: User;
+export interface PageEdge {
+  node: Page;
   cursor: String;
 }
 
-export interface UserEdgePromise extends Promise<UserEdge>, Fragmentable {
-  node: <T = UserPromise>() => T;
+export interface PageEdgePromise extends Promise<PageEdge>, Fragmentable {
+  node: <T = PagePromise>() => T;
   cursor: () => Promise<String>;
 }
 
-export interface UserEdgeSubscription
-  extends Promise<AsyncIterator<UserEdge>>,
+export interface PageEdgeSubscription
+  extends Promise<AsyncIterator<PageEdge>>,
     Fragmentable {
-  node: <T = UserSubscription>() => T;
+  node: <T = PageSubscription>() => T;
   cursor: () => Promise<AsyncIterator<String>>;
 }
 
-/*
-The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.
-*/
-export type String = string;
+export interface AggregateBoProp {
+  count: Int;
+}
+
+export interface AggregateBoPropPromise
+  extends Promise<AggregateBoProp>,
+    Fragmentable {
+  count: () => Promise<Int>;
+}
+
+export interface AggregateBoPropSubscription
+  extends Promise<AsyncIterator<AggregateBoProp>>,
+    Fragmentable {
+  count: () => Promise<AsyncIterator<Int>>;
+}
 
 export type Long = string;
 
@@ -851,24 +2270,19 @@ export type ID_Input = string | number;
 export type ID_Output = string;
 
 /*
-The `Boolean` scalar type represents `true` or `false`.
+The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.
 */
-export type Boolean = boolean;
-
-/*
-DateTime scalar input type, allowing Date
-*/
-export type DateTimeInput = Date | string;
-
-/*
-DateTime scalar output type, which is always a string
-*/
-export type DateTimeOutput = string;
+export type String = string;
 
 /*
 The `Int` scalar type represents non-fractional signed whole numeric values. Int can represent values between -(2^31) and 2^31 - 1. 
 */
 export type Int = number;
+
+/*
+The `Boolean` scalar type represents `true` or `false`.
+*/
+export type Boolean = boolean;
 
 /**
  * Model Metadata
@@ -876,11 +2290,23 @@ export type Int = number;
 
 export const models: Model[] = [
   {
-    name: "User",
+    name: "EnumType",
     embedded: false
   },
   {
-    name: "Post",
+    name: "EnumProp",
+    embedded: false
+  },
+  {
+    name: "Bo",
+    embedded: false
+  },
+  {
+    name: "BoProp",
+    embedded: false
+  },
+  {
+    name: "Page",
     embedded: false
   }
 ];
