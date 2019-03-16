@@ -579,7 +579,7 @@ export interface EnumTypeFieldDetails {
     args: {}
     description: string
     list: undefined
-    nullable: true
+    nullable: false
     resolve: undefined
   }
 }
@@ -1031,7 +1031,7 @@ export interface BoFieldDetails {
     args: {}
     description: string
     list: undefined
-    nullable: true
+    nullable: false
     resolve: undefined
   }
   details: {
@@ -1533,7 +1533,7 @@ export interface PageFieldDetails {
     args: {}
     description: string
     list: undefined
-    nullable: true
+    nullable: false
     resolve: undefined
   }
   bos: {
@@ -2477,7 +2477,7 @@ export interface EnumTypePreviousValuesFieldDetails {
     args: {}
     description: string
     list: undefined
-    nullable: true
+    nullable: false
     resolve: undefined
   }
 }
@@ -2717,7 +2717,7 @@ export interface BoPreviousValuesFieldDetails {
     args: {}
     description: string
     list: undefined
-    nullable: true
+    nullable: false
     resolve: undefined
   }
 }
@@ -3047,7 +3047,7 @@ export interface PagePreviousValuesFieldDetails {
     args: {}
     description: string
     list: undefined
-    nullable: true
+    nullable: false
     resolve: undefined
   }
 }
@@ -3056,10 +3056,12 @@ export interface PagePreviousValuesFieldDetails {
 
 export interface EnumTypeWhereUniqueInput {
   id?: string | null
+  wikiUrl?: string | null
 }
 export type EnumTypeWhereUniqueInputInputObject =
   | Extract<keyof EnumTypeWhereUniqueInput, string>
   | { name: 'id', alias?: string  } 
+  | { name: 'wikiUrl', alias?: string  } 
   
 export interface EnumPropWhereInput {
   id?: string | null
@@ -3284,10 +3286,12 @@ export type EnumPropWhereUniqueInputInputObject =
   
 export interface BoWhereUniqueInput {
   id?: string | null
+  wikiUrl?: string | null
 }
 export type BoWhereUniqueInputInputObject =
   | Extract<keyof BoWhereUniqueInput, string>
   | { name: 'id', alias?: string  } 
+  | { name: 'wikiUrl', alias?: string  } 
   
 export interface BoPropWhereInput {
   id?: string | null
@@ -3600,10 +3604,12 @@ export type BoPropWhereUniqueInputInputObject =
   
 export interface PageWhereUniqueInput {
   id?: string | null
+  wikiUrl?: string | null
 }
 export type PageWhereUniqueInputInputObject =
   | Extract<keyof PageWhereUniqueInput, string>
   | { name: 'id', alias?: string  } 
+  | { name: 'wikiUrl', alias?: string  } 
   
 export interface PageWhereInput {
   id?: string | null
@@ -3856,7 +3862,7 @@ export interface EnumTypeCreateInput {
   name?: string | null
   desc?: string | null
   props?: EnumPropCreateManyWithoutEnumTypeInput | null
-  wikiUrl?: string | null
+  wikiUrl?: string
 }
 export type EnumTypeCreateInputInputObject =
   | Extract<keyof EnumTypeCreateInput, string>
@@ -4083,7 +4089,7 @@ export type EnumTypeCreateOneWithoutPropsInputInputObject =
 export interface EnumTypeCreateWithoutPropsInput {
   name?: string | null
   desc?: string | null
-  wikiUrl?: string | null
+  wikiUrl?: string
 }
 export type EnumTypeCreateWithoutPropsInputInputObject =
   | Extract<keyof EnumTypeCreateWithoutPropsInput, string>
@@ -4148,7 +4154,7 @@ export interface BoCreateInput {
   name?: string | null
   desc?: string | null
   props?: BoPropCreateManyWithoutBoInput | null
-  wikiUrl?: string | null
+  wikiUrl?: string
   details?: BoCreateManyInput | null
 }
 export type BoCreateInputInputObject =
@@ -4763,7 +4769,7 @@ export type BoCreateOneWithoutPropsInputInputObject =
 export interface BoCreateWithoutPropsInput {
   name?: string | null
   desc?: string | null
-  wikiUrl?: string | null
+  wikiUrl?: string
   details?: BoCreateManyInput | null
 }
 export type BoCreateWithoutPropsInputInputObject =
@@ -4857,7 +4863,7 @@ export interface PageCreateInput {
   system?: string | null
   domain?: string | null
   type?: string | null
-  wikiUrl?: string | null
+  wikiUrl?: string
   bos?: BoCreateManyInput | null
   enums?: EnumTypeCreateManyInput | null
 }

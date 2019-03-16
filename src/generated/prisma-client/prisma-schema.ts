@@ -31,7 +31,7 @@ type Bo {
   name: String
   desc: String
   props(where: BoPropWhereInput, orderBy: BoPropOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [BoProp!]
-  wikiUrl: String
+  wikiUrl: String!
   details(where: BoWhereInput, orderBy: BoOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Bo!]
 }
 
@@ -45,7 +45,7 @@ input BoCreateInput {
   name: String
   desc: String
   props: BoPropCreateManyWithoutBoInput
-  wikiUrl: String
+  wikiUrl: String!
   details: BoCreateManyInput
 }
 
@@ -62,7 +62,7 @@ input BoCreateOneWithoutPropsInput {
 input BoCreateWithoutPropsInput {
   name: String
   desc: String
-  wikiUrl: String
+  wikiUrl: String!
   details: BoCreateManyInput
 }
 
@@ -90,7 +90,7 @@ type BoPreviousValues {
   id: ID!
   name: String
   desc: String
-  wikiUrl: String
+  wikiUrl: String!
 }
 
 type BoProp {
@@ -663,6 +663,7 @@ input BoWhereInput {
 
 input BoWhereUniqueInput {
   id: ID
+  wikiUrl: String
 }
 
 type EnumProp {
@@ -879,7 +880,7 @@ type EnumType {
   name: String
   desc: String
   props(where: EnumPropWhereInput, orderBy: EnumPropOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [EnumProp!]
-  wikiUrl: String
+  wikiUrl: String!
 }
 
 type EnumTypeConnection {
@@ -892,7 +893,7 @@ input EnumTypeCreateInput {
   name: String
   desc: String
   props: EnumPropCreateManyWithoutEnumTypeInput
-  wikiUrl: String
+  wikiUrl: String!
 }
 
 input EnumTypeCreateManyInput {
@@ -913,7 +914,7 @@ input EnumTypeCreateOneWithoutPropsInput {
 input EnumTypeCreateWithoutPropsInput {
   name: String
   desc: String
-  wikiUrl: String
+  wikiUrl: String!
 }
 
 type EnumTypeEdge {
@@ -940,7 +941,7 @@ type EnumTypePreviousValues {
   id: ID!
   name: String
   desc: String
-  wikiUrl: String
+  wikiUrl: String!
 }
 
 input EnumTypeScalarWhereInput {
@@ -1176,6 +1177,7 @@ input EnumTypeWhereInput {
 
 input EnumTypeWhereUniqueInput {
   id: ID
+  wikiUrl: String
 }
 
 scalar Long
@@ -1231,7 +1233,7 @@ type Page {
   system: String
   domain: String
   type: String
-  wikiUrl: String
+  wikiUrl: String!
   bos(where: BoWhereInput, orderBy: BoOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Bo!]
   enums(where: EnumTypeWhereInput, orderBy: EnumTypeOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [EnumType!]
 }
@@ -1249,7 +1251,7 @@ input PageCreateInput {
   system: String
   domain: String
   type: String
-  wikiUrl: String
+  wikiUrl: String!
   bos: BoCreateManyInput
   enums: EnumTypeCreateManyInput
 }
@@ -1297,7 +1299,7 @@ type PagePreviousValues {
   system: String
   domain: String
   type: String
-  wikiUrl: String
+  wikiUrl: String!
 }
 
 type PageSubscriptionPayload {
@@ -1466,6 +1468,7 @@ input PageWhereInput {
 
 input PageWhereUniqueInput {
   id: ID
+  wikiUrl: String
 }
 
 type Query {

@@ -366,6 +366,7 @@ export interface EnumPropUpdateManyWithWhereNestedInput {
 
 export type BoWhereUniqueInput = AtLeastOne<{
   id: ID_Input;
+  wikiUrl?: String;
 }>;
 
 export interface BoPropScalarWhereInput {
@@ -941,6 +942,7 @@ export interface EnumTypeUpdateOneRequiredWithoutPropsInput {
 
 export type PageWhereUniqueInput = AtLeastOne<{
   id: ID_Input;
+  wikiUrl?: String;
 }>;
 
 export interface EnumPropUpdateManyDataInput {
@@ -1104,14 +1106,14 @@ export interface BoCreateInput {
   name?: String;
   desc?: String;
   props?: BoPropCreateManyWithoutBoInput;
-  wikiUrl?: String;
+  wikiUrl: String;
   details?: BoCreateManyInput;
 }
 
 export interface EnumTypeCreateWithoutPropsInput {
   name?: String;
   desc?: String;
-  wikiUrl?: String;
+  wikiUrl: String;
 }
 
 export interface BoPropCreateWithoutBoInput {
@@ -1197,7 +1199,7 @@ export interface EnumTypeCreateInput {
   name?: String;
   desc?: String;
   props?: EnumPropCreateManyWithoutEnumTypeInput;
-  wikiUrl?: String;
+  wikiUrl: String;
 }
 
 export interface BoUpdateManyInput {
@@ -1434,7 +1436,7 @@ export type EnumPropWhereUniqueInput = AtLeastOne<{
 export interface BoCreateWithoutPropsInput {
   name?: String;
   desc?: String;
-  wikiUrl?: String;
+  wikiUrl: String;
   details?: BoCreateManyInput;
 }
 
@@ -1445,7 +1447,7 @@ export interface PageCreateInput {
   system?: String;
   domain?: String;
   type?: String;
-  wikiUrl?: String;
+  wikiUrl: String;
   bos?: BoCreateManyInput;
   enums?: EnumTypeCreateManyInput;
 }
@@ -1495,6 +1497,7 @@ export interface EnumTypeUpdateInput {
 
 export type EnumTypeWhereUniqueInput = AtLeastOne<{
   id: ID_Input;
+  wikiUrl?: String;
 }>;
 
 export type BoPropWhereUniqueInput = AtLeastOne<{
@@ -1518,7 +1521,7 @@ export interface PagePreviousValues {
   system?: String;
   domain?: String;
   type?: String;
-  wikiUrl?: String;
+  wikiUrl: String;
 }
 
 export interface PagePreviousValuesPromise
@@ -1572,7 +1575,7 @@ export interface EnumType {
   id: ID_Output;
   name?: String;
   desc?: String;
-  wikiUrl?: String;
+  wikiUrl: String;
 }
 
 export interface EnumTypePromise extends Promise<EnumType>, Fragmentable {
@@ -1707,26 +1710,29 @@ export interface EnumTypeSubscriptionPayloadSubscription
   previousValues: <T = EnumTypePreviousValuesSubscription>() => T;
 }
 
-export interface EnumProp {
-  id: ID_Output;
-  key: String;
-  value: Int;
+export interface PageSubscriptionPayload {
+  mutation: MutationType;
+  node: Page;
+  updatedFields: String[];
+  previousValues: PagePreviousValues;
 }
 
-export interface EnumPropPromise extends Promise<EnumProp>, Fragmentable {
-  id: () => Promise<ID_Output>;
-  key: () => Promise<String>;
-  value: () => Promise<Int>;
-  enumType: <T = EnumTypePromise>() => T;
-}
-
-export interface EnumPropSubscription
-  extends Promise<AsyncIterator<EnumProp>>,
+export interface PageSubscriptionPayloadPromise
+  extends Promise<PageSubscriptionPayload>,
     Fragmentable {
-  id: () => Promise<AsyncIterator<ID_Output>>;
-  key: () => Promise<AsyncIterator<String>>;
-  value: () => Promise<AsyncIterator<Int>>;
-  enumType: <T = EnumTypeSubscription>() => T;
+  mutation: () => Promise<MutationType>;
+  node: <T = PagePromise>() => T;
+  updatedFields: () => Promise<String[]>;
+  previousValues: <T = PagePreviousValuesPromise>() => T;
+}
+
+export interface PageSubscriptionPayloadSubscription
+  extends Promise<AsyncIterator<PageSubscriptionPayload>>,
+    Fragmentable {
+  mutation: () => Promise<AsyncIterator<MutationType>>;
+  node: <T = PageSubscription>() => T;
+  updatedFields: () => Promise<AsyncIterator<String[]>>;
+  previousValues: <T = PagePreviousValuesSubscription>() => T;
 }
 
 export interface BoEdge {
@@ -1783,71 +1789,26 @@ export interface PageConnectionSubscription
   aggregate: <T = AggregatePageSubscription>() => T;
 }
 
-export interface Bo {
+export interface EnumProp {
   id: ID_Output;
-  name?: String;
-  desc?: String;
-  wikiUrl?: String;
+  key: String;
+  value: Int;
 }
 
-export interface BoPromise extends Promise<Bo>, Fragmentable {
+export interface EnumPropPromise extends Promise<EnumProp>, Fragmentable {
   id: () => Promise<ID_Output>;
-  name: () => Promise<String>;
-  desc: () => Promise<String>;
-  props: <T = FragmentableArray<BoProp>>(
-    args?: {
-      where?: BoPropWhereInput;
-      orderBy?: BoPropOrderByInput;
-      skip?: Int;
-      after?: String;
-      before?: String;
-      first?: Int;
-      last?: Int;
-    }
-  ) => T;
-  wikiUrl: () => Promise<String>;
-  details: <T = FragmentableArray<Bo>>(
-    args?: {
-      where?: BoWhereInput;
-      orderBy?: BoOrderByInput;
-      skip?: Int;
-      after?: String;
-      before?: String;
-      first?: Int;
-      last?: Int;
-    }
-  ) => T;
+  key: () => Promise<String>;
+  value: () => Promise<Int>;
+  enumType: <T = EnumTypePromise>() => T;
 }
 
-export interface BoSubscription
-  extends Promise<AsyncIterator<Bo>>,
+export interface EnumPropSubscription
+  extends Promise<AsyncIterator<EnumProp>>,
     Fragmentable {
   id: () => Promise<AsyncIterator<ID_Output>>;
-  name: () => Promise<AsyncIterator<String>>;
-  desc: () => Promise<AsyncIterator<String>>;
-  props: <T = Promise<AsyncIterator<BoPropSubscription>>>(
-    args?: {
-      where?: BoPropWhereInput;
-      orderBy?: BoPropOrderByInput;
-      skip?: Int;
-      after?: String;
-      before?: String;
-      first?: Int;
-      last?: Int;
-    }
-  ) => T;
-  wikiUrl: () => Promise<AsyncIterator<String>>;
-  details: <T = Promise<AsyncIterator<BoSubscription>>>(
-    args?: {
-      where?: BoWhereInput;
-      orderBy?: BoOrderByInput;
-      skip?: Int;
-      after?: String;
-      before?: String;
-      first?: Int;
-      last?: Int;
-    }
-  ) => T;
+  key: () => Promise<AsyncIterator<String>>;
+  value: () => Promise<AsyncIterator<Int>>;
+  enumType: <T = EnumTypeSubscription>() => T;
 }
 
 export interface Page {
@@ -1858,7 +1819,7 @@ export interface Page {
   system?: String;
   domain?: String;
   type?: String;
-  wikiUrl?: String;
+  wikiUrl: String;
 }
 
 export interface PagePromise extends Promise<Page>, Fragmentable {
@@ -1977,7 +1938,7 @@ export interface BoPreviousValues {
   id: ID_Output;
   name?: String;
   desc?: String;
-  wikiUrl?: String;
+  wikiUrl: String;
 }
 
 export interface BoPreviousValuesPromise
@@ -2137,29 +2098,71 @@ export interface BoPropPreviousValuesSubscription
   linkBo: () => Promise<AsyncIterator<String>>;
 }
 
-export interface PageSubscriptionPayload {
-  mutation: MutationType;
-  node: Page;
-  updatedFields: String[];
-  previousValues: PagePreviousValues;
+export interface Bo {
+  id: ID_Output;
+  name?: String;
+  desc?: String;
+  wikiUrl: String;
 }
 
-export interface PageSubscriptionPayloadPromise
-  extends Promise<PageSubscriptionPayload>,
-    Fragmentable {
-  mutation: () => Promise<MutationType>;
-  node: <T = PagePromise>() => T;
-  updatedFields: () => Promise<String[]>;
-  previousValues: <T = PagePreviousValuesPromise>() => T;
+export interface BoPromise extends Promise<Bo>, Fragmentable {
+  id: () => Promise<ID_Output>;
+  name: () => Promise<String>;
+  desc: () => Promise<String>;
+  props: <T = FragmentableArray<BoProp>>(
+    args?: {
+      where?: BoPropWhereInput;
+      orderBy?: BoPropOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => T;
+  wikiUrl: () => Promise<String>;
+  details: <T = FragmentableArray<Bo>>(
+    args?: {
+      where?: BoWhereInput;
+      orderBy?: BoOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => T;
 }
 
-export interface PageSubscriptionPayloadSubscription
-  extends Promise<AsyncIterator<PageSubscriptionPayload>>,
+export interface BoSubscription
+  extends Promise<AsyncIterator<Bo>>,
     Fragmentable {
-  mutation: () => Promise<AsyncIterator<MutationType>>;
-  node: <T = PageSubscription>() => T;
-  updatedFields: () => Promise<AsyncIterator<String[]>>;
-  previousValues: <T = PagePreviousValuesSubscription>() => T;
+  id: () => Promise<AsyncIterator<ID_Output>>;
+  name: () => Promise<AsyncIterator<String>>;
+  desc: () => Promise<AsyncIterator<String>>;
+  props: <T = Promise<AsyncIterator<BoPropSubscription>>>(
+    args?: {
+      where?: BoPropWhereInput;
+      orderBy?: BoPropOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => T;
+  wikiUrl: () => Promise<AsyncIterator<String>>;
+  details: <T = Promise<AsyncIterator<BoSubscription>>>(
+    args?: {
+      where?: BoWhereInput;
+      orderBy?: BoOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => T;
 }
 
 export interface EnumTypeConnection {
@@ -2187,7 +2190,7 @@ export interface EnumTypePreviousValues {
   id: ID_Output;
   name?: String;
   desc?: String;
-  wikiUrl?: String;
+  wikiUrl: String;
 }
 
 export interface EnumTypePreviousValuesPromise
@@ -2353,14 +2356,14 @@ export type ID_Input = string | number;
 export type ID_Output = string;
 
 /*
-The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.
-*/
-export type String = string;
-
-/*
 The `Int` scalar type represents non-fractional signed whole numeric values. Int can represent values between -(2^31) and 2^31 - 1. 
 */
 export type Int = number;
+
+/*
+The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.
+*/
+export type String = string;
 
 /*
 The `Boolean` scalar type represents `true` or `false`.

@@ -3,7 +3,7 @@ type EnumType {
   name: String
   desc: String
   props: [EnumProp!]!
-  wikiUrl: String
+  wikiUrl: String! @unique
 }
 
 type EnumProp {
@@ -18,7 +18,7 @@ type Bo {
   name: String
   desc: String
   props: [BoProp!]!
-  wikiUrl: String
+  wikiUrl: String! @unique
   details: [Bo] # 清单实体
 }
 
@@ -43,7 +43,7 @@ type Page {
   system: String # 系统名称
   domain: String # 业务领域
   type: String # 业务类型
-  wikiUrl: String
+  wikiUrl: String! @unique
   bos: [Bo!]!
   enums: [EnumType!]!
 }
