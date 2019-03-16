@@ -10,6 +10,7 @@ type EnumProp {
   id: ID! @unique
   key: String!
   value: Int!
+  enumType: EnumType!
 }
 
 type Bo {
@@ -29,8 +30,8 @@ type BoProp {
   required: Boolean # 是否必填
   unique: Boolean # 是否唯一
   redundant: Boolean # 是否冗余
-  Bo: Bo # 所属 BO
-  linkBo: Bo # 关联另一个 BO
+  bo: Bo! # 所属 BO
+  linkBo: String # 关联另一个 BO
   linkEnumType: EnumType # 关联枚举
 }
 

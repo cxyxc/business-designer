@@ -288,6 +288,8 @@ export type BoPropOrderByInput =
   | "unique_DESC"
   | "redundant_ASC"
   | "redundant_DESC"
+  | "linkBo_ASC"
+  | "linkBo_DESC"
   | "createdAt_ASC"
   | "createdAt_DESC"
   | "updatedAt_ASC"
@@ -357,18 +359,95 @@ export type PageOrderByInput =
 
 export type MutationType = "CREATED" | "UPDATED" | "DELETED";
 
-export interface EnumPropUpdateDataInput {
-  key?: String;
-  value?: Int;
+export interface EnumPropUpdateManyWithWhereNestedInput {
+  where: EnumPropScalarWhereInput;
+  data: EnumPropUpdateManyDataInput;
 }
 
 export type BoWhereUniqueInput = AtLeastOne<{
   id: ID_Input;
 }>;
 
-export interface EnumPropUpdateManyDataInput {
-  key?: String;
-  value?: Int;
+export interface BoPropScalarWhereInput {
+  id?: ID_Input;
+  id_not?: ID_Input;
+  id_in?: ID_Input[] | ID_Input;
+  id_not_in?: ID_Input[] | ID_Input;
+  id_lt?: ID_Input;
+  id_lte?: ID_Input;
+  id_gt?: ID_Input;
+  id_gte?: ID_Input;
+  id_contains?: ID_Input;
+  id_not_contains?: ID_Input;
+  id_starts_with?: ID_Input;
+  id_not_starts_with?: ID_Input;
+  id_ends_with?: ID_Input;
+  id_not_ends_with?: ID_Input;
+  name?: String;
+  name_not?: String;
+  name_in?: String[] | String;
+  name_not_in?: String[] | String;
+  name_lt?: String;
+  name_lte?: String;
+  name_gt?: String;
+  name_gte?: String;
+  name_contains?: String;
+  name_not_contains?: String;
+  name_starts_with?: String;
+  name_not_starts_with?: String;
+  name_ends_with?: String;
+  name_not_ends_with?: String;
+  desc?: String;
+  desc_not?: String;
+  desc_in?: String[] | String;
+  desc_not_in?: String[] | String;
+  desc_lt?: String;
+  desc_lte?: String;
+  desc_gt?: String;
+  desc_gte?: String;
+  desc_contains?: String;
+  desc_not_contains?: String;
+  desc_starts_with?: String;
+  desc_not_starts_with?: String;
+  desc_ends_with?: String;
+  desc_not_ends_with?: String;
+  type?: String;
+  type_not?: String;
+  type_in?: String[] | String;
+  type_not_in?: String[] | String;
+  type_lt?: String;
+  type_lte?: String;
+  type_gt?: String;
+  type_gte?: String;
+  type_contains?: String;
+  type_not_contains?: String;
+  type_starts_with?: String;
+  type_not_starts_with?: String;
+  type_ends_with?: String;
+  type_not_ends_with?: String;
+  required?: Boolean;
+  required_not?: Boolean;
+  unique?: Boolean;
+  unique_not?: Boolean;
+  redundant?: Boolean;
+  redundant_not?: Boolean;
+  linkBo?: String;
+  linkBo_not?: String;
+  linkBo_in?: String[] | String;
+  linkBo_not_in?: String[] | String;
+  linkBo_lt?: String;
+  linkBo_lte?: String;
+  linkBo_gt?: String;
+  linkBo_gte?: String;
+  linkBo_contains?: String;
+  linkBo_not_contains?: String;
+  linkBo_starts_with?: String;
+  linkBo_not_starts_with?: String;
+  linkBo_ends_with?: String;
+  linkBo_not_ends_with?: String;
+  AND?: BoPropScalarWhereInput[] | BoPropScalarWhereInput;
+  OR?: BoPropScalarWhereInput[] | BoPropScalarWhereInput;
+  NOT?: BoPropScalarWhereInput[] | BoPropScalarWhereInput;
 }
 
 export interface EnumPropWhereInput {
@@ -408,14 +487,15 @@ export interface EnumPropWhereInput {
   value_lte?: Int;
   value_gt?: Int;
   value_gte?: Int;
+  enumType?: EnumTypeWhereInput;
   AND?: EnumPropWhereInput[] | EnumPropWhereInput;
   OR?: EnumPropWhereInput[] | EnumPropWhereInput;
   NOT?: EnumPropWhereInput[] | EnumPropWhereInput;
 }
 
-export interface EnumTypeUpsertNestedInput {
-  update: EnumTypeUpdateDataInput;
-  create: EnumTypeCreateInput;
+export interface BoPropUpdateManyWithWhereNestedInput {
+  where: BoPropScalarWhereInput;
+  data: BoPropUpdateManyDataInput;
 }
 
 export interface EnumTypeWhereInput {
@@ -483,30 +563,55 @@ export interface EnumTypeWhereInput {
   NOT?: EnumTypeWhereInput[] | EnumTypeWhereInput;
 }
 
-export interface EnumPropCreateManyInput {
-  create?: EnumPropCreateInput[] | EnumPropCreateInput;
-  connect?: EnumPropWhereUniqueInput[] | EnumPropWhereUniqueInput;
+export interface BoUpdateInput {
+  name?: String;
+  desc?: String;
+  props?: BoPropUpdateManyWithoutBoInput;
+  wikiUrl?: String;
+  details?: BoUpdateManyInput;
 }
 
-export interface BoCreateOneWithoutPropsInput {
-  create?: BoCreateWithoutPropsInput;
-  connect?: BoWhereUniqueInput;
+export interface BoPropUpdateManyMutationInput {
+  name?: String;
+  desc?: String;
+  type?: String;
+  required?: Boolean;
+  unique?: Boolean;
+  redundant?: Boolean;
+  linkBo?: String;
 }
 
-export interface EnumPropCreateInput {
-  key: String;
-  value: Int;
+export interface BoPropUpdateManyWithoutBoInput {
+  create?: BoPropCreateWithoutBoInput[] | BoPropCreateWithoutBoInput;
+  delete?: BoPropWhereUniqueInput[] | BoPropWhereUniqueInput;
+  connect?: BoPropWhereUniqueInput[] | BoPropWhereUniqueInput;
+  set?: BoPropWhereUniqueInput[] | BoPropWhereUniqueInput;
+  disconnect?: BoPropWhereUniqueInput[] | BoPropWhereUniqueInput;
+  update?:
+    | BoPropUpdateWithWhereUniqueWithoutBoInput[]
+    | BoPropUpdateWithWhereUniqueWithoutBoInput;
+  upsert?:
+    | BoPropUpsertWithWhereUniqueWithoutBoInput[]
+    | BoPropUpsertWithWhereUniqueWithoutBoInput;
+  deleteMany?: BoPropScalarWhereInput[] | BoPropScalarWhereInput;
+  updateMany?:
+    | BoPropUpdateManyWithWhereNestedInput[]
+    | BoPropUpdateManyWithWhereNestedInput;
 }
 
-export interface BoPropUpsertWithWhereUniqueWithoutLinkBoInput {
+export interface BoPropUpdateManyDataInput {
+  name?: String;
+  desc?: String;
+  type?: String;
+  required?: Boolean;
+  unique?: Boolean;
+  redundant?: Boolean;
+  linkBo?: String;
+}
+
+export interface BoPropUpdateWithWhereUniqueWithoutBoInput {
   where: BoPropWhereUniqueInput;
-  update: BoPropUpdateWithoutLinkBoDataInput;
-  create: BoPropCreateWithoutLinkBoInput;
-}
-
-export interface BoCreateManyInput {
-  create?: BoCreateInput[] | BoCreateInput;
-  connect?: BoWhereUniqueInput[] | BoWhereUniqueInput;
+  data: BoPropUpdateWithoutBoDataInput;
 }
 
 export interface EnumTypeSubscriptionWhereInput {
@@ -520,12 +625,15 @@ export interface EnumTypeSubscriptionWhereInput {
   NOT?: EnumTypeSubscriptionWhereInput[] | EnumTypeSubscriptionWhereInput;
 }
 
-export interface BoUpdateInput {
+export interface BoPropUpdateWithoutBoDataInput {
   name?: String;
   desc?: String;
-  props?: BoPropUpdateManyWithoutLinkBoInput;
-  wikiUrl?: String;
-  details?: BoUpdateManyInput;
+  type?: String;
+  required?: Boolean;
+  unique?: Boolean;
+  redundant?: Boolean;
+  linkBo?: String;
+  linkEnumType?: EnumTypeUpdateOneInput;
 }
 
 export interface BoPropSubscriptionWhereInput {
@@ -539,22 +647,13 @@ export interface BoPropSubscriptionWhereInput {
   NOT?: BoPropSubscriptionWhereInput[] | BoPropSubscriptionWhereInput;
 }
 
-export interface BoPropUpdateManyWithoutLinkBoInput {
-  create?: BoPropCreateWithoutLinkBoInput[] | BoPropCreateWithoutLinkBoInput;
-  delete?: BoPropWhereUniqueInput[] | BoPropWhereUniqueInput;
-  connect?: BoPropWhereUniqueInput[] | BoPropWhereUniqueInput;
-  set?: BoPropWhereUniqueInput[] | BoPropWhereUniqueInput;
-  disconnect?: BoPropWhereUniqueInput[] | BoPropWhereUniqueInput;
-  update?:
-    | BoPropUpdateWithWhereUniqueWithoutLinkBoInput[]
-    | BoPropUpdateWithWhereUniqueWithoutLinkBoInput;
-  upsert?:
-    | BoPropUpsertWithWhereUniqueWithoutLinkBoInput[]
-    | BoPropUpsertWithWhereUniqueWithoutLinkBoInput;
-  deleteMany?: BoPropScalarWhereInput[] | BoPropScalarWhereInput;
-  updateMany?:
-    | BoPropUpdateManyWithWhereNestedInput[]
-    | BoPropUpdateManyWithWhereNestedInput;
+export interface EnumTypeUpdateOneInput {
+  create?: EnumTypeCreateInput;
+  update?: EnumTypeUpdateDataInput;
+  upsert?: EnumTypeUpsertNestedInput;
+  delete?: Boolean;
+  disconnect?: Boolean;
+  connect?: EnumTypeWhereUniqueInput;
 }
 
 export interface PageUpdateManyMutationInput {
@@ -567,9 +666,11 @@ export interface PageUpdateManyMutationInput {
   wikiUrl?: String;
 }
 
-export interface BoPropUpdateWithWhereUniqueWithoutLinkBoInput {
-  where: BoPropWhereUniqueInput;
-  data: BoPropUpdateWithoutLinkBoDataInput;
+export interface EnumTypeUpdateDataInput {
+  name?: String;
+  desc?: String;
+  props?: EnumPropUpdateManyWithoutEnumTypeInput;
+  wikiUrl?: String;
 }
 
 export interface EnumTypeUpdateManyDataInput {
@@ -578,14 +679,24 @@ export interface EnumTypeUpdateManyDataInput {
   wikiUrl?: String;
 }
 
-export interface BoPropUpdateWithoutLinkBoDataInput {
-  name?: String;
-  desc?: String;
-  type?: String;
-  required?: Boolean;
-  unique?: Boolean;
-  redundant?: Boolean;
-  linkEnumType?: EnumTypeUpdateOneInput;
+export interface EnumPropUpdateManyWithoutEnumTypeInput {
+  create?:
+    | EnumPropCreateWithoutEnumTypeInput[]
+    | EnumPropCreateWithoutEnumTypeInput;
+  delete?: EnumPropWhereUniqueInput[] | EnumPropWhereUniqueInput;
+  connect?: EnumPropWhereUniqueInput[] | EnumPropWhereUniqueInput;
+  set?: EnumPropWhereUniqueInput[] | EnumPropWhereUniqueInput;
+  disconnect?: EnumPropWhereUniqueInput[] | EnumPropWhereUniqueInput;
+  update?:
+    | EnumPropUpdateWithWhereUniqueWithoutEnumTypeInput[]
+    | EnumPropUpdateWithWhereUniqueWithoutEnumTypeInput;
+  upsert?:
+    | EnumPropUpsertWithWhereUniqueWithoutEnumTypeInput[]
+    | EnumPropUpsertWithWhereUniqueWithoutEnumTypeInput;
+  deleteMany?: EnumPropScalarWhereInput[] | EnumPropScalarWhereInput;
+  updateMany?:
+    | EnumPropUpdateManyWithWhereNestedInput[]
+    | EnumPropUpdateManyWithWhereNestedInput;
 }
 
 export interface EnumTypeScalarWhereInput {
@@ -650,13 +761,9 @@ export interface EnumTypeScalarWhereInput {
   NOT?: EnumTypeScalarWhereInput[] | EnumTypeScalarWhereInput;
 }
 
-export interface EnumTypeUpdateOneInput {
-  create?: EnumTypeCreateInput;
-  update?: EnumTypeUpdateDataInput;
-  upsert?: EnumTypeUpsertNestedInput;
-  delete?: Boolean;
-  disconnect?: Boolean;
-  connect?: EnumTypeWhereUniqueInput;
+export interface EnumPropUpdateWithWhereUniqueWithoutEnumTypeInput {
+  where: EnumPropWhereUniqueInput;
+  data: EnumPropUpdateWithoutEnumTypeDataInput;
 }
 
 export interface EnumTypeUpsertWithWhereUniqueNestedInput {
@@ -665,11 +772,9 @@ export interface EnumTypeUpsertWithWhereUniqueNestedInput {
   create: EnumTypeCreateInput;
 }
 
-export interface EnumTypeUpdateDataInput {
-  name?: String;
-  desc?: String;
-  props?: EnumPropUpdateManyInput;
-  wikiUrl?: String;
+export interface EnumPropUpdateWithoutEnumTypeDataInput {
+  key?: String;
+  value?: Int;
 }
 
 export interface EnumTypeUpdateManyInput {
@@ -690,22 +795,10 @@ export interface EnumTypeUpdateManyInput {
     | EnumTypeUpdateManyWithWhereNestedInput;
 }
 
-export interface EnumPropUpdateManyInput {
-  create?: EnumPropCreateInput[] | EnumPropCreateInput;
-  update?:
-    | EnumPropUpdateWithWhereUniqueNestedInput[]
-    | EnumPropUpdateWithWhereUniqueNestedInput;
-  upsert?:
-    | EnumPropUpsertWithWhereUniqueNestedInput[]
-    | EnumPropUpsertWithWhereUniqueNestedInput;
-  delete?: EnumPropWhereUniqueInput[] | EnumPropWhereUniqueInput;
-  connect?: EnumPropWhereUniqueInput[] | EnumPropWhereUniqueInput;
-  set?: EnumPropWhereUniqueInput[] | EnumPropWhereUniqueInput;
-  disconnect?: EnumPropWhereUniqueInput[] | EnumPropWhereUniqueInput;
-  deleteMany?: EnumPropScalarWhereInput[] | EnumPropScalarWhereInput;
-  updateMany?:
-    | EnumPropUpdateManyWithWhereNestedInput[]
-    | EnumPropUpdateManyWithWhereNestedInput;
+export interface EnumPropUpsertWithWhereUniqueWithoutEnumTypeInput {
+  where: EnumPropWhereUniqueInput;
+  update: EnumPropUpdateWithoutEnumTypeDataInput;
+  create: EnumPropCreateWithoutEnumTypeInput;
 }
 
 export interface BoPropWhereInput {
@@ -771,16 +864,67 @@ export interface BoPropWhereInput {
   unique_not?: Boolean;
   redundant?: Boolean;
   redundant_not?: Boolean;
-  linkBo?: BoWhereInput;
+  bo?: BoWhereInput;
+  linkBo?: String;
+  linkBo_not?: String;
+  linkBo_in?: String[] | String;
+  linkBo_not_in?: String[] | String;
+  linkBo_lt?: String;
+  linkBo_lte?: String;
+  linkBo_gt?: String;
+  linkBo_gte?: String;
+  linkBo_contains?: String;
+  linkBo_not_contains?: String;
+  linkBo_starts_with?: String;
+  linkBo_not_starts_with?: String;
+  linkBo_ends_with?: String;
+  linkBo_not_ends_with?: String;
   linkEnumType?: EnumTypeWhereInput;
   AND?: BoPropWhereInput[] | BoPropWhereInput;
   OR?: BoPropWhereInput[] | BoPropWhereInput;
   NOT?: BoPropWhereInput[] | BoPropWhereInput;
 }
 
-export interface EnumPropUpdateWithWhereUniqueNestedInput {
-  where: EnumPropWhereUniqueInput;
-  data: EnumPropUpdateDataInput;
+export interface EnumPropScalarWhereInput {
+  id?: ID_Input;
+  id_not?: ID_Input;
+  id_in?: ID_Input[] | ID_Input;
+  id_not_in?: ID_Input[] | ID_Input;
+  id_lt?: ID_Input;
+  id_lte?: ID_Input;
+  id_gt?: ID_Input;
+  id_gte?: ID_Input;
+  id_contains?: ID_Input;
+  id_not_contains?: ID_Input;
+  id_starts_with?: ID_Input;
+  id_not_starts_with?: ID_Input;
+  id_ends_with?: ID_Input;
+  id_not_ends_with?: ID_Input;
+  key?: String;
+  key_not?: String;
+  key_in?: String[] | String;
+  key_not_in?: String[] | String;
+  key_lt?: String;
+  key_lte?: String;
+  key_gt?: String;
+  key_gte?: String;
+  key_contains?: String;
+  key_not_contains?: String;
+  key_starts_with?: String;
+  key_not_starts_with?: String;
+  key_ends_with?: String;
+  key_not_ends_with?: String;
+  value?: Int;
+  value_not?: Int;
+  value_in?: Int[] | Int;
+  value_not_in?: Int[] | Int;
+  value_lt?: Int;
+  value_lte?: Int;
+  value_gt?: Int;
+  value_gte?: Int;
+  AND?: EnumPropScalarWhereInput[] | EnumPropScalarWhereInput;
+  OR?: EnumPropScalarWhereInput[] | EnumPropScalarWhereInput;
+  NOT?: EnumPropScalarWhereInput[] | EnumPropScalarWhereInput;
 }
 
 export interface EnumTypeCreateManyInput {
@@ -788,19 +932,20 @@ export interface EnumTypeCreateManyInput {
   connect?: EnumTypeWhereUniqueInput[] | EnumTypeWhereUniqueInput;
 }
 
-export interface BoUpsertWithoutPropsInput {
-  update: BoUpdateWithoutPropsDataInput;
-  create: BoCreateWithoutPropsInput;
+export interface EnumTypeUpdateOneRequiredWithoutPropsInput {
+  create?: EnumTypeCreateWithoutPropsInput;
+  update?: EnumTypeUpdateWithoutPropsDataInput;
+  upsert?: EnumTypeUpsertWithoutPropsInput;
+  connect?: EnumTypeWhereUniqueInput;
 }
 
 export type PageWhereUniqueInput = AtLeastOne<{
   id: ID_Input;
 }>;
 
-export interface EnumPropUpsertWithWhereUniqueNestedInput {
-  where: EnumPropWhereUniqueInput;
-  update: EnumPropUpdateDataInput;
-  create: EnumPropCreateInput;
+export interface EnumPropUpdateManyDataInput {
+  key?: String;
+  value?: Int;
 }
 
 export interface PageWhereInput {
@@ -927,46 +1072,9 @@ export interface PageWhereInput {
   NOT?: PageWhereInput[] | PageWhereInput;
 }
 
-export interface EnumPropScalarWhereInput {
-  id?: ID_Input;
-  id_not?: ID_Input;
-  id_in?: ID_Input[] | ID_Input;
-  id_not_in?: ID_Input[] | ID_Input;
-  id_lt?: ID_Input;
-  id_lte?: ID_Input;
-  id_gt?: ID_Input;
-  id_gte?: ID_Input;
-  id_contains?: ID_Input;
-  id_not_contains?: ID_Input;
-  id_starts_with?: ID_Input;
-  id_not_starts_with?: ID_Input;
-  id_ends_with?: ID_Input;
-  id_not_ends_with?: ID_Input;
-  key?: String;
-  key_not?: String;
-  key_in?: String[] | String;
-  key_not_in?: String[] | String;
-  key_lt?: String;
-  key_lte?: String;
-  key_gt?: String;
-  key_gte?: String;
-  key_contains?: String;
-  key_not_contains?: String;
-  key_starts_with?: String;
-  key_not_starts_with?: String;
-  key_ends_with?: String;
-  key_not_ends_with?: String;
-  value?: Int;
-  value_not?: Int;
-  value_in?: Int[] | Int;
-  value_not_in?: Int[] | Int;
-  value_lt?: Int;
-  value_lte?: Int;
-  value_gt?: Int;
-  value_gte?: Int;
-  AND?: EnumPropScalarWhereInput[] | EnumPropScalarWhereInput;
-  OR?: EnumPropScalarWhereInput[] | EnumPropScalarWhereInput;
-  NOT?: EnumPropScalarWhereInput[] | EnumPropScalarWhereInput;
+export interface EnumTypeUpsertNestedInput {
+  update: EnumTypeUpdateDataInput;
+  create: EnumTypeCreateInput;
 }
 
 export interface EnumPropUpdateManyMutationInput {
@@ -974,51 +1082,46 @@ export interface EnumPropUpdateManyMutationInput {
   value?: Int;
 }
 
-export interface EnumPropUpdateManyWithWhereNestedInput {
-  where: EnumPropScalarWhereInput;
-  data: EnumPropUpdateManyDataInput;
+export interface BoPropUpsertWithWhereUniqueWithoutBoInput {
+  where: BoPropWhereUniqueInput;
+  update: BoPropUpdateWithoutBoDataInput;
+  create: BoPropCreateWithoutBoInput;
 }
 
-export interface BoPropUpdateManyMutationInput {
-  name?: String;
-  desc?: String;
-  type?: String;
-  required?: Boolean;
-  unique?: Boolean;
-  redundant?: Boolean;
-}
-
-export interface BoUpdateWithoutPropsDataInput {
+export interface EnumTypeUpdateWithoutPropsDataInput {
   name?: String;
   desc?: String;
   wikiUrl?: String;
-  details?: BoUpdateManyInput;
+}
+
+export interface EnumPropUpdateInput {
+  key?: String;
+  value?: Int;
+  enumType?: EnumTypeUpdateOneRequiredWithoutPropsInput;
 }
 
 export interface BoCreateInput {
   name?: String;
   desc?: String;
-  props?: BoPropCreateManyWithoutLinkBoInput;
+  props?: BoPropCreateManyWithoutBoInput;
   wikiUrl?: String;
   details?: BoCreateManyInput;
 }
 
-export interface BoUpdateOneWithoutPropsInput {
-  create?: BoCreateWithoutPropsInput;
-  update?: BoUpdateWithoutPropsDataInput;
-  upsert?: BoUpsertWithoutPropsInput;
-  delete?: Boolean;
-  disconnect?: Boolean;
-  connect?: BoWhereUniqueInput;
+export interface EnumTypeCreateWithoutPropsInput {
+  name?: String;
+  desc?: String;
+  wikiUrl?: String;
 }
 
-export interface BoPropCreateWithoutLinkBoInput {
+export interface BoPropCreateWithoutBoInput {
   name?: String;
   desc?: String;
   type?: String;
   required?: Boolean;
   unique?: Boolean;
   redundant?: Boolean;
+  linkBo?: String;
   linkEnumType?: EnumTypeCreateOneInput;
 }
 
@@ -1093,110 +1196,9 @@ export interface BoWhereInput {
 export interface EnumTypeCreateInput {
   name?: String;
   desc?: String;
-  props?: EnumPropCreateManyInput;
+  props?: EnumPropCreateManyWithoutEnumTypeInput;
   wikiUrl?: String;
 }
-
-export interface BoPropScalarWhereInput {
-  id?: ID_Input;
-  id_not?: ID_Input;
-  id_in?: ID_Input[] | ID_Input;
-  id_not_in?: ID_Input[] | ID_Input;
-  id_lt?: ID_Input;
-  id_lte?: ID_Input;
-  id_gt?: ID_Input;
-  id_gte?: ID_Input;
-  id_contains?: ID_Input;
-  id_not_contains?: ID_Input;
-  id_starts_with?: ID_Input;
-  id_not_starts_with?: ID_Input;
-  id_ends_with?: ID_Input;
-  id_not_ends_with?: ID_Input;
-  name?: String;
-  name_not?: String;
-  name_in?: String[] | String;
-  name_not_in?: String[] | String;
-  name_lt?: String;
-  name_lte?: String;
-  name_gt?: String;
-  name_gte?: String;
-  name_contains?: String;
-  name_not_contains?: String;
-  name_starts_with?: String;
-  name_not_starts_with?: String;
-  name_ends_with?: String;
-  name_not_ends_with?: String;
-  desc?: String;
-  desc_not?: String;
-  desc_in?: String[] | String;
-  desc_not_in?: String[] | String;
-  desc_lt?: String;
-  desc_lte?: String;
-  desc_gt?: String;
-  desc_gte?: String;
-  desc_contains?: String;
-  desc_not_contains?: String;
-  desc_starts_with?: String;
-  desc_not_starts_with?: String;
-  desc_ends_with?: String;
-  desc_not_ends_with?: String;
-  type?: String;
-  type_not?: String;
-  type_in?: String[] | String;
-  type_not_in?: String[] | String;
-  type_lt?: String;
-  type_lte?: String;
-  type_gt?: String;
-  type_gte?: String;
-  type_contains?: String;
-  type_not_contains?: String;
-  type_starts_with?: String;
-  type_not_starts_with?: String;
-  type_ends_with?: String;
-  type_not_ends_with?: String;
-  required?: Boolean;
-  required_not?: Boolean;
-  unique?: Boolean;
-  unique_not?: Boolean;
-  redundant?: Boolean;
-  redundant_not?: Boolean;
-  AND?: BoPropScalarWhereInput[] | BoPropScalarWhereInput;
-  OR?: BoPropScalarWhereInput[] | BoPropScalarWhereInput;
-  NOT?: BoPropScalarWhereInput[] | BoPropScalarWhereInput;
-}
-
-export interface EnumPropSubscriptionWhereInput {
-  mutation_in?: MutationType[] | MutationType;
-  updatedFields_contains?: String;
-  updatedFields_contains_every?: String[] | String;
-  updatedFields_contains_some?: String[] | String;
-  node?: EnumPropWhereInput;
-  AND?: EnumPropSubscriptionWhereInput[] | EnumPropSubscriptionWhereInput;
-  OR?: EnumPropSubscriptionWhereInput[] | EnumPropSubscriptionWhereInput;
-  NOT?: EnumPropSubscriptionWhereInput[] | EnumPropSubscriptionWhereInput;
-}
-
-export interface BoPropUpdateManyWithWhereNestedInput {
-  where: BoPropScalarWhereInput;
-  data: BoPropUpdateManyDataInput;
-}
-
-export type BoPropWhereUniqueInput = AtLeastOne<{
-  id: ID_Input;
-}>;
-
-export interface BoPropUpdateManyDataInput {
-  name?: String;
-  desc?: String;
-  type?: String;
-  required?: Boolean;
-  unique?: Boolean;
-  redundant?: Boolean;
-}
-
-export type EnumPropWhereUniqueInput = AtLeastOne<{
-  id: ID_Input;
-}>;
 
 export interface BoUpdateManyInput {
   create?: BoCreateInput[] | BoCreateInput;
@@ -1216,40 +1218,44 @@ export interface BoUpdateManyInput {
     | BoUpdateManyWithWhereNestedInput;
 }
 
-export type EnumTypeWhereUniqueInput = AtLeastOne<{
-  id: ID_Input;
-}>;
+export interface EnumPropCreateWithoutEnumTypeInput {
+  key: String;
+  value: Int;
+}
 
 export interface BoUpdateWithWhereUniqueNestedInput {
   where: BoWhereUniqueInput;
   data: BoUpdateDataInput;
 }
 
-export interface PageCreateInput {
-  name?: String;
-  desc?: String;
-  project?: String;
-  system?: String;
-  domain?: String;
-  type?: String;
-  wikiUrl?: String;
-  bos?: BoCreateManyInput;
-  enums?: EnumTypeCreateManyInput;
+export interface PageSubscriptionWhereInput {
+  mutation_in?: MutationType[] | MutationType;
+  updatedFields_contains?: String;
+  updatedFields_contains_every?: String[] | String;
+  updatedFields_contains_some?: String[] | String;
+  node?: PageWhereInput;
+  AND?: PageSubscriptionWhereInput[] | PageSubscriptionWhereInput;
+  OR?: PageSubscriptionWhereInput[] | PageSubscriptionWhereInput;
+  NOT?: PageSubscriptionWhereInput[] | PageSubscriptionWhereInput;
 }
 
 export interface BoUpdateDataInput {
   name?: String;
   desc?: String;
-  props?: BoPropUpdateManyWithoutLinkBoInput;
+  props?: BoPropUpdateManyWithoutBoInput;
   wikiUrl?: String;
   details?: BoUpdateManyInput;
 }
 
-export interface EnumTypeUpdateInput {
-  name?: String;
-  desc?: String;
-  props?: EnumPropUpdateManyInput;
-  wikiUrl?: String;
+export interface BoSubscriptionWhereInput {
+  mutation_in?: MutationType[] | MutationType;
+  updatedFields_contains?: String;
+  updatedFields_contains_every?: String[] | String;
+  updatedFields_contains_some?: String[] | String;
+  node?: BoWhereInput;
+  AND?: BoSubscriptionWhereInput[] | BoSubscriptionWhereInput;
+  OR?: BoSubscriptionWhereInput[] | BoSubscriptionWhereInput;
+  NOT?: BoSubscriptionWhereInput[] | BoSubscriptionWhereInput;
 }
 
 export interface BoUpsertWithWhereUniqueNestedInput {
@@ -1258,9 +1264,9 @@ export interface BoUpsertWithWhereUniqueNestedInput {
   create: BoCreateInput;
 }
 
-export interface EnumTypeCreateOneInput {
-  create?: EnumTypeCreateInput;
-  connect?: EnumTypeWhereUniqueInput;
+export interface EnumTypeUpdateManyWithWhereNestedInput {
+  where: EnumTypeScalarWhereInput;
+  data: EnumTypeUpdateManyDataInput;
 }
 
 export interface BoScalarWhereInput {
@@ -1325,77 +1331,14 @@ export interface BoScalarWhereInput {
   NOT?: BoScalarWhereInput[] | BoScalarWhereInput;
 }
 
-export interface BoSubscriptionWhereInput {
-  mutation_in?: MutationType[] | MutationType;
-  updatedFields_contains?: String;
-  updatedFields_contains_every?: String[] | String;
-  updatedFields_contains_some?: String[] | String;
-  node?: BoWhereInput;
-  AND?: BoSubscriptionWhereInput[] | BoSubscriptionWhereInput;
-  OR?: BoSubscriptionWhereInput[] | BoSubscriptionWhereInput;
-  NOT?: BoSubscriptionWhereInput[] | BoSubscriptionWhereInput;
-}
-
-export interface BoUpdateManyWithWhereNestedInput {
-  where: BoScalarWhereInput;
-  data: BoUpdateManyDataInput;
-}
-
 export interface EnumTypeUpdateWithWhereUniqueNestedInput {
   where: EnumTypeWhereUniqueInput;
   data: EnumTypeUpdateDataInput;
 }
 
-export interface BoUpdateManyDataInput {
-  name?: String;
-  desc?: String;
-  wikiUrl?: String;
-}
-
-export interface EnumTypeUpdateManyMutationInput {
-  name?: String;
-  desc?: String;
-  wikiUrl?: String;
-}
-
-export interface BoPropCreateInput {
-  name?: String;
-  desc?: String;
-  type?: String;
-  required?: Boolean;
-  unique?: Boolean;
-  redundant?: Boolean;
-  linkBo?: BoCreateOneWithoutPropsInput;
-  linkEnumType?: EnumTypeCreateOneInput;
-}
-
-export interface BoCreateWithoutPropsInput {
-  name?: String;
-  desc?: String;
-  wikiUrl?: String;
-  details?: BoCreateManyInput;
-}
-
-export interface BoPropUpdateInput {
-  name?: String;
-  desc?: String;
-  type?: String;
-  required?: Boolean;
-  unique?: Boolean;
-  redundant?: Boolean;
-  linkBo?: BoUpdateOneWithoutPropsInput;
-  linkEnumType?: EnumTypeUpdateOneInput;
-}
-
-export interface BoUpdateManyMutationInput {
-  name?: String;
-  desc?: String;
-  wikiUrl?: String;
-}
-
-export interface EnumPropUpdateInput {
-  key?: String;
-  value?: Int;
+export interface BoUpdateManyWithWhereNestedInput {
+  where: BoScalarWhereInput;
+  data: BoUpdateManyDataInput;
 }
 
 export interface PageUpdateInput {
@@ -1410,25 +1353,157 @@ export interface PageUpdateInput {
   enums?: EnumTypeUpdateManyInput;
 }
 
-export interface EnumTypeUpdateManyWithWhereNestedInput {
-  where: EnumTypeScalarWhereInput;
-  data: EnumTypeUpdateManyDataInput;
+export interface BoUpdateManyDataInput {
+  name?: String;
+  desc?: String;
+  wikiUrl?: String;
 }
 
-export interface PageSubscriptionWhereInput {
+export interface EnumTypeUpdateManyMutationInput {
+  name?: String;
+  desc?: String;
+  wikiUrl?: String;
+}
+
+export interface BoUpdateManyMutationInput {
+  name?: String;
+  desc?: String;
+  wikiUrl?: String;
+}
+
+export interface EnumTypeUpsertWithoutPropsInput {
+  update: EnumTypeUpdateWithoutPropsDataInput;
+  create: EnumTypeCreateWithoutPropsInput;
+}
+
+export interface EnumTypeCreateOneWithoutPropsInput {
+  create?: EnumTypeCreateWithoutPropsInput;
+  connect?: EnumTypeWhereUniqueInput;
+}
+
+export interface BoPropCreateManyWithoutBoInput {
+  create?: BoPropCreateWithoutBoInput[] | BoPropCreateWithoutBoInput;
+  connect?: BoPropWhereUniqueInput[] | BoPropWhereUniqueInput;
+}
+
+export interface EnumPropCreateInput {
+  key: String;
+  value: Int;
+  enumType: EnumTypeCreateOneWithoutPropsInput;
+}
+
+export interface EnumPropCreateManyWithoutEnumTypeInput {
+  create?:
+    | EnumPropCreateWithoutEnumTypeInput[]
+    | EnumPropCreateWithoutEnumTypeInput;
+  connect?: EnumPropWhereUniqueInput[] | EnumPropWhereUniqueInput;
+}
+
+export interface BoPropCreateInput {
+  name?: String;
+  desc?: String;
+  type?: String;
+  required?: Boolean;
+  unique?: Boolean;
+  redundant?: Boolean;
+  bo: BoCreateOneWithoutPropsInput;
+  linkBo?: String;
+  linkEnumType?: EnumTypeCreateOneInput;
+}
+
+export interface EnumPropSubscriptionWhereInput {
   mutation_in?: MutationType[] | MutationType;
   updatedFields_contains?: String;
   updatedFields_contains_every?: String[] | String;
   updatedFields_contains_some?: String[] | String;
-  node?: PageWhereInput;
-  AND?: PageSubscriptionWhereInput[] | PageSubscriptionWhereInput;
-  OR?: PageSubscriptionWhereInput[] | PageSubscriptionWhereInput;
-  NOT?: PageSubscriptionWhereInput[] | PageSubscriptionWhereInput;
+  node?: EnumPropWhereInput;
+  AND?: EnumPropSubscriptionWhereInput[] | EnumPropSubscriptionWhereInput;
+  OR?: EnumPropSubscriptionWhereInput[] | EnumPropSubscriptionWhereInput;
+  NOT?: EnumPropSubscriptionWhereInput[] | EnumPropSubscriptionWhereInput;
 }
 
-export interface BoPropCreateManyWithoutLinkBoInput {
-  create?: BoPropCreateWithoutLinkBoInput[] | BoPropCreateWithoutLinkBoInput;
-  connect?: BoPropWhereUniqueInput[] | BoPropWhereUniqueInput;
+export interface BoCreateOneWithoutPropsInput {
+  create?: BoCreateWithoutPropsInput;
+  connect?: BoWhereUniqueInput;
+}
+
+export type EnumPropWhereUniqueInput = AtLeastOne<{
+  id: ID_Input;
+}>;
+
+export interface BoCreateWithoutPropsInput {
+  name?: String;
+  desc?: String;
+  wikiUrl?: String;
+  details?: BoCreateManyInput;
+}
+
+export interface PageCreateInput {
+  name?: String;
+  desc?: String;
+  project?: String;
+  system?: String;
+  domain?: String;
+  type?: String;
+  wikiUrl?: String;
+  bos?: BoCreateManyInput;
+  enums?: EnumTypeCreateManyInput;
+}
+
+export interface BoUpsertWithoutPropsInput {
+  update: BoUpdateWithoutPropsDataInput;
+  create: BoCreateWithoutPropsInput;
+}
+
+export interface BoUpdateWithoutPropsDataInput {
+  name?: String;
+  desc?: String;
+  wikiUrl?: String;
+  details?: BoUpdateManyInput;
+}
+
+export interface BoUpdateOneRequiredWithoutPropsInput {
+  create?: BoCreateWithoutPropsInput;
+  update?: BoUpdateWithoutPropsDataInput;
+  upsert?: BoUpsertWithoutPropsInput;
+  connect?: BoWhereUniqueInput;
+}
+
+export interface BoPropUpdateInput {
+  name?: String;
+  desc?: String;
+  type?: String;
+  required?: Boolean;
+  unique?: Boolean;
+  redundant?: Boolean;
+  bo?: BoUpdateOneRequiredWithoutPropsInput;
+  linkBo?: String;
+  linkEnumType?: EnumTypeUpdateOneInput;
+}
+
+export interface EnumTypeCreateOneInput {
+  create?: EnumTypeCreateInput;
+  connect?: EnumTypeWhereUniqueInput;
+}
+
+export interface EnumTypeUpdateInput {
+  name?: String;
+  desc?: String;
+  props?: EnumPropUpdateManyWithoutEnumTypeInput;
+  wikiUrl?: String;
+}
+
+export type EnumTypeWhereUniqueInput = AtLeastOne<{
+  id: ID_Input;
+}>;
+
+export type BoPropWhereUniqueInput = AtLeastOne<{
+  id: ID_Input;
+}>;
+
+export interface BoCreateManyInput {
+  create?: BoCreateInput[] | BoCreateInput;
+  connect?: BoWhereUniqueInput[] | BoWhereUniqueInput;
 }
 
 export interface NodeNode {
@@ -1560,6 +1635,7 @@ export interface BoProp {
   required?: Boolean;
   unique?: Boolean;
   redundant?: Boolean;
+  linkBo?: String;
 }
 
 export interface BoPropPromise extends Promise<BoProp>, Fragmentable {
@@ -1570,7 +1646,8 @@ export interface BoPropPromise extends Promise<BoProp>, Fragmentable {
   required: () => Promise<Boolean>;
   unique: () => Promise<Boolean>;
   redundant: () => Promise<Boolean>;
-  linkBo: <T = BoPromise>() => T;
+  bo: <T = BoPromise>() => T;
+  linkBo: () => Promise<String>;
   linkEnumType: <T = EnumTypePromise>() => T;
 }
 
@@ -1584,7 +1661,8 @@ export interface BoPropSubscription
   required: () => Promise<AsyncIterator<Boolean>>;
   unique: () => Promise<AsyncIterator<Boolean>>;
   redundant: () => Promise<AsyncIterator<Boolean>>;
-  linkBo: <T = BoSubscription>() => T;
+  bo: <T = BoSubscription>() => T;
+  linkBo: () => Promise<AsyncIterator<String>>;
   linkEnumType: <T = EnumTypeSubscription>() => T;
 }
 
@@ -1639,6 +1717,7 @@ export interface EnumPropPromise extends Promise<EnumProp>, Fragmentable {
   id: () => Promise<ID_Output>;
   key: () => Promise<String>;
   value: () => Promise<Int>;
+  enumType: <T = EnumTypePromise>() => T;
 }
 
 export interface EnumPropSubscription
@@ -1647,6 +1726,7 @@ export interface EnumPropSubscription
   id: () => Promise<AsyncIterator<ID_Output>>;
   key: () => Promise<AsyncIterator<String>>;
   value: () => Promise<AsyncIterator<Int>>;
+  enumType: <T = EnumTypeSubscription>() => T;
 }
 
 export interface BoEdge {
@@ -2028,6 +2108,7 @@ export interface BoPropPreviousValues {
   required?: Boolean;
   unique?: Boolean;
   redundant?: Boolean;
+  linkBo?: String;
 }
 
 export interface BoPropPreviousValuesPromise
@@ -2040,6 +2121,7 @@ export interface BoPropPreviousValuesPromise
   required: () => Promise<Boolean>;
   unique: () => Promise<Boolean>;
   redundant: () => Promise<Boolean>;
+  linkBo: () => Promise<String>;
 }
 
 export interface BoPropPreviousValuesSubscription
@@ -2052,6 +2134,7 @@ export interface BoPropPreviousValuesSubscription
   required: () => Promise<AsyncIterator<Boolean>>;
   unique: () => Promise<AsyncIterator<Boolean>>;
   redundant: () => Promise<AsyncIterator<Boolean>>;
+  linkBo: () => Promise<AsyncIterator<String>>;
 }
 
 export interface PageSubscriptionPayload {

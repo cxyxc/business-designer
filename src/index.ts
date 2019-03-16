@@ -4,20 +4,6 @@ import * as path from 'path'
 import datamodelInfo from './generated/nexus-prisma'
 import { prisma } from './generated/prisma-client'
 
-const User = prismaObjectType({
-  name: 'User',
-  definition(t) {
-    t.prismaFields(['*'])
-  },
-})
-
-const Post = prismaObjectType({
-  name: 'Post',
-  definition(t) {
-    t.prismaFields(['*'])
-  },
-})
-
 const Query = prismaObjectType({
   name: 'Query',
   definition(t) {
@@ -34,7 +20,7 @@ const Mutation = prismaObjectType({
 
 const schema = makePrismaSchema({
   // Provide all the GraphQL types we've implemented
-  types: [Query, Mutation, User, Post],
+  types: [Query, Mutation],
 
   // Configure the interface to Prisma
   prisma: {
