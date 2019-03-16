@@ -1,5 +1,5 @@
 {
-  "name": "typescript-graphql",
+  "name": "business-designer",
   "scripts": {
     "start": "ts-node-dev --no-notify --respawn --transpileOnly ./src"
   },
