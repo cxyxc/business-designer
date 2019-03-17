@@ -103,7 +103,7 @@ type BoProp {
   redundant: Boolean
   bo: Bo!
   linkBo: String
-  linkEnumType: EnumType
+  linkEnumType: String
 }
 
 type BoPropConnection {
@@ -121,7 +121,7 @@ input BoPropCreateInput {
   redundant: Boolean
   bo: BoCreateOneWithoutPropsInput!
   linkBo: String
-  linkEnumType: EnumTypeCreateOneInput
+  linkEnumType: String
 }
 
 input BoPropCreateManyWithoutBoInput {
@@ -137,7 +137,7 @@ input BoPropCreateWithoutBoInput {
   unique: Boolean
   redundant: Boolean
   linkBo: String
-  linkEnumType: EnumTypeCreateOneInput
+  linkEnumType: String
 }
 
 type BoPropEdge {
@@ -162,6 +162,8 @@ enum BoPropOrderByInput {
   redundant_DESC
   linkBo_ASC
   linkBo_DESC
+  linkEnumType_ASC
+  linkEnumType_DESC
   createdAt_ASC
   createdAt_DESC
   updatedAt_ASC
@@ -177,6 +179,7 @@ type BoPropPreviousValues {
   unique: Boolean
   redundant: Boolean
   linkBo: String
+  linkEnumType: String
 }
 
 input BoPropScalarWhereInput {
@@ -256,6 +259,20 @@ input BoPropScalarWhereInput {
   linkBo_not_starts_with: String
   linkBo_ends_with: String
   linkBo_not_ends_with: String
+  linkEnumType: String
+  linkEnumType_not: String
+  linkEnumType_in: [String!]
+  linkEnumType_not_in: [String!]
+  linkEnumType_lt: String
+  linkEnumType_lte: String
+  linkEnumType_gt: String
+  linkEnumType_gte: String
+  linkEnumType_contains: String
+  linkEnumType_not_contains: String
+  linkEnumType_starts_with: String
+  linkEnumType_not_starts_with: String
+  linkEnumType_ends_with: String
+  linkEnumType_not_ends_with: String
   AND: [BoPropScalarWhereInput!]
   OR: [BoPropScalarWhereInput!]
   NOT: [BoPropScalarWhereInput!]
@@ -288,7 +305,7 @@ input BoPropUpdateInput {
   redundant: Boolean
   bo: BoUpdateOneRequiredWithoutPropsInput
   linkBo: String
-  linkEnumType: EnumTypeUpdateOneInput
+  linkEnumType: String
 }
 
 input BoPropUpdateManyDataInput {
@@ -299,6 +316,7 @@ input BoPropUpdateManyDataInput {
   unique: Boolean
   redundant: Boolean
   linkBo: String
+  linkEnumType: String
 }
 
 input BoPropUpdateManyMutationInput {
@@ -309,6 +327,7 @@ input BoPropUpdateManyMutationInput {
   unique: Boolean
   redundant: Boolean
   linkBo: String
+  linkEnumType: String
 }
 
 input BoPropUpdateManyWithoutBoInput {
@@ -336,7 +355,7 @@ input BoPropUpdateWithoutBoDataInput {
   unique: Boolean
   redundant: Boolean
   linkBo: String
-  linkEnumType: EnumTypeUpdateOneInput
+  linkEnumType: String
 }
 
 input BoPropUpdateWithWhereUniqueWithoutBoInput {
@@ -428,7 +447,20 @@ input BoPropWhereInput {
   linkBo_not_starts_with: String
   linkBo_ends_with: String
   linkBo_not_ends_with: String
-  linkEnumType: EnumTypeWhereInput
+  linkEnumType: String
+  linkEnumType_not: String
+  linkEnumType_in: [String!]
+  linkEnumType_not_in: [String!]
+  linkEnumType_lt: String
+  linkEnumType_lte: String
+  linkEnumType_gt: String
+  linkEnumType_gte: String
+  linkEnumType_contains: String
+  linkEnumType_not_contains: String
+  linkEnumType_starts_with: String
+  linkEnumType_not_starts_with: String
+  linkEnumType_ends_with: String
+  linkEnumType_not_ends_with: String
   AND: [BoPropWhereInput!]
   OR: [BoPropWhereInput!]
   NOT: [BoPropWhereInput!]
@@ -901,11 +933,6 @@ input EnumTypeCreateManyInput {
   connect: [EnumTypeWhereUniqueInput!]
 }
 
-input EnumTypeCreateOneInput {
-  create: EnumTypeCreateInput
-  connect: EnumTypeWhereUniqueInput
-}
-
 input EnumTypeCreateOneWithoutPropsInput {
   create: EnumTypeCreateWithoutPropsInput
   connect: EnumTypeWhereUniqueInput
@@ -1067,15 +1094,6 @@ input EnumTypeUpdateManyWithWhereNestedInput {
   data: EnumTypeUpdateManyDataInput!
 }
 
-input EnumTypeUpdateOneInput {
-  create: EnumTypeCreateInput
-  update: EnumTypeUpdateDataInput
-  upsert: EnumTypeUpsertNestedInput
-  delete: Boolean
-  disconnect: Boolean
-  connect: EnumTypeWhereUniqueInput
-}
-
 input EnumTypeUpdateOneRequiredWithoutPropsInput {
   create: EnumTypeCreateWithoutPropsInput
   update: EnumTypeUpdateWithoutPropsDataInput
@@ -1092,11 +1110,6 @@ input EnumTypeUpdateWithoutPropsDataInput {
 input EnumTypeUpdateWithWhereUniqueNestedInput {
   where: EnumTypeWhereUniqueInput!
   data: EnumTypeUpdateDataInput!
-}
-
-input EnumTypeUpsertNestedInput {
-  update: EnumTypeUpdateDataInput!
-  create: EnumTypeCreateInput!
 }
 
 input EnumTypeUpsertWithoutPropsInput {

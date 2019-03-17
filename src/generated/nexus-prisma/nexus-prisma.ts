@@ -123,15 +123,11 @@ export interface NexusPrismaTypes {
       BoCreateInput: BoCreateInputInputObject
       BoPropCreateManyWithoutBoInput: BoPropCreateManyWithoutBoInputInputObject
       BoPropCreateWithoutBoInput: BoPropCreateWithoutBoInputInputObject
-      EnumTypeCreateOneInput: EnumTypeCreateOneInputInputObject
       BoCreateManyInput: BoCreateManyInputInputObject
       BoUpdateInput: BoUpdateInputInputObject
       BoPropUpdateManyWithoutBoInput: BoPropUpdateManyWithoutBoInputInputObject
       BoPropUpdateWithWhereUniqueWithoutBoInput: BoPropUpdateWithWhereUniqueWithoutBoInputInputObject
       BoPropUpdateWithoutBoDataInput: BoPropUpdateWithoutBoDataInputInputObject
-      EnumTypeUpdateOneInput: EnumTypeUpdateOneInputInputObject
-      EnumTypeUpdateDataInput: EnumTypeUpdateDataInputInputObject
-      EnumTypeUpsertNestedInput: EnumTypeUpsertNestedInputInputObject
       BoPropUpsertWithWhereUniqueWithoutBoInput: BoPropUpsertWithWhereUniqueWithoutBoInputInputObject
       BoPropScalarWhereInput: BoPropScalarWhereInputInputObject
       BoPropUpdateManyWithWhereNestedInput: BoPropUpdateManyWithWhereNestedInputInputObject
@@ -157,6 +153,7 @@ export interface NexusPrismaTypes {
       PageUpdateInput: PageUpdateInputInputObject
       EnumTypeUpdateManyInput: EnumTypeUpdateManyInputInputObject
       EnumTypeUpdateWithWhereUniqueNestedInput: EnumTypeUpdateWithWhereUniqueNestedInputInputObject
+      EnumTypeUpdateDataInput: EnumTypeUpdateDataInputInputObject
       EnumTypeUpsertWithWhereUniqueNestedInput: EnumTypeUpsertWithWhereUniqueNestedInputInputObject
       EnumTypeScalarWhereInput: EnumTypeScalarWhereInputInputObject
       EnumTypeUpdateManyWithWhereNestedInput: EnumTypeUpdateManyWithWhereNestedInputInputObject
@@ -1160,17 +1157,12 @@ export interface BoPropFieldDetails {
     resolve: undefined
   }
   linkEnumType: {
-    type: 'EnumType'
+    type: 'String'
     args: {}
     description: string
     list: undefined
     nullable: true
-    resolve: (
-      root: core.RootValue<"BoProp">,
-      args: {  }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.EnumType | null> | prisma.EnumType | null
+    resolve: undefined
   }
 }
   
@@ -2805,6 +2797,7 @@ type BoPropPreviousValuesObject =
   | { name: 'unique', args?: [] | false, alias?: string  } 
   | { name: 'redundant', args?: [] | false, alias?: string  } 
   | { name: 'linkBo', args?: [] | false, alias?: string  } 
+  | { name: 'linkEnumType', args?: [] | false, alias?: string  } 
 
 type BoPropPreviousValuesFields =
   | 'id'
@@ -2815,6 +2808,7 @@ type BoPropPreviousValuesFields =
   | 'unique'
   | 'redundant'
   | 'linkBo'
+  | 'linkEnumType'
 
 
 
@@ -2878,6 +2872,14 @@ export interface BoPropPreviousValuesFieldDetails {
     resolve: undefined
   }
   linkBo: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  linkEnumType: {
     type: 'String'
     args: {}
     description: string
@@ -3371,7 +3373,20 @@ export interface BoPropWhereInput {
   linkBo_not_starts_with?: string | null
   linkBo_ends_with?: string | null
   linkBo_not_ends_with?: string | null
-  linkEnumType?: EnumTypeWhereInput | null
+  linkEnumType?: string | null
+  linkEnumType_not?: string | null
+  linkEnumType_in?: string[]
+  linkEnumType_not_in?: string[]
+  linkEnumType_lt?: string | null
+  linkEnumType_lte?: string | null
+  linkEnumType_gt?: string | null
+  linkEnumType_gte?: string | null
+  linkEnumType_contains?: string | null
+  linkEnumType_not_contains?: string | null
+  linkEnumType_starts_with?: string | null
+  linkEnumType_not_starts_with?: string | null
+  linkEnumType_ends_with?: string | null
+  linkEnumType_not_ends_with?: string | null
   AND?: BoPropWhereInput[]
   OR?: BoPropWhereInput[]
   NOT?: BoPropWhereInput[]
@@ -3456,6 +3471,19 @@ export type BoPropWhereInputInputObject =
   | { name: 'linkBo_ends_with', alias?: string  } 
   | { name: 'linkBo_not_ends_with', alias?: string  } 
   | { name: 'linkEnumType', alias?: string  } 
+  | { name: 'linkEnumType_not', alias?: string  } 
+  | { name: 'linkEnumType_in', alias?: string  } 
+  | { name: 'linkEnumType_not_in', alias?: string  } 
+  | { name: 'linkEnumType_lt', alias?: string  } 
+  | { name: 'linkEnumType_lte', alias?: string  } 
+  | { name: 'linkEnumType_gt', alias?: string  } 
+  | { name: 'linkEnumType_gte', alias?: string  } 
+  | { name: 'linkEnumType_contains', alias?: string  } 
+  | { name: 'linkEnumType_not_contains', alias?: string  } 
+  | { name: 'linkEnumType_starts_with', alias?: string  } 
+  | { name: 'linkEnumType_not_starts_with', alias?: string  } 
+  | { name: 'linkEnumType_ends_with', alias?: string  } 
+  | { name: 'linkEnumType_not_ends_with', alias?: string  } 
   | { name: 'AND', alias?: string  } 
   | { name: 'OR', alias?: string  } 
   | { name: 'NOT', alias?: string  } 
@@ -4182,7 +4210,7 @@ export interface BoPropCreateWithoutBoInput {
   unique?: boolean | null
   redundant?: boolean | null
   linkBo?: string | null
-  linkEnumType?: EnumTypeCreateOneInput | null
+  linkEnumType?: string | null
 }
 export type BoPropCreateWithoutBoInputInputObject =
   | Extract<keyof BoPropCreateWithoutBoInput, string>
@@ -4194,15 +4222,6 @@ export type BoPropCreateWithoutBoInputInputObject =
   | { name: 'redundant', alias?: string  } 
   | { name: 'linkBo', alias?: string  } 
   | { name: 'linkEnumType', alias?: string  } 
-  
-export interface EnumTypeCreateOneInput {
-  create?: EnumTypeCreateInput | null
-  connect?: EnumTypeWhereUniqueInput | null
-}
-export type EnumTypeCreateOneInputInputObject =
-  | Extract<keyof EnumTypeCreateOneInput, string>
-  | { name: 'create', alias?: string  } 
-  | { name: 'connect', alias?: string  } 
   
 export interface BoCreateManyInput {
   create?: BoCreateInput[]
@@ -4268,7 +4287,7 @@ export interface BoPropUpdateWithoutBoDataInput {
   unique?: boolean | null
   redundant?: boolean | null
   linkBo?: string | null
-  linkEnumType?: EnumTypeUpdateOneInput | null
+  linkEnumType?: string | null
 }
 export type BoPropUpdateWithoutBoDataInputInputObject =
   | Extract<keyof BoPropUpdateWithoutBoDataInput, string>
@@ -4280,45 +4299,6 @@ export type BoPropUpdateWithoutBoDataInputInputObject =
   | { name: 'redundant', alias?: string  } 
   | { name: 'linkBo', alias?: string  } 
   | { name: 'linkEnumType', alias?: string  } 
-  
-export interface EnumTypeUpdateOneInput {
-  create?: EnumTypeCreateInput | null
-  update?: EnumTypeUpdateDataInput | null
-  upsert?: EnumTypeUpsertNestedInput | null
-  delete?: boolean | null
-  disconnect?: boolean | null
-  connect?: EnumTypeWhereUniqueInput | null
-}
-export type EnumTypeUpdateOneInputInputObject =
-  | Extract<keyof EnumTypeUpdateOneInput, string>
-  | { name: 'create', alias?: string  } 
-  | { name: 'update', alias?: string  } 
-  | { name: 'upsert', alias?: string  } 
-  | { name: 'delete', alias?: string  } 
-  | { name: 'disconnect', alias?: string  } 
-  | { name: 'connect', alias?: string  } 
-  
-export interface EnumTypeUpdateDataInput {
-  name?: string | null
-  desc?: string | null
-  props?: EnumPropUpdateManyWithoutEnumTypeInput | null
-  wikiUrl?: string | null
-}
-export type EnumTypeUpdateDataInputInputObject =
-  | Extract<keyof EnumTypeUpdateDataInput, string>
-  | { name: 'name', alias?: string  } 
-  | { name: 'desc', alias?: string  } 
-  | { name: 'props', alias?: string  } 
-  | { name: 'wikiUrl', alias?: string  } 
-  
-export interface EnumTypeUpsertNestedInput {
-  update?: EnumTypeUpdateDataInput
-  create?: EnumTypeCreateInput
-}
-export type EnumTypeUpsertNestedInputInputObject =
-  | Extract<keyof EnumTypeUpsertNestedInput, string>
-  | { name: 'update', alias?: string  } 
-  | { name: 'create', alias?: string  } 
   
 export interface BoPropUpsertWithWhereUniqueWithoutBoInput {
   where?: BoPropWhereUniqueInput
@@ -4408,6 +4388,20 @@ export interface BoPropScalarWhereInput {
   linkBo_not_starts_with?: string | null
   linkBo_ends_with?: string | null
   linkBo_not_ends_with?: string | null
+  linkEnumType?: string | null
+  linkEnumType_not?: string | null
+  linkEnumType_in?: string[]
+  linkEnumType_not_in?: string[]
+  linkEnumType_lt?: string | null
+  linkEnumType_lte?: string | null
+  linkEnumType_gt?: string | null
+  linkEnumType_gte?: string | null
+  linkEnumType_contains?: string | null
+  linkEnumType_not_contains?: string | null
+  linkEnumType_starts_with?: string | null
+  linkEnumType_not_starts_with?: string | null
+  linkEnumType_ends_with?: string | null
+  linkEnumType_not_ends_with?: string | null
   AND?: BoPropScalarWhereInput[]
   OR?: BoPropScalarWhereInput[]
   NOT?: BoPropScalarWhereInput[]
@@ -4490,6 +4484,20 @@ export type BoPropScalarWhereInputInputObject =
   | { name: 'linkBo_not_starts_with', alias?: string  } 
   | { name: 'linkBo_ends_with', alias?: string  } 
   | { name: 'linkBo_not_ends_with', alias?: string  } 
+  | { name: 'linkEnumType', alias?: string  } 
+  | { name: 'linkEnumType_not', alias?: string  } 
+  | { name: 'linkEnumType_in', alias?: string  } 
+  | { name: 'linkEnumType_not_in', alias?: string  } 
+  | { name: 'linkEnumType_lt', alias?: string  } 
+  | { name: 'linkEnumType_lte', alias?: string  } 
+  | { name: 'linkEnumType_gt', alias?: string  } 
+  | { name: 'linkEnumType_gte', alias?: string  } 
+  | { name: 'linkEnumType_contains', alias?: string  } 
+  | { name: 'linkEnumType_not_contains', alias?: string  } 
+  | { name: 'linkEnumType_starts_with', alias?: string  } 
+  | { name: 'linkEnumType_not_starts_with', alias?: string  } 
+  | { name: 'linkEnumType_ends_with', alias?: string  } 
+  | { name: 'linkEnumType_not_ends_with', alias?: string  } 
   | { name: 'AND', alias?: string  } 
   | { name: 'OR', alias?: string  } 
   | { name: 'NOT', alias?: string  } 
@@ -4511,6 +4519,7 @@ export interface BoPropUpdateManyDataInput {
   unique?: boolean | null
   redundant?: boolean | null
   linkBo?: string | null
+  linkEnumType?: string | null
 }
 export type BoPropUpdateManyDataInputInputObject =
   | Extract<keyof BoPropUpdateManyDataInput, string>
@@ -4521,6 +4530,7 @@ export type BoPropUpdateManyDataInputInputObject =
   | { name: 'unique', alias?: string  } 
   | { name: 'redundant', alias?: string  } 
   | { name: 'linkBo', alias?: string  } 
+  | { name: 'linkEnumType', alias?: string  } 
   
 export interface BoUpdateManyInput {
   create?: BoCreateInput[]
@@ -4743,7 +4753,7 @@ export interface BoPropCreateInput {
   redundant?: boolean | null
   bo?: BoCreateOneWithoutPropsInput
   linkBo?: string | null
-  linkEnumType?: EnumTypeCreateOneInput | null
+  linkEnumType?: string | null
 }
 export type BoPropCreateInputInputObject =
   | Extract<keyof BoPropCreateInput, string>
@@ -4788,7 +4798,7 @@ export interface BoPropUpdateInput {
   redundant?: boolean | null
   bo?: BoUpdateOneRequiredWithoutPropsInput | null
   linkBo?: string | null
-  linkEnumType?: EnumTypeUpdateOneInput | null
+  linkEnumType?: string | null
 }
 export type BoPropUpdateInputInputObject =
   | Extract<keyof BoPropUpdateInput, string>
@@ -4845,6 +4855,7 @@ export interface BoPropUpdateManyMutationInput {
   unique?: boolean | null
   redundant?: boolean | null
   linkBo?: string | null
+  linkEnumType?: string | null
 }
 export type BoPropUpdateManyMutationInputInputObject =
   | Extract<keyof BoPropUpdateManyMutationInput, string>
@@ -4855,6 +4866,7 @@ export type BoPropUpdateManyMutationInputInputObject =
   | { name: 'unique', alias?: string  } 
   | { name: 'redundant', alias?: string  } 
   | { name: 'linkBo', alias?: string  } 
+  | { name: 'linkEnumType', alias?: string  } 
   
 export interface PageCreateInput {
   name?: string | null
@@ -4942,6 +4954,19 @@ export type EnumTypeUpdateWithWhereUniqueNestedInputInputObject =
   | Extract<keyof EnumTypeUpdateWithWhereUniqueNestedInput, string>
   | { name: 'where', alias?: string  } 
   | { name: 'data', alias?: string  } 
+  
+export interface EnumTypeUpdateDataInput {
+  name?: string | null
+  desc?: string | null
+  props?: EnumPropUpdateManyWithoutEnumTypeInput | null
+  wikiUrl?: string | null
+}
+export type EnumTypeUpdateDataInputInputObject =
+  | Extract<keyof EnumTypeUpdateDataInput, string>
+  | { name: 'name', alias?: string  } 
+  | { name: 'desc', alias?: string  } 
+  | { name: 'props', alias?: string  } 
+  | { name: 'wikiUrl', alias?: string  } 
   
 export interface EnumTypeUpsertWithWhereUniqueNestedInput {
   where?: EnumTypeWhereUniqueInput
@@ -5265,6 +5290,8 @@ export type BoPropOrderByInputValues =
   | 'redundant_DESC'
   | 'linkBo_ASC'
   | 'linkBo_DESC'
+  | 'linkEnumType_ASC'
+  | 'linkEnumType_DESC'
   | 'createdAt_ASC'
   | 'createdAt_DESC'
   | 'updatedAt_ASC'
