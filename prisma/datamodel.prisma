@@ -31,8 +31,8 @@ type BoProp {
   unique: Boolean # 是否唯一
   redundant: Boolean # 是否冗余
   bo: Bo! # 所属 BO
-  linkBo: String # 关联另一个 BO
-  linkEnumType: EnumType # 关联枚举
+  linkBo: String # 关联另一个 BO （使用 wikiUrl）
+  linkEnumType: String # 关联枚举 （使用 wikiUrl）
 }
 
 type Page {
