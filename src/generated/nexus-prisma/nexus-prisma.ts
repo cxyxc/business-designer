@@ -123,7 +123,7 @@ export interface NexusPrismaTypes {
       BoCreateInput: BoCreateInputInputObject
       BoPropCreateManyWithoutBoInput: BoPropCreateManyWithoutBoInputInputObject
       BoPropCreateWithoutBoInput: BoPropCreateWithoutBoInputInputObject
-      BoCreateManyInput: BoCreateManyInputInputObject
+      BoCreatedetailsInput: BoCreatedetailsInputInputObject
       BoUpdateInput: BoUpdateInputInputObject
       BoPropUpdateManyWithoutBoInput: BoPropUpdateManyWithoutBoInputInputObject
       BoPropUpdateWithWhereUniqueWithoutBoInput: BoPropUpdateWithWhereUniqueWithoutBoInputInputObject
@@ -132,13 +132,7 @@ export interface NexusPrismaTypes {
       BoPropScalarWhereInput: BoPropScalarWhereInputInputObject
       BoPropUpdateManyWithWhereNestedInput: BoPropUpdateManyWithWhereNestedInputInputObject
       BoPropUpdateManyDataInput: BoPropUpdateManyDataInputInputObject
-      BoUpdateManyInput: BoUpdateManyInputInputObject
-      BoUpdateWithWhereUniqueNestedInput: BoUpdateWithWhereUniqueNestedInputInputObject
-      BoUpdateDataInput: BoUpdateDataInputInputObject
-      BoUpsertWithWhereUniqueNestedInput: BoUpsertWithWhereUniqueNestedInputInputObject
-      BoScalarWhereInput: BoScalarWhereInputInputObject
-      BoUpdateManyWithWhereNestedInput: BoUpdateManyWithWhereNestedInputInputObject
-      BoUpdateManyDataInput: BoUpdateManyDataInputInputObject
+      BoUpdatedetailsInput: BoUpdatedetailsInputInputObject
       BoUpdateManyMutationInput: BoUpdateManyMutationInputInputObject
       BoPropCreateInput: BoPropCreateInputInputObject
       BoCreateOneWithoutPropsInput: BoCreateOneWithoutPropsInputInputObject
@@ -149,8 +143,16 @@ export interface NexusPrismaTypes {
       BoUpsertWithoutPropsInput: BoUpsertWithoutPropsInputInputObject
       BoPropUpdateManyMutationInput: BoPropUpdateManyMutationInputInputObject
       PageCreateInput: PageCreateInputInputObject
+      BoCreateManyInput: BoCreateManyInputInputObject
       EnumTypeCreateManyInput: EnumTypeCreateManyInputInputObject
       PageUpdateInput: PageUpdateInputInputObject
+      BoUpdateManyInput: BoUpdateManyInputInputObject
+      BoUpdateWithWhereUniqueNestedInput: BoUpdateWithWhereUniqueNestedInputInputObject
+      BoUpdateDataInput: BoUpdateDataInputInputObject
+      BoUpsertWithWhereUniqueNestedInput: BoUpsertWithWhereUniqueNestedInputInputObject
+      BoScalarWhereInput: BoScalarWhereInputInputObject
+      BoUpdateManyWithWhereNestedInput: BoUpdateManyWithWhereNestedInputInputObject
+      BoUpdateManyDataInput: BoUpdateManyDataInputInputObject
       EnumTypeUpdateManyInput: EnumTypeUpdateManyInputInputObject
       EnumTypeUpdateWithWhereUniqueNestedInput: EnumTypeUpdateWithWhereUniqueNestedInputInputObject
       EnumTypeUpdateDataInput: EnumTypeUpdateDataInputInputObject
@@ -956,7 +958,7 @@ type BoObject =
   | { name: 'desc', args?: [] | false, alias?: string  } 
   | { name: 'props', args?: BoPropsArgs[] | false, alias?: string  } 
   | { name: 'wikiUrl', args?: [] | false, alias?: string  } 
-  | { name: 'details', args?: BoDetailsArgs[] | false, alias?: string  } 
+  | { name: 'details', args?: [] | false, alias?: string  } 
 
 type BoFields =
   | 'id'
@@ -968,14 +970,6 @@ type BoFields =
 
 
 type BoPropsArgs =
-  | 'where'
-  | 'orderBy'
-  | 'skip'
-  | 'after'
-  | 'before'
-  | 'first'
-  | 'last'
-type BoDetailsArgs =
   | 'where'
   | 'orderBy'
   | 'skip'
@@ -1032,17 +1026,12 @@ export interface BoFieldDetails {
     resolve: undefined
   }
   details: {
-    type: 'Bo'
-    args: Record<BoDetailsArgs, core.NexusArgDef<string>>
+    type: 'String'
+    args: {}
     description: string
     list: true
     nullable: false
-    resolve: (
-      root: core.RootValue<"Bo">,
-      args: { where?: BoWhereInput | null, orderBy?: prisma.BoOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.Bo[]> | prisma.Bo[]
+    resolve: undefined
   }
 }
   
@@ -1055,6 +1044,7 @@ type BoPropObject =
   | { name: 'name', args?: [] | false, alias?: string  } 
   | { name: 'desc', args?: [] | false, alias?: string  } 
   | { name: 'type', args?: [] | false, alias?: string  } 
+  | { name: 'wikiUrl', args?: [] | false, alias?: string  } 
   | { name: 'required', args?: [] | false, alias?: string  } 
   | { name: 'unique', args?: [] | false, alias?: string  } 
   | { name: 'redundant', args?: [] | false, alias?: string  } 
@@ -1067,6 +1057,7 @@ type BoPropFields =
   | 'name'
   | 'desc'
   | 'type'
+  | 'wikiUrl'
   | 'required'
   | 'unique'
   | 'redundant'
@@ -1104,6 +1095,14 @@ export interface BoPropFieldDetails {
     resolve: undefined
   }
   type: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  wikiUrl: {
     type: 'String'
     args: {}
     description: string
@@ -2668,12 +2667,14 @@ type BoPreviousValuesObject =
   | { name: 'name', args?: [] | false, alias?: string  } 
   | { name: 'desc', args?: [] | false, alias?: string  } 
   | { name: 'wikiUrl', args?: [] | false, alias?: string  } 
+  | { name: 'details', args?: [] | false, alias?: string  } 
 
 type BoPreviousValuesFields =
   | 'id'
   | 'name'
   | 'desc'
   | 'wikiUrl'
+  | 'details'
 
 
 
@@ -2709,6 +2710,14 @@ export interface BoPreviousValuesFieldDetails {
     args: {}
     description: string
     list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  details: {
+    type: 'String'
+    args: {}
+    description: string
+    list: true
     nullable: false
     resolve: undefined
   }
@@ -2793,6 +2802,7 @@ type BoPropPreviousValuesObject =
   | { name: 'name', args?: [] | false, alias?: string  } 
   | { name: 'desc', args?: [] | false, alias?: string  } 
   | { name: 'type', args?: [] | false, alias?: string  } 
+  | { name: 'wikiUrl', args?: [] | false, alias?: string  } 
   | { name: 'required', args?: [] | false, alias?: string  } 
   | { name: 'unique', args?: [] | false, alias?: string  } 
   | { name: 'redundant', args?: [] | false, alias?: string  } 
@@ -2804,6 +2814,7 @@ type BoPropPreviousValuesFields =
   | 'name'
   | 'desc'
   | 'type'
+  | 'wikiUrl'
   | 'required'
   | 'unique'
   | 'redundant'
@@ -2840,6 +2851,14 @@ export interface BoPropPreviousValuesFieldDetails {
     resolve: undefined
   }
   type: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  wikiUrl: {
     type: 'String'
     args: {}
     description: string
@@ -3352,6 +3371,20 @@ export interface BoPropWhereInput {
   type_not_starts_with?: string | null
   type_ends_with?: string | null
   type_not_ends_with?: string | null
+  wikiUrl?: string | null
+  wikiUrl_not?: string | null
+  wikiUrl_in?: string[]
+  wikiUrl_not_in?: string[]
+  wikiUrl_lt?: string | null
+  wikiUrl_lte?: string | null
+  wikiUrl_gt?: string | null
+  wikiUrl_gte?: string | null
+  wikiUrl_contains?: string | null
+  wikiUrl_not_contains?: string | null
+  wikiUrl_starts_with?: string | null
+  wikiUrl_not_starts_with?: string | null
+  wikiUrl_ends_with?: string | null
+  wikiUrl_not_ends_with?: string | null
   required?: boolean | null
   required_not?: boolean | null
   unique?: boolean | null
@@ -3449,6 +3482,20 @@ export type BoPropWhereInputInputObject =
   | { name: 'type_not_starts_with', alias?: string  } 
   | { name: 'type_ends_with', alias?: string  } 
   | { name: 'type_not_ends_with', alias?: string  } 
+  | { name: 'wikiUrl', alias?: string  } 
+  | { name: 'wikiUrl_not', alias?: string  } 
+  | { name: 'wikiUrl_in', alias?: string  } 
+  | { name: 'wikiUrl_not_in', alias?: string  } 
+  | { name: 'wikiUrl_lt', alias?: string  } 
+  | { name: 'wikiUrl_lte', alias?: string  } 
+  | { name: 'wikiUrl_gt', alias?: string  } 
+  | { name: 'wikiUrl_gte', alias?: string  } 
+  | { name: 'wikiUrl_contains', alias?: string  } 
+  | { name: 'wikiUrl_not_contains', alias?: string  } 
+  | { name: 'wikiUrl_starts_with', alias?: string  } 
+  | { name: 'wikiUrl_not_starts_with', alias?: string  } 
+  | { name: 'wikiUrl_ends_with', alias?: string  } 
+  | { name: 'wikiUrl_not_ends_with', alias?: string  } 
   | { name: 'required', alias?: string  } 
   | { name: 'required_not', alias?: string  } 
   | { name: 'unique', alias?: string  } 
@@ -3548,9 +3595,6 @@ export interface BoWhereInput {
   wikiUrl_not_starts_with?: string | null
   wikiUrl_ends_with?: string | null
   wikiUrl_not_ends_with?: string | null
-  details_every?: BoWhereInput | null
-  details_some?: BoWhereInput | null
-  details_none?: BoWhereInput | null
   AND?: BoWhereInput[]
   OR?: BoWhereInput[]
   NOT?: BoWhereInput[]
@@ -3616,9 +3660,6 @@ export type BoWhereInputInputObject =
   | { name: 'wikiUrl_not_starts_with', alias?: string  } 
   | { name: 'wikiUrl_ends_with', alias?: string  } 
   | { name: 'wikiUrl_not_ends_with', alias?: string  } 
-  | { name: 'details_every', alias?: string  } 
-  | { name: 'details_some', alias?: string  } 
-  | { name: 'details_none', alias?: string  } 
   | { name: 'AND', alias?: string  } 
   | { name: 'OR', alias?: string  } 
   | { name: 'NOT', alias?: string  } 
@@ -4183,7 +4224,7 @@ export interface BoCreateInput {
   desc?: string | null
   props?: BoPropCreateManyWithoutBoInput | null
   wikiUrl?: string
-  details?: BoCreateManyInput | null
+  details?: BoCreatedetailsInput | null
 }
 export type BoCreateInputInputObject =
   | Extract<keyof BoCreateInput, string>
@@ -4206,6 +4247,7 @@ export interface BoPropCreateWithoutBoInput {
   name?: string | null
   desc?: string | null
   type?: string | null
+  wikiUrl?: string | null
   required?: boolean | null
   unique?: boolean | null
   redundant?: boolean | null
@@ -4217,27 +4259,26 @@ export type BoPropCreateWithoutBoInputInputObject =
   | { name: 'name', alias?: string  } 
   | { name: 'desc', alias?: string  } 
   | { name: 'type', alias?: string  } 
+  | { name: 'wikiUrl', alias?: string  } 
   | { name: 'required', alias?: string  } 
   | { name: 'unique', alias?: string  } 
   | { name: 'redundant', alias?: string  } 
   | { name: 'linkBo', alias?: string  } 
   | { name: 'linkEnumType', alias?: string  } 
   
-export interface BoCreateManyInput {
-  create?: BoCreateInput[]
-  connect?: BoWhereUniqueInput[]
+export interface BoCreatedetailsInput {
+  set?: string[]
 }
-export type BoCreateManyInputInputObject =
-  | Extract<keyof BoCreateManyInput, string>
-  | { name: 'create', alias?: string  } 
-  | { name: 'connect', alias?: string  } 
+export type BoCreatedetailsInputInputObject =
+  | Extract<keyof BoCreatedetailsInput, string>
+  | { name: 'set', alias?: string  } 
   
 export interface BoUpdateInput {
   name?: string | null
   desc?: string | null
   props?: BoPropUpdateManyWithoutBoInput | null
   wikiUrl?: string | null
-  details?: BoUpdateManyInput | null
+  details?: BoUpdatedetailsInput | null
 }
 export type BoUpdateInputInputObject =
   | Extract<keyof BoUpdateInput, string>
@@ -4283,6 +4324,7 @@ export interface BoPropUpdateWithoutBoDataInput {
   name?: string | null
   desc?: string | null
   type?: string | null
+  wikiUrl?: string | null
   required?: boolean | null
   unique?: boolean | null
   redundant?: boolean | null
@@ -4294,6 +4336,7 @@ export type BoPropUpdateWithoutBoDataInputInputObject =
   | { name: 'name', alias?: string  } 
   | { name: 'desc', alias?: string  } 
   | { name: 'type', alias?: string  } 
+  | { name: 'wikiUrl', alias?: string  } 
   | { name: 'required', alias?: string  } 
   | { name: 'unique', alias?: string  } 
   | { name: 'redundant', alias?: string  } 
@@ -4368,6 +4411,20 @@ export interface BoPropScalarWhereInput {
   type_not_starts_with?: string | null
   type_ends_with?: string | null
   type_not_ends_with?: string | null
+  wikiUrl?: string | null
+  wikiUrl_not?: string | null
+  wikiUrl_in?: string[]
+  wikiUrl_not_in?: string[]
+  wikiUrl_lt?: string | null
+  wikiUrl_lte?: string | null
+  wikiUrl_gt?: string | null
+  wikiUrl_gte?: string | null
+  wikiUrl_contains?: string | null
+  wikiUrl_not_contains?: string | null
+  wikiUrl_starts_with?: string | null
+  wikiUrl_not_starts_with?: string | null
+  wikiUrl_ends_with?: string | null
+  wikiUrl_not_ends_with?: string | null
   required?: boolean | null
   required_not?: boolean | null
   unique?: boolean | null
@@ -4464,6 +4521,20 @@ export type BoPropScalarWhereInputInputObject =
   | { name: 'type_not_starts_with', alias?: string  } 
   | { name: 'type_ends_with', alias?: string  } 
   | { name: 'type_not_ends_with', alias?: string  } 
+  | { name: 'wikiUrl', alias?: string  } 
+  | { name: 'wikiUrl_not', alias?: string  } 
+  | { name: 'wikiUrl_in', alias?: string  } 
+  | { name: 'wikiUrl_not_in', alias?: string  } 
+  | { name: 'wikiUrl_lt', alias?: string  } 
+  | { name: 'wikiUrl_lte', alias?: string  } 
+  | { name: 'wikiUrl_gt', alias?: string  } 
+  | { name: 'wikiUrl_gte', alias?: string  } 
+  | { name: 'wikiUrl_contains', alias?: string  } 
+  | { name: 'wikiUrl_not_contains', alias?: string  } 
+  | { name: 'wikiUrl_starts_with', alias?: string  } 
+  | { name: 'wikiUrl_not_starts_with', alias?: string  } 
+  | { name: 'wikiUrl_ends_with', alias?: string  } 
+  | { name: 'wikiUrl_not_ends_with', alias?: string  } 
   | { name: 'required', alias?: string  } 
   | { name: 'required_not', alias?: string  } 
   | { name: 'unique', alias?: string  } 
@@ -4515,6 +4586,7 @@ export interface BoPropUpdateManyDataInput {
   name?: string | null
   desc?: string | null
   type?: string | null
+  wikiUrl?: string | null
   required?: boolean | null
   unique?: boolean | null
   redundant?: boolean | null
@@ -4526,11 +4598,226 @@ export type BoPropUpdateManyDataInputInputObject =
   | { name: 'name', alias?: string  } 
   | { name: 'desc', alias?: string  } 
   | { name: 'type', alias?: string  } 
+  | { name: 'wikiUrl', alias?: string  } 
   | { name: 'required', alias?: string  } 
   | { name: 'unique', alias?: string  } 
   | { name: 'redundant', alias?: string  } 
   | { name: 'linkBo', alias?: string  } 
   | { name: 'linkEnumType', alias?: string  } 
+  
+export interface BoUpdatedetailsInput {
+  set?: string[]
+}
+export type BoUpdatedetailsInputInputObject =
+  | Extract<keyof BoUpdatedetailsInput, string>
+  | { name: 'set', alias?: string  } 
+  
+export interface BoUpdateManyMutationInput {
+  name?: string | null
+  desc?: string | null
+  wikiUrl?: string | null
+  details?: BoUpdatedetailsInput | null
+}
+export type BoUpdateManyMutationInputInputObject =
+  | Extract<keyof BoUpdateManyMutationInput, string>
+  | { name: 'name', alias?: string  } 
+  | { name: 'desc', alias?: string  } 
+  | { name: 'wikiUrl', alias?: string  } 
+  | { name: 'details', alias?: string  } 
+  
+export interface BoPropCreateInput {
+  name?: string | null
+  desc?: string | null
+  type?: string | null
+  wikiUrl?: string | null
+  required?: boolean | null
+  unique?: boolean | null
+  redundant?: boolean | null
+  bo?: BoCreateOneWithoutPropsInput
+  linkBo?: string | null
+  linkEnumType?: string | null
+}
+export type BoPropCreateInputInputObject =
+  | Extract<keyof BoPropCreateInput, string>
+  | { name: 'name', alias?: string  } 
+  | { name: 'desc', alias?: string  } 
+  | { name: 'type', alias?: string  } 
+  | { name: 'wikiUrl', alias?: string  } 
+  | { name: 'required', alias?: string  } 
+  | { name: 'unique', alias?: string  } 
+  | { name: 'redundant', alias?: string  } 
+  | { name: 'bo', alias?: string  } 
+  | { name: 'linkBo', alias?: string  } 
+  | { name: 'linkEnumType', alias?: string  } 
+  
+export interface BoCreateOneWithoutPropsInput {
+  create?: BoCreateWithoutPropsInput | null
+  connect?: BoWhereUniqueInput | null
+}
+export type BoCreateOneWithoutPropsInputInputObject =
+  | Extract<keyof BoCreateOneWithoutPropsInput, string>
+  | { name: 'create', alias?: string  } 
+  | { name: 'connect', alias?: string  } 
+  
+export interface BoCreateWithoutPropsInput {
+  name?: string | null
+  desc?: string | null
+  wikiUrl?: string
+  details?: BoCreatedetailsInput | null
+}
+export type BoCreateWithoutPropsInputInputObject =
+  | Extract<keyof BoCreateWithoutPropsInput, string>
+  | { name: 'name', alias?: string  } 
+  | { name: 'desc', alias?: string  } 
+  | { name: 'wikiUrl', alias?: string  } 
+  | { name: 'details', alias?: string  } 
+  
+export interface BoPropUpdateInput {
+  name?: string | null
+  desc?: string | null
+  type?: string | null
+  wikiUrl?: string | null
+  required?: boolean | null
+  unique?: boolean | null
+  redundant?: boolean | null
+  bo?: BoUpdateOneRequiredWithoutPropsInput | null
+  linkBo?: string | null
+  linkEnumType?: string | null
+}
+export type BoPropUpdateInputInputObject =
+  | Extract<keyof BoPropUpdateInput, string>
+  | { name: 'name', alias?: string  } 
+  | { name: 'desc', alias?: string  } 
+  | { name: 'type', alias?: string  } 
+  | { name: 'wikiUrl', alias?: string  } 
+  | { name: 'required', alias?: string  } 
+  | { name: 'unique', alias?: string  } 
+  | { name: 'redundant', alias?: string  } 
+  | { name: 'bo', alias?: string  } 
+  | { name: 'linkBo', alias?: string  } 
+  | { name: 'linkEnumType', alias?: string  } 
+  
+export interface BoUpdateOneRequiredWithoutPropsInput {
+  create?: BoCreateWithoutPropsInput | null
+  update?: BoUpdateWithoutPropsDataInput | null
+  upsert?: BoUpsertWithoutPropsInput | null
+  connect?: BoWhereUniqueInput | null
+}
+export type BoUpdateOneRequiredWithoutPropsInputInputObject =
+  | Extract<keyof BoUpdateOneRequiredWithoutPropsInput, string>
+  | { name: 'create', alias?: string  } 
+  | { name: 'update', alias?: string  } 
+  | { name: 'upsert', alias?: string  } 
+  | { name: 'connect', alias?: string  } 
+  
+export interface BoUpdateWithoutPropsDataInput {
+  name?: string | null
+  desc?: string | null
+  wikiUrl?: string | null
+  details?: BoUpdatedetailsInput | null
+}
+export type BoUpdateWithoutPropsDataInputInputObject =
+  | Extract<keyof BoUpdateWithoutPropsDataInput, string>
+  | { name: 'name', alias?: string  } 
+  | { name: 'desc', alias?: string  } 
+  | { name: 'wikiUrl', alias?: string  } 
+  | { name: 'details', alias?: string  } 
+  
+export interface BoUpsertWithoutPropsInput {
+  update?: BoUpdateWithoutPropsDataInput
+  create?: BoCreateWithoutPropsInput
+}
+export type BoUpsertWithoutPropsInputInputObject =
+  | Extract<keyof BoUpsertWithoutPropsInput, string>
+  | { name: 'update', alias?: string  } 
+  | { name: 'create', alias?: string  } 
+  
+export interface BoPropUpdateManyMutationInput {
+  name?: string | null
+  desc?: string | null
+  type?: string | null
+  wikiUrl?: string | null
+  required?: boolean | null
+  unique?: boolean | null
+  redundant?: boolean | null
+  linkBo?: string | null
+  linkEnumType?: string | null
+}
+export type BoPropUpdateManyMutationInputInputObject =
+  | Extract<keyof BoPropUpdateManyMutationInput, string>
+  | { name: 'name', alias?: string  } 
+  | { name: 'desc', alias?: string  } 
+  | { name: 'type', alias?: string  } 
+  | { name: 'wikiUrl', alias?: string  } 
+  | { name: 'required', alias?: string  } 
+  | { name: 'unique', alias?: string  } 
+  | { name: 'redundant', alias?: string  } 
+  | { name: 'linkBo', alias?: string  } 
+  | { name: 'linkEnumType', alias?: string  } 
+  
+export interface PageCreateInput {
+  name?: string | null
+  desc?: string | null
+  project?: string | null
+  system?: string | null
+  domain?: string | null
+  type?: string | null
+  wikiUrl?: string
+  bos?: BoCreateManyInput | null
+  enums?: EnumTypeCreateManyInput | null
+}
+export type PageCreateInputInputObject =
+  | Extract<keyof PageCreateInput, string>
+  | { name: 'name', alias?: string  } 
+  | { name: 'desc', alias?: string  } 
+  | { name: 'project', alias?: string  } 
+  | { name: 'system', alias?: string  } 
+  | { name: 'domain', alias?: string  } 
+  | { name: 'type', alias?: string  } 
+  | { name: 'wikiUrl', alias?: string  } 
+  | { name: 'bos', alias?: string  } 
+  | { name: 'enums', alias?: string  } 
+  
+export interface BoCreateManyInput {
+  create?: BoCreateInput[]
+  connect?: BoWhereUniqueInput[]
+}
+export type BoCreateManyInputInputObject =
+  | Extract<keyof BoCreateManyInput, string>
+  | { name: 'create', alias?: string  } 
+  | { name: 'connect', alias?: string  } 
+  
+export interface EnumTypeCreateManyInput {
+  create?: EnumTypeCreateInput[]
+  connect?: EnumTypeWhereUniqueInput[]
+}
+export type EnumTypeCreateManyInputInputObject =
+  | Extract<keyof EnumTypeCreateManyInput, string>
+  | { name: 'create', alias?: string  } 
+  | { name: 'connect', alias?: string  } 
+  
+export interface PageUpdateInput {
+  name?: string | null
+  desc?: string | null
+  project?: string | null
+  system?: string | null
+  domain?: string | null
+  type?: string | null
+  wikiUrl?: string | null
+  bos?: BoUpdateManyInput | null
+  enums?: EnumTypeUpdateManyInput | null
+}
+export type PageUpdateInputInputObject =
+  | Extract<keyof PageUpdateInput, string>
+  | { name: 'name', alias?: string  } 
+  | { name: 'desc', alias?: string  } 
+  | { name: 'project', alias?: string  } 
+  | { name: 'system', alias?: string  } 
+  | { name: 'domain', alias?: string  } 
+  | { name: 'type', alias?: string  } 
+  | { name: 'wikiUrl', alias?: string  } 
+  | { name: 'bos', alias?: string  } 
+  | { name: 'enums', alias?: string  } 
   
 export interface BoUpdateManyInput {
   create?: BoCreateInput[]
@@ -4569,7 +4856,7 @@ export interface BoUpdateDataInput {
   desc?: string | null
   props?: BoPropUpdateManyWithoutBoInput | null
   wikiUrl?: string | null
-  details?: BoUpdateManyInput | null
+  details?: BoUpdatedetailsInput | null
 }
 export type BoUpdateDataInputInputObject =
   | Extract<keyof BoUpdateDataInput, string>
@@ -4726,202 +5013,14 @@ export interface BoUpdateManyDataInput {
   name?: string | null
   desc?: string | null
   wikiUrl?: string | null
+  details?: BoUpdatedetailsInput | null
 }
 export type BoUpdateManyDataInputInputObject =
   | Extract<keyof BoUpdateManyDataInput, string>
   | { name: 'name', alias?: string  } 
   | { name: 'desc', alias?: string  } 
   | { name: 'wikiUrl', alias?: string  } 
-  
-export interface BoUpdateManyMutationInput {
-  name?: string | null
-  desc?: string | null
-  wikiUrl?: string | null
-}
-export type BoUpdateManyMutationInputInputObject =
-  | Extract<keyof BoUpdateManyMutationInput, string>
-  | { name: 'name', alias?: string  } 
-  | { name: 'desc', alias?: string  } 
-  | { name: 'wikiUrl', alias?: string  } 
-  
-export interface BoPropCreateInput {
-  name?: string | null
-  desc?: string | null
-  type?: string | null
-  required?: boolean | null
-  unique?: boolean | null
-  redundant?: boolean | null
-  bo?: BoCreateOneWithoutPropsInput
-  linkBo?: string | null
-  linkEnumType?: string | null
-}
-export type BoPropCreateInputInputObject =
-  | Extract<keyof BoPropCreateInput, string>
-  | { name: 'name', alias?: string  } 
-  | { name: 'desc', alias?: string  } 
-  | { name: 'type', alias?: string  } 
-  | { name: 'required', alias?: string  } 
-  | { name: 'unique', alias?: string  } 
-  | { name: 'redundant', alias?: string  } 
-  | { name: 'bo', alias?: string  } 
-  | { name: 'linkBo', alias?: string  } 
-  | { name: 'linkEnumType', alias?: string  } 
-  
-export interface BoCreateOneWithoutPropsInput {
-  create?: BoCreateWithoutPropsInput | null
-  connect?: BoWhereUniqueInput | null
-}
-export type BoCreateOneWithoutPropsInputInputObject =
-  | Extract<keyof BoCreateOneWithoutPropsInput, string>
-  | { name: 'create', alias?: string  } 
-  | { name: 'connect', alias?: string  } 
-  
-export interface BoCreateWithoutPropsInput {
-  name?: string | null
-  desc?: string | null
-  wikiUrl?: string
-  details?: BoCreateManyInput | null
-}
-export type BoCreateWithoutPropsInputInputObject =
-  | Extract<keyof BoCreateWithoutPropsInput, string>
-  | { name: 'name', alias?: string  } 
-  | { name: 'desc', alias?: string  } 
-  | { name: 'wikiUrl', alias?: string  } 
   | { name: 'details', alias?: string  } 
-  
-export interface BoPropUpdateInput {
-  name?: string | null
-  desc?: string | null
-  type?: string | null
-  required?: boolean | null
-  unique?: boolean | null
-  redundant?: boolean | null
-  bo?: BoUpdateOneRequiredWithoutPropsInput | null
-  linkBo?: string | null
-  linkEnumType?: string | null
-}
-export type BoPropUpdateInputInputObject =
-  | Extract<keyof BoPropUpdateInput, string>
-  | { name: 'name', alias?: string  } 
-  | { name: 'desc', alias?: string  } 
-  | { name: 'type', alias?: string  } 
-  | { name: 'required', alias?: string  } 
-  | { name: 'unique', alias?: string  } 
-  | { name: 'redundant', alias?: string  } 
-  | { name: 'bo', alias?: string  } 
-  | { name: 'linkBo', alias?: string  } 
-  | { name: 'linkEnumType', alias?: string  } 
-  
-export interface BoUpdateOneRequiredWithoutPropsInput {
-  create?: BoCreateWithoutPropsInput | null
-  update?: BoUpdateWithoutPropsDataInput | null
-  upsert?: BoUpsertWithoutPropsInput | null
-  connect?: BoWhereUniqueInput | null
-}
-export type BoUpdateOneRequiredWithoutPropsInputInputObject =
-  | Extract<keyof BoUpdateOneRequiredWithoutPropsInput, string>
-  | { name: 'create', alias?: string  } 
-  | { name: 'update', alias?: string  } 
-  | { name: 'upsert', alias?: string  } 
-  | { name: 'connect', alias?: string  } 
-  
-export interface BoUpdateWithoutPropsDataInput {
-  name?: string | null
-  desc?: string | null
-  wikiUrl?: string | null
-  details?: BoUpdateManyInput | null
-}
-export type BoUpdateWithoutPropsDataInputInputObject =
-  | Extract<keyof BoUpdateWithoutPropsDataInput, string>
-  | { name: 'name', alias?: string  } 
-  | { name: 'desc', alias?: string  } 
-  | { name: 'wikiUrl', alias?: string  } 
-  | { name: 'details', alias?: string  } 
-  
-export interface BoUpsertWithoutPropsInput {
-  update?: BoUpdateWithoutPropsDataInput
-  create?: BoCreateWithoutPropsInput
-}
-export type BoUpsertWithoutPropsInputInputObject =
-  | Extract<keyof BoUpsertWithoutPropsInput, string>
-  | { name: 'update', alias?: string  } 
-  | { name: 'create', alias?: string  } 
-  
-export interface BoPropUpdateManyMutationInput {
-  name?: string | null
-  desc?: string | null
-  type?: string | null
-  required?: boolean | null
-  unique?: boolean | null
-  redundant?: boolean | null
-  linkBo?: string | null
-  linkEnumType?: string | null
-}
-export type BoPropUpdateManyMutationInputInputObject =
-  | Extract<keyof BoPropUpdateManyMutationInput, string>
-  | { name: 'name', alias?: string  } 
-  | { name: 'desc', alias?: string  } 
-  | { name: 'type', alias?: string  } 
-  | { name: 'required', alias?: string  } 
-  | { name: 'unique', alias?: string  } 
-  | { name: 'redundant', alias?: string  } 
-  | { name: 'linkBo', alias?: string  } 
-  | { name: 'linkEnumType', alias?: string  } 
-  
-export interface PageCreateInput {
-  name?: string | null
-  desc?: string | null
-  project?: string | null
-  system?: string | null
-  domain?: string | null
-  type?: string | null
-  wikiUrl?: string
-  bos?: BoCreateManyInput | null
-  enums?: EnumTypeCreateManyInput | null
-}
-export type PageCreateInputInputObject =
-  | Extract<keyof PageCreateInput, string>
-  | { name: 'name', alias?: string  } 
-  | { name: 'desc', alias?: string  } 
-  | { name: 'project', alias?: string  } 
-  | { name: 'system', alias?: string  } 
-  | { name: 'domain', alias?: string  } 
-  | { name: 'type', alias?: string  } 
-  | { name: 'wikiUrl', alias?: string  } 
-  | { name: 'bos', alias?: string  } 
-  | { name: 'enums', alias?: string  } 
-  
-export interface EnumTypeCreateManyInput {
-  create?: EnumTypeCreateInput[]
-  connect?: EnumTypeWhereUniqueInput[]
-}
-export type EnumTypeCreateManyInputInputObject =
-  | Extract<keyof EnumTypeCreateManyInput, string>
-  | { name: 'create', alias?: string  } 
-  | { name: 'connect', alias?: string  } 
-  
-export interface PageUpdateInput {
-  name?: string | null
-  desc?: string | null
-  project?: string | null
-  system?: string | null
-  domain?: string | null
-  type?: string | null
-  wikiUrl?: string | null
-  bos?: BoUpdateManyInput | null
-  enums?: EnumTypeUpdateManyInput | null
-}
-export type PageUpdateInputInputObject =
-  | Extract<keyof PageUpdateInput, string>
-  | { name: 'name', alias?: string  } 
-  | { name: 'desc', alias?: string  } 
-  | { name: 'project', alias?: string  } 
-  | { name: 'system', alias?: string  } 
-  | { name: 'domain', alias?: string  } 
-  | { name: 'type', alias?: string  } 
-  | { name: 'wikiUrl', alias?: string  } 
-  | { name: 'bos', alias?: string  } 
-  | { name: 'enums', alias?: string  } 
   
 export interface EnumTypeUpdateManyInput {
   create?: EnumTypeCreateInput[]
@@ -5282,6 +5381,8 @@ export type BoPropOrderByInputValues =
   | 'desc_DESC'
   | 'type_ASC'
   | 'type_DESC'
+  | 'wikiUrl_ASC'
+  | 'wikiUrl_DESC'
   | 'required_ASC'
   | 'required_DESC'
   | 'unique_ASC'

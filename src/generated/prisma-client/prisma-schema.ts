@@ -32,7 +32,7 @@ type Bo {
   desc: String
   props(where: BoPropWhereInput, orderBy: BoPropOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [BoProp!]
   wikiUrl: String!
-  details(where: BoWhereInput, orderBy: BoOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Bo!]
+  details: [String!]!
 }
 
 type BoConnection {
@@ -41,12 +41,16 @@ type BoConnection {
   aggregate: AggregateBo!
 }
 
+input BoCreatedetailsInput {
+  set: [String!]
+}
+
 input BoCreateInput {
   name: String
   desc: String
   props: BoPropCreateManyWithoutBoInput
   wikiUrl: String!
-  details: BoCreateManyInput
+  details: BoCreatedetailsInput
 }
 
 input BoCreateManyInput {
@@ -63,7 +67,7 @@ input BoCreateWithoutPropsInput {
   name: String
   desc: String
   wikiUrl: String!
-  details: BoCreateManyInput
+  details: BoCreatedetailsInput
 }
 
 type BoEdge {
@@ -91,6 +95,7 @@ type BoPreviousValues {
   name: String
   desc: String
   wikiUrl: String!
+  details: [String!]!
 }
 
 type BoProp {
@@ -98,6 +103,7 @@ type BoProp {
   name: String
   desc: String
   type: String
+  wikiUrl: String
   required: Boolean
   unique: Boolean
   redundant: Boolean
@@ -116,6 +122,7 @@ input BoPropCreateInput {
   name: String
   desc: String
   type: String
+  wikiUrl: String
   required: Boolean
   unique: Boolean
   redundant: Boolean
@@ -133,6 +140,7 @@ input BoPropCreateWithoutBoInput {
   name: String
   desc: String
   type: String
+  wikiUrl: String
   required: Boolean
   unique: Boolean
   redundant: Boolean
@@ -154,6 +162,8 @@ enum BoPropOrderByInput {
   desc_DESC
   type_ASC
   type_DESC
+  wikiUrl_ASC
+  wikiUrl_DESC
   required_ASC
   required_DESC
   unique_ASC
@@ -175,6 +185,7 @@ type BoPropPreviousValues {
   name: String
   desc: String
   type: String
+  wikiUrl: String
   required: Boolean
   unique: Boolean
   redundant: Boolean
@@ -239,6 +250,20 @@ input BoPropScalarWhereInput {
   type_not_starts_with: String
   type_ends_with: String
   type_not_ends_with: String
+  wikiUrl: String
+  wikiUrl_not: String
+  wikiUrl_in: [String!]
+  wikiUrl_not_in: [String!]
+  wikiUrl_lt: String
+  wikiUrl_lte: String
+  wikiUrl_gt: String
+  wikiUrl_gte: String
+  wikiUrl_contains: String
+  wikiUrl_not_contains: String
+  wikiUrl_starts_with: String
+  wikiUrl_not_starts_with: String
+  wikiUrl_ends_with: String
+  wikiUrl_not_ends_with: String
   required: Boolean
   required_not: Boolean
   unique: Boolean
@@ -300,6 +325,7 @@ input BoPropUpdateInput {
   name: String
   desc: String
   type: String
+  wikiUrl: String
   required: Boolean
   unique: Boolean
   redundant: Boolean
@@ -312,6 +338,7 @@ input BoPropUpdateManyDataInput {
   name: String
   desc: String
   type: String
+  wikiUrl: String
   required: Boolean
   unique: Boolean
   redundant: Boolean
@@ -323,6 +350,7 @@ input BoPropUpdateManyMutationInput {
   name: String
   desc: String
   type: String
+  wikiUrl: String
   required: Boolean
   unique: Boolean
   redundant: Boolean
@@ -351,6 +379,7 @@ input BoPropUpdateWithoutBoDataInput {
   name: String
   desc: String
   type: String
+  wikiUrl: String
   required: Boolean
   unique: Boolean
   redundant: Boolean
@@ -426,6 +455,20 @@ input BoPropWhereInput {
   type_not_starts_with: String
   type_ends_with: String
   type_not_ends_with: String
+  wikiUrl: String
+  wikiUrl_not: String
+  wikiUrl_in: [String!]
+  wikiUrl_not_in: [String!]
+  wikiUrl_lt: String
+  wikiUrl_lte: String
+  wikiUrl_gt: String
+  wikiUrl_gte: String
+  wikiUrl_contains: String
+  wikiUrl_not_contains: String
+  wikiUrl_starts_with: String
+  wikiUrl_not_starts_with: String
+  wikiUrl_ends_with: String
+  wikiUrl_not_ends_with: String
   required: Boolean
   required_not: Boolean
   unique: Boolean
@@ -555,7 +598,11 @@ input BoUpdateDataInput {
   desc: String
   props: BoPropUpdateManyWithoutBoInput
   wikiUrl: String
-  details: BoUpdateManyInput
+  details: BoUpdatedetailsInput
+}
+
+input BoUpdatedetailsInput {
+  set: [String!]
 }
 
 input BoUpdateInput {
@@ -563,13 +610,14 @@ input BoUpdateInput {
   desc: String
   props: BoPropUpdateManyWithoutBoInput
   wikiUrl: String
-  details: BoUpdateManyInput
+  details: BoUpdatedetailsInput
 }
 
 input BoUpdateManyDataInput {
   name: String
   desc: String
   wikiUrl: String
+  details: BoUpdatedetailsInput
 }
 
 input BoUpdateManyInput {
@@ -588,6 +636,7 @@ input BoUpdateManyMutationInput {
   name: String
   desc: String
   wikiUrl: String
+  details: BoUpdatedetailsInput
 }
 
 input BoUpdateManyWithWhereNestedInput {
@@ -606,7 +655,7 @@ input BoUpdateWithoutPropsDataInput {
   name: String
   desc: String
   wikiUrl: String
-  details: BoUpdateManyInput
+  details: BoUpdatedetailsInput
 }
 
 input BoUpdateWithWhereUniqueNestedInput {
@@ -685,9 +734,6 @@ input BoWhereInput {
   wikiUrl_not_starts_with: String
   wikiUrl_ends_with: String
   wikiUrl_not_ends_with: String
-  details_every: BoWhereInput
-  details_some: BoWhereInput
-  details_none: BoWhereInput
   AND: [BoWhereInput!]
   OR: [BoWhereInput!]
   NOT: [BoWhereInput!]

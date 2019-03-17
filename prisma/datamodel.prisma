@@ -19,20 +19,21 @@ type Bo {
   desc: String
   props: [BoProp!]!
   wikiUrl: String! @unique
-  details: [Bo] # 清单实体
+  details: [String] # 清单实体（使用 wikiUrl）
 }
 
 type BoProp {
   id: ID! @unique
   name: String
   desc: String
-  type: String # 数据类型
+  type: String # 数据类型 （BO 或 枚举时为 wikiUrl）
+  wikiUrl: String
   required: Boolean # 是否必填
   unique: Boolean # 是否唯一
   redundant: Boolean # 是否冗余
   bo: Bo! # 所属 BO
-  linkBo: String # 关联另一个 BO （使用 wikiUrl）
-  linkEnumType: String # 关联枚举 （使用 wikiUrl）
+  linkBo: String # 关联另一个 BO （BO Id）
+  linkEnumType: String # 关联枚举 （EnumType Id）
 }
 
 type Page {
